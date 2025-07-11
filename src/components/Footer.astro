@@ -1,0 +1,51 @@
+---
+const today = new Date();
+---
+
+<footer class="rounded-t-[3rem] bg-[#000066]  ">
+	&copy; {today.getFullYear()} Luis Reyes Digital. Todos los derechos reservados..
+	<div class="social-links">
+			<a
+				href="https://www.linkedin.com/in/luis-reyes-digital-263aa2355"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<img src="/iconos/linkedin.png" alt="LinkedIn" class="social-icon-img" />
+			</a>
+			<a
+				href="http://www.youtube.com/@LuisReyesDigital"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<img src="/iconos/youtube.png" alt="YouTube" class="social-icon-img" />
+			</a>
+			<a
+				href="https://www.instagram.com/luisreyesdigital?igsh=MW93bXU5OHhtN2t2OQ=="
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<img src="/iconos/instagram.png" alt="Instagram" class="social-icon-img" />
+			</a>
+		</div>
+</footer>
+<style>
+	footer {
+		padding: 2em 1em 6em 1em;
+		/*background: linear-gradient(var(--gray-gradient)) no-repeat;*/
+		color: rgb(var(--gray));
+		text-align: center;
+	}
+	.social-links {
+		display: flex;
+		justify-content: center;
+		gap: 1em;
+		margin-top: 1em;
+	}
+	.social-links a {
+		text-decoration: none;
+		color: rgb(var(--gray));
+	}
+	.social-links a:hover {
+		color: rgb(var(--gray-dark));
+	}
+</style>

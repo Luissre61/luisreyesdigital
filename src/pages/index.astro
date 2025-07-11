@@ -1,0 +1,184 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body  class="overflow-x-hidden">
+		<Header />
+		<main>
+			<section title="Pilares de mi contenido">
+    <div class="w-screen bg-[#000066] text-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative left-1/2 right-1/2 mx-[-50vw]">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center w-full">
+            <!-- Columna de texto -->
+            <div class="space-y-4 sm:space-y-6">
+                <h1 class="text-lg sm:text-2xl md:text-3xl font-bold leading-snug sm:leading-tight">
+                    Soy Luis Reyes
+                </h1>
+
+                <p class="text-base sm:text-xl md:text-2xl leading-relaxed">
+                    Un profesional con experiencia en el mundo real de ventas y soporte remoto, con conocimientos del desarrollo de aplicaciones web, ahora construyendo mi futuro en el ecosistema <b class="font-semibold">digital</b>.
+                </p>
+                
+                <a href="/about" class="inline-block bg-white text-[#000033] hover:bg-[#000033] hover:text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md hover:border-white border-transparent">
+                    Explora Mi Viaje Digital
+                </a>
+            </div>
+
+            <!-- Columna de imagen -->
+            <div class="flex justify-center mt-6 md:mt-0">
+                <div class="w-full h-56 sm:h-64 md:h-80 lg:h-96 rounded-lg overflow-hidden shadow-xl">
+                    <img
+                        src="https://i.pinimg.com/736x/f1/ae/0b/f1ae0b2e1310c8626dc231f0fc9bf9ca.jpg"
+                        alt="Luis Reyes - Profesional digital"
+                        class="w-full h-full object-cover object-center"
+                        loading="lazy"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+			<section class="p-8">
+				<div class="max-w-7xl mx-auto">
+					<!-- Título principal -->
+					<h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-10 md:mb-12 text-gray-800 px-4">
+    🔥 "Tu valor profesional no se mide en títulos, sino en habilidades y resultados"
+</h1>
+					<h2 class="mb-6">💡 Pilares de mi Contenido</h2>
+
+					<div
+						class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+					>
+						<!-- Cuadro Mision -->
+						<div
+							class="group bg-white p-6 rounded-lg shadow-md border border-gray-200 w-full transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900"
+						>
+							<h2
+								class="text-xl font-semibold mb-4 group-hover:text-white"
+							>
+								📌 Misión
+							</h2>
+							<p class="text-gray-600 group-hover:text-white">
+								"Dominar las herramientas que transforman experiencias digitales en crecimiento escalable, combinando: Experiencia real, Conocimiento técnico y Visión estratégica"
+							</p>
+						</div>
+
+						<!-- Marketin con ADN -->
+						<div
+							class="group bg-white p-6 rounded-lg shadow-md border border-gray-200 w-full transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900"
+						>
+							<h2
+								class="text-xl font-semibold mb-4 group-hover:text-white"
+							>
+								🔴 Marketing Digital con ADN de Atención al
+								Cliente
+							</h2>
+							<p class="text-gray-600 group-hover:text-white">
+								"Aprovecho lo que aprendí en el Contac Center
+								para crear estrategias que funcionan: Técnicas
+								de persuasión, Gestión multicanal, Power Skills"
+							</p>
+						</div>
+
+						<!-- IA y automatizacion  -->
+						<div
+							class="group bg-white p-6 rounded-lg shadow-md border border-gray-200 w-full transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900"
+						>
+							<h2
+								class="text-xl font-semibold mb-4 group-hover:text-white"
+							>
+								🟡 IA y Automatización para No-Técnicos
+							</h2>
+							<p class="text-gray-600 group-hover:text-white">
+								"Cómo implemento herramientas accesibles para:
+								Crear asistentes virtuales con IA, Extraer
+								insights valiosos,
+							</p>
+						</div>
+
+						<!-- Cuadro Mentalidad -->
+						<div
+							class="group bg-white p-6 rounded-lg shadow-md border border-gray-200 w-full transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900"
+						>
+							<h2
+								class="text-xl font-semibold mb-4 group-hover:text-white"
+							>
+								🟢 Mentalidad para la Reinvención Estratégica
+							</h2>
+							<p class="text-gray-600 group-hover:text-white">
+								Enfrentando mis propios obstáculos: Falta de
+								visión clara, Procrastinación vs. Acción,
+								Gestión del tiempo"
+							</p>
+						</div>
+					</div>
+				</div>
+	<section class="min-h-[70vh] bg-gray-100 flex flex-col md:flex-row items-center justify-center gap-8 p-8 mt-[5%] rounded-lg">
+    <!-- Imagen responsiva (45% del viewport) -->
+    <div class="flex justify-center w-[45vw]">
+        <img 
+            src="https://i.pinimg.com/736x/62/f1/e4/62f1e4ea079366f04e92cd9ee837b3d9.jpg" 
+            alt="Habilidades digitales"
+            class="max-h-[60vh] w-auto object-cover rounded-lg shadow-md"
+        >
+    </div>
+
+    <!-- Contenedor de información (45% del viewport) -->
+    <div class="bg-gray-100 text-gray-800 py-6 sm:py-8 px-4 sm:px-6 rounded-lg w-full md:w-[90vw] lg:w-[70vw] xl:w-[50vw] 2xl:w-[45vw] max-w-4xl mx-auto">
+    <div class="text-left">
+        <!-- Título responsivo -->
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+            Habilidades que Impulsan mi Visión Digital
+        </h1>
+        
+        <!-- Lista responsiva con emojis alineados -->
+        <ul class="text-sm sm:text-base md:text-lg lg:text-xl space-y-2 sm:space-y-3">
+            <li class="flex items-start">
+                <span class="mr-2 mt-0.5 flex-shrink-0">🗣️</span>
+                Comunicación y Ventas Remotas (Base)
+            </li>
+            <li class="flex items-start">
+                <span class="mr-2 mt-0.5 flex-shrink-0">🧠</span>
+                Aprendizaje Activo en Marketing Digital
+            </li>
+            <li class="flex items-start">
+                <span class="mr-2 mt-0.5 flex-shrink-0">🚀</span>
+                Explorando el Potencial de IA y Automatización
+            </li>
+            <li class="flex items-start">
+                <span class="mr-2 mt-0.5 flex-shrink-0">💻</span>
+                Habilidades en Front-End para la Visión Digital
+            </li>
+        </ul>
+    </div>
+</div>
+</section>
+<!-- Llamado final a la acción mejorado -->
+<section class="w-full sm:w-[80vw] md:w-[70vw] mx-auto px-4 py-8 sm:p-8 bg-blue-600 rounded-none sm:rounded-4xl mt-8 sm:mt-[5%]">
+    <div class="max-w-[90vw] sm:max-w-none mx-auto text-center">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4">
+            🌟 Acompáñame en mi Camino hacia la Especialización Digital. <span class="hidden sm:inline">➡️</span>
+        </h2>
+        <p class="text-white text-base sm:text-lg md:text-xl mb-6 sm:mb-8 px-2 sm:px-0">
+            "Conecta con Luis Reyes Digital. Juntos, podemos aprender, superar obstáculos y construir un futuro digital lleno de oportunidades. 🚀✨"
+        </p>
+        <a href="https://www.linkedin.com/in/luis-reyes-digital-263aa2355" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-[#000033] hover:bg-white hover:text-[#000033] text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md border-transparent hover:border-[#000033]">
+            🔗 ¡Conecta en LinkedIn! <span class="hidden sm:inline">⬇️</span>
+        </a>
+    </div>
+</section>
+		</main>
+
+		<Footer />
+	</body>
+</html>
