@@ -1,79 +1,55 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
+import Icon from "./Icon.astro";
 ---
 
 <header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Inicio</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">Acerca de Mí</HeaderLink>
-		</div>
-		<div class="social-links">
-			<a
-				href="https://www.linkedin.com/in/luis-reyes-digital-263aa2355"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<img src="/iconos/linkedin2.png" alt="LinkedIn" class="social-icon-img" />
-			</a>
-			<a
-				href="http://www.youtube.com/@LuisReyesDigital"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<img src="/iconos/youtube2.png" alt="YouTube" class="social-icon-img" />
-			</a>
-			<a
-				href="https://www.instagram.com/luisreyesdigital?igsh=MW93bXU5OHhtN2t2OQ=="
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<img src="/iconos/instagram2.png" alt="Instagram" class="social-icon-img" />
-			</a>
-		</div>
-	</nav>
-	<style>
-		header {
-			margin: 0;
-			padding: 0 1em;
-			background: white;
-			box-shadow: 0 2px 8px rgba(var(--black), 5%);
-		}
-		h2 {
-			margin: 0;
-			font-size: 1em;
-		}
+    <nav>
+        <h2><a href="/">{SITE_TITLE}</a></h2>
+        <div class="internal-links">
+            <HeaderLink href="/">Inicio</HeaderLink>
+            <HeaderLink href="/blog">Blog</HeaderLink>
+            <HeaderLink href="/about">Acerca de Mí</HeaderLink>
+        </div>
 
-		h2 a,
-		h2 a.active {
-			text-decoration: none;
-		}
-		nav {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-		}
-		.internal-links a {
-			padding: 1em 0.5em;
-			color: var(--black);
-			border-bottom: 4px solid transparent;
-			text-decoration: none;
-		}
-		.internal-links a.active {
-			text-decoration: none;
-			border-bottom-color: var(--accent);
-		}
-		@media (max-width: 720px) {
-			.social-links {
-				gap: 0.5rem;
-			}
-			.social-links a {
-				width: 24px;
-				height: 24px;
-			}
-		}
-	</style>
+        <div class="social-icons-wrapper flex items-center gap-4 mb-4">
+            <a href="https://www.linkedin.com/in/luis-reyes-digital-263aa2355" target="_blank"> <Icon name="linkedin" width={28} height={28} /></a>
+            <a href="https://www.youtube.com/@LuisReyesDigital" target="_blank"><Icon name="youtube" width={42} height={42} /></a>
+            <a href="https://www.instagram.com/luisreyesdigital/" target="_blank"><Icon name="instagram" width={28} height={28} /></a>
+        </div>
+    </nav>
+    <style>
+        header {
+            margin: 0;
+            padding: 0 1em;
+            background: white;
+            box-shadow: 0 2px 8px rgba(var(--black), 5%);
+        }
+        h2 {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        h2 a,
+        h2 a.active {
+            text-decoration: none;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .internal-links a {
+            padding: 1em 0.5em;
+            color: var(--black);
+            border-bottom: 4px solid transparent;
+            text-decoration: none;
+        }
+        .internal-links a.active {
+            text-decoration: none;
+            border-bottom-color: var(--accent);
+        }
+        
+    </style>
 </header>

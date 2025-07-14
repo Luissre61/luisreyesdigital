@@ -1,63 +1,233 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="overflow-x-hidden flex flex-col min-h-screen">
+		<Header />
+		<main class="flex-grow">
+			<section>
+				<div
+					class="bg-white rounded-3xl shadow-lg p-8 md:p-12 lg:p-16 text-center w-[80vw] min-w-[320px] mx-auto relative mt-8 mb-16"
+				>
+					<button
+						class="px-5 py-1 border border-gray-300 rounded-full text-xs font-medium text-gray-700 uppercase tracking-wide mb-6 hover:bg-gray-50 transition duration-300"
+					>
+						MI HISTORIA
+					</button>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+					<h2
+						class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#007bff] mb-3 leading-tight"
+					>
+						Luis Reyes.
+					</h2>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+					<h3
+						class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 leading-tight"
+					>
+						Fundador de Luis Reyes Digital | Tu Guía hacia el Futuro Online
+					</h3>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+					<p
+						class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto"
+					>
+						"¿Qué pasaría si te dijera que tu punto de partida no define tu destino, sino tu potencia? Esta es la historia de cómo los obstáculos se convirtieron en escalones, y una visión clara me llevó del campo a la ciudad, del empleo dependiente a la construcción de mi marca personal digital."
+						<b class="font-semibold">Acompáñame en este viaje.</b>
+					</p>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+					<div
+						class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-white rounded-tl-xl rounded-br-xl shadow-lg rotate-45"
+					>
+					</div>
+					<div
+						class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-tl-full rounded-br-full rotate-45 opacity-50 blur-sm"
+					>
+					</div>
+				</div>
+			</section>
+
+			<section title="Mi Historia" class="mb-16">
+    <h2
+        class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 text-center"
+    >
+        Mi Historia
+    </h2>
+    <div
+        class="bg-white rounded-3xl shadow-lg p-8 md:p-12 lg:p-16 w-[80vw] min-w-[320px] mx-auto"
+    >
+        <div
+            class="flex flex-col md:flex-row gap-8 lg:gap-12 items-start"
+        >
+            <div class="md:w-[65%] lg:w-[70%] text-base sm:text-lg text-gray-700 leading-relaxed space-y-6 text-left md:text-justify">
+                <h3
+                    class="text-xl sm:text-2xl font-bold text-gray-900 !mb-4 text-left"
+                >
+                    De Agente a Emprendedor Digital: Cómo
+                    Reinventarse y Construir una Marca Personal
+                    en la Era Digital
+                </h3>
+                <p>
+                    Mi nombre es Luis Reyes, y aunque muchos me
+                    ven ahora inmerso en el mundo del
+                    desarrollo web y el marketing digital, mis
+                    raíces están ancladas en la serena belleza
+                    del campo venezolano. Crecí rodeado de
+                    naturaleza y familia, un entorno que, si
+                    bien me dio paz, también alimentó una
+                    inquietud creciente por la tecnología y la
+                    conexión con un mundo más amplio. A los diez
+                    años, con mis propios ahorros, ya tenía mi
+                    primer celular, y a los quince, la llegada
+                    de nuestra primera computadora me abrió las
+                    puertas a un universo fasciniente: el de los
+                    videojuegos y las infinitas posibilidades de
+                    lo digital. Esa curiosidad por desentrañar
+                    el funcionamiento del mundo digital sería,
+                    años después, la brújula de mi reinvención.
+                </p>
+                <p>Al culminar la secundaria, el campo se me quedó pequeño. Anhelaba la ciudad, la efervescencia de nuevas ideas y oportunidades. Me mudé a casa de mi tía y comencé a estudiar informática, convencido de que había encontrado mi camino. Sin embargo, la profunda crisis que golpeó a Venezuela en 2017 me obligó a abandonar mis estudios tras solo dos semestros. Fue un golpe duro; tuve que regresar al campo, y con ello, la incertidumbre.</p>
+                <p>Pero la adversidad, para mí, siempre ha sido un catalizador. Lejos de quedarme de brazos cruzados, vi una oportunidad. Junto a un primo, emprendimos un proyecto audaz: una destilería de licor artesanal de caña. Nos sumergimos de lleno, trabajando incansablemente, incluso contratando a tres personas para la producción. Más allá de los ingresos, esa destilería fue mi primera gran escuela de negocios: aprendí a gestionar la producción, a construir redes de comercialización y a liderar un equipo. Construimos una red sólida, desde la comercialización de la materia prima hasta la distribución en otros estados. Nos iba realmente bien, aunque mi corazón aún anhelaba la vida en la ciudad y la conexión con el universo digital.</p>
+                <p>Entonces llegó el 2020. La pandemia no solo detuvo al mundo, sino que arrasó con todo lo que habíamos construido durante tres años. De la noche a la mañana, nuestro emprendimiento había quebrado. Esa fue, sin duda, una de las etapas más duras de mi vida. Me encontré sin trabajo, cuestionando cada decisión, cada "hubiera" del pasado. Entré en una profunda depresión, un dolor silencioso que solo yo conocía. Pero mi espíritu resiliente se negó a ser vencido. Pasaba noches en vela, analizando el origen de mis problemas, buscando respuestas, buscando la salida, hasta que esa profunda introspección me llevó a tomar una nueva decisión transformadora en 2021, una que cambiaría, una vez más, el rumbo de mi vida y me lanzaría a la acción.</p>
+            </div>
+
+            <div
+                class="w-full md:w-[35%] lg:w-[30%] md:sticky md:top-24 h-full"
+            >
+                <div
+                    class="flex flex-row md:flex-col justify-center items-center gap-8"
+                >
+                    <img
+                        src="/imagenes/luis-1.jpg"
+                        alt="Retrato de Luis Reyes"
+                        class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-lg"
+                        loading="lazy"
+                        width="224"
+                        height="224"
+                    />
+                    <img
+                        src="/imagenes/luis-2.jpg"
+                        alt="Luis Reyes en un entorno profesional"
+                        class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-lg"
+                        loading="lazy"
+                        width="224"
+                        height="224"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+			<!-- Sección 2 -->
+
+			<section title="Mi Historia - parte 2" class="mb-16">
+  
+    <div
+        class="bg-white rounded-3xl shadow-lg p-8 md:p-12 lg:p-16 w-[80vw] min-w-[320px] mx-auto"
+    >
+        <div
+            class="flex flex-col md:flex-row-reverse gap-8 lg:gap-12 items-start"
+        >
+            <div class="md:w-[65%] lg:w-[70%] text-base sm:text-lg text-gray-700 leading-relaxed space-y-6 text-left md:text-justify">
+                <h3
+                    class="text-xl sm:text-2xl font-bold text-gray-900 !mb-4 text-left"
+                >
+                    Forjando mi Propio Camino: La Ciudad, los Desafíos y la Fuerza de la Adaptación
+                </h3>
+                <p>En 2021, la inactividad en el campo se hizo insostenible. Aunque disfrutaba mis trotes vespertinos por los senderos verdes, la conversación interna constante me consumía. Necesitaba un cambio radical. Fue entonces cuando, durante una visita a la ciudad, un amigo me sugirió buscar trabajo. Tomé la palabra al instante. Sin pensarlo dos veces, acepté mi primera oportunidad en un trabajo dependiente, en una tienda de zapatos. Fue un paso fundamental en mi proceso de reinvención: por primera vez, experimentaba la disciplina de un jefe y un horario, mientras reconstruía mi vida personal. Este trabajo no solo me dio un respiro financiero, sino que, crucialmente, me permitió despejar la mente y empezar a reconstruirme.</p>
+				<p>Esa estabilidad incipiente me impulsó a dar el siguiente gran paso: mudarme solo y asumir la responsabilidad de mi propio alquiler. La vida en la ciudad, sin embargo, no fue un camino de rosas; fue dura y estuvo llena de choques emocionales. Me sentía solo, sin una red de apoyo cercana, en un mundo mucho más grande y desafiante de lo que había conocido. Los obstáculos no tardaron en llegar: mi contrato en la tienda de zapatos terminó, y de pronto, me vi desempleado, sin ingresos y con la presión de pagar un alquiler.</p>
+				<p>Pero la adversidad, lejos de paralizarme, encendió una chispa. Sin trabajo y en mi nuevo hogar, mi refugio y mi herramienta más poderosa fue el mundo que siempre me había apasionado: el digital. Me sumergí en la búsqueda de empleo online, explorando cada aplicación y recurso digital, convencido de que la solución estaba allí. Conseguí varias entrevistas, aunque la falta de un título universitario limitaba mis opciones. Cada una de esas experiencias –en una empresa de plásticos, como almacenista en textiles o atendiendo al público en una tienda de hogar– fue un escalón, un aprendizaje sobre lo que buscaba –y no buscaba– en mi camino. No eran fracasos, sino ajustes necesarios en mi búsqueda de un propósito mayor.</p>
+				<p>Me volví, de alguna manera, "adicto" a llevarme al límite. Sentía que al renunciar y verme en la necesidad imperiosa de generar ingresos, me obligaba a buscar nuevas oportunidades con una creatividad y una determinación inquebrantables. Comprendí que las personas no debemos estancarnos en nuestra zona de confort. Cada vez que salía de ella, aprendía, crecía y me acercaba más a la visión de emprendedor que empezaba a definirse en mi interior.</p>
+
+            </div>
+
+            <div
+                class="w-full md:w-[35%] lg:w-[30%] md:sticky md:top-24 h-full"
+            >
+                <div
+                    class="flex flex-row md:flex-col justify-center items-center gap-8"
+                >
+                    <img
+                        src="/imagenes/luis-3.jpg"
+                        alt="Retrato de Luis Reyes"
+                        class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-lg"
+                        loading="lazy"
+                        width="224"
+                        height="224"
+                    />
+                    <img
+                        src="/imagenes/luis-4.jpg"
+                        alt="Luis Reyes en un entorno profesional"
+                        class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-lg"
+                        loading="lazy"
+                        width="224"
+                        height="224"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+			<!-- Sección 3 -->
+			<section title="Mi Historia" class="mb-16">
+    <div
+        class="bg-white rounded-3xl shadow-lg p-8 md:p-12 lg:p-16 w-[80vw] min-w-[320px] mx-auto"
+    >
+        <div
+            class="flex flex-col md:flex-row gap-8 lg:gap-12 items-start"
+        >
+            <div class="md:w-[65%] lg:w-[70%] text-base sm:text-lg text-gray-700 leading-relaxed space-y-6 text-left md:text-justify">
+                <h3
+                    class="text-xl sm:text-2xl font-bold text-gray-900 !mb-4 text-left"
+                >
+                   La Visión Clara: Forjando mi Destino Digital y el Nacimiento de una Marca con Propósito
+                </h3>
+                <p>Mi experiencia como cajero en el supermercado, y mi ascenso a supervisor, me enseñó valiosas lecciones sobre liderazgo y gestión. Sin embargo, sentía que algo esencial me faltaba. Anhelaba un crecimiento más profundo, una carrera que me permitiera desarrollar todo mi potencial. Así que, una vez más, tomé una decisión audaz: renunciar y volver a ponerme al límite. La idea de estar desempleado ya no me asustaba; sabía que tenía la capacidad de salir adelante.</p>
+				<p>Esta vez, mi búsqueda me llevó de vuelta a un contact center, pero con una diferencia crucial. Como agente integral en ventas y soporte de TV satelital, encontré no solo estabilidad económica, sino, vitalmente, el tiempo que necesitaba para retomar mis estudios de informática. Abordé el desafío con entusiasmo: trabajaba, entrenaba, intentaba socializar... una fórmula perfecta para el colapso. Era la intensidad de mi búsqueda de crecimiento la que me empujaba al límite. Tuve que dejar el gimnasio para priorizar los estudios, pero un nuevo obstáculo se presentó: al tercer semestre, los horarios universitarios no se coordinaban con mi trabajo. Con gran pesar y por segunda vez, tuve que retirarme de la universidad, ya que al ser privada, sus costos eran elevados.</p>
+				<p>Fue un momento de profunda reflexión. Me cuestioné si, quizás, las oportunidades para obtener un título universitario eran un lujo inalcanzable para mí. Fue en esa encrucijada donde la claridad llegó: mi camino no era el tradicional. Comprendí que lo que realmente necesitaba era la flexibilidad y el aprendizaje 100% online. Fue entonces cuando mi visión se aclaró por completo.</p>
+				<p>Me inscribí en mi primer curso especializado en Fundamentos de la Programación con Python, que me resultó sencillo gracias a mis conocimientos previos. Inmediatamente después, abordé el curso de Front-End, donde adquirí las habilidades fundamentales del desarrollo web. Estas son las habilidades que, hoy por hoy, me han impulsado a crear Luis Reyes Digital y a adentrarme con pasión en el fascinante mundo del Marketing Digital y la Inteligencia Artificial.</p>
+				<p>Todo lo que he vivido, cada desafío, cada reinvención, me ha dotado de un aprendizaje incalculable y una resiliencia forjada en el mundo real desde muy temprana edad, y me han preparado de forma única para los desafíos y oportunidades del mundo digital y del emprendimiento. Hoy, esa visión es inquebrantable: sé exactamente dónde quiero llegar. Estoy convencido de que esta es otra decisión que no solo cambiará mi vida para mejor, sino que me permitirá guiar a otros en su propio camino, consolidando mi rol como empresario y referente digital en mi anhelo de construir mi futuro.</p>
+            </div>
+
+            <div
+                class="w-full md:w-[35%] lg:w-[30%] md:sticky md:top-24 h-full"
+            >
+                <div
+                    class="flex flex-row md:flex-col justify-center items-center gap-8"
+                >
+                    <img
+                        src="/imagenes/luis-5.jpg"
+                        alt="Retrato de Luis Reyes"
+                        class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-lg"
+                        loading="lazy"
+                        width="224"
+                        height="224"
+                    />
+                    <img
+                        src="/imagenes/luis-6.jpg"
+                        alt="Luis Reyes en un entorno profesional"
+                        class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-lg"
+                        loading="lazy"
+                        width="224"
+                        height="224"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+		</main>
+
+		<Footer />
+	</body>
+</html>

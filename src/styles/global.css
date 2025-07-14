@@ -136,38 +136,24 @@ hr {
 	white-space: nowrap;
 }
 
-/* Estilos de los iconos*/
-.social-links {
-    display: flex;
-    gap: 1rem; /* Espacio entre iconos */
-    align-items: center; /* Alinea verticalmente los iconos si no tienen la misma altura */
-}
 
-.social-links a {
-    /* El contenedor del icono puede ser el mismo tamaño para todos */
-    display: flex; /* Para centrar la imagen si es necesario */
-    justify-content: center;
-    align-items: center;
-    width: 32px;  /* Tamaño consistente del área del enlace */
-    height: 32px; /* Tamaño consistente del área del enlace */
-    /* Aquí puedes poner colores de fondo o bordes si quieres que los enlaces sean cuadrados visibles */
-}
 
-.social-icon-img {
-    width: 100%;  /* La imagen ocupa el 100% del ancho de su contenedor (32px) */
-    height: 100%; /* La imagen ocupa el 100% del alto de su contenedor (32px) */
-    object-fit: contain; /* ¡Clave para que no se corte y mantenga la proporción! */
-    /* Si quieres que llene todo el espacio y no te importa un poco de recorte, usa 'cover' */
-    /* Si quieres que se estire para llenar todo y no te importa la distorsión, usa 'fill' */
-    
-    display: block; /* Elimina cualquier espacio extra por defecto de las imágenes */
-    transition: transform 0.2s ease-in-out; /* Animación para el hover si quieres */
-}
 
 /* Efecto hover si lo deseas */
-.social-links a:hover .social-icon-img {
+.social-icons-wrapper a:hover  {
     /* Puedes cambiar el color si tus iconos son monocromáticos o aplicar un filtro */
      filter: brightness(0.8);  /* Oscurece la imagen */
-    transform: scale(1.05);  /* Un ligero aumento de tamaño */
+    transform: scale(1.10);  /* Un ligero aumento de tamaño */
 }
 
+
+@media (max-width: 720px) {
+    .social-icons-wrapper {
+        gap: 0.5rem; /* Reduce el espacio entre los iconos en móviles */
+    }
+    /* Ajusta el tamaño de los SVG dentro de los enlaces en el contenedor de iconos */
+    .social-icons-wrapper a svg {
+        width: 20px !important; /* Un tamaño más pequeño para móviles */
+        height: 20px !important; /* Un tamaño más pequeño para móviles */
+    }
+}
