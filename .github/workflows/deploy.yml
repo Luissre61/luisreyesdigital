@@ -1,21 +1,16 @@
-# Nombre del flujo de trabajo
 name: Deploy Astro site to Pages
 
-# Se ejecuta en cada push a la rama `main`
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"] # Asegúrate de que esta es la rama donde haces push
 
-  # Permite ejecutar este flujo de trabajo manualmente desde la pestaña Actions en GitHub
-  workflow_dispatch:
+  workflow_dispatch: # Permite ejecutar manualmente
 
-# Permisos para el GITHUB_TOKEN para permitir el despliegue en GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
-# Permite un solo despliegue concurrente, cancelando ejecuciones anteriores si se hace un nuevo push.
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -26,25 +21,31 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 8 # O la versión que estés usando
+          version: 8 # Ajusta a tu versión de pnpm si es diferente
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "20" # Ajusta a tu versión de Node.js si es diferente
           cache: "pnpm"
+
       - name: Install dependencies
         run: pnpm install
+
       - name: Build
         run: pnpm build
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./dist # Asegúrate de que Astro genera la salida en esta carpeta
 
   deploy:
     needs: build

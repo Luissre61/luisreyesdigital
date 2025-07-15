@@ -7,7 +7,11 @@ interface Props {
 }
 
 const { name, class: className, width = 24, height = 24 } = Astro.props;
+
+// Construye la ruta al sprite, asegurando que funcione correctamente
+// tanto en desarrollo como en producción con una ruta base.
+const spriteHref = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/iconos/sprite.svg#${name}`;
 ---
 <svg class:list={[className]} {width} {height} fill="currentColor">
-  <use href={`/iconos/sprite.svg#${name}`} />
+  <use href={spriteHref} />
 </svg>

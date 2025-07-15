@@ -152,8 +152,5 @@ hr {
         gap: 0.5rem; /* Reduce el espacio entre los iconos en móviles */
     }
     /* Ajusta el tamaño de los SVG dentro de los enlaces en el contenedor de iconos */
-    .social-icons-wrapper a svg {
-        width: 20px !important; /* Un tamaño más pequeño para móviles */
-        height: 20px !important; /* Un tamaño más pequeño para móviles */
-    }
+    
 }
