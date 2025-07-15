@@ -5,11 +5,19 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://luissre61.github.io', // Confirmado que este es tu usuario
-  base: '/luisreyesdigital',          // Confirmado que este es el nombre de tu repositorio
+  // **TU NOMBRE DE USUARIO ES 'luissre61'**
+  site: 'https://luissre61.github.io', // Confirmado tu nombre de usuario
+
+  // **TU REPOSITORIO ES 'luisreyesdigital'**
+  base: '/luisreyesdigital', // Confirmo que esto es correcto para tu repositorio
+
   trailingSlash: 'always',
   integrations: [mdx(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
+  },
+  // **¡ESTO ES LO CLAVE PARA EL ERROR DE LAS FUENTES/ASSETS!**
+  build: {
+    assetsPrefix: '/luisreyesdigital', // Asegura que esto coincida con tu 'base'
   },
 });
