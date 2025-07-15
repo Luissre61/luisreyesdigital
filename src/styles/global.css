@@ -49,8 +49,8 @@ body {
 main {
 	/*width: 720px;*/
 	max-width: calc(100% - 2em);
-	margin: auto;
-	/*padding: 3em 1em;*/
+	margin: 0 auto;
+	padding: 0 1em 3em; /* Eliminamos el padding superior y ajustamos el inferior */
 }
 
 
@@ -113,9 +113,7 @@ hr {
 	body {
 		font-size: 18px;
 	}
-	main {
-		padding: 1em;
-	}
+	
 }
 
 .sr-only {
