@@ -1,55 +1,108 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
-import Icon from "./Icon.astro";
+// Ya no necesitamos importar Icon aquí, ya que los iconos de RRSS se moverán al footer.
+// import Icon from "./Icon.astro";
 ---
 
-<header>
-    <nav>
-        <h2><a href={import.meta.env.BASE_URL || '/'}>{SITE_TITLE}</a></h2>
-        <div class="internal-links">
-            <HeaderLink href="/">Inicio</HeaderLink>
-            <HeaderLink href="/blog/">Blog</HeaderLink>
-            <HeaderLink href="/about/">Acerca de Mí</HeaderLink>
-        </div>
+<header class="bg-white shadow-md py-4 px-4 sm:px-6 lg:px-8">
+  <nav class="flex items-center justify-between flex-wrap">
+    <h2 class="text-xl font-bold">
+      <a href={import.meta.env.BASE_URL || '/'} class="text-gray-800 hover:text-gray-600 transition-colors">
+        {SITE_TITLE}
+      </a>
+    </h2>
 
-        <div class="social-icons-wrapper flex items-center gap-4">
-            <a href="https://www.linkedin.com/in/luis-reyes-digital-263aa2355" target="_blank" aria-label="Mi perfil de LinkedIn" class="text-gray-800 hover:text-blue-600 transition-colors"><Icon name="linkedin" width={28} height={28} /></a>
-            <a href="https://www.youtube.com/@LuisReyesDigital" target="_blank" aria-label="Mi canal de YouTube" class="text-gray-800 hover:text-red-600 transition-colors"><Icon name="youtube" width={42} height={42} /></a>
-            <a href="https://www.instagram.com/luisreyesdigital/" target="_blank" aria-label="Mi perfil de Instagram" class="text-gray-800 hover:text-pink-500 transition-colors"><Icon name="instagram" width={28} height={28} /></a>
-        </div>
-    </nav>
-    <style>
-        header {
-            margin: 0;
-            padding: 0 1em;
-            background: white;
-            box-shadow: 0 2px 8px rgba(var(--black), 5%);
-        }
-        h2 {
-            margin: 0;
-            font-size: 1em;
-        }
+    <div class="block md:hidden">
+      <button id="open-menu-button" class="flex items-center px-3 py-2 border rounded text-gray-700 border-gray-700 hover:text-gray-900 hover:border-gray-900">
+        <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Abrir Menú</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-6z"/></svg>
+      </button>
+    </div>
 
-        h2 a,
-        h2 a.active {
-            text-decoration: none;
-        }
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .internal-links a {
-            padding: 1em 0.5em;
-            color: var(--black);
-            border-bottom: 4px solid transparent;
-            text-decoration: none;
-        }
-        .internal-links a.active {
-            text-decoration: none;
-            border-bottom-color: var(--accent);
-        }
-        
-    </style>
+    <div id="mobile-menu" class="hidden w-full md:flex md:items-center md:w-auto">
+      <button id="close-menu-button" class="absolute top-4 right-4 md:hidden flex items-center px-3 py-2  rounded text-gray-700 border-gray-700 hover:text-gray-900 hover:border-gray-900 z-50">
+        <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Cerrar Menú</title><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/></svg>
+      </button>
+
+      <div class="internal-links text-sm
+                  flex flex-col items-center justify-center
+                  md:flex-grow md:flex-row md:justify-end md:items-center
+                  w-full md:w-auto mt-16 md:mt-0"> {/* Añadido mt-16 para separar de la X en móvil */}
+        <HeaderLink href="/" class="block text-center mt-4 md:inline-block md:mt-0 px-4 py-2 text-gray-800 hover:text-gray-600 transition-colors">Inicio</HeaderLink>
+        <HeaderLink href="/blog/" class="block text-center mt-4 md:inline-block md:mt-0 px-4 py-2 text-gray-800 hover:text-gray-600 transition-colors">Blog</HeaderLink>
+        <HeaderLink href="/about/" class="block text-center mt-4 md:inline-block md:mt-0 px-4 py-2 text-gray-800 hover:text-gray-600 transition-colors">Acerca de Mí</HeaderLink>
+        {/* Si tenías un enlace a Newsletter que quieres mantener, añádelo aquí también */}
+        </div>
+      </div>
+  </nav>
 </header>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const openMenuButton = document.getElementById('open-menu-button'); // Nuevo ID para el botón de hamburguesa
+    const closeMenuButton = document.getElementById('close-menu-button'); // Nuevo ID para el botón de la X
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (openMenuButton && closeMenuButton && mobileMenu) {
+      // Función para abrir el menú
+      const openMenu = () => {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex', 'flex-col', 'absolute', 'top-0', 'left-0', 'h-screen', 'w-full', 'bg-white', 'z-50', 'items-center', 'justify-center');
+        openMenuButton.classList.add('hidden'); // Oculta el botón de hamburguesa cuando el menú está abierto
+      };
+
+      // Función para cerrar el menú
+      const closeMenu = () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex', 'flex-col', 'absolute', 'top-0', 'left-0', 'h-screen', 'w-full', 'bg-white', 'z-50', 'items-center', 'justify-center');
+        openMenuButton.classList.remove('hidden'); // Muestra el botón de hamburguesa cuando el menú está cerrado
+      };
+
+      openMenuButton.addEventListener('click', openMenu);
+      closeMenuButton.addEventListener('click', closeMenu);
+
+      // Cierra el menú cuando se hace clic en un enlace (en móvil)
+      const menuLinks = mobileMenu.querySelectorAll('.internal-links a');
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth < 768) { // Solo en móviles
+            closeMenu();
+          }
+        });
+      });
+
+      // Asegura que el menú se resetee a estado de escritorio si se redimensiona
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) { // md breakpoint de Tailwind
+          mobileMenu.classList.remove('hidden', 'flex', 'flex-col', 'absolute', 'top-0', 'left-0', 'h-screen', 'w-full', 'bg-white', 'z-50', 'items-center', 'justify-center');
+          mobileMenu.classList.add('flex'); // Vuelve a ser flex para escritorio
+          openMenuButton.classList.remove('hidden'); // Asegura que la hamburguesa sea visible
+        } else {
+          // Si estamos en móvil y el menú está cerrado, asegurarnos de que la hamburguesa esté visible
+          if (mobileMenu.classList.contains('hidden')) {
+            openMenuButton.classList.remove('hidden');
+          }
+        }
+      });
+    }
+  });
+</script>
+
+<style is:global>
+  /* Tus estilos CSS existentes (no modificados de la última vez) */
+  h2 {
+    margin: 0;
+  }
+  h2 a,
+  h2 a.active {
+    text-decoration: none;
+  }
+  .internal-links a {
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+  }
+  .internal-links a.active {
+    text-decoration: none;
+    border-bottom-color: var(--accent);
+  }
+</style>
