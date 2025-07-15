@@ -1,41 +1,55 @@
-name: Deploy Astro to GitHub Pages # Línea 1
+name: Deploy Astro to GitHub Pages
 
-on: # Línea 3
+on:
   push:
-    branches:
-      - main # O la rama donde tengas tu código fuente
+    branches: [ "main" ]
+  # Permite ejecutar este flujo de trabajo manualmente desde la pestaña Actions
+  workflow_dispatch:
+
+# Otorga los permisos correctos y seguros para el despliegue
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permite un solo despliegue concurrente, cancelando ejecuciones anteriores.
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # Necesario para subir los archivos
-      pages: write     # Necesario para desplegar en GitHub Pages
-      id-token: write  # Necesario para OIDC (si usas autenticación)
-
     steps:
-      - name: Checkout your repository
+      - name: Checkout
         uses: actions/checkout@v4
-
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8 # O la versión que estés usando
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # Usa la versión de Node.js que tu Astro usa
-
+          node-version: 20
+          cache: 'pnpm' # Habilita el caché para pnpm
       - name: Install dependencies
-        run: npm install # O yarn install, pnpm install
-
-      - name: Build Astro project
-        run: npm run build # O yarn build, pnpm build
-
+        run: pnpm install
+      - name: Build
+        run: pnpm build
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # Asegúrate de que esta sea la carpeta de salida de tu build de Astro
+          path: ./dist
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
