@@ -1,13 +1,13 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
-import { Image } from 'astro:assets';
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import { Image } from "astro:assets";
 
-const posts = (await getCollection('blog')).sort(
+const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
@@ -21,7 +21,9 @@ const posts = (await getCollection('blog')).sort(
 				scroll-behavior: smooth;
 			}
 			main {
-				width: 960px;
+				max-width: 960px; /* CAMBIO CLAVE: Usar max-width en lugar de width fijo */
+				margin: 0 auto; /* Centrar el contenido de main */
+				padding: 0 1rem; /* Añadir padding a los lados para pantallas pequeñas */
 			}
 			ul {
 				display: flex;
@@ -62,13 +64,16 @@ const posts = (await getCollection('blog')).sort(
 				box-shadow: var(--box-shadow);
 			}
 			@media (max-width: 720px) {
+				/* Para ul, el gap de 0.5em y width: 100% para li ya es bueno */
 				ul {
-					gap: 0.5em;
+					gap: 1rem; /* Podrías hacer el gap un poco más grande para mejor espacio */
 				}
 				ul li {
 					width: 100%;
 					text-align: center;
 				}
+				/* Considera añadir un padding lateral a main aquí también si no lo tienes globalmente */
+				/* main { padding: 0 1rem; } */
 			}
 		</style>
 	</head>
@@ -76,43 +81,52 @@ const posts = (await getCollection('blog')).sort(
 		<Header />
 		<main>
 			<section
-				title="Pilares de mi contenido"
-				class="relative w-screen h-full bg-cover bg-center bg-fixed flex items-center justify-start py-12 sm:py-16 px-4 sm:px-6 lg:px-8 mx-[-50vw] left-1/2 right-1/2 mb-8 "
-				style="background-image: url('https://i.pinimg.com/736x/cb/51/aa/cb51aa75f4c397bc38101266084bf127.jpg');"
-			>
-				<div class="absolute inset-0 bg-black opacity-30"></div>
-				<div
-					class="relative z-10 p-6 sm:p-8 md:p-10 lg:p-12 bg-white rounded-lg shadow-xl text-gray-900
-                max-w-[calc(100%-8rem)] sm:max-w-[calc(100%-12rem)] md:max-w-[calc(100%-16rem)] lg:max-w-[calc(100%-20rem)]
-                left-0 ml-4 sm:ml-6 md:ml-8 lg:ml-12"
-					style="width: 40vw; min-width: 320px;"
-				>
-					<div class="space-y-4 sm:space-y-6">
-						<h1 class="text-xl md:text-2xl font-bold leading-snug sm:leading-tight text-[#000033]">
-							Construye Tu Marca Personal en la Era digital.
-						</h1>
-						
-						<p class="text-sm sm:text-base md:text-lg leading-relaxed">Mi experiencia es tu guía. Aquí, transformo mi viaje de reinvención en estrategias prácticas y consejos directos sobre Desarrollo Web, Marketing Digital e IA. Descubre cómo desbloquear tu potencial y construir tu futuro online.</p>
+    title="Pilares de mi contenido"
+    class="relative w-screen bg-cover bg-center bg-fixed flex items-center justify-start py-12 sm:py-16 px-4 sm:px-6 lg:px-8 mx-[-50vw] left-1/2 right-1/2 
+    h-[80vh] md:h-screen lg:h-screen mb-20"
+    style="background-image: url('https://i.pinimg.com/736x/cb/51/aa/cb51aa75f4c397bc38101266084bf127.jpg');"
+>
+    <div class="absolute inset-0 bg-black opacity-30"></div>
+    <div
+        class="relative z-10 p-6 sm:p-8 md:p-10 lg:p-12 bg-white rounded-lg shadow-xl text-gray-900
+        max-w-[calc(100%-8rem)] sm:max-w-[calc(100%-12rem)] md:max-w-[calc(100%-16rem)] lg:max-w-[calc(100%-20rem)]
+        left-0 ml-4 sm:ml-6 md:ml-8 lg:ml-12"
+        style="width: 40vw; min-width: 320px;"
+    >
+        <div class="space-y-4 sm:space-y-6">
+            <h1 class="text-xl md:text-2xl font-bold leading-snug sm:leading-tight text-[#000033]">
+                Construye Tu Marca Personal en la Era digital.
+            </h1>
+            
+            <p class="text-sm sm:text-base md:text-lg leading-relaxed">Mi experiencia es tu guía. Aquí, transformo mi viaje de reinvención en estrategias prácticas y consejos directos sobre Desarrollo Web, Marketing Digital e IA. Descubre cómo desbloquear tu potencial y construir tu futuro online.</p>
 
-						 <a href="#posts-section" class="inline-block bg-[#000033] text-white hover:bg-blue-600  px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md hover:border-white border-transparent">
-                    👇 Ver Posts
-                </a>
-					</div>
-				</div>
-			</section>
-
-			<section id="posts-section">
+            <a href="#posts-section" class="inline-block bg-[#000033] text-white hover:bg-blue-600 px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md hover:border-white border-transparent">
+                👇 Ver Posts
+            </a>
+        </div>
+    </div>
+</section>
+			<section  id="posts-section">
 				<ul>
 					{
-						posts.map((post) =>  (
+						posts.map((post) => (
 							<li>
-								<a href={`${import.meta.env.BASE_URL}blog/${post.slug}/`}>
+								<a
+									href={`${import.meta.env.BASE_URL}blog/${post.slug}/`}
+								>
 									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
+										<Image
+											width={720}
+											height={360}
+											src={post.data.heroImage}
+											alt=""
+										/>
 									)}
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
+										<FormattedDate
+											date={post.data.pubDate}
+										/>
 									</p>
 								</a>
 							</li>
