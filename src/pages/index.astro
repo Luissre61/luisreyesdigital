@@ -53,7 +53,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                     [mask-mode:alpha]"
                 >
                     <img
-                        src="https://i.pinimg.com/736x/f1/ae/0b/f1ae0b2e1310c8626dc231f0fc9bf9ca.jpg"
+                        src={import.meta.env.BASE_URL + "/imagenes/luis-1.jpg"}
                         alt="Luis Reyes - Profesional digital"
                         class="w-full h-full object-cover"
                         loading="lazy"
@@ -72,7 +72,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             🔥 "Tu valor profesional no se mide en títulos, sino en
             habilidades y resultados"
         </h1>
-        <h2>💡 Pilares de mi Contenido</h2>
+        <div class="mt-10"><h2 >💡 Pilares de mi Contenido</h2></div>
+        
 
         <div
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6"
@@ -147,7 +148,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 </section>
 
 				<section
-					class="min-h-[70vh] bg-gray-100 flex flex-col md:flex-row items-center justify-center gap-8 p-8 mx-[2%] mt-10 rounded-2xl"
+					class="min-h-[70vh] bg-gray-100 flex flex-col md:flex-row items-center justify-center gap-8 py-8 px-4 sm:px-0 mx-[2%] mt-10 rounded-2xl"
 				>
 					<!-- Imagen responsiva (45% del viewport) -->
 					<div class="flex justify-center w-[45vw]">
@@ -166,7 +167,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 						<div class="text-left">
 							<!-- Título responsivo -->
 							<h1
-								class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
+								class="text-xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
 							>
 								Habilidades que Impulsan mi Visión Digital
 							</h1>
