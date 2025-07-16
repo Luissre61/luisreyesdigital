@@ -16,8 +16,4 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  // **¡ESTO ES LO CLAVE PARA EL ERROR DE LAS FUENTES/ASSETS!**
-  build: {
-    assetsPrefix: '/luisreyesdigital', // Asegura que esto coincida con tu 'base'
-  },
 });
