@@ -21,7 +21,7 @@ const posts = (await getCollection('blog')).sort(
 				scroll-behavior: smooth;
 			}
 			main {
-				width: 100%;
+				width: 960px;
 			}
 			ul {
 				display: flex;
@@ -77,10 +77,10 @@ const posts = (await getCollection('blog')).sort(
 		<main>
 			<section
 				title="Pilares de mi contenido"
-				class="relative w-screen sm:h-[60%] h-full bg-cover bg-center bg-fixed flex items-center justify-start py-12 sm:py-16 px-4 sm:px-6 lg:px-8 mx-[-50vw] left-1/2 right-1/2 mb-8 "
+				class="relative w-screen h-full bg-cover bg-center bg-fixed flex items-center justify-start py-12 sm:py-16 px-4 sm:px-6 lg:px-8 mx-[-50vw] left-1/2 right-1/2 mb-8 "
 				style="background-image: url('https://i.pinimg.com/736x/cb/51/aa/cb51aa75f4c397bc38101266084bf127.jpg');"
 			>
-				<div class="flex justify-center w-full md:w-[45vw] absolute inset-0 bg-black opacity-30"></div>
+				<div class="absolute inset-0 bg-black opacity-30"></div>
 				<div
 					class="relative z-10 p-6 sm:p-8 md:p-10 lg:p-12 bg-white rounded-lg shadow-xl text-gray-900
                 max-w-[calc(100%-8rem)] sm:max-w-[calc(100%-12rem)] md:max-w-[calc(100%-16rem)] lg:max-w-[calc(100%-20rem)]
