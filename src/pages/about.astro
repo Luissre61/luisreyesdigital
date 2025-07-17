@@ -18,57 +18,51 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     </head>
     <body class="overflow-x-hidden flex flex-col min-h-screen">
         <Header />
-        <main class="flex-grow">
-            <section>
-                <div
-                    class="bg-white rounded-3xl shadow-lg p-8 md:p-12 lg:p-16 text-center w-[80vw] min-w-[320px] mx-auto relative mb-16"
-                    class="bg-white rounded-3xl shadow-lg p-8 md:p-12 lg:p-16 text-center w-full max-w-5xl mx-auto relative mb-16"
-                >
-                    <a
-                        href={import.meta.env.BASE_URL + "bio/"}
-                        class="inline-block px-5 py-1 border border-gray-300 rounded-full text-base font-medium text-gray-700 uppercase tracking-wide mb-6 hover:bg-gray-50 transition duration-300"
-                    >
-                        📖 MI HISTORIA
-                    </a>
+        <main class="flex-grow px-4 sm:px-6 md:px-10">
+            
+            
+          <section title="Mi-Viaje" class="h-auto my-10">
+    <div
+        class="bg-white rounded-3xl shadow-lg p-4 sm:p-8 md:p-12 lg:p-16 text-center w-full max-w-5xl mx-auto "
+    >
+        <a
+            href="#mi-viaje"
+            class="inline-block px-5 py-1 border border-gray-300 rounded-full text-base font-medium text-gray-700 uppercase tracking-wide mb-6 hover:bg-gray-50 transition duration-300"
+        >
+            📖 Mi Viaje
+        </a>
 
-                    <h2
-                        class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#007bff] mb-3 leading-tight"
-                    >
-                        Luis Reyes.
-                    </h2>
+        <div class="space-y-3 sm:space-y-4 md:space-y-6">
+            <h2
+                class="text-2xl sm:text-3xl lg:text-5xl font-extrabold text-[#007bff] leading-tight"
+            >
+                Luis Reyes.
+            </h2>
 
-                    <h3
-                        class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 leading-tight"
-                    >
-                        Fundador de Luis Reyes Digital | Tu Guía hacia el Futuro
-                        Online
-                    </h3>
+            <h3
+                class="text-lg sm:text-xl lg:text-3xl font-bold text-gray-900 leading-tight"
+            >
+                Fundador de Luis Reyes Digital | Tu Guía hacia el Futuro Online
+            </h3>
 
-                    <p
-                        class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto"
-                    >
-                        "¿Qué pasaría si te dijera que tu punto de partida no
-                        define tu destino, sino tu potencia? Esta es la historia
-                        de cómo los obstáculos se convirtieron en escalones, y
-                        una visión clara me llevó del campo a la ciudad, del
-                        empleo dependiente a la construcción de mi marca
-                        personal digital."
-                        <b class="font-semibold">Acompáñame en este viaje.</b>
-                    </p>
+            <p
+                class="text-sm sm:text-base md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto"
+            >
+                "¿Qué pasaría si te dijera que tu punto de partida no define tu
+                destino, sino tu potencia? Esta es la historia de cómo los
+                obstáculos se convirtieron en escalones, y una visión clara me
+                llevó del campo a la ciudad, del empleo dependiente a la
+                construcción de mi marca personal digital."
+                <b class="font-semibold">Acompáñame en este viaje.</b>
+            </p>
+        </div>
 
-                    <div
-                        class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-white rounded-tl-xl rounded-br-xl shadow-lg rotate-45"
-                    >
-                    </div>
-                    <div
-                        class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-tl-full rounded-br-full rotate-45 opacity-50 blur-sm"
-                    >
-                    </div>
-                </div>
-            </section>
-
-            <!-- Sección 3 -->
-            <section title="Mi Historia Parte 3" class="mb-16">
+        
+        
+    </div>
+</section>
+            <!-- Sección mi viaje -->
+            <section id="mi-viaje" class="mb-16">
                 <div
                     class="bg-white rounded-3xl shadow-lg p-8 md:p-12 lg:p-16 w-full max-w-5xl mx-auto"
                 >
@@ -81,8 +75,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                             <h3
                                 class="text-xl sm:text-2xl font-bold text-gray-900 !mb-4 text-left"
                             >
-                                Mi Viaje: De la Incertidumbre a la Creación
-                                Digital
+                                Mi Viajea a la Creación Digital.</b>
                             </h3>
                             <p>
                                 Mis orígenes se remontan a la tranquilidad del
@@ -117,13 +110,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                         </div>
 
                         <div
-                            class="w-full md:w-[35%] lg:w-[30%] md:sticky md:top-24 h-full"
+                            class="w-full md:w-[35%] lg:w-[30%] md:sticky md:top-24"
                         >
                             <div
                                 class="flex flex-row md:flex-col justify-center items-center gap-8"
                             >
                                 <img
-                                    src="imagenes/luis-5.jpg"
+                                    src={import.meta.env.BASE_URL + "/imagenes/luis-5.jpg"}
                                     alt="Retrato de Luis Reyes"
                                     class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-lg"
                                     loading="lazy"
@@ -131,7 +124,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                                     height="224"
                                 />
                                 <img
-                                    src="imagenes/luis-1.jpg"
+                                    src={import.meta.env.BASE_URL + "/imagenes/luis-6.jpg"}
                                     alt="Luis Reyes en un entorno profesional"
                                     class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-lg"
                                     loading="lazy"
@@ -141,11 +134,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                             </div>
                         </div>
                     </div>
-                    <a
+                    <div></div>
+                      <a
                         href={import.meta.env.BASE_URL + "bio/"}
-                        class="inline-block bg-white hover:bg-[#000033] hover:text-white text-[#000033] px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md border-transparent hover:border-[#000033]"
+                        class="inline-block px-5 py-1 border border-gray-300 rounded-full text-base font-medium text-gray-700 uppercase tracking-wide my-10 hover:bg-gray-50 transition duration-300"
                     >
-                        Mi historia
+                        📖 Mi Historia
                     </a>
                 </div>
             </section>
