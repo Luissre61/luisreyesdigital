@@ -18,62 +18,64 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     </head>
     <body class="overflow-x-hidden flex flex-col min-h-screen">
         <Header />
-        <main class="flex-grow px-4 sm:px-6 md:px-10">
-            <section title="Mi-Viaje" class="h-auto my-10">
-                <div
-                    class="bg-white rounded-3xl shadow-lg p-4 sm:p-8 md:p-12 lg:p-16 text-center w-full max-w-5xl mx-auto"
-                >
-                    <a
-                        href="#mi-viaje"
-                        class="inline-block px-5 py-1 border border-gray-300 rounded-full text-base font-medium text-gray-700 uppercase tracking-wide mb-6 hover:bg-gray-50 transition duration-300"
-                    >
-                        📍 Mi Viaje
-                    </a>
+        <main class= "flex-grow px-4 sm:px-6 md:px-10">
 
-                    <div class="space-y-3 sm:space-y-4 md:space-y-6">
-                        <h2
-                            class="text-2xl sm:text-3xl lg:text-5xl font-extrabold text-[#007bff] leading-tight mx-4"
-                        >
-                            Luis Reyes.
-                        </h2>
-
-                        <h3
-                            class="text-lg sm:text-xl lg:text-3xl font-bold text-gray-900 leading-tight"
-                        >
-                            Fundador de Luis Reyes Digital | Tu Guía hacia el
-                            Futuro Online
-                        </h3>
-
-                        <p
-                            class="text-sm sm:text-base md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto"
-                        >
-                            ¿Qué pasaría si te dijera que tu punto de partida
-                            no define tu destino, 
-                            <b class="font-semibold"
-                                >sino tu potencia? </b
-                            >
-                        </p>
-                    </div>
-                </div>
-            </section>
             <!-- Sección mi viaje -->
-            <section id="mi-viaje" class="mb-16">
-                <div
-                    class="bg-white rounded-3xl shadow-lg p-8 md:p-12 lg:p-16 w-full max-w-5xl mx-auto"
+          <section title="Mi-Viaje" class="h-auto">
+    <div class="p-2 sm:p-8 md:p-12 lg:p-16 w-full max-w-5xl mx-auto flex flex-col md:flex-row md:items-center gap-8"
+    >
+        <div class="flex-1 text-center md:text-left">
+            <a href="#mi-viaje"
+                class="inline-block px-5 py-1 border border-gray-300 rounded-full text-base font-medium text-gray-700 uppercase tracking-wide mb-2 hover:bg-gray-50 transition duration-300">📍 Mi Viaje
+            </a>
+            
+            <div class="space-y-3 sm:space-y-4 md:space-y-6">
+                <h2
+                    class="text-2xl sm:text-3xl lg:text-5xl font-extrabold text-[#007bff] leading-tight"
                 >
+                    Luis Reyes.
+                </h2>
+            
+                <h3
+                    class="text-lg sm:text-xl lg:text-3xl font-bold text-gray-900 leading-tight"
+                >
+                    Fundador de Luis Reyes Digital | Tu Guía hacia el Futuro Online
+                </h3>
+            
+                <p
+                    class="text-sm sm:text-base md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto md:mx-0"
+                >
+                    ¿Qué pasaría si te dijera que tu punto de partida no define tu
+                    destino, <b class="font-semibold">sino tu potencia?</b>
+                </p>
+            </div>
+        </div>
+
+        <div class="flex-1 flex justify-center">
+            <img
+                src={import.meta.env.BASE_URL + "/imagenes/luis-7.png"}
+                alt="Retrato de Luis Reyes"
+                class="max-h-[60vh] w-auto object-cover mask-b-from-60% mask-b-to-90% "
+            >
+        </div>
+    </div>
+</section>
+            <!-- Sección mi camino -->
+            <section id="mi-viaje">
+                <div class="p-8 md:p-12 lg:p-16 w-full max-w-5xl mx-auto">
                     <div
                         class="flex flex-col md:flex-row gap-8 lg:gap-12 items-start"
                     >
                         <div
                             class="md:w-[65%] lg:w-[70%] text-base sm:text-lg text-gray-700 leading-relaxed space-y-6 text-left md:text-justify">
 
-                            <h2 class="text-2xl font-semibold"> Mi camino me ha preparado para ayudarte a:
+                            <h2 class="text-xl sm:text-2xl font-semibold"> Mi camino me ha preparado para ayudarte a:
                                 </h2>
 
                             <div
-                                class="mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6"
+                                class="mt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6"
                             >
-                                <h2 class="text-xl font-semibold mt-6">
+                                <h2 class="text-lg sm:text-xl font-semibold mt-6">
                                     💡 Encontrar Tu Propósito Digital
                                 </h2>
                                 <p class="text-gray-600">
@@ -84,7 +86,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                                     tangible.
                                 </p>
 
-                                <h2 class="text-xl font-semibold mt-6">
+                                <h2 class="text-lg sm:text-xl font-semibold mt-6">
                                     🚀 Desbloquear Oportunidades
                                 </h2>
                                 <p class="text-gray-600">
@@ -95,7 +97,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                                     oportunidades.
                                 </p>
 
-                                <h2 class="text-xl font-semibold mt-6">
+                                <h2 class="text-lg sm:text-xl font-semibold mt-6">
                                     💻 Adquirir Habilidades de Alto Valor
                                 </h2>
                                 <p class="text-gray-600">
@@ -107,7 +109,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                                     proyecto.
                                 </p>
 
-                                <h2 class="text-xl font-semibold mt-6">
+                                <h2 class="text-lg sm:text-xl font-semibold mt-6">
                                     📈 Afrontar la Adversidad
                                 </h2>
                                 <p class="text-gray-600">
@@ -120,48 +122,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                             </div>
                         </div>
 
-                        <div
-                            class="w-full md:w-[35%] lg:w-[30%] md:sticky md:top-24"
-                        >
-                            <div
-                                class="flex flex-row md:flex-col justify-center items-center gap-8"
-                            >
-                                <img
-                                    src={import.meta.env.BASE_URL +
-                                        "/imagenes/luis-5.jpg"}
-                                    alt="Retrato de Luis Reyes"
-                                    class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-lg"
-                                    loading="lazy"
-                                    width="224"
-                                    height="224"
-                                />
-                                <img
-                                    src={import.meta.env.BASE_URL +
-                                        "/imagenes/luis-6.jpg"}
-                                    alt="Luis Reyes en un entorno profesional"
-                                    class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-lg"
-                                    loading="lazy"
-                                    width="224"
-                                    height="224"
-                                />
-                            </div>
-                        </div>
+                       
                     </div>
-                    <div></div>
-                    <a
-                        href={import.meta.env.BASE_URL + "bio/"}
-                        class="inline-block px-5 py-1 border border-gray-300 rounded-full text-base font-medium text-gray-700 uppercase tracking-wide my-10 hover:bg-gray-50 transition duration-300"
-                    >
-                        📖 Mi Historia
-                    </a>
+                    <a href={import.meta.env.BASE_URL + "bio/"}
+                        class="inline-block px-5 py-1 border border-gray-300 rounded-full text-base font-medium text-gray-700 uppercase tracking-wide my-10 hover:bg-gray-50 transition duration-300">📖 Mi Historia</a>
+                    
                 </div>
             </section>
 
             <!-- Llamado final a la acción  -->
             <section
-                class="w-[95vw] sm:w-[80vw] md:w-[70vw] mx-auto px-4 py-8 sm:p-8 bg-blue-600 rounded-4xl mt-10"
+                class="w-[90vw] sm:w-[80vw] md:w-[70vw] mx-auto px-4 py-8 sm:p-8 bg-blue-600 rounded-4xl"
             >
-                <div class="max-w-[90vw] sm:max-w-none mx-auto text-center">
+                <div class="max-w-[80vw] sm:max-w-none mx-auto text-center">
                     <h2
                         class="text-lg sm:text-xl md:text-2xl text-white mb-6 sm:mb-8"
                     >
