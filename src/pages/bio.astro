@@ -8,204 +8,143 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			html {
-				scroll-behavior: smooth;
-			}
-		</style>
-	</head>
-	<body class="overflow-x-hidden flex flex-col min-h-screen">
-		<Header />
-		<main class="flex-grow px-4 sm:px-6 md:px-10">
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+        </style>
+    </head>
+    <body class="overflow-x-hidden flex flex-col min-h-screen">
+        <Header />
+        <main class="flex-grow px-4 sm:px-6 md:px-10">
 
-
-            <!-- Sección 1 -->
-			<section id="mi-historia" title="Mi Historia" class="my-8">
-    <h2
-        class="text-3xl sm:text-4xl font-bold text-gray-900 text-center"
-    >
-        Mi Historia
-    </h2>
+            <!-- Sección 1 --> 
+            <section id="mi-historia" class="my-8 md:my-16 lg:my-24">
     <div
-        class="bg-white rounded-3xl shadow-lg p-8 md:p-12 lg:p-16 w-full max-w-5xl mx-auto mt-8 "
+        class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 max-w-7xl mx-auto items-start"
     >
+        <div class="w-full h-full md:sticky md:top-24">
+            <img
+                src={import.meta.env.BASE_URL + "/imagenes/luis-1.jpg"}
+                alt="Retrato de Luis Reyes"
+                class="w-full h-auto object-cover rounded-3xl shadow-lg border-4 border-white"
+                loading="lazy"
+            />
+        </div>
+
         <div
-            class="flex flex-col md:flex-row gap-8 lg:gap-12 items-start"
+            class="bg-white rounded-3xl shadow-lg p-8 md:p-12 lg:p-16 space-y-8 md:space-y-12 lg:space-y-16"
         >
-            <div class="md:w-[65%] lg:w-[70%] text-base sm:text-lg text-gray-700 leading-relaxed space-y-6 text-left md:text-justify">
-                <h3
-                    class="text-xl sm:text-2xl font-bold text-gray-900 !mb-4 text-left"
+            <div class="space-y-4">
+                <h1
+                    class="text-xl sm:text-4xl font-bold text-gray-900 text-left"
                 >
-                    Cómo Reinventarse y Construir una Marca Personal
-                    en la Era Digital
-                </h3>
-                <p>
-                    Hola, mi nombre es Luis Reyes, y aunque muchos me
-                    ven ahora inmerso en el mundo del
-                    desarrollo web y el marketing digital, mis
-                    raíces están ancladas en la serena belleza
-                    del campo venezolano. Crecí rodeado de
-                    naturaleza y familia, un entorno que, si
-                    bien me dio paz, también alimentó una
-                    inquietud creciente por la tecnología y la
-                    conexión con un mundo más amplio. A los diez
-                    años, con mis propios ahorros, ya tenía mi
-                    primer celular, y a los quince, la llegada
-                    de nuestra primera computadora me abrió las
-                    puertas a un universo fasciniente: el de los
-                    videojuegos y las infinitas posibilidades de
-                    lo digital. Esa curiosidad por desentrañar
-                    el funcionamiento del mundo digital sería,
-                    años después, la brújula de mi reinvención.
+                    Un visionario en constante evolución y crecimiento.
+                </h1>
+                <p class="text-base sm:text-lg text-gray-700 leading-relaxed text-left">
+                    Hola, mi nombre es Luis Reyes Aunque hoy estoy inmerso en el
+                    mundo del desarrollo web y el marketing digital, mis raíces
+                    están en la serena belleza del campo venezolano. Desde muy
+                    joven, el universo digital me fascinó, desde mi primer
+                    celular hasta la primera computadora que me abrió la puerta
+                    a las infinitas posibilidades del código. Esa curiosidad ha
+                    sido la brújula de toda mi vida
                 </p>
-                <p>Al culminar la secundaria, el campo se me quedó pequeño. Anhelaba la ciudad, la efervescencia de nuevas ideas y oportunidades. Me mudé a casa de mi tía y comencé a estudiar informática, convencido de que había encontrado mi camino. Sin embargo, la profunda crisis que golpeó a Venezuela en 2017 me obligó a abandonar mis estudios tras solo dos semestros. Fue un golpe duro; tuve que regresar al campo, y con ello, la incertidumbre.</p>
-                <p>Pero la adversidad, para mí, siempre ha sido un catalizador. Lejos de quedarme de brazos cruzados, vi una oportunidad. Junto a un primo, emprendimos un proyecto audaz: una destilería de licor artesanal de caña. Nos sumergimos de lleno, trabajando incansablemente, incluso contratando a tres personas para la producción. Más allá de los ingresos, esa destilería fue mi primera gran escuela de negocios: aprendí a gestionar la producción, a construir redes de comercialización y a liderar un equipo. Construimos una red sólida, desde la comercialización de la materia prima hasta la distribución en otros estados. Nos iba realmente bien, aunque mi corazón aún anhelaba la vida en la ciudad y la conexión con el universo digital.</p>
-                <p>Entonces llegó el 2020. La pandemia no solo detuvo al mundo, sino que arrasó con todo lo que habíamos construido durante tres años. De la noche a la mañana, nuestro emprendimiento había quebrado. Esa fue, sin duda, una de las etapas más duras de mi vida. Me encontré sin trabajo, cuestionando cada decisión, cada "hubiera" del pasado. Entré en una profunda depresión, un dolor silencioso que solo yo conocía. Pero mi espíritu resiliente se negó a ser vencido. Pasaba noches en vela, analizando el origen de mis problemas, buscando respuestas, buscando la salida, hasta que esa profunda introspección me llevó a tomar una nueva decisión transformadora en 2021, una que cambiaría, una vez más, el rumbo de mi vida y me lanzaría a la acción.</p>
             </div>
 
-            <div
-                class="w-full md:w-[35%] lg:w-[30%] md:sticky md:top-24"
-            >
-                <div
-                    class="flex flex-row md:flex-col justify-center items-center gap-8"
+            <div class="space-y-4">
+                <h3
+                    class="text-xl sm:text-2xl font-bold text-gray-900 text-left"
                 >
-                    <img
-						src={import.meta.env.BASE_URL + "/imagenes/luis-1.jpg"} 
-                         alt="Mi imagen"
-                        alt="Retrato de Luis Reyes"
-                        class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-lg"
-                        loading="lazy"
-                        width="224"
-                        height="224"
-                    />
-                    <img
-						src={import.meta.env.BASE_URL + "/imagenes/luis-2.jpg"}
-                        alt="Luis Reyes en un entorno profesional"
-                        class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-lg"
-                        loading="lazy"
-                        width="224"
-                        height="224"
-                    />
-                </div>
+                    De la Incertidumbre al Emprendimiento
+                </h3>
+                <p class="text-base sm:text-lg text-gray-700 leading-relaxed text-left">
+                    La vida me llevó a la ciudad para estudiar informática, pero
+                    la crisis del país me obligó a regresar al campo. Lejos de
+                    rendirme, vi una oportunidad y me lancé a mi primer gran
+                    proyecto: una destilería de licor artesanal. Fue mi primera
+                    escuela de negocios; aprendí a gestionar, a liderar equipos
+                    y a construir redes de comercialización. Nos iba realmente
+                    bien.
+                </p>
+                <p class="text-base sm:text-lg text-gray-700 leading-relaxed text-left">
+                    Pero entonces, llegó la pandemia.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h3
+                    class="text-xl sm:text-2xl font-bold text-gray-900 text-left"
+                >
+                    El Quiebre y la Búsqueda de un Propósito
+                </h3>
+                <p class="text-base sm:text-lg text-gray-700 leading-relaxed text-left">
+                    De la noche a la mañana, tres años de arduo trabajo se
+                    derrumbaron. Entré en una etapa muy dura de mi vida, llena
+                    de cuestionamientos y una profunda depresión. Pero mi
+                    espíritu se negó a ser vencido. Me propuse llevarme al
+                    límite, a la ciudad, a nuevos trabajos, escalando una y otra
+                    vez para mantenerme a flote. Intenté por segunda vez una
+                    carrera universitaria, y volví a fracasar.
+                </p>
+                <p class="text-base sm:text-lg text-gray-700 leading-relaxed text-left">
+                    Fue en esa frustración que llegó mi mayor claridad: el
+                    camino no era el tradicional.
+                </p>
+            </div>
+             <div class="space-y-4">
+                <h3
+                    class="text-xl sm:text-2xl font-bold text-gray-900 text-left"
+                >
+                    El Gran Cambio: Mi Evolución Digital
+                </h3>
+                <p class="text-base sm:text-lg text-gray-700 leading-relaxed text-left">
+                    Comprendí que lo que necesitaba era la flexibilidad y el aprendizaje 100% online. Así fue como me sumergí en los fundamentos de la programación, adquirí habilidades de Front-End y me enamoré del fascinante mundo del Marketing Digital y la Inteligencia Artificial. Hoy, sigo mi aprendizaje con el Análisis de Datos, buscando expandir aún más mi conjunto de herramientas.
+                </p>
+                <p class="text-base sm:text-lg text-gray-700 leading-relaxed text-left">
+                  Todo lo que he vivido, cada obstáculo y cada quiebre, me ha dotado de una resiliencia forjada en la vida real. Esa es la base de mi visión hoy: estoy construyendo mi futuro y estoy listo para guiarte en tu propio camino de transformación.
+                </p>
+                
+            </div>
+            <div class="space-y-4">
+                <h3
+                    class="text-xl sm:text-2xl font-bold text-gray-900 text-left"
+                >
+                    Y ahora, un nuevo capítulo se abre.
+                </h3>
+                <p class="text-base sm:text-lg text-gray-700 leading-relaxed text-left">
+                   Luego de sumergirme por completo en el mundo digital y de crear Luis Reyes Digital con el fin de crecer profesionalmente, me preparo para dar un gran salto. Un nuevo horizonte me llama, un desafío que me llevará más allá del océano, demostrando una vez más que el punto de partida no define el destino.
+                </p>
+               
+                
             </div>
         </div>
     </div>
 </section>
-
-			<!-- Sección 2 -->
-
-			<section title="Mi Historia Parte 2" class="mb-16">
-  
-    <div
-        class="bg-white rounded-3xl shadow-lg p-8 md:p-12 lg:p-16 w-full max-w-5xl mx-auto"
-    >
-        <div
-            class="flex flex-col md:flex-row-reverse gap-8 lg:gap-12 items-start"
+            <!-- Sección 4 -->
+             <section
+    class="w-[95vw] sm:w-[80vw] md:w-[70vw] mx-auto px-4 py-8 sm:p-8 bg-blue-600 rounded-4xl mt-10"
+>
+    <div class="max-w-[90vw] sm:max-w-none mx-auto text-center">
+        <h2
+            class="text-lg sm:text-xl md:text-2xl text-white mb-6 sm:mb-8 font-tu-fuente-de-titulos"
         >
-            <div class="md:w-[65%] lg:w-[70%] text-base sm:text-lg text-gray-700 leading-relaxed space-y-6 text-left md:text-justify">
-                <h3
-                    class="text-xl sm:text-2xl font-bold text-gray-900 !mb-4 text-left"
-                >
-                    Forjando mi Propio Camino: La Ciudad, los Desafíos y la Fuerza de la Adaptación
-                </h3>
-                <p>En 2021, la inactividad en el campo se hizo insostenible. Aunque disfrutaba mis trotes vespertinos por los senderos verdes, la conversación interna constante me consumía. Necesitaba un cambio radical. Sin pensarlo dos veces, fui en busqueda de una nueva oportunidad en un trabajo dependiente, la consegui  en una tienda de zapatos. Fue un paso fundamental en mi proceso de reinvención: por primera vez, experimentaba la disciplina de un jefe y un horario, mientras reconstruía mi vida personal. Este trabajo no solo me dio un respiro financiero, sino que, crucialmente, me permitió despejar la mente y empezar a reconstruirme.</p>
-				<p>Esa estabilidad incipiente me impulsó a dar el siguiente gran paso: mudarme solo y asumir la responsabilidad de mi propio alquiler. La vida en la ciudad, sin embargo, no fue un camino de rosas; fue dura y estuvo llena de choques emocionales. Me sentía solo, sin una red de apoyo cercana, en un mundo mucho más grande y desafiante de lo que había conocido. Los obstáculos no tardaron en llegar: mi contrato en la tienda de zapatos terminó, y de pronto, me vi desempleado, sin ingresos y con la presión de pagar un alquiler.</p>
-				<p>Pero la adversidad, lejos de paralizarme, encendió una chispa. Sin trabajo y en mi nuevo hogar, mi refugio y mi herramienta más poderosa fue el mundo que siempre me había apasionado: el digital. Me sumergí en la búsqueda de empleo en plataformas online, explorando cada aplicación y recurso digital, convencido de que la solución estaba allí. Conseguí varias entrevistas, aunque la falta de un título universitario limitaba mis opciones. Cada una de esas experiencias –en una empresa de plásticos, como almacenista en textiles o atendiendo al público en una tienda de hogar– fue un escalón, un aprendizaje sobre lo que buscaba –y no buscaba– en mi camino. No eran fracasos, sino ajustes necesarios en mi búsqueda de un propósito mayor.</p>
-				<p>Me volví, de alguna manera, "adicto" a llevarme al límite. Sentía que al renunciar y verme en la necesidad imperiosa de generar ingresos, me obligaba a buscar nuevas oportunidades con una creatividad y una determinación inquebrantables. Comprendí que las personas no debemos estancarnos en nuestra zona de confort. Cada vez que salía de ella, aprendía, crecía y me acercaba más a la visión de emprendedor que empezaba a definirse en mi interior.</p>
+            "Arriesgate a nuevas aventuras, abre el mundo digital. Mi historia
+            es la prueba de no hay fracasos, sino nuevas oportunidades. Te
+            muestro estrategias y aprendizajes reales para tu evolución."
+        </h2>
 
-            </div>
-
-            <div
-                class="w-full md:w-[35%] lg:w-[30%] md:sticky md:top-24"
-            >
-                <div
-                    class="flex flex-row md:flex-col justify-center items-center gap-8"
-                >
-                    <img
-						src={import.meta.env.BASE_URL + "/imagenes/luis-3.jpg"}
-                        alt="Retrato de Luis Reyes"
-                        class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-lg"
-                        loading="lazy"
-                        width="224"
-                        height="224"
-                    />
-                    <img
-					 src={import.meta.env.BASE_URL + "/imagenes/luis-4.jpg"}
-                        alt="Luis Reyes en un entorno profesional"
-                        class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-lg"
-                        loading="lazy"
-                        width="224"
-                        height="224"
-                    />
-                </div>
-            </div>
-        </div>
+        <a
+            href={import.meta.env.BASE_URL + "blog/"}
+            class="my-5 inline-block bg-white hover:bg-[#000033] hover:text-white text-[#000033] px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md border-transparent hover:border-[#000033] font-tu-fuente-de-cuerpo"
+            >Explora mi Blog 🔎</a
+        >
     </div>
 </section>
 
-			<!-- Sección 3 -->
-			<section title="Mi Historia Parte 3" class="mb-16">
-    <div
-        class="bg-white rounded-3xl shadow-lg p-8 md:p-12 lg:p-16 w-full max-w-5xl mx-auto"
-    >
-        <div
-            class="flex flex-col md:flex-row gap-8 lg:gap-12 items-start"
-        >
-            <div class="md:w-[65%] lg:w-[70%] text-base sm:text-lg text-gray-700 leading-relaxed space-y-6 text-left md:text-justify">
-                <h3
-                    class="text-xl sm:text-2xl font-bold text-gray-900 !mb-4 text-left"
-                >
-                   La Visión Clara: Forjando mi Destino Digital y el Nacimiento de una Marca con Propósito
-                </h3>
-                <p>Mi experiencia como cajero en el supermercado, y mi ascenso a supervisor, me enseñó valiosas lecciones sobre liderazgo y gestión. Sin embargo, sentía que algo esencial me faltaba. Anhelaba un crecimiento más profundo, una carrera que me permitiera desarrollar todo mi potencial. Así que, una vez más, tomé una decisión audaz: renunciar y volver a ponerme al límite. La idea de estar desempleado ya no me asustaba; sabía que tenía la capacidad de salir adelante.</p>
-				<p>Esta vez, mi búsqueda me llevó a un contact center, pero con una diferencia crucial. Como agente integral en ventas y soporte, encontré no solo estabilidad económica, sino, vitalmente, el tiempo que necesitaba para retomar mis estudios de informática. Abordé el desafío con entusiasmo: trabajaba, entrenaba, intentaba socializar... una fórmula perfecta para el colapso. Era la intensidad de mi búsqueda de crecimiento la que me empujaba al límite. Tuve que dejar el gimnasio para priorizar los estudios, pero un nuevo obstáculo se presentó: al tercer semestre, los horarios universitarios no se coordinaban con mi trabajo. Con gran pesar y por segunda vez, tuve que retirarme de la universidad, ya que al ser privada, sus costos eran elevados.</p>
-				<p>Fue un momento de profunda reflexión. Me cuestioné si, quizás, las oportunidades para obtener un título universitario eran un lujo inalcanzable para mí. Fue en esa encrucijada donde la claridad llegó: mi camino no era el tradicional. Comprendí que las universidades tradicionales no eran mi camino; lo que necesitaba era enfocarme en aprender habilidades valiosas que me dieran las herramientas que hoy estoy aplicando. Comprendí que lo que realmente necesitaba era la flexibilidad y el aprendizaje 100% online. Fue entonces cuando mi visión se aclaró por completo..</p>
-				<p>Me inscribí en mi primer curso especializado en Fundamentos de la Programación con Python, que me resultó sencillo gracias a mis conocimientos previos. Inmediatamente después, abordé el curso de Front-End, donde adquirí las habilidades fundamentales del desarrollo web. Estas son las habilidades que, hoy por hoy me han impulsado a crear Luis Reyes Digital y a adentrarme con pasión en el fascinante mundo del Marketing Digital y la Inteligencia Artificial. Y porque el aprendizaje nunca termina, actualmente me encuentro inmerso en el estudio del análisis de datos, buscando expandir aún más mi conjunto de herramientas.</p>
-				<p>Todo lo que he vivido, cada desafío, cada reinvención, me ha dotado de un aprendizaje incalculable y una resiliencia forjada en el mundo real desde muy temprana edad, y me han preparado de forma única para los desafíos y oportunidades del mundo digital y del emprendimiento. Hoy, esa visión es inquebrantable: sé exactamente dónde quiero llegar. Estoy convencido de que esta es otra decisión que no solo cambiará mi vida para mejor, sino que me permitirá guiar a otros en su propio camino, consolidando mi rol como empresario y referente digital en mi anhelo de construir mi futuro.</p>
-            </div>
-
-            <div
-                class="w-full md:w-[35%] lg:w-[30%] md:sticky md:top-24"
-            >
-                <div
-                    class="flex flex-row md:flex-col justify-center items-center gap-8"
-                >
-                    <img
-						src={import.meta.env.BASE_URL + "/imagenes/luis-5.jpg"}
-                        alt="Retrato de Luis Reyes"
-                        class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-lg"
-                        loading="lazy"
-                        width="224"
-                        height="224"
-                    />
-                    <img
-					src={import.meta.env.BASE_URL + "/imagenes/luis-6.jpg"}
-                        alt="Luis Reyes en un entorno profesional"
-                        class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-lg"
-                        loading="lazy"
-                        width="224"
-                        height="224"
-                    />
-                </div>
-            </div>
-        </div>
-    </div>
- <section
-                class="w-[95vw] sm:w-[80vw] md:w-[70vw] mx-auto px-4 py-8 sm:p-8 bg-blue-600 rounded-4xl mt-10"
-            >
-                <div class="max-w-[90vw] sm:max-w-none mx-auto text-center">
-                    <h2 class="text-lg sm:text-xl md:text-2xl  text-white mb-6 sm:mb-8">
-                        "Arriesgate a nuevas aventuras, abre el mundo digital. Mi historia es la prueba de no hay fracasos, sino nuevas oportunidades. Te muestro estrategias y aprendizajes reales para tu evolución."
-                    </h2>
-
-                    <a href={import.meta.env.BASE_URL + "blog/"} class="my-5 inline-block bg-white hover:bg-[#000033] hover:text-white text-[#000033] px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md border-transparent hover:border-[#000033]">Explora mi Blog 🔎</a>
-                </div>
-            </section>
-
-		</main>
-
-		<Footer />
-	</body>
+            <Footer />
+        </main>
+    </body>
 </html>
