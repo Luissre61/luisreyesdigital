@@ -18,14 +18,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     </head>
     <body class="overflow-x-hidden flex flex-col min-h-screen">
         <Header />
-        <main class="flex-grow px-4 sm:px-6 md:px-10">
+        <main class="">
 
             <!-- Sección mi viaje -->
-            <section title="Mi-Viaje" class="h-screen md:h-auto mt-6 sm:pt-0"> 
+            <section title="Mi-Viaje" class="h-screen md:h-auto  bg-gray-200"> 
     <div
         class="p-2 sm:p-8 md:p-12 lg:p-16 w-full max-w-5xl mx-auto flex flex-col md:flex-row md:items-center gap-8 "
     >
-        <div class="flex-1 text-center md:text-left">
+        <div class="flex-1 text-center md:text-left mt-4">
             <a
                 href="#mi-viaje"
                 class="inline-block px-5 py-1 border border-gray-300 rounded-full text-base font-medium text-gray-700 uppercase tracking-wide mb-2 hover:bg-gray-50 transition duration-300"
@@ -63,110 +63,148 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     </div>
 </section>
             <!-- Sección mi camino -->
-            <section id="mi-viaje">
-                <div class="p-8 md:p-12 lg:p-16 w-full max-w-5xl mx-auto">
+           <section id="mi-viaje" class="sm:p-0 md:p-8">
+    <div class="max-w-7xl mx-auto items-center justify-center">
+        
+
+        <div class="m-4 sm:mt-10 text-base sm:text-2xl">
+            <h2>Mi camino me ha preparado para ayudarte a:</h2>
+        </div>
+
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6 lg:justify-items-center"
+        >
+            <div
+                class="group bg-gray-50 p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900 w-[90vw] mx-auto md:w-full"
+            >
+                <div class="flex items-center gap-4 mb-4">
                     <div
-                        class="flex flex-col md:flex-row gap-8 lg:gap-12 items-start"
+                        class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-md border border-gray-200 flex-shrink-0"
                     >
-                        <div
-                            class="md:w-[65%] lg:w-[70%] text-base sm:text-lg text-gray-700 leading-relaxed space-y-6 text-left md:text-justify"
-                        >
-                            <h2 class="text-xl sm:text-2xl font-semibold">
-                                Mi camino me ha preparado para ayudarte a:
-                            </h2>
-
-                            <div
-                                class="mt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6"
-                            >
-                                <h2
-                                    class="text-lg sm:text-xl font-semibold mt-6"
-                                >
-                                    💡 Encontrar Tu Propósito Digital
-                                </h2>
-                                <p class="text-gray-600">
-                                    Como pasé de no tener un rumbo definido a
-                                    construir una marca con propósito, te
-                                    muestro cómo encontrar tu camino y
-                                    transformar tu visión en un proyecto
-                                    tangible.
-                                </p>
-
-                                <h2
-                                    class="text-lg sm:text-xl font-semibold mt-6"
-                                >
-                                    🚀 Desbloquear Oportunidades
-                                </h2>
-                                <p class="text-gray-600">
-                                    Te guío a través de las lecciones que
-                                    aprendí al arriesgarme y dejar mi zona de
-                                    confort, para que descubras que los fracasos
-                                    solo son el camino hacia nuevas
-                                    oportunidades.
-                                </p>
-
-                                <h2
-                                    class="text-lg sm:text-xl font-semibold mt-6"
-                                >
-                                    💻 Adquirir Habilidades de Alto Valor
-                                </h2>
-                                <p class="text-gray-600">
-                                    Te comparto mi proceso para dominar
-                                    habilidades fundamentales como el desarrollo
-                                    web, el análisis de datos, el marketing
-                                    digital y la IA, y te muestro cómo
-                                    aplicarlas para crear tu propia marca y
-                                    proyecto.
-                                </p>
-
-                                <h2
-                                    class="text-lg sm:text-xl font-semibold mt-6"
-                                >
-                                    📈 Afrontar la Adversidad
-                                </h2>
-                                <p class="text-gray-600">
-                                    Mi experiencia con la quiebra y la depresión
-                                    me enseñó a convertir los obstáculos en
-                                    catalizadores. Te inspiro a encontrar la
-                                    fuerza para seguir adelante, a cuestionar la
-                                    culpa y a usar cada revés como un impulso.
-                                </p>
-                            </div>
-                        </div>
+                        <span class="text-3xl">💡</span>
                     </div>
-                    <a
-                        href={import.meta.env.BASE_URL + "bio/"}
-                        class="inline-block px-5 py-1 border border-gray-300 rounded-full text-base font-medium text-gray-700 uppercase tracking-wide my-10 hover:bg-gray-50 transition duration-300"
-                        >📖 Mi Historia</a
+                    <h2
+                        class="text-base md:text-xl font-semibold group-hover:text-white flex-grow"
                     >
+                        Encontrar Tu Propósito Digital
+                    </h2>
                 </div>
-            </section>
+                <p
+                    class="mt-1 sm:mt-4 text-sm md:text-lg text-gray-600 group-hover:text-white"
+                >
+                    Como pasé de no tener un rumbo definido a construir una
+                    marca con propósito, te muestro cómo encontrar tu camino y
+                    transformar tu visión en un proyecto tangible.
+                </p>
+            </div>
 
+            <div
+                class="group bg-gray-50 p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900 w-[90vw] mx-auto md:w-full"
+            >
+                <div class="flex items-center gap-4 mb-4">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-md border border-gray-200 flex-shrink-0"
+                    >
+                        <span class="text-3xl">🚀</span>
+                    </div>
+                    <h2
+                        class="text-base md:text-xl font-semibold group-hover:text-white flex-grow"
+                    >
+                        Desbloquear Oportunidades
+                    </h2>
+                </div>
+                <p
+                    class="mt-1 sm:mt-4 text-sm md:text-lg text-gray-600 group-hover:text-white"
+                >
+                    Te guío a través de las lecciones que aprendí al arriesgarme
+                    y dejar mi zona de confort, para que descubras que los
+                    fracasos solo son el camino hacia nuevas oportunidades.
+                </p>
+            </div>
+
+            <div
+                class="group bg-gray-50 p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900 w-[90vw] mx-auto md:w-full"
+            >
+                <div class="flex items-center gap-4 mb-4">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-md border border-gray-200 flex-shrink-0"
+                    >
+                        <span class="text-3xl">💻</span>
+                    </div>
+                    <h2
+                        class="text-base md:text-xl font-semibold group-hover:text-white flex-grow"
+                    >
+                        Adquirir Habilidades de Alto Valor
+                    </h2>
+                </div>
+                <p
+                    class="mt-1 sm:mt-4 text-sm md:text-lg text-gray-600 group-hover:text-white"
+                >
+                    Te comparto mi proceso para dominar habilidades fundamentales
+                    como el desarrollo web, el análisis de datos, el marketing
+                    digital y la IA, y te muestro cómo aplicarlas para crear tu
+                    propia marca y proyecto.
+                </p>
+            </div>
+
+            <div
+                class="group bg-gray-50 p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900 w-[90vw] mx-auto md:w-full"
+            >
+                <div class="flex items-center gap-4 mb-4">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-md border border-gray-200 flex-shrink-0"
+                    >
+                        <span class="text-3xl">📈</span>
+                    </div>
+                    <h2
+                        class="text-base md:text-xl font-semibold group-hover:text-white flex-grow"
+                    >
+                        Afrontar la Adversidad
+                    </h2>
+                </div>
+                <p
+                    class="mt-1 sm:mt-4 text-sm md:text-lg text-gray-600 group-hover:text-white"
+                >
+                    Mi experiencia con la quiebra y la depresión me enseñó a
+                    convertir los obstáculos en catalizadores. Te inspiro a
+                    encontrar la fuerza para seguir adelante, a cuestionar la
+                    culpa y a usar cada revés como un impulso.
+                </p>
+            </div>
+        </div>
+    </div>
+    <a href={import.meta.env.BASE_URL + "bio/"}
+        class="inline-block px-5 py-1 border border-gray-300 rounded-full text-base font-medium text-gray-700 uppercase tracking-wide my-10 hover:bg-gray-50 transition duration-300"
+        >📖 Mi Historia</a>
+        
+</section>
             <section
                 class="w-[90vw] sm:w-[80vw] md:w-[70vw] mx-auto"
             >
                 <div
-                    class="group bg-white p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900 mx-auto md:w-full"
+                    class="group bg-blue-600 p-4 sm:p-6 rounded-4xl shadow-md border border-gray-200 transition-all duration-300 hover:-translate-y-2 mx-auto md:w-full flex-row items-center justify-center "
                 >
-                    <h2
-                        class="text-base md:text-2xl font-semibold group-hover:text-white"
-                    >
-                        📌 Misión
-                    </h2>
-                    <p
-                        class="mt-4 text-sm md:text-lg text-gray-600 group-hover:text-white"
-                    >
-                        "Dominar las herramientas que transforman experiencias
-                        digitales en crecimiento escalable, combinando:
-                        Experiencia real, Conocimiento técnico y Visión
-                        estratégica"
-                    </p>
-                    <a
-                        href={import.meta.env.BASE_URL + "blog/"}
-                        class="my-5 inline-block bg-white hover:bg-[#000033] hover:text-white text-[#000033] px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md border-transparent hover:border-[#000033]"
-                    >
-                        🛠️ Descubre las Herramientas
-                    </a>
-                </div>
+                    <div>
+    <div class="text-center">
+        <h1 class="text-base md:text-3xl font-semibold text-white">
+            Misión
+        </h1>
+        <p class="mt-4 text-sm md:text-2xl text-white">
+            "Dominar las herramientas que transforman experiencias digitales en
+            crecimiento escalable, combinando: Experiencia real, Conocimiento
+            técnico y Visión estratégica"
+        </p>
+    <a
+    href={import.meta.env.BASE_URL + "blog/"}
+    class="mt-10 inline-block bg-blue-950 hover:text-blue-950 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md relative overflow-hidden boton"
+>
+    <span class="relative z-10">
+        🛠️ Descubre las Herramientas
+        <span class="hidden sm:inline">⬇️</span>
+    </span>
+</a>
+    </div>
+</div>
             </section>
              
 

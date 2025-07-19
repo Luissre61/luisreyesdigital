@@ -17,7 +17,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
             <!-- Sección 1 -->
             <section title="Mis estrategias">
-                <div class="bg-[#000066] text-white pb-0 py-4 sm:py-16 px-4 sm:px-6 lg:px-8 sm:h-4/5 md:h-4/5 lg:h-4/5 overflow-x-hidden mb-7" >
+                <div class="bg-[#000030] text-white pb-0 py-4 sm:py-16 px-4 sm:px-6 lg:px-8 sm:h-4/5 md:h-4/5 lg:h-4/5 overflow-x-hidden mb-7" >
                     <div
                         class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center w-full">
                         <div class="space-y-2 sm:space-y-2">
@@ -27,17 +27,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                             </h1>
 
                             <p class="text-xs sm:text-lg md:text-2xl leading-relaxed">
-                                Un profesional con experiencia en el mundo real
-                                de ventas y soporte remoto, con conocimientos
-                                del desarrollo de aplicaciones web, ahora
-                                construyendo mi futuro en el ecosistema <b
-                                    class="font-semibold">digital</b>.
+                                  Te enseño a crear y posicionar tu marca personal. Mi experiencia en el mundo real y mi constante evolución son la base de mi guía, pensada para ayudarte a construir<b class="font-semibold"> tu futuro digital</b>.
                             </p>
 
-                            <a href={import.meta.env.BASE_URL + "about/"}
-                                class="inline-block bg-white text-[#000033] hover:bg-[#000033] hover:text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-xs sm:text-lg font-semibold transition duration-300 shadow-md hover:border-white border-transparent">
-                                🚀 Explora Mi Viaje Digital
-                            </a>
+                               <a
+    href={import.meta.env.BASE_URL + "about/"}
+    class="inline-block bg-blue-950 text-white hover:text-blue-950 px-6 py-2 sm:px-8 sm:py-3 rounded-full text-xs sm:text-lg font-semibold transition duration-300 shadow-md border border-transparent hover:border-blue-950 relative overflow-hidden boton"
+>
+    <span class="relative z-10">
+        🚀 Explora Mi Viaje Digital
+    </span>
+</a>
                         </div>
 
                         <div class="flex justify-center mt-6 md:mt-0">
@@ -55,14 +55,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                     </div>
                 </div>
             </section>
+            <!-- Sección 2 -->
             <section class="sm:p-0 md:p-8 ">
     <div class="max-w-7xl mx-auto items-center justify-center">
         <h1
-            class="text-base sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center sm:mb-10 md:mb-12 text-gray-800 px-4">
+            class="text-sm sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center sm:mb-10 md:mb-12 text-gray-800 px-4">
             🔥Tu valor profesional no se mide en títulos, sino en
             habilidades y resultados🔥
         </h1>
-        <div class="mt-2 sm:mt-10 text-base sm:text-xl"><h2>💡 Pilares de mi Contenido</h2></div>
+        <div class="mt-8 sm:mt-12 text-sm sm:text-xl"><h2>💡 Pilares de mi Contenido</h2></div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 lg:justify-items-center">
             
@@ -159,13 +160,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                             </li>
                         </ul>
                         <a
-                            href={import.meta.env.BASE_URL + "blog/"}
-                            class="mt-10 inline-block bg-[#000033] hover:bg-white hover:text-[#000033] text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md border-transparent hover:border-[#000033]"
-                        >
-                            💡 Descubre Cómo Aplico Estas Habilidades ✨ <span
-                                class="hidden sm:inline">⬇️</span
-                            >
-                        </a>
+    href={import.meta.env.BASE_URL + "blog/"}
+    class="mt-10 inline-block bg-[#000033] hover:text-[#000033] text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md relative overflow-hidden boton border border-transparent hover:border-[#000033]"
+>
+    <span class="relative z-10">
+        💡 Descubre Cómo Aplico Estas Habilidades ✨
+        <span class="hidden sm:inline">⬇️</span>
+    </span>
+</a>
                     </div>
                 </div>
             </section>
