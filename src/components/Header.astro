@@ -6,10 +6,10 @@ import Icon from "./Icon.astro"; // Volvemos a importar Icon
 
 <header class="bg-white shadow-md py-1 sm:py-2 md:py-4 px-4 sm:px-6 lg:px-8">
    
-  <nav class="flex items-center justify-between flex-wrap">
+  <nav class="relative flex items-center justify-between flex-wrap">
 
-  <div>
-    <h2 class="text-base md:text-2xl font-bold">
+  <div >
+    <h2 class="text-base md:text-xl font-bold">
       <a href={import.meta.env.BASE_URL || '/'} class="text-gray-800 hover:text-gray-600 transition-colors">
         {SITE_TITLE}
       </a>
@@ -17,24 +17,24 @@ import Icon from "./Icon.astro"; // Volvemos a importar Icon
   </div>
 
   
+  
     <div class="block md:hidden">
       <button id="open-menu-button" class="flex items-center px-3 py-2 rounded text-gray-700 border-gray-700 hover:text-gray-900 hover:border-gray-900">
         <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Abrir Menú</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-6z"/></svg>
       </button>
     </div>
 
-    <div id="mobile-menu" class="hidden w-full md:flex md:items-center md:w-auto">
+    <div id="mobile-menu" class="hidden w-full md:flex md:items-center md:w-auto md:ml-auto">
       <button id="close-menu-button" class="absolute top-4 right-4 md:hidden flex items-center px-3 py-2 rounded text-gray-700 border-gray-700 hover:text-gray-900 hover:border-gray-900 z-50">
         <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Cerrar Menú</title><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/></svg>
       </button>
 
-      <div class="internal-links text-sm
-            flex flex-col items-center justify-center bg-white md:bg-transparent
-            md:flex-grow md:flex-row md:justify-center md:items-center {/* CAMBIADO AQUÍ */}
-            w-full md:w-auto mt-16 md:mt-0">
-        <HeaderLink href="/" class="text-2xl md:text-xl block text-center mt-3 md:inline-block md:mt-0 px-4 py-2 text-gray-800 hover:text-gray-600 transition-colors">Inicio</HeaderLink>
-        <HeaderLink href="/blog/" class="text-2xl md:text-xl block text-center mt-4 md:inline-block md:mt-0 px-4 py-2 text-gray-800 hover:text-gray-600 transition-colors">Blog</HeaderLink>
-        <HeaderLink href="/about/" class="text-2xl md:text-xl block text-center mt-4 md:inline-block md:mt-0 px-4 py-2 text-gray-800 hover:text-gray-600 transition-colors">Acerca de Mí</HeaderLink>
+      <div class="internal-links flex flex-grow flex-col items-center justify-center bg-blue-200 text-sm
+            md:flex-grow-0 md:flex-row md:items-center w-full md:w-auto md:mt-0
+            md:absolute md:left-1/2 md:-translate-x-1/2 rounded-full">
+        <HeaderLink href="/" class="text-2xl md:text-xl block text-center mt-3 md:inline-block md:mt-0 px-4 py-2 text-gray-800 transition-colors hover:bg-blue-600 rounded-full hover:text-white">Inicio</HeaderLink>
+        <HeaderLink href="/blog/" class="text-2xl md:text-xl block text-center mt-4 md:inline-block md:mt-0 px-4 py-2 text-gray-800  hover:bg-blue-600 rounded-full hover:text-white transition-colors">Blog</HeaderLink>
+        <HeaderLink href="/about/" class="text-2xl md:text-xl block text-center mt-4 md:inline-block md:mt-0 px-4 py-2 text-gray-800 hover:bg-blue-600 rounded-full hover:text-white transition-colors">Acerca de Mí</HeaderLink>
       </div>
 
       <div class="social-icons-wrapper flex items-center justify-center gap-2 mt-4 md:mt-0 md:ml-4 w-full md:w-auto">
@@ -58,16 +58,18 @@ import Icon from "./Icon.astro"; // Volvemos a importar Icon
     const closeMenuButton = document.getElementById('close-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
+    const mobileMenuOverlayClasses = ['flex', 'flex-col', 'fixed', 'top-0', 'left-0', 'h-screen', 'w-screen', 'bg-white', 'z-50', 'py-20'];
+
     if (openMenuButton && closeMenuButton && mobileMenu) {
       const openMenu = () => {
         mobileMenu.classList.remove('hidden');
-        mobileMenu.classList.add('flex', 'flex-col', 'absolute', 'top-0', 'left-0', 'h-screen', 'w-full', 'bg-white', 'z-50', 'items-center', 'justify-center');
+        mobileMenu.classList.add(...mobileMenuOverlayClasses);
         openMenuButton.classList.add('hidden');
       };
 
       const closeMenu = () => {
         mobileMenu.classList.add('hidden');
-        mobileMenu.classList.remove('flex', 'flex-col', 'absolute', 'top-0', 'left-0', 'h-screen', 'w-full', 'bg-white', 'z-50', 'items-center', 'justify-center');
+        mobileMenu.classList.remove(...mobileMenuOverlayClasses);
         openMenuButton.classList.remove('hidden');
       };
 
@@ -85,7 +87,7 @@ import Icon from "./Icon.astro"; // Volvemos a importar Icon
 
       window.addEventListener('resize', () => {
         if (window.innerWidth >= 768) {
-          mobileMenu.classList.remove('hidden', 'flex', 'flex-col', 'absolute', 'top-0', 'left-0', 'h-screen', 'w-full', 'bg-white', 'z-50', 'items-center', 'justify-center');
+          mobileMenu.classList.remove('hidden', ...mobileMenuOverlayClasses);
           mobileMenu.classList.add('flex');
           openMenuButton.classList.remove('hidden');
         } else {

@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import FeatureCard from "../components/FeatureCard.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
@@ -13,104 +14,84 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     </head>
     <body class="overflow-x-hidden">
         <Header />
-        <main class="">
-
+        <main class="flex flex-col gap-16 sm:gap-24">
             <!-- Sección 1 -->
             <section title="Mis estrategias">
-                <div class="bg-[#000030] text-white pb-0 py-4 sm:py-16 px-4 sm:px-6 lg:px-8 sm:h-4/5 md:h-4/5 lg:h-4/5 overflow-x-hidden mb-7" >
-                    <div
-                        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center w-full">
-                        <div class="space-y-2 sm:space-y-2">
-                            
-                            <h1 class="text-sm sm:text-xl md:text-2xl font-bold leading-snug sm:leading-tight">
-                                Soy Luis Reyes
-                            </h1>
+<!-- 
+<section class="relative bg-[#ffe5d9] py-12 :">
+ <div class="container mx-auto text-center">
+ <h2 class="text-2xl font-bold text-gray-800 mb-4">Título de la Sección</h2>
+ <p class="text-gray-700">Este es un ejemplo de contenido dentro de la sección con la forma curva en la parte inferior.</p>
+ </div>
+ <div class="absolute bottom-0 left-0 w-full overflow-hidden" style="transform: translateZ(0)">
+ <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <path d="M0 27.9395C144 6.13953 323.333 -16.0605 536 27.9395C748.667 71.9395 968 45.9395 1440 113.939V120H0V27.9395Z" fill="currentColor"></path>
+ </svg>
+ </div>
+</section>
 
-                            <p class="text-xs sm:text-lg md:text-2xl leading-relaxed">
-                                  Te enseño a crear y posicionar tu marca personal. Mi experiencia en el mundo real y mi constante evolución son la base de mi guía, pensada para ayudarte a construir<b class="font-semibold"> tu futuro digital</b>.
-                            </p>
+<style>
+section svg {
+ fill: #ffffff; /* Color de la curva (blanco) */
+}
+</style>
+-->
 
-                               <a
-    href={import.meta.env.BASE_URL + "about/"}
-    class="inline-block bg-blue-950 text-white hover:text-blue-950 px-6 py-2 sm:px-8 sm:py-3 rounded-full text-xs sm:text-lg font-semibold transition duration-300 shadow-md border border-transparent hover:border-blue-950 relative overflow-hidden boton"
->
-    <span class="relative z-10">
-        🚀 Explora Mi Viaje Digital
-    </span>
-</a>
-                        </div>
+    <div
+        class="
+            bg-gradient-to-b from-blue-950 via-blue-800 to-blue-950
+            font-sans
+            text-white pb-0 py-4 sm:py-16 px-4 sm:px-6 lg:px-8 sm:h-4/5 md:h-4/5 lg:h-4/5 overflow-x-hidden
+        "
+    >
+        <div
+            class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center w-full"
+        >
+            <div class="space-y-2 sm:space-y-2">
+                <h1
+                    class="text-sm sm:text-xl md:text-2xl font-bold leading-snug sm:leading-tight"
+                >
+                    Soy Luis Reyes
+                </h1>
 
-                        <div class="flex justify-center mt-6 md:mt-0">
-                            <div
-                                class="max-w-full h-[58vh] sm:h-[80vh] rounded-lg overflow-hidden shadow-xl relative
+                <p
+                    class="text-xs sm:text-lg md:text-3xl leading-relaxed font-semibold ">
+                    Te enseño a crear tu marca
+                    personal. Mi experiencia  y 
+                    constante evolución son la base de mi guía que 
+                    te ayudara a construir tu <b
+                    class="inline-block  border-b-4 border-transparent bg-blue-600 px-2 py-1 text-white transition-colors duration-300 ease-in-out hover:border-blue-600 hover:bg-transparent "> futuro digital. </b>
+                    <br>
+               
+
+                <a
+                    href={import.meta.env.BASE_URL + "about/"}
+                    class="inline-block bg-white text-[#000033] px-6 py-2 sm:px-8 sm:py-3 mt-8 rounded-full text-xs sm:text-lg font-semibold transition duration-300 shadow-md hover:border-white border-transparent hover:scale-105"
+                    >🚀 Explora Mi Viaje Digital
+                </a>
+            </div>
+
+            <div class="flex justify-center mt-6 md:mt-0">
+                <div
+                    class="max-w-full h-[58vh] sm:h-[80vh] rounded-lg overflow-hidden shadow-xl relative
                     [mask-image:linear-gradient(to_bottom,rgb(0,0,0)_0%,rgb(0,0,0)_80%,rgba(0,0,0,0)_100%)]
-                    [mask-mode:alpha]">
-                                <img
-                                    src={import.meta.env.BASE_URL + "/imagenes/luis-7.png"}
-                                    alt="Luis Reyes - Profesional digital"
-                                    class="w-full h-full object-cover"
-                                    loading="lazy"/>
-                            </div>
-                        </div>
-                    </div>
+                    [mask-mode:alpha]"
+                >
+                    <img
+                        src={import.meta.env.BASE_URL +
+                            "/imagenes/luis-7.png"}
+                        alt="Luis Reyes - Profesional digital"
+                        class="w-full h-full object-cover"
+                        loading="lazy"
+                    />
                 </div>
-            </section>
-            <!-- Sección 2 -->
-            <section class="sm:p-0 md:p-8 ">
-    <div class="max-w-7xl mx-auto items-center justify-center">
-        <h1
-            class="text-sm sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center sm:mb-10 md:mb-12 text-gray-800 px-4">
-            🔥Tu valor profesional no se mide en títulos, sino en
-            habilidades y resultados🔥
-        </h1>
-        <div class="mt-8 sm:mt-12 text-sm sm:text-xl"><h2>💡 Pilares de mi Contenido</h2></div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 lg:justify-items-center">
-            
-            <div title="Contenido" class="group bg-white p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900 w-[90vw] mx-auto md:w-full"
-            >
-                <h2
-                    class="text-base md:text-2xl font-semibold group-hover:text-white"
-                >
-                    🔴 Marketing Digital con ADN de Atención al
-                    Cliente
-                </h2>
-                <p class="mt-1 sm:mt-4 text-sm md:text-lg text-gray-600 group-hover:text-white">
-                    Estrategias que van más allá de los números, creadas con la base del trato humano. Aquí encontrarás tácticas de persuasión, gestión de clientes y soft skills aplicadas a lo digital.
-                </p>
-            </div>
-
-            <div
-                class="group bg-white p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900 w-[90vw] mx-auto md:w-full"
-            >
-                <h2
-                    class="text-base md:text-2xl font-semibold group-hover:text-white"
-                >
-                    🟡 IA y Automatización para No-Técnicos
-                </h2>
-                <p class="mt-1 sm:mt-4 text-sm md:text-lg text-gray-600 group-hover:text-white">
-                    Guías prácticas para integrar herramientas de IA sin ser un experto. Descubre cómo crear asistentes virtuales, analizar datos y automatizar procesos para impulsar tu proyecto.
-                </p>
-            </div>
-
-            <div
-                class="group bg-white p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900 w-[90vw] mx-auto md:w-full"
-            >
-                <h2
-                    class="text-base md:text-2xl font-semibold group-hover:text-white"
-                >
-                    🟢 Mentalidad para la Reinvención Estratégica
-                </h2>
-                <p class="mt-1 sm:mt-4 text-sm md:text-lg text-gray-600 group-hover:text-white">
-                    Lecciones y reflexiones para transformar desafíos en oportunidades. Hablaremos de cómo ganar claridad, pasar a la acción y gestionar tu tiempo para construir un futuro sólido.
-                </p>
             </div>
         </div>
     </div>
 </section>
             <!-- Sección 3 -->
             <section
-                class="min-h-[70vh] flex flex-col md:flex-row items-center justify-center gap-8 py-8 px-4 sm:px-0 mx-[2%] mt-10 rounded-2xl"
+                class="min-h-[70vh] flex flex-col md:flex-row items-center justify-center gap-8 px-4 sm:px-6 lg:px-8"
             >
                 <!-- Imagen responsiva (45% del viewport) -->
                 <div class="flex justify-center w-[45vw]">
@@ -118,19 +99,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                         src="https://i.pinimg.com/736x/62/f1/e4/62f1e4ea079366f04e92cd9ee837b3d9.jpg"
                         alt="Habilidades digitales"
                         class="max-h-[60vh] w-auto object-cover shadow-md mask-radial-closest-corner mask-radial-from-100% mask-radial-at-[40%_50%]"
-                       
                     />
                 </div>
 
                 <!-- Contenedor de información (45% del viewport) -->
                 <div
-                    class= "text-gray-800 py-6 sm:py-8 px-4 sm:px-6 rounded-lg w-full md:w-[90vw] lg:w-[70vw] xl:w-[50vw] 2xl:w-[45vw] max-w-4xl mx-auto"
+                    class="text-gray-800 w-full md:w-[90vw] lg:w-[70vw] xl:w-[50vw] 2xl:w-[45vw] max-w-4xl mx-auto"
                 >
-                    <div class="text-left">
+                    <div class="text-left flex flex-col gap-6 sm:gap-8">
                         <!-- Título responsivo -->
-                        <h1
-                            class="text-xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
-                        >
+                        <h1 class="text-xl sm:text-3xl md:text-4xl font-bold">
                             Habilidades que Impulsan mi Visión Digital
                         </h1>
 
@@ -160,22 +138,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                             </li>
                         </ul>
                         <a
-    href={import.meta.env.BASE_URL + "blog/"}
-    class="mt-10 inline-block bg-[#000033] hover:text-[#000033] text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md relative overflow-hidden boton border border-transparent hover:border-[#000033]"
->
-    <span class="relative z-10">
-        💡 Descubre Cómo Aplico Estas Habilidades ✨
-        <span class="hidden sm:inline">⬇️</span>
-    </span>
-</a>
+                            href={import.meta.env.BASE_URL + "blog/"}
+                            class="self-start inline-block bg-blue-100 text-[#000033] hover:bg-[#000033] hover:text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-sm sm:text-lg font-semibold transition duration-300 shadow-md border border-transparent hover:border-white hover:scale-105"
+                        >
+                            💡 Descubre Cómo Aplico Estas Habilidades ✨⬇️
+                        </a>
                     </div>
                 </div>
             </section>
 
-
             <!-- Llamado final a la acción mejorado 
             <section
-                class="w-[95vw] sm:w-[80vw] md:w-[70vw] mx-auto px-4 py-8 sm:p-8 bg-blue-600 rounded-4xl mt-10"
+                class="w-[95vw] sm:w-[80vw] md:w-[70vw] mx-auto px-4 py-8 sm:p-8 bg-blue-600 rounded-4xl"
             >
                 <div class="max-w-[90vw] sm:max-w-none mx-auto text-center">
                     <h2

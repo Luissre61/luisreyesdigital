@@ -16,70 +16,15 @@ const posts = (await getCollection("blog")).sort(
 <html lang="es">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
+		<style is:global>
 			html {
 				scroll-behavior: smooth;
-			}
-			main {
-				max-width: 960px; /* CAMBIO CLAVE: Usar max-width en lugar de width fijo */
-				margin: 0 auto; /* Centrar el contenido de main */
-				padding: 0 1rem; /* Añadir padding a los lados para pantallas pequeñas */
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				/* Para ul, el gap de 0.5em y width: 100% para li ya es bueno */
-				ul {
-					gap: 1rem; /* Podrías hacer el gap un poco más grande para mejor espacio */
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				/* Considera añadir un padding lateral a main aquí también si no lo tienes globalmente */
-				/* main { padding: 0 1rem; } */
 			}
 		</style>
 	</head>
 	<body>
 		<Header />
-		<main>
+		<main class="max-w-5xl mx-auto px-4">
 			<section
     title="Pilares de mi contenido"
     class="relative w-screen bg-cover bg-center bg-fixed flex items-center justify-start py-12 sm:py-16 px-4 sm:px-6 lg:px-8 mx-[-50vw] left-1/2 right-1/2 
@@ -100,38 +45,31 @@ const posts = (await getCollection("blog")).sort(
             
             <p class="text-sm sm:text-base md:text-lg leading-relaxed">Mi experiencia es tu guía. Aquí, transformo mi viaje de reinvención en estrategias prácticas y consejos directos sobre Desarrollo Web, Marketing Digital e IA. Descubre cómo desbloquear tu potencial y construir tu futuro online.</p>
 
-           <a
-    href="#posts-section"
-    class="inline-block bg-blue-950 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md border border-transparent hover:border-[#000033] relative overflow-hidden boton hover:text-blue-950"
->
-    <span class="relative z-10">
-        👇 Ver Posts
-    </span>
-</a>
+            <a href="#posts-section" class="inline-block bg-[#000033] text-white hover:bg-blue-600 px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md hover:border-white border-transparent hover:scale-105">👇 Ver Posts </a>
         </div>
     </div>
 </section>
 			<section  id="posts-section">
-				<ul>
+				<ul class="grid grid-cols-1 md:grid-cols-2 gap-8 list-none m-0 p-0">
 					{
 						posts.map((post) => (
-							<li>
+							<li class="group">
 								<a
 									href={`${import.meta.env.BASE_URL}blog/${post.slug}/`}
+									class="block no-underline"
 								>
 									{post.data.heroImage && (
 										<Image
 											width={720}
 											height={360}
 											src={post.data.heroImage}
-											alt=""
+											alt={`Imagen de portada para ${post.data.title}`}
+											class="mb-2 rounded-xl object-cover transition duration-200 ease-in-out group-hover:shadow-lg"
 										/>
 									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate
-											date={post.data.pubDate}
-										/>
+									<h4 class="m-0 text-gray-900 leading-tight text-xl font-bold transition duration-200 ease-in-out group-hover:text-accent">{post.data.title}</h4>
+									<p class="m-0 text-gray-600 transition duration-200 ease-in-out group-hover:text-accent">
+										<FormattedDate date={post.data.pubDate} />
 									</p>
 								</a>
 							</li>

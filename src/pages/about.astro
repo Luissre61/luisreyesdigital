@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import FeatureCard from "../components/FeatureCard.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
@@ -10,28 +11,23 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 <html lang="es">
     <head>
         <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-        <style>
-            html {
-                scroll-behavior: smooth;
-            }
-        </style>
     </head>
     <body class="overflow-x-hidden flex flex-col min-h-screen">
-        <Header />
-        <main class="">
+        <Header/>
+        <main class="flex flex-col gap-16 sm:gap-24 ">
 
             <!-- Sección mi viaje -->
-            <section title="Mi-Viaje" class="h-screen md:h-auto  bg-gray-200"> 
+            <section title="Mi-Viaje" class="bg-gray-200">
     <div
         class="p-2 sm:p-8 md:p-12 lg:p-16 w-full max-w-5xl mx-auto flex flex-col md:flex-row md:items-center gap-8 "
     >
-        <div class="flex-1 text-center md:text-left mt-4">
+        <div class="flex-1 flex flex-col items-center md:items-start gap-4 text-center md:text-left">
             <a
                 href="#mi-viaje"
-                class="inline-block px-5 py-1 border border-gray-300 rounded-full text-base font-medium text-gray-700 uppercase tracking-wide mb-2 hover:bg-gray-50 transition duration-300"
+                class="inline-block px-5 py-1 border border-gray-300 rounded-full text-base font-medium text-gray-700 uppercase tracking-wide hover:bg-gray-50 transition duration-300 over:scale-105"
             >📍 Mi Viaje</a>
 
-            <div class="space-y-6 sm:space-y-8 md:space-y-12">
+            <div class="flex flex-col gap-6 sm:gap-8 md:gap-12">
                 <h2
                     class="text-2xl sm:text-3xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#007bff] to-[#00bfff] tracking-wide leading-tight"
                 >
@@ -39,7 +35,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 </h2>
 
                 <h3
-                    class="text-lg sm:text-xl lg:text-3xl font-extrabold text-gray-900 leading-tight my-4"
+                    class="text-lg sm:text-xl lg:text-3xl font-extrabold text-gray-900 leading-tight"
                 >
                     Fundador de Luis Reyes Digital | Tu Guía hacia el Futuro Online
                 </h3>
@@ -63,148 +59,64 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     </div>
 </section>
             <!-- Sección mi camino -->
-           <section id="mi-viaje" class="sm:p-0 md:p-8">
-    <div class="max-w-7xl mx-auto items-center justify-center">
-        
-
-        <div class="m-4 sm:mt-10 text-base sm:text-2xl">
-            <h2>Mi camino me ha preparado para ayudarte a:</h2>
-        </div>
+           <section id="mi-viaje" class="px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-8">
+    <div class="max-w-7xl w-full mx-auto flex flex-col items-center text-center gap-8 sm:gap-12">
+        <h2 class="text-base sm:text-2xl">Mi camino me ha preparado para ayudarte a:</h2>
 
         <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6 lg:justify-items-center"
+            class="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:justify-items-center"
         >
-            <div
-                class="group bg-gray-50 p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900 w-[90vw] mx-auto md:w-full"
-            >
-                <div class="flex items-center gap-4 mb-4">
-                    <div
-                        class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-md border border-gray-200 flex-shrink-0"
-                    >
-                        <span class="text-3xl">💡</span>
-                    </div>
-                    <h2
-                        class="text-base md:text-xl font-semibold group-hover:text-white flex-grow"
-                    >
-                        Encontrar Tu Propósito Digital
-                    </h2>
-                </div>
-                <p
-                    class="mt-1 sm:mt-4 text-sm md:text-lg text-gray-600 group-hover:text-white"
-                >
-                    Como pasé de no tener un rumbo definido a construir una
-                    marca con propósito, te muestro cómo encontrar tu camino y
-                    transformar tu visión en un proyecto tangible.
-                </p>
-            </div>
+            <FeatureCard
+                icon="💡"
+                title="Encontrar Tu Propósito Digital"
+                description="Como pasé de no tener un rumbo definido a construir una marca con propósito, te muestro cómo encontrar tu camino y transformar tu visión en un proyecto tangible."
+            />
 
-            <div
-                class="group bg-gray-50 p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900 w-[90vw] mx-auto md:w-full"
-            >
-                <div class="flex items-center gap-4 mb-4">
-                    <div
-                        class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-md border border-gray-200 flex-shrink-0"
-                    >
-                        <span class="text-3xl">🚀</span>
-                    </div>
-                    <h2
-                        class="text-base md:text-xl font-semibold group-hover:text-white flex-grow"
-                    >
-                        Desbloquear Oportunidades
-                    </h2>
-                </div>
-                <p
-                    class="mt-1 sm:mt-4 text-sm md:text-lg text-gray-600 group-hover:text-white"
-                >
-                    Te guío a través de las lecciones que aprendí al arriesgarme
-                    y dejar mi zona de confort, para que descubras que los
-                    fracasos solo son el camino hacia nuevas oportunidades.
-                </p>
-            </div>
+            <FeatureCard
+                icon="🚀"
+                title="Desbloquear Oportunidades"
+                description="Te guío a través de las lecciones que aprendí al arriesgarme y dejar mi zona de confort, para que descubras que los fracasos solo son el camino hacia nuevas oportunidades."
+            />
 
-            <div
-                class="group bg-gray-50 p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900 w-[90vw] mx-auto md:w-full"
-            >
-                <div class="flex items-center gap-4 mb-4">
-                    <div
-                        class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-md border border-gray-200 flex-shrink-0"
-                    >
-                        <span class="text-3xl">💻</span>
-                    </div>
-                    <h2
-                        class="text-base md:text-xl font-semibold group-hover:text-white flex-grow"
-                    >
-                        Adquirir Habilidades de Alto Valor
-                    </h2>
-                </div>
-                <p
-                    class="mt-1 sm:mt-4 text-sm md:text-lg text-gray-600 group-hover:text-white"
-                >
-                    Te comparto mi proceso para dominar habilidades fundamentales
-                    como el desarrollo web, el análisis de datos, el marketing
-                    digital y la IA, y te muestro cómo aplicarlas para crear tu
-                    propia marca y proyecto.
-                </p>
-            </div>
+            <FeatureCard
+                icon="💻"
+                title="Adquirir Habilidades de Alto Valor"
+                description="Te comparto mi proceso para dominar habilidades fundamentales como el desarrollo web, el análisis de datos, el marketing digital y la IA, y te muestro cómo aplicarlas para crear tu propia marca y proyecto."
+            />
 
-            <div
-                class="group bg-gray-50 p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900 w-[90vw] mx-auto md:w-full"
-            >
-                <div class="flex items-center gap-4 mb-4">
-                    <div
-                        class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-md border border-gray-200 flex-shrink-0"
-                    >
-                        <span class="text-3xl">📈</span>
-                    </div>
-                    <h2
-                        class="text-base md:text-xl font-semibold group-hover:text-white flex-grow"
-                    >
-                        Afrontar la Adversidad
-                    </h2>
-                </div>
-                <p
-                    class="mt-1 sm:mt-4 text-sm md:text-lg text-gray-600 group-hover:text-white"
-                >
-                    Mi experiencia con la quiebra y la depresión me enseñó a
-                    convertir los obstáculos en catalizadores. Te inspiro a
-                    encontrar la fuerza para seguir adelante, a cuestionar la
-                    culpa y a usar cada revés como un impulso.
-                </p>
-            </div>
+            <FeatureCard
+                icon="📈"
+                title="Afrontar la Adversidad"
+                description="Mi experiencia con la quiebra y la depresión me enseñó a convertir los obstáculos en catalizadores. Te inspiro a encontrar la fuerza para seguir adelante, a cuestionar la culpa y a usar cada revés como un impulso."
+            />
         </div>
     </div>
     <a href={import.meta.env.BASE_URL + "bio/"}
-        class="inline-block px-5 py-1 border border-gray-300 rounded-full text-base font-medium text-gray-700 uppercase tracking-wide my-10 hover:bg-gray-50 transition duration-300"
+        class="inline-block px-5 py-1 border border-gray-300 rounded-full text-base font-medium text-gray-700 uppercase tracking-wide hover:bg-gray-50 transition duration-300 over:scale-105"
         >📖 Mi Historia</a>
         
 </section>
             <section
                 class="w-[90vw] sm:w-[80vw] md:w-[70vw] mx-auto"
             >
-                <div
-                    class="group bg-blue-600 p-4 sm:p-6 rounded-4xl shadow-md border border-gray-200 transition-all duration-300 hover:-translate-y-2 mx-auto md:w-full flex-row items-center justify-center "
-                >
-                    <div>
-    <div class="text-center">
+                <div class="group bg-blue-600 p-4 sm:p-6 rounded-4xl shadow-md border border-gray-200 mx-auto md:w-full">
+    <div class="text-center flex flex-col items-center gap-6 sm:gap-8">
         <h1 class="text-base md:text-3xl font-semibold text-white">
-            Misión
+             Misión 
         </h1>
-        <p class="mt-4 text-sm md:text-2xl text-white">
+        <p class="text-sm md:text-2xl text-white">
             "Dominar las herramientas que transforman experiencias digitales en
             crecimiento escalable, combinando: Experiencia real, Conocimiento
             técnico y Visión estratégica"
         </p>
-    <a
-    href={import.meta.env.BASE_URL + "blog/"}
-    class="mt-10 inline-block bg-blue-950 hover:text-blue-950 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md relative overflow-hidden boton"
->
-    <span class="relative z-10">
-        🛠️ Descubre las Herramientas
-        <span class="hidden sm:inline">⬇️</span>
-    </span>
-</a>
+        <a
+            href={import.meta.env.BASE_URL + "blog/"}
+            class="inline-block bg-blue-950 hover:bg-white hover:text-blue-950 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md border-transparent hover:blue-950 hover:scale-105"
+        >
+            🛠️ Descubre las Herramientas
+            <span class="hidden sm:inline">⬇️</span>
+        </a>
     </div>
-</div>
             </section>
              
 
