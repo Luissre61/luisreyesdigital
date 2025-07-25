@@ -45,7 +45,15 @@ const posts = (await getCollection("blog")).sort(
             
             <p class="text-sm sm:text-base md:text-lg leading-relaxed">Mi experiencia es tu guía. Aquí, transformo mi viaje de reinvención en estrategias prácticas y consejos directos sobre Desarrollo Web, Marketing Digital e IA. Descubre cómo desbloquear tu potencial y construir tu futuro online.</p>
 
-            <a href="#posts-section" class="inline-block bg-[#000033] text-white hover:bg-blue-600 px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md hover:border-white border-transparent hover:scale-105">👇 Ver Posts </a>
+           <a 
+    href="#posts-section" 
+    class="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/30 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden group border-transparent"
+>
+    <span class="relative z-10 flex items-center gap-1">
+        👇 Ver Posts
+    </span>
+    <span class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+</a>
         </div>
     </div>
 </section>
