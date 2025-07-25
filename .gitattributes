@@ -1,0 +1,21 @@
+# Establece el comportamiento por defecto para manejar automáticamente los finales de línea.
+# Forzará que todos los archivos de texto usen LF (estilo Unix), que es la práctica moderna recomendada.
+* text=auto eol=lf
+
+# Declara explícitamente los archivos de texto para asegurar la normalización.
+*.astro text
+*.css text
+*.html text
+*.js text
+*.json text
+*.md text
+*.mjs text
+*.ts text
+*.svg text
+*.xml text
+
+# Declara los archivos que son binarios y no deben ser modificados.
+*.png binary
+*.jpg binary
+*.woff binary
+*.woff2 binary

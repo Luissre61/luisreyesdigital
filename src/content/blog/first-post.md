@@ -1,5 +1,5 @@
 ---
-title: 'MI NOVIO DE PUECO A MAS PUECO'
+title: 'hola'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Jul 08 2024'
 heroImage: '../../assets/blog-placeholder-3.jpg'

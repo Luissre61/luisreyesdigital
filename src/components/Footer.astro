@@ -3,31 +3,28 @@ import Icon from "./Icon.astro";
 const today = new Date();
 ---
 
-<footer class="rounded-t-[3rem] bg-[#000066] mt-10">
-    <div>
-        &copy; {today.getFullYear()} Luis Reyes Digital. Todos los derechos reservados.
+<footer class="relative bg-[#000033] text-white pt-16 pb-8 overflow-hidden">
+  <!-- Curva invertida idéntica al ejemplo -->
+  <div class="absolute top-0 left-0 right-0 h-20 bg-white rounded-b-[100%]"></div>
+  
+  <!-- Contenido del footer -->
+  <div class="relative z-10 flex flex-col items-center text-center px-4 py-8">
+    <!-- Texto de copyright -->
+    <div class="mb-6">
+      &copy; {new Date().getFullYear()} Luis Reyes Digital. Todos los derechos reservados.
     </div>
     
-    <div class="flex items-center gap-4 mb-4 social-icons-wrapper">
-        <a href="https://www.linkedin.com/in/luis-reyes-digital-263aa2355" target="_blank"> <Icon name="linkedin" width={28} height={28} /></a>
-        <a href="https://www.youtube.com/@LuisReyesDigital" target="_blank"><Icon name="youtube" width={42} height={42} /></a>
-        <a href="https://www.instagram.com/luisreyesdigital/" target="_blank"><Icon name="instagram" width={28} height={28} /></a>
+    <!-- Iconos sociales -->
+    <div class="flex items-center gap-6">
+      <a href="https://www.linkedin.com/in/luis-reyes-digital-263aa2355" target="_blank" class="hover:opacity-80 transition-opacity">
+        <Icon name="linkedin" width={28} height={28} />
+      </a>
+      <a href="https://www.youtube.com/@LuisReyesDigital" target="_blank" class="hover:opacity-80 transition-opacity">
+        <Icon name="youtube" width={42} height={42} />
+      </a>
+      <a href="https://www.instagram.com/luisreyesdigital/" target="_blank" class="hover:opacity-80 transition-opacity">
+        <Icon name="instagram" width={28} height={28} />
+      </a>
     </div>
-
+  </div>
 </footer>
-
-<style>
-    footer {
-        padding: 2em 1em 2em 1em;
-        background-color: #000066; /* Usé background-color directamente por la clase en el HTML, pero si prefieres el background de CSS, puedes ajustarlo. */
-        color: rgb(var(--gray));
-        
-        /* --- Cambios para centrar y apilar los divs --- */
-        display: flex; /* Habilitar Flexbox */
-        flex-direction: column; /* Apilar los elementos hijos (los divs) verticalmente */
-        align-items: center; /* Centrar los elementos hijos horizontalmente en un layout de columna */
-        /* --- Fin de cambios --- */
-
-        text-align: center; /* Mantiene el texto dentro del primer div centrado */
-    }
-</style>

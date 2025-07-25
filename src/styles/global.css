@@ -194,3 +194,7 @@ a.boton::before {
 a.boton:hover::before {
   transform: scale(1);
 }
+
+.bg-section-gradient {
+    background: linear-gradient(to bottom, white 0%, #f0f9ff 100%);
+}

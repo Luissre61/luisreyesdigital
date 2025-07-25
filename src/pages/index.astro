@@ -17,8 +17,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         <main class="flex flex-col gap-16 sm:gap-24">
 
           <!-- Sección 1 - Modernizada -->
-<!-- Sección 1 - Versión final -->
-<section title="Mis estrategias" class="min-h-[85vh]">
+<section title="Mis estrategias" class="min-h-[70vh]">
     <div class="bg-[#000033] font-sans text-white h-[90vh] px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <!-- Patrón de conexiones tecnológicas (fondo) -->
         <div class="absolute inset-0 opacity-20">
@@ -33,21 +32,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
                 <p class="text-lg sm:text-2xl leading-relaxed font-medium text-gray-200">
                     Te enseño a crear tu marca personal. Mi experiencia y 
-                    constante evolución son la base de mi guía que 
+                    constante evolución son la base de la guía que 
                     te ayudará a construir tu 
                     <b class="inline-block px-1 font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent animate-pulse">
                         futuro digital.
                     </b>
                 </p>
 
-                <a href={import.meta.env.BASE_URL + "about/"} class="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-3 sm:px-10 sm:py-4 mt-8 rounded-full text-lg sm:text-xl font-bold transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/30 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden group">
+                <a href={import.meta.env.BASE_URL + "about/"} class="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-3 sm:px-10 sm:py-4 mt-8 rounded-full text-lg sm:text-xl font-bold transition-all duration-700 hover:shadow-xl hover:shadow-cyan-500/30 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden group">
                     <span class="relative z-10 flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                         🚀 Explora Mi Viaje Digital
                     </span>
-                    <span class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                    <span class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></span>
                 </a>
             </div>
 
@@ -61,6 +60,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             </div>
         </div>
     </div>
+  <div class="bg-[#000033] h-[10vh] w-full relative overflow-hidden">
+    <div class="absolute bottom-0 left-0 right-0 h-full bg-white rounded-t-[100%]"></div>
+</div>
 </section>
 
 <!-- Sección habilidades -->
@@ -69,9 +71,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <div class="text-gray-800 w-full md:w-[90vw] lg:w-[70vw] xl:w-[50vw] 2xl:w-[45vw] max-w-4xl mx-auto">
         <div class="text-left flex flex-col gap-6 sm:gap-8">
             <!-- Título responsivo -->
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#000033] mb-4">
-               Habilidades que Impulsan mi Visión Digital
-            </h1>
+            <h2 class="text-2xl sm:text-4xl font-bold text-[#000033] bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent px-4 py-2 transition-all duration-1000">
+            Habilidades que Impulsan mi Visión Digital
+        </h2>
 
             <!-- Descripción -->
            <ul class="text-lg sm:text-xl space-y-3 font-medium text-gray-700">
@@ -95,12 +97,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
    <a
     href={import.meta.env.BASE_URL + "blog/"}
-    class="self-start inline-block bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-sm sm:text-lg font-semibold transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/30 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden group border-transparent"
+    class="self-start inline-block bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-sm sm:text-lg font-semibold transition-all duration-700 hover:shadow-xl hover:shadow-cyan-500/30 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden group border-transparent"
 >
     <span class="relative z-10 flex items-center gap-2">
         💡 Descubre Cómo Aplico Estas Habilidades ✨⬇️
     </span>
-    <span class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+    <span class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></span>
 </a>
 
         </div>
@@ -113,6 +115,45 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             alt="Luis Reyes"
             class="max-h-[60vh] w-auto object-cover shadow-xl rounded-xl mask-radial-closest-corner mask-radial-from-100% mask-radial-at-[40%_50%]"
         />
+    </div>
+</section>
+
+ <!-- Sección mi camino - Con transiciones más lentas -->
+<section id="mi-viaje" class="px-4 sm:px-6 lg:px-8 py-12 sm:py-20 ">
+    <div class="max-w-7xl w-full mx-auto flex flex-col items-center text-center gap-8 sm:gap-16">
+        <h2 class="text-2xl sm:text-4xl font-bold text-[#000033] bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent px-4 py-2 transition-all duration-1000">
+            Mi camino me ha preparado para ayudarte a:
+        </h2>
+
+        <div class="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:justify-items-center">
+            <FeatureCard
+                icon="💡"
+                title="Encontrar Tu Propósito Digital"
+                description="Como pasé de no tener un rumbo definido a construir una marca con propósito, te muestro cómo encontrar tu camino y transformar tu visión en un proyecto tangible."
+                class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
+            />
+
+            <FeatureCard
+                icon="🚀"
+                title="Desbloquear Oportunidades"
+                description="Te guío a través de las lecciones que aprendí al arriesgarme y dejar mi zona de confort, para que descubras que los fracasos solo son el camino hacia nuevas oportunidades."
+                class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
+            />
+
+            <FeatureCard
+                icon="💻"
+                title="Adquirir Habilidades de Alto Valor"
+                description="Te comparto mi proceso para dominar habilidades fundamentales como el desarrollo web, el análisis de datos, el marketing digital y la IA, y te muestro cómo aplicarlas para crear tu propia marca y proyecto."
+                class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
+            />
+
+            <FeatureCard
+                icon="📈"
+                title="Afrontar la Adversidad"
+                description="Mi experiencia con la quiebra y la depresión me enseñó a convertir los obstáculos en catalizadores. Te inspiro a encontrar la fuerza para seguir adelante, a cuestionar la culpa y a usar cada revés como un impulso."
+                class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
+            />
+        </div>
     </div>
 </section>
 

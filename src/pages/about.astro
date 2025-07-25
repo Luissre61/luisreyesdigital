@@ -2,7 +2,6 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import FeatureCard from "../components/FeatureCard.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
@@ -11,114 +10,230 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 <html lang="es">
     <head>
         <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+        </style>
     </head>
-    <body class="overflow-x-hidden flex flex-col min-h-screen">
-        <Header/>
-        <main class="flex flex-col gap-16 sm:gap-24 ">
-
-            <!-- Sección mi viaje -->
-            <section title="Mi-Viaje" class="bg-gray-200">
-    <div
-        class="p-2 sm:p-8 md:p-12 lg:p-16 w-full max-w-5xl mx-auto flex flex-col md:flex-row md:items-center gap-8 "
+    <body
+        class="overflow-x-hidden flex flex-col min-h-screen font-sans bg-white"
     >
-        <div class="flex-1 flex flex-col items-center md:items-start gap-4 text-center md:text-left">
-            <a
-                href="#mi-viaje"
-                class="inline-block px-5 py-1 border border-gray-300 rounded-full text-base font-medium text-gray-700 uppercase tracking-wide hover:bg-gray-50 transition duration-300 over:scale-105"
-            >📍 Mi Viaje</a>
+    <!-- Main Content -->
+        <main class="flex-grow bg-white -mt-1">
+        <Header />
 
-            <div class="flex flex-col gap-6 sm:gap-8 md:gap-12">
-                <h2
-                    class="text-2xl sm:text-3xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#007bff] to-[#00bfff] tracking-wide leading-tight"
+        <!-- Hero Section with Wave -->
+        <div class="relative bg-[#000033] min-h-[30vh] sm:min-h-[45vh] w-full overflow-hidden">
+            <!-- Background pattern -->
+            <div class="absolute inset-0 opacity-10">
+                <div
+                    class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBzdHJva2U9InJnYmEoMzQsMjExLDIzOCwwLjE1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+')]"
                 >
-                    Luis Reyes.
-                </h2>
+                </div>
+            </div>
 
-                <h3
-                    class="text-lg sm:text-xl lg:text-3xl font-extrabold text-gray-900 leading-tight"
-                >
-                    Fundador de Luis Reyes Digital | Tu Guía hacia el Futuro Online
-                </h3>
+            <!-- Wave transition -->
+            <div
+                class="absolute bottom-0 left-0 w-full h-20 bg-white rounded-t-[100%]"
+            >
+            </div>
 
-                <p
-                    class="text-sm sm:text-base md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto md:mx-0"
-                >
-                    ¿Qué pasaría si te dijera que tu punto de partida no define tu destino, <b class="font-semibold">sino tu potencia?</b>
-                </p>
+            <!-- Content -->
+            <div
+                class="relative z-10 max-w-7xl mx-auto h-full flex items-center px-6"
+            >
+                <div class="text-white py-20">
+                    <h1
+                        class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+                    >
+                        Luis <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500"
+                            >Reyes</span
+                        >
+                    </h1>
+                    <p
+                        class="text-xl md:text-2xl text-blue-200 italic max-w-2xl"
+                    >
+                        Un visionario en constante evolución y crecimiento
+                    </p>
+                </div>
             </div>
         </div>
 
-        <div class="flex-1 flex justify-center">
-            <img
-                src={import.meta.env.BASE_URL +
-                "/imagenes/luis-7.png"}
-                alt="Retrato de Luis Reyes"
-                class="max-h-[60vh] w-auto object-cover mask-b-from-60% mask-b-to-90%"
-            />
-        </div>
-    </div>
-</section>
-            <!-- Sección mi camino -->
-           <section id="mi-viaje" class="px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-8">
-    <div class="max-w-7xl w-full mx-auto flex flex-col items-center text-center gap-8 sm:gap-12">
-        <h2 class="text-base sm:text-2xl">Mi camino me ha preparado para ayudarte a:</h2>
-
-        <div
-            class="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:justify-items-center"
-        >
-            <FeatureCard
-                icon="💡"
-                title="Encontrar Tu Propósito Digital"
-                description="Como pasé de no tener un rumbo definido a construir una marca con propósito, te muestro cómo encontrar tu camino y transformar tu visión en un proyecto tangible."
-            />
-
-            <FeatureCard
-                icon="🚀"
-                title="Desbloquear Oportunidades"
-                description="Te guío a través de las lecciones que aprendí al arriesgarme y dejar mi zona de confort, para que descubras que los fracasos solo son el camino hacia nuevas oportunidades."
-            />
-
-            <FeatureCard
-                icon="💻"
-                title="Adquirir Habilidades de Alto Valor"
-                description="Te comparto mi proceso para dominar habilidades fundamentales como el desarrollo web, el análisis de datos, el marketing digital y la IA, y te muestro cómo aplicarlas para crear tu propia marca y proyecto."
-            />
-
-            <FeatureCard
-                icon="📈"
-                title="Afrontar la Adversidad"
-                description="Mi experiencia con la quiebra y la depresión me enseñó a convertir los obstáculos en catalizadores. Te inspiro a encontrar la fuerza para seguir adelante, a cuestionar la culpa y a usar cada revés como un impulso."
-            />
-        </div>
-    </div>
-    <a href={import.meta.env.BASE_URL + "bio/"}
-        class="inline-block px-5 py-1 border border-gray-300 rounded-full text-base font-medium text-gray-700 uppercase tracking-wide hover:bg-gray-50 transition duration-300 over:scale-105"
-        >📖 Mi Historia</a>
         
-</section>
-            <section
-                class="w-[90vw] sm:w-[80vw] md:w-[70vw] mx-auto"
-            >
-                <div class="group bg-blue-600 p-4 sm:p-6 rounded-4xl shadow-md border border-gray-200 mx-auto md:w-full">
-    <div class="text-center flex flex-col items-center gap-6 sm:gap-8">
-        <h1 class="text-base md:text-3xl font-semibold text-white">
-             Misión 
-        </h1>
-        <p class="text-sm md:text-2xl text-white">
-            "Dominar las herramientas que transforman experiencias digitales en
-            crecimiento escalable, combinando: Experiencia real, Conocimiento
-            técnico y Visión estratégica"
-        </p>
-        <a
-            href={import.meta.env.BASE_URL + "blog/"}
-            class="inline-block bg-blue-950 hover:bg-white hover:text-blue-950 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition duration-300 shadow-md border-transparent hover:blue-950 hover:scale-105"
-        >
-            🛠️ Descubre las Herramientas
-            <span class="hidden sm:inline">⬇️</span>
-        </a>
-    </div>
-            </section>
-             
+            <div class="max-w-4xl mx-auto ">
+                <!-- Article container -->
+                <article class="prose prose-lg md:prose-xl prose-blue">
+                    <!-- First section -->
+                    <p
+                        class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
+                    >
+                        Hola, mi nombre es Luis Reyes. Aunque hoy estoy inmerso
+                        en el fascinante mundo del desarrollo web y el marketing
+                        digital, mis raíces se aferran a la serena belleza del
+                        campo venezolano. Mi espíritu aventurero siempre me ha
+                        impulsado a explorar sus diversos paisajes. Sin embargo
+                        desde muy joven, el universo digital me cautivó por
+                        completo; desde mi primer celular hasta la primera
+                        computadora, sentí cómo se abría ante mí un mundo de
+                        infinitas posibilidades. Esa curiosidad ha sido la
+                        brújula de toda mi vida, llevándome por caminos
+                        inesperados y transformadores.
+                    </p>
+
+                    <figure class="my-10">
+                        <img
+                            src={import.meta.env.BASE_URL +
+                                "/imagenes/luis-bosque.jpg"}
+                            alt="Luis en la naturaleza"
+                            class="rounded-2xl shadow-xl w-full h-auto max-h-[70vh] object-cover"
+                            loading="lazy"
+                        />
+                    
+                    </figure>
+
+                    <p
+                        class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
+                    >
+                        La vida me trajo a la ciudad para estudiar informática,
+                        pero la crisis del país me obligó a regresar a mis
+                        orígenes. Lejos de rendirme, vi una oportunidad y me
+                        lancé a mi primer gran proyecto: una destilería de licor
+                        artesanal. Fue mi escuela de negocios a pie de calle;
+                        ahí aprendí a gestionar, a liderar equipos y a construir
+                        redes de comercialización, logrando un éxito palpable.
+                        Sin embargo, en un giro inesperado, llegó la pandemia y,
+                        de la noche a la mañana, tres años de arduo trabajo se
+                        derrumbaron.
+                    </p>
+                    
+                    <!-- Divider -->
+                    <div class="border-t border-gray-200 my-12"></div>
+                    <!-- Second section -->
+                    <h2
+                        class="text-3xl md:text-4xl font-bold text-gray-700 mb-6 pb-2 "
+                    >
+                        Caminos inesperados que forjan el destino correcto.
+                    </h2>
+                    
+
+                    <p
+                        class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
+                    >
+                        Esa etapa fue dura, llena de cuestionamientos y una
+                        profunda depresión. Pero mi espíritu se negó a ser
+                        vencido. Me propuse llevarme al límite, a la ciudad, a
+                        nuevos trabajos, escalando una y otra vez para
+                        mantenerme a flote. Incluso intenté una segunda carrera
+                        universitaria, y volví a fracasar. Fue en esa
+                        frustración donde llegó mi mayor claridad: el camino no
+                        era el tradicional, y el verdadero valor no se mide en
+                        títulos, sino en la resiliencia y las habilidades que
+                        forjas en la vida real. Comprendí que lo que necesitaba
+                        era la flexibilidad y el aprendizaje 100% online. Así
+                        fue como me sumergí en los fundamentos de la
+                        programación, adquirí habilidades sólidas de Front-End,
+                        y me enamoré del fascinante mundo del Marketing Digital
+                        y la Inteligencia Artificial. Hoy, sigo mi aprendizaje
+                        con el Análisis de Datos, buscando expandir aún más mi
+                        conjunto de herramientas.
+                    </p>
+                    <p
+                        class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
+                    >
+                        Todo lo que he vivido, cada obstáculo y cada quiebre, me
+                        ha dotado de una fortaleza inquebrantable. Esa es la
+                        base de mi visión hoy: estoy construyendo mi futuro
+                        digital y estoy listo para guiarte en tu propio camino
+                        de transformación.
+                    </p>
+                    <!-- Divider -->
+                    <div class="border-t border-gray-200 my-12"></div>
+                    <!-- Third section -->
+                    <h2
+                        class="text-3xl md:text-4xl font-bold text-gray-700 mb-6 pb-2 "
+                    >
+                        El Próximo Gran Salto: Un Nuevo Capítulo Se Abre.
+                    </h2>
+                    
+
+                    <p
+                        class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
+                    >
+                        Luego de sumergirme por completo en el mundo digital y
+                        de crear Luis Reyes Digital con el fin de crecer
+                        profesionalmente, me preparo para dar un gran salto. Un
+                        nuevo horizonte me llama, un desafío que me llevará más
+                        allá del océano, demostrando una vez más que el punto de
+                        partida no define el destino, sino tu potencia. Quiero
+                        contarte mis experiencias, compartir las estrategias y
+                        herramientas que realmente funcionan, y mostrarte el
+                        cómo para que tú también puedas desbloquear tu potencial
+                        digital.
+                    </p>
+                    <figure class="my-10">
+                        <img
+                            src={import.meta.env.BASE_URL +
+                                "/imagenes/luis-ciudad.jpg"}
+                            alt="Luis en la naturaleza"
+                            class="rounded-2xl shadow-xl w-full h-auto max-h-[70vh] object-cover"
+                            loading="lazy"
+                        />
+                        <figcaption class="text-center text-gray-500 mt-2">
+                            Acompañame en este viaje digital. ¡Juntos, construyamos tu propio futuro digital
+                        </figcaption>
+                    </figure>
+
+                    <!-- CTA Section -->
+                    <div
+                        class="bg-[#000033] rounded-3xl p-8 md:p-12 my-16 shadow-lg"
+                    >
+                        <div class="max-w-2xl mx-auto text-center">
+                            <h2
+                                class="text-2xl md:text-3xl text-white font-bold mb-6"
+                            >
+                                Transforma cada desafío en tu próxima
+                                oportunidad
+                            </h2>
+                            <a href={import.meta.env.BASE_URL + "about/"}
+   class="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-3 sm:px-10 sm:py-4 mt-8 rounded-full text-lg sm:text-xl font-bold transition-all duration-700 hover:shadow-xl hover:shadow-cyan-500/30 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden group">
+   
+   <span class="relative z-10 flex items-center justify-center gap-2 text-white">
+      <!-- Icono rayo izquierdo -->
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           class="h-5 w-5 sm:h-6 sm:w-6 text-white" 
+           fill="none" 
+           viewBox="0 0 24 24" 
+           stroke="currentColor">
+         <path stroke-linecap="round" 
+               stroke-linejoin="round" 
+               stroke-width="2" 
+               d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+
+      Explora Mi Blog
+
+      <!-- Icono rayo derecho -->
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           class="h-5 w-5 sm:h-6 sm:w-6 text-white" 
+           fill="none" 
+           viewBox="0 0 24 24" 
+           stroke="currentColor">
+         <path stroke-linecap="round" 
+               stroke-linejoin="round" 
+               stroke-width="2" 
+               d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+   </span>
+
+   <span class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></span>
+</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
 
         <Footer />
     </body>

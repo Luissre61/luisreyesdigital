@@ -26,39 +26,53 @@ const posts = (await getCollection("blog")).sort(
 		<Header />
 		<main class="max-w-5xl mx-auto px-4">
 			<section
-    title="Pilares de mi contenido"
-    class="relative w-screen bg-cover bg-center bg-fixed flex items-center justify-start py-12 sm:py-16 px-4 sm:px-6 lg:px-8 mx-[-50vw] left-1/2 right-1/2 
+				title="Pilares de mi contenido"
+				class="relative w-screen bg-cover bg-center bg-fixed flex items-center justify-start py-12 sm:py-16 px-4 sm:px-6 lg:px-8 mx-[-50vw] left-1/2 right-1/2
     h-[80vh] md:h-screen lg:h-screen mb-20"
-    style="background-image: url('https://i.pinimg.com/736x/cb/51/aa/cb51aa75f4c397bc38101266084bf127.jpg');"
->
-    <div class="absolute inset-0 bg-black opacity-30"></div>
-    <div
-        class="relative z-10 p-6 sm:p-8 md:p-10 lg:p-12 bg-white rounded-lg shadow-xl text-gray-900
+				style="background-image: url('https://i.pinimg.com/736x/cb/51/aa/cb51aa75f4c397bc38101266084bf127.jpg');"
+			>
+				<div class="absolute inset-0 bg-black opacity-30"></div>
+				<div
+					class="relative z-10 p-6 sm:p-8 md:p-10 lg:p-12 bg-white rounded-lg shadow-xl text-gray-900
         max-w-[calc(100%-8rem)] sm:max-w-[calc(100%-12rem)] md:max-w-[calc(100%-16rem)] lg:max-w-[calc(100%-20rem)]
         left-0 ml-4 sm:ml-6 md:ml-8 lg:ml-12"
-        style="width: 40vw; min-width: 320px;"
-    >
-        <div class="space-y-4 sm:space-y-6">
-            <h1 class="text-xl md:text-2xl font-bold leading-snug sm:leading-tight text-[#000033]">
-                Construye Tu Marca Personal en la Era digital.
-            </h1>
-            
-            <p class="text-sm sm:text-base md:text-lg leading-relaxed">Mi experiencia es tu guía. Aquí, transformo mi viaje de reinvención en estrategias prácticas y consejos directos sobre Desarrollo Web, Marketing Digital e IA. Descubre cómo desbloquear tu potencial y construir tu futuro online.</p>
+					style="width: 40vw; min-width: 320px;"
+				>
+					<div class="space-y-4 sm:space-y-6">
+						<h1
+							class="text-xl md:text-2xl font-bold leading-snug sm:leading-tight text-[#000033]"
+						>
+							Construye Tu Marca Personal en la Era digital.
+						</h1>
 
-           <a 
-    href="#posts-section" 
-    class="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/30 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden group border-transparent"
->
-    <span class="relative z-10 flex items-center gap-1">
-        👇 Ver Posts
-    </span>
-    <span class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-</a>
-        </div>
-    </div>
-</section>
-			<section  id="posts-section">
-				<ul class="grid grid-cols-1 md:grid-cols-2 gap-8 list-none m-0 p-0">
+						<p
+							class="text-sm sm:text-base md:text-lg leading-relaxed"
+						>
+							Mi experiencia es tu guía. Aquí, transformo mi viaje
+							de reinvención en estrategias prácticas y consejos
+							directos sobre Desarrollo Web, Marketing Digital e
+							IA. Descubre cómo desbloquear tu potencial y
+							construir tu futuro online.
+						</p>
+
+						<a
+							href="#posts-section"
+							class="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/30 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden group border-transparent"
+						>
+							<span class="relative z-10 flex items-center gap-1">
+								👇 Ver Posts
+							</span>
+							<span
+								class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+							></span>
+						</a>
+					</div>
+				</div>
+			</section>
+			<section id="posts-section">
+				<ul
+					class="grid grid-cols-1 md:grid-cols-2 gap-8 list-none m-0 p-0"
+				>
 					{
 						posts.map((post) => (
 							<li class="group">
@@ -75,9 +89,13 @@ const posts = (await getCollection("blog")).sort(
 											class="mb-2 rounded-xl object-cover transition duration-200 ease-in-out group-hover:shadow-lg"
 										/>
 									)}
-									<h4 class="m-0 text-gray-900 leading-tight text-xl font-bold transition duration-200 ease-in-out group-hover:text-accent">{post.data.title}</h4>
+									<h4 class="m-0 text-gray-900 leading-tight text-xl font-bold transition duration-200 ease-in-out group-hover:text-accent">
+										{post.data.title}
+									</h4>
 									<p class="m-0 text-gray-600 transition duration-200 ease-in-out group-hover:text-accent">
-										<FormattedDate date={post.data.pubDate} />
+										<FormattedDate
+											date={post.data.pubDate}
+										/>
 									</p>
 								</a>
 							</li>
