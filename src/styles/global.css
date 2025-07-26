@@ -4,7 +4,7 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 main{
-    background-color: white;
+    background-image: linear-gradient(to bottom, #ffffff, #3b82f6);
     
 }
 
@@ -195,6 +195,3 @@ a.boton:hover::before {
   transform: scale(1);
 }
 
-.bg-section-gradient {
-    background: linear-gradient(to bottom, white 0%, #f0f9ff 100%);
-}

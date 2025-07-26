@@ -26,7 +26,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
         <div class="max-w-7xl mx-auto h-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
             <div class="space-y-4 sm:space-y-6">
-                <h1 class="text-2xl sm:text-4xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+                <h1 class="text-2xl sm:text-4xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 pt-20 sm:pt-0">
                     Soy Luis Reyes
                 </h1>
 
@@ -39,13 +39,32 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                     </b>
                 </p>
 
-                <a href={import.meta.env.BASE_URL + "about/"} class="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-3 sm:px-10 sm:py-4 mt-8 rounded-full text-lg sm:text-xl font-bold transition-all duration-700 hover:shadow-xl hover:shadow-cyan-500/30 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden group">
+                <!-- Botón de Llamado a la Acción (CTA) con efectos visuales -->
+                <a 
+                    href={import.meta.env.BASE_URL + "about/"} 
+                    class="
+                        inline-block  <!-- Se comporta como un bloque pero en línea -->
+                        bg-gradient-to-r from-blue-600 to-cyan-500  <!-- Fondo con degradado inicial -->
+                        text-white  <!-- Color del texto -->
+                        px-8 py-3 sm:px-10 sm:py-4  <!-- Padding (relleno) responsivo -->
+                        mt-8  <!-- Margen superior -->
+                        rounded-full  <!-- Bordes completamente redondeados -->
+                        text-lg sm:text-xl font-bold  <!-- Estilos de fuente responsivos -->
+                        transition-all duration-700  <!-- Transición suave para todos los cambios -->
+                        hover:shadow-xl hover:shadow-cyan-500/30  <!-- Sombra al pasar el cursor -->
+                        transform hover:-translate-y-1 hover:scale-105  <!-- Efecto de levantamiento y escala al pasar el cursor -->
+                        relative overflow-hidden group  <!-- Contenedor relativo, oculta desbordamiento y define un 'group' para los efectos de hover en los hijos -->
+                    ">
+                    <!-- Contenido visible del botón -->
                     <span class="relative z-10 flex items-center gap-2">
+                        <!-- Icono SVG de rayo -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
-                        🚀 Explora Mi Viaje Digital
+                        <!-- Texto del botón -->
+                         Explora Mi Viaje Digital 🚀
                     </span>
+                    <!-- Capa de superposición para el efecto de hover -->
                     <span class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></span>
                 </a>
             </div>
@@ -119,7 +138,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 </section>
 
  <!-- Sección mi camino - Con transiciones más lentas -->
-<section id="mi-viaje" class="px-4 sm:px-6 lg:px-8 py-12 sm:py-20 ">
+<section id="mi-viaje" class="px-4 sm:px-6 lg:px-8  ">
     <div class="max-w-7xl w-full mx-auto flex flex-col items-center text-center gap-8 sm:gap-16">
         <h2 class="text-2xl sm:text-4xl font-bold text-[#000033] bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent px-4 py-2 transition-all duration-1000">
             Mi camino me ha preparado para ayudarte a:

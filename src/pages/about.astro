@@ -7,10 +7,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <!doctype html>
+<!-- Inicia el documento HTML en español -->
 <html lang="es">
     <head>
+        <!-- Sección Head: Metadatos, título y estilos -->
         <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
         <style>
+            /* Estilo para el desplazamiento suave */
             html {
                 scroll-behavior: smooth;
             }
@@ -19,53 +22,55 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <body
         class="overflow-x-hidden flex flex-col min-h-screen font-sans bg-white"
     >
-    <!-- Main Content -->
+        <!-- Contenido principal de la página -->
         <main class="flex-grow bg-white -mt-1">
-        <Header />
+            <Header />
 
-        <!-- Hero Section with Wave -->
-        <div class="relative bg-[#000033] min-h-[30vh] sm:min-h-[45vh] w-full overflow-hidden">
-            <!-- Background pattern -->
-            <div class="absolute inset-0 opacity-10">
+            <!-- Sección Hero: Encabezado principal con fondo oscuro y curva -->
+            <div
+                class="relative bg-[#000033] min-h-[30vh] sm:min-h-[45vh] w-full overflow-hidden"
+            >
+                <!-- Patrón de fondo decorativo -->
+                <div class="absolute inset-0 opacity-10">
+                    <div
+                        class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBzdHJva2U9InJnYmEoMzQsMjExLDIzOCwwLjE1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+')]"
+                    >
+                    </div>
+                </div>
+
+                <!-- Transición de curva hacia el contenido principal -->
                 <div
-                    class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBzdHJva2U9InJnYmEoMzQsMjExLDIzOCwwLjE1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+')]"
+                    class="absolute bottom-0 left-0 w-full h-20 bg-white rounded-t-[100%]"
                 >
                 </div>
-            </div>
 
-            <!-- Wave transition -->
-            <div
-                class="absolute bottom-0 left-0 w-full h-20 bg-white rounded-t-[100%]"
-            >
-            </div>
-
-            <!-- Content -->
-            <div
-                class="relative z-10 max-w-7xl mx-auto h-full flex items-center px-6"
-            >
-                <div class="text-white py-20">
-                    <h1
-                        class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
-                    >
-                        Luis <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500"
-                            >Reyes</span
+                <!-- Contenido del Hero: Título y subtítulo -->
+                <div
+                    class="relative z-10 max-w-7xl mx-auto h-full flex items-center px-6"
+                >
+                    <div class="text-white pt-5 sm:p-20">
+                        <h1
+                            class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
                         >
-                    </h1>
-                    <p
-                        class="text-xl md:text-2xl text-blue-200 italic max-w-2xl"
-                    >
-                        Un visionario en constante evolución y crecimiento
-                    </p>
+                            Luis <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500"
+                                >Reyes</span
+                            >
+                        </h1>
+                        <p
+                            class="text-xl md:text-2xl text-blue-200 italic max-w-2xl"
+                        >
+                            Un visionario en constante evolución y crecimiento
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        
-            <div class="max-w-4xl mx-auto ">
-                <!-- Article container -->
+            <!-- Contenedor principal del artículo -->
+            <div class="max-w-4xl mx-auto">
+                <!-- Contenedor del artículo con estilos de 'prose' para el contenido Markdown -->
                 <article class="prose prose-lg md:prose-xl prose-blue">
-                    <!-- First section -->
+                    <!-- Sección 1: Introducción y orígenes -->
                     <p
                         class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
                     >
@@ -82,6 +87,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                         inesperados y transformadores.
                     </p>
 
+                    <!-- Imagen 1: Luis en la naturaleza -->
                     <figure class="my-10">
                         <img
                             src={import.meta.env.BASE_URL +
@@ -90,9 +96,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                             class="rounded-2xl shadow-xl w-full h-auto max-h-[70vh] object-cover"
                             loading="lazy"
                         />
-                    
                     </figure>
 
+                    <!-- Sección 2: Primer emprendimiento y adversidad -->
                     <p
                         class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
                     >
@@ -107,17 +113,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                         de la noche a la mañana, tres años de arduo trabajo se
                         derrumbaron.
                     </p>
-                    
-                    <!-- Divider -->
+
+                    <!-- Divisor visual entre secciones -->
                     <div class="border-t border-gray-200 my-12"></div>
-                    <!-- Second section -->
+                    <!-- Sección 3: El punto de inflexión y reinvención -->
                     <h2
-                        class="text-3xl md:text-4xl font-bold text-gray-700 mb-6 pb-2 "
+                        class="text-3xl md:text-4xl font-bold text-gray-700 mb-6 pb-2"
                     >
                         Caminos inesperados que forjan el destino correcto.
                     </h2>
-                    
 
+                    <!-- Párrafo sobre la superación y el aprendizaje online -->
                     <p
                         class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
                     >
@@ -138,6 +144,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                         y la Inteligencia Artificial. Hoy, sigo mi aprendizaje
                         con el Análisis de Datos, buscando expandir aún más mi
                         conjunto de herramientas.
+                        <!-- Párrafo de cierre de la sección -->
                     </p>
                     <p
                         class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
@@ -148,16 +155,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                         digital y estoy listo para guiarte en tu propio camino
                         de transformación.
                     </p>
-                    <!-- Divider -->
+                    <!-- Divisor visual entre secciones -->
                     <div class="border-t border-gray-200 my-12"></div>
-                    <!-- Third section -->
+                    <!-- Sección 4: Visión a futuro y propósito del blog -->
                     <h2
-                        class="text-3xl md:text-4xl font-bold text-gray-700 mb-6 pb-2 "
+                        class="text-3xl md:text-4xl font-bold text-gray-700 mb-6 pb-2"
                     >
                         El Próximo Gran Salto: Un Nuevo Capítulo Se Abre.
                     </h2>
-                    
 
+                    <!-- Párrafo sobre el próximo capítulo y la misión del blog -->
                     <p
                         class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
                     >
@@ -172,6 +179,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                         cómo para que tú también puedas desbloquear tu potencial
                         digital.
                     </p>
+
+                    <!-- Imagen 2: Luis en la ciudad -->
                     <figure class="my-10">
                         <img
                             src={import.meta.env.BASE_URL +
@@ -181,11 +190,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                             loading="lazy"
                         />
                         <figcaption class="text-center text-gray-500 mt-2">
-                            Acompañame en este viaje digital. ¡Juntos, construyamos tu propio futuro digital
+                            Acompañame en este viaje digital. ¡Juntos,
+                            construyamos tu propio futuro digital
                         </figcaption>
                     </figure>
 
-                    <!-- CTA Section -->
+                    <!-- Sección de Llamado a la Acción (CTA) -->
                     <div
                         class="bg-[#000033] rounded-3xl p-8 md:p-12 my-16 shadow-lg"
                     >
@@ -196,39 +206,48 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                                 Transforma cada desafío en tu próxima
                                 oportunidad
                             </h2>
-                            <a href={import.meta.env.BASE_URL + "about/"}
-   class="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-3 sm:px-10 sm:py-4 mt-8 rounded-full text-lg sm:text-xl font-bold transition-all duration-700 hover:shadow-xl hover:shadow-cyan-500/30 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden group">
-   
-   <span class="relative z-10 flex items-center justify-center gap-2 text-white">
-      <!-- Icono rayo izquierdo -->
-      <svg xmlns="http://www.w3.org/2000/svg" 
-           class="h-5 w-5 sm:h-6 sm:w-6 text-white" 
-           fill="none" 
-           viewBox="0 0 24 24" 
-           stroke="currentColor">
-         <path stroke-linecap="round" 
-               stroke-linejoin="round" 
-               stroke-width="2" 
-               d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
 
-      Explora Mi Blog
+                            <!-- Botón CTA que enlaza al blog -->
+                            <a
+                                href={import.meta.env.BASE_URL + "blog/"}
+                                class="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-3 sm:px-10 sm:py-4 mt-8 rounded-full text-lg sm:text-xl font-bold transition-all duration-700 hover:shadow-xl hover:shadow-cyan-500/30 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden group">
+                                <span
+                                    class="relative z-10 flex items-center justify-center gap-2 text-white"
+                                >
+                                    <!-- Icono rayo izquierdo -->
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 sm:h-6 sm:w-6 text-white"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z"
+                                        ></path>
+                                    </svg>
 
-      <!-- Icono rayo derecho -->
-      <svg xmlns="http://www.w3.org/2000/svg" 
-           class="h-5 w-5 sm:h-6 sm:w-6 text-white" 
-           fill="none" 
-           viewBox="0 0 24 24" 
-           stroke="currentColor">
-         <path stroke-linecap="round" 
-               stroke-linejoin="round" 
-               stroke-width="2" 
-               d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-   </span>
+                                    Explora Mi Blog
 
-   <span class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></span>
-</a>
+                                    <!-- Icono rayo derecho -->
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 sm:h-6 sm:w-6 text-white"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                </span>
+
+                               <span
+                                    class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></span> </a>
                         </div>
                     </div>
                 </article>
