@@ -17,20 +17,25 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         <main class="flex flex-col gap-16 sm:gap-24">
 
           <!-- Sección 1 - Modernizada -->
-<section title="Mis estrategias" class="min-h-[70vh]">
-    <div class="bg-[#000033] font-sans text-white h-[90vh] px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <!-- Patrón de conexiones tecnológicas (fondo) -->
+<section title="Mis estrategias" class="min-h-[70vh] sm:min-h-[85vh]">
+    <div class="bg-[#000033] font-sans text-white h-auto min-h-[80vh] sm:h-[90vh] px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <!-- Patrón de fondo -->
         <div class="absolute inset-0 opacity-20">
-            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBzdHJva2U9InJnYmEoMzQsMjExLDIzOCwwLjE1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+')]"></div>
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,...')]"></div>
         </div>
 
-        <div class="max-w-7xl mx-auto h-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
-            <div class="space-y-4 sm:space-y-6">
-                <h1 class="text-2xl sm:text-4xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 pt-20 sm:pt-0">
-                    Soy Luis Reyes
+        <div class="max-w-7xl mx-auto h-full flex flex-col md:grid md:grid-cols-2 gap-6 sm:gap-8 relative z-10 py-8 sm:py-0">
+            <!-- Contenido de texto - Siempre arriba en móvil -->
+            <div class="flex flex-col justify-center order-1">
+                <h1 class="text-3xl sm:text-4xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+                    Luis Reyes Digital
                 </h1>
+                
+                <h2 class="text-2xl sm:text-3xl text-white mt-2 mb-4">
+                    Soy Luis Reyes
+                </h2>
 
-                <p class="text-lg sm:text-2xl leading-relaxed font-medium text-gray-200">
+                <p class="text-lg sm:text-xl leading-relaxed font-medium text-gray-200 mb-6">
                     Te enseño a crear tu marca personal. Mi experiencia y 
                     constante evolución son la base de la guía que 
                     te ayudará a construir tu 
@@ -39,49 +44,32 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                     </b>
                 </p>
 
-                <!-- Botón de Llamado a la Acción (CTA) con efectos visuales -->
-                <a 
-                    href={import.meta.env.BASE_URL + "about/"} 
-                    class="
-                        inline-block  <!-- Se comporta como un bloque pero en línea -->
-                        bg-gradient-to-r from-blue-600 to-cyan-500  <!-- Fondo con degradado inicial -->
-                        text-white  <!-- Color del texto -->
-                        px-8 py-3 sm:px-10 sm:py-4  <!-- Padding (relleno) responsivo -->
-                        mt-8  <!-- Margen superior -->
-                        rounded-full  <!-- Bordes completamente redondeados -->
-                        text-lg sm:text-xl font-bold  <!-- Estilos de fuente responsivos -->
-                        transition-all duration-700  <!-- Transición suave para todos los cambios -->
-                        hover:shadow-xl hover:shadow-cyan-500/30  <!-- Sombra al pasar el cursor -->
-                        transform hover:-translate-y-1 hover:scale-105  <!-- Efecto de levantamiento y escala al pasar el cursor -->
-                        relative overflow-hidden group  <!-- Contenedor relativo, oculta desbordamiento y define un 'group' para los efectos de hover en los hijos -->
-                    ">
-                    <!-- Contenido visible del botón -->
-                    <span class="relative z-10 flex items-center gap-2">
-                        <!-- Icono SVG de rayo -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                        <!-- Texto del botón -->
-                         Explora Mi Viaje Digital 🚀
-                    </span>
-                    <!-- Capa de superposición para el efecto de hover -->
-                    <span class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></span>
+                <a href={import.meta.env.BASE_URL + "about/"} 
+                   class="self-start inline-block bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-bold transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30 transform hover:-translate-y-1">
+                   <span class="flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                      Explora Mi Viaje Digital
+                   </span>
                 </a>
             </div>
 
-            <div class="flex justify-center h-full items-center">
+            <!-- Imagen - Abajo en móvil, al lado en desktop -->
+            <div class="flex justify-center items-center order-2 md:order-2 mt-8 sm:mt-0">
                 <img
                     src={import.meta.env.BASE_URL + "/imagenes/luis-7.png"}
                     alt="Luis Reyes - Profesional digital"
-                    class="h-[70vh] object-contain"
+                    class="h-[50vh] sm:h-[70vh] w-auto object-contain"
                     loading="lazy"
                 />
             </div>
         </div>
     </div>
-  <div class="bg-[#000033] h-[10vh] w-full relative overflow-hidden">
-    <div class="absolute bottom-0 left-0 right-0 h-full bg-white rounded-t-[100%]"></div>
-</div>
+    
+    <div class="bg-[#000033] h-[10vh] w-full relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 right-0 h-full bg-white rounded-t-[100%]"></div>
+    </div>
 </section>
 
 <!-- Sección habilidades -->
