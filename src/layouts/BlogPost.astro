@@ -40,6 +40,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			main {
 				max-width: 100%;
 				margin: 0 auto;
+				/* Padding por defecto para pantallas más grandes */
 				padding: 2rem 1rem;
 			}
 
@@ -125,12 +126,24 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}
 
 			@media (max-width: 768px) {
+				main {
+					/* Se elimina todo el padding en móviles para un diseño de ancho completo. */
+					padding: 1em;
+				}
+
+				.article-container {
+					/* Se eliminan los estilos de "tarjeta" en móvil para que el contenido MDX tome el control. */
+					border-radius: 0;
+					box-shadow: none;
+				}
+
 				.article-title {
 					font-size: 1.75rem;
 				}
-				
+
 				.article-content {
-					padding: 1.5rem;
+					/* Se elimina el padding para que el contenido MDX pueda ser de ancho completo. */
+					padding: 0;
 				}
 			}
 		</style>

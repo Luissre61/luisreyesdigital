@@ -48,7 +48,10 @@ b {
 article { /*  O .markdown o .prose, según tu HTML generado */
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 1em 3em; 
+    /* Se elimina el padding horizontal (1em) que entraba en conflicto.
+       Ahora el espaciado lateral se controla exclusivamente con clases de Tailwind,
+       lo que permite diseños de ancho completo en móvil. */
+    padding-bottom: 3em;
 
     a {
         color: var(--accent);
@@ -109,11 +112,15 @@ article { /*  O .markdown o .prose, según tu HTML generado */
         border-top: 1px solid rgb(var(--gray-light));
     }
 }
+/* Media Query para unificar estilos móviles */
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;
 	}
-	
+
+    .social-icons-wrapper {
+        gap: 0.5rem; /* Reduce el espacio entre los iconos en móviles */
+    }
 }
 
 .sr-only {
@@ -142,15 +149,6 @@ article { /*  O .markdown o .prose, según tu HTML generado */
     /* Puedes cambiar el color si tus iconos son monocromáticos o aplicar un filtro */
      filter: brightness(0.8);  /* Oscurece la imagen */
     transform: scale(1.10);  /* Un ligero aumento de tamaño */
-}
-
-
-@media (max-width: 720px) {
-    .social-icons-wrapper {
-        gap: 0.5rem; /* Reduce el espacio entre los iconos en móviles */
-    }
-    /* Ajusta el tamaño de los SVG dentro de los enlaces en el contenedor de iconos */
-    
 }
 
 /*Estilo para los botones*/

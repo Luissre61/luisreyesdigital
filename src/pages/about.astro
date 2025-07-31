@@ -12,18 +12,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <head>
         <!-- Sección Head: Metadatos, título y estilos -->
         <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-        <style>
-            /* Estilo para el desplazamiento suave */
-            html {
-                scroll-behavior: smooth;
-            }
-        </style>
     </head>
     <body
         class="overflow-x-hidden flex flex-col min-h-screen font-sans bg-white"
     >
         <!-- Contenido principal de la página -->
-        <main class="flex-grow bg-white -mt-1">
+        <main class="flex-grow bg-white -mt-1 ">
             <Header />
 
             <!-- Sección Hero: Encabezado principal con fondo oscuro y curva -->
@@ -67,7 +61,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             </div>
 
             <!-- Contenedor principal del artículo -->
-            <div class="max-w-4xl mx-auto">
+            <!--
+              Este contenedor aplica el padding lateral directamente al contenido del artículo.
+              - `px-4`: Padding de 1rem en móvil (equivalente a ~1em).
+              - `md:px-12`: Padding de 3rem en pantallas medianas y grandes (equivalente a ~3em).
+            -->
+            <div class="max-w-4xl mx-auto px-4 md:px-12">
                 <!-- Contenedor del artículo con estilos de 'prose' para el contenido Markdown -->
                 <article class="prose prose-lg md:prose-xl prose-blue">
                     <!-- Sección 1: Introducción y orígenes -->

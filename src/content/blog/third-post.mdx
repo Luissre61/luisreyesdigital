@@ -5,103 +5,421 @@ pubDate: 'Jul 22 2021'
 heroImage: '../../assets/blog-placeholder-2.jpg'
 ---
 
-<section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-  <article class="prose prose-lg md:prose-xl prose-blue">
-    {/* Encabezado con gradiente */}
-    <header class="mb-12">
-      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
-        <span class=" bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-          Te Ahorro Horas: La Base para una Marca Personal de Alto Impacto
+{/*
+  Se ha modificado el padding horizontal para que sea responsive.
+  - `px-0`: Elimina el padding en los laterales en la vista móvil, permitiendo que el contenido ocupe todo el ancho.
+  - `sm:px-4`: Restaura el padding en pantallas más grandes para una mejor legibilidad.
+*/}
+<section class="max-w-4xl mx-auto px-0 sm:px-4 py-8 sm:py-12">
+  <article class="prose prose-sm sm:prose-lg">
+    {/*Encabezado optimizado para móvil*/} 
+    <header class="mb-8">
+      <h1 class="text-2xl sm:text-3xl font-bold leading-tight mb-4">
+        <span class="text-gray-700 bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
+          Te Ahorro Horas: La Base para una Marca Personal de Alto Impacto (¡y por qué la IA ya te está buscando!)
         </span>
-        <span class="block text-[#000033] mt-2">(¡y por qué la IA ya te está buscando!)</span>
       </h1>
-      <p class="text-xl text-gray-700">
-        Te comparto mis inicios y mis bases que seguro te ayudarán a ti, pero ahorrándote horas de lectura. ¡Vamos a ello!
+      <p class="text-base sm:text-lg text-gray-700">
+        Mis bases que te ayudarán ahorrándote horas de lectura. ¡Vamos!
       </p>
     </header>
 
-    {/* Sección 1 */}
-    <div class="bg-white rounded-xl shadow-md p-6 sm:p-8 mb-12 border-l-4 border-blue-500">
-      <h2 class="text-2xl sm:text-3xl font-bold text-[#000033] mb-4">
-        ¿Qué Rayos es Eso de la Marca Personal y por Qué Debería Importarte?
-        <span class="block text-lg text-blue-600">(¡Te lo cuento fácil!)</span>
+     {/*Sección 1 - Stack simple en móvil */}
+    <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 mb-8 border-l-2 sm:border-l-4 border-blue-500">
+      <h2 class="text-xl sm:text-2xl font-bold text-[#000033] mb-3">
+        ¿Qué es la Marca Personal?
+        <span class="block text-sm sm:text-base text-blue-600">(¡Te lo cuento fácil!)</span>
       </h2>
       
-      <p class="text-lg text-gray-700 mb-6">
-        Sé que suena a "cosa de famosos" o "solo para influencers", ¿verdad? ¡Error! La marca personal es mucho más simple y mucho más poderosa de lo que crees.
-      </p>
+      <div class="bg-blue-50 rounded-md p-4 mb-4 border border-blue-100">
+        <p class="text-sm sm:text-base italic text-blue-800">
+          Sé que suena a "cosa de famosos" o "solo para influencers", ¿verdad? ¡Error! La marca personal es mucho más simple y mucho más poderosa de lo que crees.
 
-      <div class="bg-blue-50 rounded-lg p-6 mb-6 border border-blue-100">
-        <p class="text-lg italic text-blue-800">
-          "Tu marca es lo que la gente dice de ti cuando no estás en la sala" - Jeff Bezos
+
         </p>
       </div>
 
-      <p class="text-lg text-gray-700">
-        Imagina esto: tu marca personal es la huella que dejas en la mente de los demás. Es lo que la gente piensa y dice de ti cuando tú no estás en la sala. ¿Te conocen por ser un experto en algo? ¿Por ser confiable? ¿Por ser el que siempre da la milla extra? Esa es tu marca personal.
+      <p class="text-sm sm:text-base text-gray-700">
+        Imagina esto: tu marca personal es la huella que dejas en la mente de los demás. Es lo que la gente piensa y dice de ti cuando tú no estás en la sala. ¿Te conocen por ser un experto en algo? ¿Por ser confiable? ¿Por ser el que siempre da la milla extra? Esa es tu marca personal. Como dice Jeff Bezos, el fundador de Amazon: "Tu marca es lo que la gente dice de ti cuando no estás en la sala".
+      </p>
+       <p class="text-sm sm:text-base text-gray-700">
+        Ahora, si tu marca personal es esa huella, el <b> "Personal Branding"</b> es el arte de esculpir esa huella, de gestionarla para que sea exactamente la que tú quieres dejar. Es tu plan de acción para influir en esa percepción.
+      </p>
+      <p class="text-sm sm:text-base text-gray-700">
+        Tu marca personal ya existe, te guste o no, la trabajes o no. Cada post que compartes, cada comentario, cada interacción en una reunión... todo suma (¡o resta!). El personal branding es tu herramienta para tomar el control y dirigirla hacia donde quieres ir.
       </p>
     </div>
 
-    {/* Sección 2 */}
-    <div class="mb-12">
-      <h2 class="text-2xl sm:text-3xl font-bold text-[#000033] mb-6 pb-2 border-b-2 border-blue-500">
-        Las Diferencias Clave que te Ayudarán a Entenderlo Mejor
+     {/* Sección 2 - Una columna en móvil */}
+    <div class="mb-8">
+      <h2 class="text-xl sm:text-2xl font-bold text-[#000033] mb-4 pb-1 border-b border-blue-300 sm:border-b-2 sm:border-blue-500">
+        Diferencias Clave
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        {/* Tarjeta 1 */}
-        <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-bold text-blue-600 mb-2">Marca Personal</h3>
-          <p class="text-gray-700">Es la percepción estratégica que tú construyes. Piensa en un profesional reconocido por su contenido sobre liderazgo en LinkedIn.</p>
+      <div class="space-y-4 sm:grid sm:grid-cols-2 sm:gap-4 sm:space-y-0">
+         {/* Tarjeta 1 */}
+        <div class="bg-white rounded-lg p-4 border border-gray-100">
+          <h3 class="text-base sm:text-lg font-bold text-blue-600 mb-1">Marca Personal</h3>
+          <p class="text-xs sm:text-sm text-gray-700"> Es la percepción estratégica que tú construyes. Piensa en un profesional reconocido por su contenido sobre liderazgo en LinkedIn.</p>
         </div>
         
-        {/* Tarjeta 2 */}
-        <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-bold text-blue-600 mb-2">Reputación</h3>
-          <p class="text-gray-700">Es lo que otros dicen y piensan de ti basándose en tu historial de acciones. Por ejemplo, un CEO con fama positiva por tratar bien a sus empleados.</p>
+         {/* Tarjeta 2 */}
+        <div class="bg-white rounded-lg p-4 border border-gray-100">
+          <h3 class="text-base sm:text-lg font-bold text-blue-600 mb-1">Reputación</h3>
+          <p class="text-xs sm:text-sm text-gray-700"> Es lo que otros dicen y piensan de ti basándose en tu historial de acciones. Por ejemplo, un CEO con fama positiva por tratar bien a sus empleados.</p>
+        </div>
+
+         {/* Tarjeta 3 */}
+        <div class="bg-white rounded-lg p-4 border border-gray-100">
+          <h3 class="text-base sm:text-lg font-bold text-blue-600 mb-1">Identidad Profesional</h3>
+          <p class="text-xs sm:text-sm text-gray-700">Es cómo te defines en tu carrera. "Soy desarrollador Front-End y creo experiencias web increíbles."</p>
+        </div>
+
+         {/* Tarjeta 4 */}
+        <div class="bg-white rounded-lg p-4 border border-gray-100">
+          <h3 class="text-base sm:text-lg font-bold text-blue-600 mb-1">Influencia</h3>
+          <p class="text-xs sm:text-sm text-gray-700">Tu capacidad de impactar en las decisiones y opiniones de otros. Como Elon Musk con sus tweets.</p>
+        </div>
+         {/* Tarjeta 5 */}
+        <div class="bg-white rounded-lg p-4 border border-gray-100">
+          <h3 class="text-base sm:text-lg font-bold text-blue-600 mb-1">Visibilidad</h3>
+          <p class="text-xs sm:text-sm text-gray-700">Tu nivel de exposición en tu industria. Un abogado con mucha experiencia pero sin presencia online, tiene baja visibilidad.</p>
+        </div>
+      </div>
+    </div>
+    
+    {/* Sección de Importancia - Reestructurada para consistencia */}
+    <div class="mb-8">
+      <h2 class="text-xl sm:text-2xl font-bold text-[#000033] mb-6 pb-1 border-b border-blue-300 sm:border-b-2 sm:border-blue-500">
+        🌍 El mundo cambió: ¿Por qué importa ahora?
+      </h2>
+      <p class="text-sm sm:text-base text-gray-600 italic mb-6">
+        Antes, un buen currículum y experiencia bastaban. Hoy, la historia es diferente. Tu presencia digital es tu nueva carta de presentación, y esto es lo que necesitas saber:
+      </p>
+
+      <div class="space-y-6">
+        {/* Tarjeta 1: Investigación Online */}
+        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-500">
+          <h3 class="font-bold flex items-center gap-2 mb-2 text-base sm:text-lg text-[#000033]">
+            🔍 Te investigan online (¡y la IA también!)
+          </h3>
+          <p class="text-sm sm:text-base text-gray-700 mb-3">
+            Un 70% de las empresas investigan a los candidatos en línea antes de contratar. Y el dato que asusta: ¡el 57% ha descartado a alguien por lo que encontró!
+          </p>
+          <p class="text-sm sm:text-base bg-blue-50 p-3 rounded-md text-blue-800">
+            Ahora imagina que una IA busca al candidato perfecto: si tu huella digital es un desastre o inexistente, simplemente <strong class="font-semibold">no aparecerás en los resultados.</strong>
+          </p>
+        </div>
+
+        {/* Tarjeta 2: Visibilidad */}
+        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-purple-500">
+          <h3 class="font-bold flex items-center gap-2 mb-2 text-base sm:text-lg text-[#000033]">
+            🏆 No se trata de ser el mejor, sino el más visible
+          </h3>
+          <p class="text-sm sm:text-base text-gray-700 mb-2">
+            No necesitas ser el único experto en tu campo. Necesitas ser quien mejor comunica su valor. ¿Conoces a Simon Sinek? No es el único que sabe de liderazgo, pero su "Start With Why" lo hizo el más reconocido. ¿La diferencia? Su marca personal.
+          </p>
+          <p class="text-sm sm:text-base font-bold bg-purple-50 p-3 rounded-md text-purple-800">
+            ✨ Comunicar tu valor es más importante que ser el mejor en secreto.
+          </p>
+        </div>
+
+        {/* Tarjeta 3: Anti-crisis */}
+        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-green-500">
+          <h3 class="font-bold flex items-center gap-2 mb-2 text-base sm:text-lg text-[#000033]">
+            🛡️ Tu blindaje anti-crisis
+          </h3>
+          <p class="text-sm sm:text-base text-gray-700 mb-2">
+            ¿Recuerdas 2008 o 2020? Quienes ya tenían una marca personal fuerte sufrieron menos. ¿Por qué? Tenían una comunidad, contactos y un posicionamiento que los sostuvo cuando el mercado se tambaleó.
+          </p>
+          <p class="text-sm sm:text-base bg-green-50 p-3 rounded-md font-bold text-green-800">
+            ¡Construye tu marca cuando todo va bien, y te salvará cuando las cosas se pongan feas!
+          </p>
         </div>
       </div>
     </div>
 
-    {/* Sección 3 */}
-    <div class="bg-gradient-to-r from-[#000033] to-blue-800 rounded-xl p-8 text-white mb-12">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-4">¿Por qué ya no es opcional? ¡Sencillo!</h2>
-      <p class="text-lg mb-6">El mundo cambió. Antes, un buen currículum y experiencia bastaban. ¡Hoy, no!</p>
+     {/* Sección 3 - Full width en móvil */}
+    <div class="bg-gradient-to-r from-[#000033] to-blue-800 rounded-lg p-4 sm:p-6 text-white mb-8">
+      <h2 class="text-xl sm:text-2xl font-bold mb-3">Tu marca personal es tu superpoder para:</h2>
       
-      <ul class="space-y-4">
+      <ul class="space-y-3">
         <li class="flex items-start">
-          <span class="mr-3 text-2xl">🔍</span>
-          <span><strong>Los reclutadores te Googlean (¡y la IA también!):</strong> Un 70% de las empresas investigan online antes de contratar.</span>
+          <span class="mr-2 text-lg sm:text-xl">🔍</span>
+          <span class="text-xs sm:text-sm"><strong>Conseguir ese trabajo soñado: </strong> Te haces más valioso, más visible para reclutadores y puedes negociar mejor. </span>
         </li>
         <li class="flex items-start">
-          <span class="mr-3 text-2xl">🌟</span>
-          <span><strong>No eres el mejor, eres el más visible:</strong> No necesitas ser el único experto. Necesitas ser el que mejor comunica su valor.</span>
+          <span class="mr-2 text-lg sm:text-xl">🌟</span>
+          <span class="text-xs sm:text-sm"><strong>Lanzar ese emprendimiento que te quita el sueño:</strong> Atrae clientes de alto valor, te diferencias de la competencia y te conviertes en un referente.</span>
         </li>
       </ul>
     </div>
 
-    {/* Sección 4 */}
-    <div class="mb-12">
-      <h2 class="text-2xl sm:text-3xl font-bold text-[#000033] mb-6">¡Manos a la Obra! Ejercicios Prácticos</h2>
-      
-      <div class="bg-yellow-50 rounded-xl p-6 border-l-4 border-yellow-400 mb-8">
-        <h3 class="text-xl font-bold text-[#000033] mb-3">Ejercicio 1: Tu Auditoría Express Digital</h3>
-        <p class="text-gray-700 mb-4">Descubre qué imagen proyectas con estos pasos:</p>
+    {/* Sección 4 -*/}
+    <div class="mb-8">
+  <h2 class="text-xl sm:text-2xl font-bold text-[#000033] mb-6 pb-1 border-b border-blue-300 sm:border-b-2 sm:border-blue-500">
+    La Fórmula Secreta de una Marca Personal de Alto Impacto (¡Para que la IA y la gente te amen!)
+  </h2>
+  
+  <p class="text-sm sm:text-base text-gray-600 italic mb-6">
+    Olvídate de solo "estar presente". En la era de la información instantánea y la IA, ser visible ya no es suficiente. El verdadero éxito radica en ser inolvidable, en influir y generar un cambio, dejando una huella más allá de lo profesional.
+    <br /><br />
+    ¿Cómo logramos eso? Aquí te va la base que aprendí y aplico:
+  </p>
+
+  <div class="space-y-6">
+    {/* Sección: ¿Qué es Marca Personal? -> Se reinterpreta como "De la Presencia a la Influencia" */}
+    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-500">
+      <h3 class="font-bold flex items-center gap-2 mb-2 text-base sm:text-lg text-[#000033]">
+        💡 De la Presencia a la Influencia
+      </h3>
+      <p class="text-sm sm:text-base text-gray-700 mb-3">
+        No solo publiques; crea contenido que resuene, que genere acción, que deje a la gente pensando: "¡Exacto, eso es lo que necesitaba!".
+      </p>
+    </div>
+
+    {/* Sección: Diferencias Clave -> Se reinterpreta como "Autenticidad Extrema" */}
+    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-purple-500">
+      <h3 class="font-bold flex items-center gap-2 mb-2 text-base sm:text-lg text-[#000033]">
+        🔍 Autenticidad Extrema (¡Sé tú y punto!)
+      </h3>
+      <ul class="text-sm sm:text-base text-gray-700 space-y-2">
+        <li>Este es mi lema. Muestra tu vulnerabilidad, tu verdad.</li>
+        <li>Conecta todas tus facetas (¡sí, esa de los paisajes de Mérida también!).</li>
+        <li>La gente quiere conectar con humanos reales, no con robots perfectos.</li>
+      </ul>
+    </div>
+
+    {/* Sección: Por qué importa ahora -> Se reinterpreta como "De la Visibilidad a la Comunidad" */}
+    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-red-500">
+      <h3 class="font-bold flex items-center gap-2 mb-2 text-base sm:text-lg text-[#000033]">
+        ⚡ De la Visibilidad a la Comunidad
+      </h3>
+      {/* Eliminamos el grid de porcentajes ya que el nuevo contenido es más narrativo aquí */}
+      <p class="text-sm sm:text-base text-gray-700">
+        No busques seguidores; busca construir una tribu. Genera valor real, responde, interactúa. Las relaciones son la moneda de oro del mundo digital.
+      </p>
+    </div>
+
+
+{/* cuadro de carateristicas */}
+
+  <div class="max-w-4xl mx-auto mb-12 px-4 sm:px-6">
+  {/* Título y descripción */}
+  <div class="mb-6">
+    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#000033] mb-2 pb-2 border-b-2 border-blue-300">
+      Antes de comenzar: ¿Emprender o conseguir empleo?
+    </h2>
+    <p class="text-xs sm:text-sm text-gray-600">
+      Esta guía te ayudará a diferenciar si tu marca personal va dirigida a emprender o a conseguir tu puesto de trabajo soñado
+    </p>
+  </div>
+
+  {/* Tabla comparativa - Contenedor con scroll horizontal para móviles */}
+  <div class="overflow-x-auto shadow-sm rounded-lg mb-4">
+    <table class="w-full bg-white min-w-[600px]">
+      {/* Encabezado de tabla */}
+      <thead>
+        <tr class="bg-blue-600 text-white">
+          <th class="text-left py-3 px-3 sm:px-4 font-bold text-sm sm:text-base">Característica</th>
+          <th class="text-left py-3 px-3 sm:px-4 font-bold text-sm sm:text-base">Emprendedor</th>
+          <th class="text-left py-3 px-3 sm:px-4 font-bold text-sm sm:text-base">Profesional</th>
+        </tr>
+      </thead>
+
+      {/* Cuerpo de tabla */}
+      <tbody class="divide-y divide-gray-200">
+        {/* Fila Propósito */}
+        <tr>
+          <td class="py-3 px-3 sm:px-4 font-semibold bg-gray-50 text-xs sm:text-sm">Propósito</td>
+          <td class="py-3 px-3 sm:px-4 text-xs sm:text-sm">
+            <div class="flex items-start">
+              <span class="mr-1 mt-0.5">🚀</span>
+              <span>Generar confianza, atraer clientes, ser referente</span>
+            </div>
+          </td>
+          <td class="py-3 px-3 sm:px-4 text-xs sm:text-sm">
+            <div class="flex items-start">
+              <span class="mr-1 mt-0.5">💼</span>
+              <span>Destacar en tu empresa, crecer profesionalmente</span>
+            </div>
+          </td>
+        </tr>
         
-        <ol class="list-decimal pl-5 space-y-3">
-          <li class="text-gray-700"><strong>Googlea tu nombre</strong> en modo incógnito</li>
-          <li class="text-gray-700">Evalúa tu LinkedIn con el <strong>SSI (Social Selling Index)</strong></li>
-          <li class="text-gray-700">Revisa tus <strong>redes sociales</strong></li>
+        {/* Fila Audiencia */}
+        <tr>
+          <td class="py-3 px-3 sm:px-4 font-semibold bg-gray-50 text-xs sm:text-sm">Audiencia</td>
+          <td class="py-3 px-3 sm:px-4 text-xs sm:text-sm">
+            <div class="flex items-start">
+              <span class="mr-1 mt-0.5">👥</span>
+              <span>Clientes, inversores, aliados</span>
+            </div>
+          </td>
+          <td class="py-3 px-3 sm:px-4 text-xs sm:text-sm">
+            <div class="flex items-start">
+              <span class="mr-1 mt-0.5">🏢</span>
+              <span>Empleador, líderes, reclutadores</span>
+            </div>
+          </td>
+        </tr>
+        
+        {/* Fila Mensaje */}
+        <tr>
+          <td class="py-3 px-3 sm:px-4 font-semibold bg-gray-50 text-xs sm:text-sm">Mensaje</td>
+          <td class="py-3 px-3 sm:px-4 text-xs sm:text-sm">
+            <div class="flex items-start">
+              <span class="mr-1 mt-0.5">📢</span>
+              <span>Autoridad, innovación, soluciones</span>
+            </div>
+          </td>
+          <td class="py-3 px-3 sm:px-4 text-xs sm:text-sm">
+            <div class="flex items-start">
+              <span class="mr-1 mt-0.5">🗣️</span>
+              <span>Habilidades, resultados, valor</span>
+            </div>
+          </td>
+        </tr>
+        
+        {/* Fila Contenido */}
+        <tr>
+          <td class="py-3 px-3 sm:px-4 font-semibold bg-gray-50 text-xs sm:text-sm">Contenido</td>
+          <td class="py-3 px-3 sm:px-4 text-xs sm:text-sm">
+            <div class="flex items-start">
+              <span class="mr-1 mt-0.5">📈</span>
+              <span>Agresivo (RRSS, blog). Tono comercial</span>
+            </div>
+          </td>
+          <td class="py-3 px-3 sm:px-4 text-xs sm:text-sm">
+            <div class="flex items-start">
+              <span class="mr-1 mt-0.5">🔍</span>
+              <span>Conocimientos, networking</span>
+            </div>
+          </td>
+        </tr>
+        
+        {/* Fila Riesgo */}
+        <tr>
+          <td class="py-3 px-3 sm:px-4 font-semibold bg-gray-50 text-xs sm:text-sm">Riesgo</td>
+          <td class="py-3 px-3 sm:px-4 text-xs sm:text-sm">
+            <div class="flex items-start">
+              <span class="mr-1 mt-0.5">⚠️</span>
+              <span>Mayor exposición, reputación</span>
+            </div>
+          </td>
+          <td class="py-3 px-3 sm:px-4 text-xs sm:text-sm">
+            <div class="flex items-start">
+              <span class="mr-1 mt-0.5">⚖️</span>
+              <span>Equilibrar con imagen empresarial</span>
+            </div>
+          </td>
+        </tr>
+        
+        {/* Fila Adaptabilidad */}
+        <tr>
+          <td class="py-3 px-3 sm:px-4 font-semibold bg-gray-50 text-xs sm:text-sm">Adaptabilidad</td>
+          <td class="py-3 px-3 sm:px-4 text-xs sm:text-sm">
+            <div class="flex items-start">
+              <span class="mr-1 mt-0.5">🔄</span>
+              <span>Evoluciona con tu negocio</span>
+            </div>
+          </td>
+          <td class="py-3 px-3 sm:px-4 text-xs sm:text-sm">
+            <div class="flex items-start">
+              <span class="mr-1 mt-0.5">📈</span>
+              <span>Crecimiento en la empresa</span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  {/* Nota final */}
+  <div class="text-center text-xs sm:text-sm text-gray-500 bg-blue-50 p-3 rounded-lg">
+    <p class="flex items-center justify-center">
+      <span class="mr-2">💡</span>
+      Selecciona el enfoque que mejor se adapte a tus objetivos profesionales
+    </p>
+  </div>
+</div>
+
+{/* llamado a la accion*/}
+<div class="bg-blue-50 rounded-lg p-6 border-l-4 border-blue-500 mb-6 text-center">
+  <h3 class="font-bold text-xl sm:text-2xl text-[#000033] mb-3">
+    🚀 ¿Listo para potenciar tu marca personal?
+  </h3>
+  
+  <p class="text-sm sm:text-base text-gray-700 mb-5">
+    Ahora que conoces qué es la marca personal, su importancia en la actualidad y los errores más comunes, <span class="font-bold text-blue-600">es hora de pasar a la acción</span>. Mis otros posts te guiarán paso a paso para construir una marca personal sólida y auténtica.
+  </p>
+  
+  <div class="flex flex-col sm:flex-row justify-center gap-4">
+    <a href="#" class="bg-white hover:bg-gray-100 text-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+      Ver más artículos
+    </a>
+    <a href="#" class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-6 rounded-lg border border-blue-300 shadow-sm transition duration-300">
+      Suscríbete
+    </a>
+  </div>
+  
+  <p class="text-xs text-gray-500 mt-4 italic">
+    Únete a +5,000 profesionales que ya están construyendo su marca personal
+  </p>
+</div>
+
+
+
+    <h1> Esto es para la segunda parte </h1>
+
+
+    {/* Sección: Errores a evitar (Lista) - Usamos la estructura de 5 errores */}
+  <p class="text-base sm:text-lg text-gray-700">
+        ¡Cuidado con estos Errores! Al construir una marca personal no es publicar por publicar. Es estrategia, hay trampas que te pueden costar un montón de tiempo y energía. ¡Te muestro algunas para que no caigas en ellas!
+      </p>
+    
+    <div class="bg-yellow-50 p-4 rounded-lg shadow-sm border-l-4  border-yellow-400 ">
+      <ol class="text-sm sm:text-base text-gray-700 space-y-2 list-decimal pl-5">
+        <li>
+          <span class="font-bold">Ser un "Todólogo" sin Rumbo (Falta de Claridad en el Posicionamiento):</span> Querer hablar de todo y para todos es el camino más rápido a la confusión. Sé multidimensional (como yo, que pasé del campo a la destilería y ahora al digital), pero encuentra el hilo conductor. No se trata de hablar de todo, sino de cómo tu experiencia aporta valor a un tema central.
+        </li>
+        <li>
+          <span class="font-bold">El Fantasma Digital (No Comunicar con Consistencia):</span> Publicar cuando te acuerdas o solo cuando necesitas algo no es construir marca, es improvisar. La constancia en tu mensaje y presencia genera confianza. ¡Aparece!
+        </li>
+        <li>
+          <span class="font-bold">El Clon (Copiar a Otros sin Autenticidad):</span> Inspirarse es genial. Calcar a otros sin aportar tu propia voz es un boleto directo a la irrelevancia. ¡Tu audiencia detecta la falta de originalidad a kilómetros! Sé Luis Reyes Digital.
+        </li>
+        <li>
+          <span class="font-bold">Tu Google está Vacío (No Trabajar la Reputación Digital):</span> Si al buscar tu nombre en Google no aparece nada relevante o, peor, algo que te perjudique, ¡tienes un problema gordo! La IA no te podrá recomendar si no hay nada que encontrar.
+        </li>
+        <li>
+          <span class="font-bold">El Ermitaño Digital (Descuidar tu Red de Contactos):</span> Nadie construye una marca solo. Comparte contenido, sí, pero también relaciónate, colabora, haz networking. ¡La gente es clave!
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+     {/* Ejercicios - Simplificado para móvil */}
+    <div class="mb-8">
+      <h2 class="text-xl sm:text-2xl font-bold text-[#000033] mb-4">Ejercicios Prácticos *esto es para la segunda parte*</h2>
+      
+      <div class="bg-yellow-50 rounded-lg p-4 border-l-2 border-yellow-400 mb-6">
+        <h3 class="text-base sm:text-lg font-bold text-[#000033] mb-2">Auditoría Express Digital</h3>
+        
+        <ol class="list-decimal pl-4 space-y-2 text-xs sm:text-sm">
+          <li><strong>Googlea tu nombre</strong> en incógnito</li>
+          <li>Revisa tu <strong>LinkedIn</strong></li>
+          <li>Evalúa tus <strong>redes sociales</strong></li>
         </ol>
       </div>
     </div>
 
-    {/* CTA */}
-    <div class="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl p-8 text-center text-white shadow-lg">
-      <h3 class="text-xl sm:text-2xl font-bold mb-4">¿Listo para construir tu marca personal?</h3>
-      <a href="#posts-section" class="inline-flex items-center bg-white text-blue-600 px-8 py-3 rounded-full text-lg font-bold hover:bg-blue-50 transition-colors">
+     {/*CTA móvil optimizado - con botón destacado*/}
+    <div class="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg p-4 sm:p-6 text-center text-white">
+      <h3 class="text-base sm:text-xl font-bold mb-3">¿Listo para comenzar?</h3>
+      <a href="#posts-section" class="inline-flex items-center bg-white text-blue-600 px-4 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base font-bold">
         <span>Ver más posts</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>
       </a>
