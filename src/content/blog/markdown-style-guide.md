@@ -1,11 +1,11 @@
 ---
-title: 'hola'
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
+title: 'Guía de Estilo de Markdown'
+description: 'Ejemplos de la sintaxis básica de Markdown que se puede utilizar al escribir contenido en Astro. Un recurso útil para formatear tus posts.'
 pubDate: 'Jun 19 2024'
 heroImage: '../../assets/blog-placeholder-1.jpg'
 ---
 
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+Aquí tienes una muestra de la sintaxis básica de Markdown que puedes usar al escribir contenido en Astro.
 
 ## Headings
 

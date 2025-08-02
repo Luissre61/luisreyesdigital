@@ -176,3 +176,23 @@ a.boton::before {
 a.boton:hover::before {
   transform: scale(1);
 }
+
+/* Estilo para los los posts */
+
+/* Estilos mínimos para el componente */
+#personal-brand-post .pl-13 {
+  padding-left: 3.25rem;
+}
+
+/* Responsive para móviles */
+@media (max-width: 640px) {
+  #personal-brand-post .pl-13 {
+    padding-left: 0;
+    margin-top: 0.5rem;
+  }
+  
+  #personal-brand-post .text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
