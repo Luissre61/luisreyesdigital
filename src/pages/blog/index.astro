@@ -6,6 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import { Image } from "astro:assets";
+import GradientButton from '@/components/GradientButton.astro';
 
 
 const posts = (await getCollection("blog")).sort(
@@ -55,18 +56,13 @@ const posts = (await getCollection("blog")).sort(
 							IA. Descubre cómo desbloquear tu potencial y
 							construir tu futuro online.
 						</p>
-
-						<a
-							href="#posts-section"
-							class="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/30 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden group border-transparent"
-						>
-							<span class="relative z-10 flex items-center gap-1">
-								👇 Ver Posts
-							</span>
-							<span
-								class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-							></span>
-						</a>
+						<GradientButton 
+                     text="Ver Posts"
+                     href="#posts-section"
+                     leftIcon="⚡️"
+                     rightIcon="👇 "
+                    />
+						
 					</div>
 				</div>
 			</section>

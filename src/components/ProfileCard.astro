@@ -1,0 +1,34 @@
+---
+// src/components/ProfileCard.astro
+export interface Props {
+  title: string;
+  emoji?: string;
+  bgColor?: string;
+  borderColor?: string;
+  circleColor?: string;
+  textColor?: string;
+}
+
+const {
+  title = "Título",
+  emoji = "💼",
+  bgColor = "bg-blue-50",
+  borderColor = "border-blue-100",
+  circleColor = "bg-blue-100 text-blue-600",
+  textColor = "text-blue-600"
+} = Astro.props;
+---
+
+<div class={`rounded-md p-4 mb-4 border ${bgColor} ${borderColor}`}>
+  <div class="flex items-center mb-2">
+    <div class={`w-8 h-8 rounded-full flex items-center justify-center mr-3 ${circleColor}`}>
+      <span>{emoji}</span>
+    </div>
+    <h3 class={`text-base sm:text-lg font-bold ${textColor}`}>
+      {title}
+    </h3>
+  </div>
+  <p class="text-sm sm:text-base text-gray-700">
+    <slot />
+  </p>
+</div>

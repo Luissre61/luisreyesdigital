@@ -1,8 +1,8 @@
 ---
 title: 'Guía de Estilo de Markdown'
 description: 'Ejemplos de la sintaxis básica de Markdown que se puede utilizar al escribir contenido en Astro. Un recurso útil para formatear tus posts.'
-pubDate: 'Jun 19 2024'
-heroImage: '../../assets/blog-placeholder-1.jpg'
+pubDate: '2024-06-19'
+heroImage: '@/assets/blog-placeholder-1.jpg'
 ---
 
 Aquí tienes una muestra de la sintaxis básica de Markdown que puedes usar al escribir contenido en Astro.
@@ -39,7 +39,7 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 
 ### Output
 
-![blog placeholder](../../assets/blog-placeholder-about.jpg)
+![blog placeholder](@/assets/blog-placeholder-about.jpg)
 
 ## Blockquotes
 

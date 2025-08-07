@@ -52,11 +52,12 @@ article { /*  O .markdown o .prose, según tu HTML generado */
        Ahora el espaciado lateral se controla exclusivamente con clases de Tailwind,
        lo que permite diseños de ancho completo en móvil. */
     padding-bottom: 3em;
-
-    a {
+ 
+    /* Aplica color solo a enlaces dentro de párrafos y listas */
+    p a, li a {
         color: var(--accent);
     }
-    a:hover {
+    p a:hover, li a:hover {
         color: var(--accent);
     }
 

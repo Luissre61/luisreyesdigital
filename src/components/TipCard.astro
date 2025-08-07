@@ -1,0 +1,23 @@
+---
+// src/components/TipCard.astro
+export interface Props {
+  title: string;
+  icon?: string;
+  borderColor?: string;
+}
+
+const { 
+  title, 
+  icon = '💡', 
+  borderColor = 'border-blue-500' 
+} = Astro.props;
+---
+
+<div class={`bg-white p-4 rounded-lg shadow-sm border-l-4 ${borderColor}`}>
+  <h3 class="font-bold flex items-center gap-2 mb-2 text-base sm:text-lg text-[#000033]">
+    {icon} {title}
+  </h3>
+  <p class="text-sm sm:text-base text-gray-700">
+    <slot />
+  </p>
+</div>

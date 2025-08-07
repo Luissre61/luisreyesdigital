@@ -1,8 +1,8 @@
 ---
 title: '5 Ejemplos de Marca Personal Exitosa que Debes Estudiar'
 description: 'Analizamos 5 ejemplos de marcas personales que han triunfado. Aprende de sus estrategias para inspirar y potenciar tu propio camino.'
-pubDate: 'Jul 08 2024'
-heroImage: '../../assets/blog-placeholder-3.jpg'
+pubDate: '2024-07-08'
+heroImage: '@/assets/blog-placeholder-3.jpg'
 ---
 
 ## Introducción

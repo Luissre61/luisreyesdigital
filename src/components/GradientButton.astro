@@ -1,0 +1,100 @@
+---
+// src/components/GradientButton.astro
+export interface Props {
+  text: string;
+  href: string;
+  leftIcon?: string;
+  rightIcon?: string;
+  gradientFrom?: string;
+  gradientTo?: string;
+  hoverFrom?: string;
+  hoverTo?: string;
+  shadowColor?: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const {
+  text = "Call to Action",
+  href = "#",
+  leftIcon = "",
+  rightIcon = "",
+  gradientFrom = "from-blue-600",
+  gradientTo = "to-cyan-500",
+  hoverFrom = "from-cyan-500",
+  hoverTo = "to-blue-600",
+  shadowColor = "shadow-cyan-500/30",
+  size = "md"
+} = Astro.props;
+
+// Tamaños predefinidos
+const sizeClasses = {
+  sm: "px-4 py-1.5 text-sm",
+  md: "px-6 py-2 sm:px-8 sm:py-3 text-sm sm:text-lg",
+  lg: "px-8 py-3 sm:px-10 sm:py-4 text-lg sm:text-xl"
+};
+
+// Determinar si es un enlace interno (hash)
+const isInternalLink = href.startsWith('#');
+
+// Manejar URL correctamente
+const fullHref = isInternalLink ? href : (
+  href.startsWith('http') ? href : 
+  `${import.meta.env.BASE_URL || '/'}${href.replace(/^\//, '')}`
+);
+---
+
+{isInternalLink ? (
+  <button
+    onclick={`document.querySelector('${href}').scrollIntoView({ behavior: 'smooth' })`}
+    class={`
+      self-start inline-block 
+      bg-gradient-to-r ${gradientFrom} ${gradientTo} 
+      text-white 
+      ${sizeClasses[size]}
+      rounded-full 
+      font-semibold 
+      transition-all duration-300 
+      hover:shadow-lg hover:${shadowColor} 
+      transform hover:-translate-y-1
+      relative overflow-hidden 
+      group border-transparent
+      cursor-pointer
+    `}
+  >
+    <span class="relative z-10 flex items-center gap-2">
+      {leftIcon && <span>{leftIcon}</span>}
+      {text}
+      {rightIcon && <span>{rightIcon}</span>}
+    </span>
+    <span 
+      class={`absolute inset-0 bg-gradient-to-r ${hoverFrom} ${hoverTo} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+    ></span>
+  </button>
+) : (
+  <a
+    href={fullHref}
+    class={`
+      self-start inline-block 
+      bg-gradient-to-r ${gradientFrom} ${gradientTo} 
+      text-white 
+      ${sizeClasses[size]}
+      rounded-full 
+      font-semibold 
+      transition-all duration-300 
+      hover:shadow-lg hover:${shadowColor} 
+      transform hover:-translate-y-1
+      relative overflow-hidden 
+      group border-transparent
+    `}
+    rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+  >
+    <span class="relative z-10 flex items-center gap-2">
+      {leftIcon && <span>{leftIcon}</span>}
+      {text}
+      {rightIcon && <span>{rightIcon}</span>}
+    </span>
+    <span 
+      class={`absolute inset-0 bg-gradient-to-r ${hoverFrom} ${hoverTo} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+    ></span>
+  </a>
+)}

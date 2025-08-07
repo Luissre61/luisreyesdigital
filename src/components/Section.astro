@@ -1,0 +1,29 @@
+---
+// src/components/Section.astro
+export interface Props {
+  title: string;
+  subtitle: string;
+  sectionNumber?: number;
+  subtitleColor?: string;
+}
+
+const {
+  title,
+  subtitle,
+  sectionNumber = 0,
+  subtitleColor = "text-blue-600"
+} = Astro.props;
+---
+
+<div class="bg-white p-4 sm:p-6 ">
+  <h2 class="text-xl sm:text-2xl font-bold text-[#000033] mb-4">
+    {sectionNumber > 0 && `${sectionNumber}. `}{title}
+    <span class={`block text-sm sm:text-base ${subtitleColor}`}>
+      {subtitle}
+    </span>
+  </h2>
+  
+  <div class="space-y-6">
+    <slot />
+  </div>
+</div>
