@@ -3,7 +3,6 @@
     License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md */
 main{
     background-color: white;
-    
 }
 
 @import "tailwindcss";
@@ -44,75 +43,7 @@ b {
 	font-weight: 700;
 }
 
-/* Estilos específicos para Markdown */
-article { /*  O .markdown o .prose, según tu HTML generado */
-    max-width: 100%;
-    margin: 0 auto;
-    /* Se elimina el padding horizontal (1em) que entraba en conflicto.
-       Ahora el espaciado lateral se controla exclusivamente con clases de Tailwind,
-       lo que permite diseños de ancho completo en móvil. */
-    padding-bottom: 3em;
- 
-    /* Aplica color solo a enlaces dentro de párrafos y listas */
-    p a, li a {
-        color: var(--accent);
-    }
-    p a:hover, li a:hover {
-        color: var(--accent);
-    }
 
-    p {
-        margin-bottom: 1em;
-    }
-
-    .prose p {
-        margin-bottom: 2em;
-    }
-
-    textarea {
-        width: 100%;
-        font-size: 16px;
-    }
-    input {
-        font-size: 16px;
-    }
-
-    table {
-        width: 100%;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-    }
-
-    code {
-        padding: 2px 5px;
-        background-color: rgb(var(--gray-light));
-        border-radius: 2px;
-    }
-
-    pre {
-        padding: 1.5em;
-        border-radius: 8px;
-        overflow-x: auto;
-    }
-    pre > code {
-        all: unset;
-    }
-
-    blockquote {
-        border-left: 4px solid var(--accent);
-        padding: 0 0 0 20px;
-        margin: 0px;
-        font-size: 1.333em;
-    }
-    hr {
-        border: none;
-        border-top: 1px solid rgb(var(--gray-light));
-    }
-}
 /* Media Query para unificar estilos móviles */
 @media (max-width: 720px) {
 	body {
@@ -176,24 +107,4 @@ a.boton::before {
 
 a.boton:hover::before {
   transform: scale(1);
-}
-
-/* Estilo para los los posts */
-
-/* Estilos mínimos para el componente */
-#personal-brand-post .pl-13 {
-  padding-left: 3.25rem;
-}
-
-/* Responsive para móviles */
-@media (max-width: 640px) {
-  #personal-brand-post .pl-13 {
-    padding-left: 0;
-    margin-top: 0.5rem;
-  }
-  
-  #personal-brand-post .text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
 }

@@ -1,8 +1,8 @@
 ---
-title: 'Te enseño las Base para una Marca Personal de Alto Impacto (¡y por qué es tan importante hoy en día!)'
+title: 'prueba'
 description: 'Mis bases te ayudarán a construir una marca personal sólida, ahorrándote horas de lectura y confusión.'
-pubDate: '2021-07-22'
-heroImage: '@/assets/blog-placeholder-2.jpg'
+pubDate: '2021-07-24'
+heroImage: '@/assets/blog-placeholder-4.jpg' 
 ---
 import TipCard from '@/components/TipCard.astro';
 import Section from '@/components/Section.astro';
@@ -11,104 +11,155 @@ import ProfileCard from '@/components/ProfileCard.astro';
 
 
      {/*Sección 1 - Stack simple en móvil */}
-     <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 mb-8 border-l-2 sm:border-l-4 border-blue-500">
-      <h2 class="text-xl sm:text-2xl font-bold text-[#000033] mb-3">
-        ¿Qué es la Marca Personal?
-        <span class="block text-sm sm:text-base text-blue-600">(¡Te lo cuento fácil!)</span>
-      </h2>
-      
-      <div class="bg-blue-50 rounded-md p-4 mb-4 border border-blue-100">
-        <p class="text-sm sm:text-base italic text-blue-800">
-          Sé que suena a "cosa de famosos" o "solo para influencers", ¿verdad? ¡Error! La marca personal es mucho más simple y mucho más poderosa de lo que crees.
-        </p>
-      </div>
+   <Section 
+  title="¿Qué es la Marca Personal?" 
+  subtitle="(¡Te lo cuento fácil!)"
+  sectionNumber={1}
+>
+  <TipCard 
+    title="" 
+    icon="💡" 
+    borderColor="border-transparent"
+  >
+    
+    
+    <p class="mb-4">
+      Imagina esto: tu marca personal es la huella que dejas en la mente de los demás. Es lo que la gente piensa y dice de ti cuando tú no estás en la sala. ¿Te conocen por ser un experto en algo? ¿Por ser confiable? ¿Por ser el que siempre da la milla extra? Esa es tu marca personal. Como dice Jeff Bezos, el fundador de Amazon: "Tu marca es lo que la gente dice de ti cuando no estás en la sala".
+    </p>
+    
+    
+    <p class="mb-4">
+      Ahora, si tu marca personal es esa huella, el <b>"Personal Branding"</b> es el arte de esculpir esa huella, de gestionarla para que sea exactamente la que tú quieres dejar. Es tu plan de acción para influir en esa percepción.
+    </p>
+    
+    <p>
+      Tu marca personal ya existe, te guste o no, la trabajes o no. Cada post que compartes, cada comentario, cada interacción en una reunión... todo suma (¡o resta!). El personal branding es tu herramienta para tomar el control y dirigirla hacia donde quieres ir.
+    </p>
+  </TipCard>
 
-      <p class="text-sm sm:text-base text-gray-700">
-        Imagina esto: tu marca personal es la huella que dejas en la mente de los demás. Es lo que la gente piensa y dice de ti cuando tú no estás en la sala. ¿Te conocen por ser un experto en algo? ¿Por ser confiable? ¿Por ser el que siempre da la milla extra? Esa es tu marca personal. Como dice Jeff Bezos, el fundador de Amazon: "Tu marca es lo que la gente dice de ti cuando no estás en la sala".
-      </p>
-      <p class="text-sm sm:text-base text-gray-700">
-        Ahora, si tu marca personal es esa huella, el <b> "Personal Branding"</b> es el arte de esculpir esa huella, de gestionarla para que sea exactamente la que tú quieres dejar. Es tu plan de acción para influir en esa percepción.
-      </p>
-      <p class="text-sm sm:text-base text-gray-700">
-        Tu marca personal ya existe, te guste o no, la trabajes o no. Cada post que compartes, cada comentario, cada interacción en una reunión... todo suma (¡o resta!). El personal branding es tu herramienta para tomar el control y dirigirla hacia donde quieres ir.
-      </p>
-     </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+    <ProfileCard 
+      title="Marca Personal" 
+      emoji="🎯"
+      bgColor="bg-purple-50"
+      borderColor="border border-purple-100"
+      circleColor="bg-white text-purple-600"
+      textColor="text-purple-600"
+    >
+      La huella que dejas en los demás cuando no estás presente
+    </ProfileCard>
+    
+    <ProfileCard 
+      title="Personal Branding" 
+      emoji="🛠️"
+      bgColor="bg-blue-50"
+      borderColor="border border-blue-100"
+      circleColor="bg-white text-blue-600"
+      textColor="text-blue-600"
+    >
+      El proceso activo de gestionar y moldear tu marca personal
+    </ProfileCard>
+  </div>
+</Section>
 
      {/* Sección 2 - Una columna en móvil */}
-     <div class="mb-8">
-      <h2 class="text-xl sm:text-2xl font-bold text-[#000033] mb-4 pb-1 border-b border-blue-300 sm:border-b-2 sm:border-blue-500">
-        Diferencias Claves
-      </h2>
+     <Section 
+  title="Diferencias Claves" 
+  subtitle=""
+  sectionNumber={2}
+>
+  <div class="space-y-4 sm:grid sm:grid-cols-2 sm:gap-4 sm:space-y-0">
+    <ProfileCard 
+      title="Marca Personal" 
+      emoji="🎯"
+      bgColor="bg-white"
+      borderColor="border border-gray-100"
+      circleColor="bg-blue-100 text-blue-600"
+      textColor="text-blue-600"
+    >
+      Es la percepción estratégica que tú construyes. Piensa en un profesional reconocido por su contenido sobre liderazgo en LinkedIn.
+    </ProfileCard>
+    
+    <ProfileCard 
+      title="Reputación" 
+      emoji="⭐"
+      bgColor="bg-white"
+      borderColor="border border-gray-100"
+      circleColor="bg-blue-100 text-blue-600"
+      textColor="text-blue-600"
+    >
+      Es lo que otros dicen y piensan de ti basándose en tu historial de acciones. Por ejemplo, un CEO con fama positiva por tratar bien a sus empleados.
+    </ProfileCard>
 
-      <div class="space-y-4 sm:grid sm:grid-cols-2 sm:gap-4 sm:space-y-0">
-         {/* Tarjeta 1 */}
-        <div class="bg-white rounded-lg p-4 border border-gray-100">
-          <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-1">Marca Personal</h3>
-          <p class="text-sm sm:text-base text-gray-700"> Es la percepción estratégica que tú construyes. Piensa en un profesional reconocido por su contenido sobre liderazgo en LinkedIn.</p>
-        </div>
-        
-         {/* Tarjeta 2 */}
-        <div class="bg-white rounded-lg p-4 border border-gray-100">
-          <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-1">Reputación</h3>
-          <p class="text-sm sm:text-base text-gray-700"> Es lo que otros dicen y piensan de ti basándose en tu historial de acciones. Por ejemplo, un CEO con fama positiva por tratar bien a sus empleados.</p>
-        </div>
+    <ProfileCard 
+      title="Identidad Profesional" 
+      emoji="👔"
+      bgColor="bg-white"
+      borderColor="border border-gray-100"
+      circleColor="bg-blue-100 text-blue-600"
+      textColor="text-blue-600"
+    >
+      Es cómo te defines en tu carrera. "Soy desarrollador Front-End y creo experiencias web increíbles."
+    </ProfileCard>
 
-         {/* Tarjeta 3 */}
-        <div class="bg-white rounded-lg p-4 border border-gray-100">
-          <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-1">Identidad Profesional</h3>
-          <p class="text-sm sm:text-base text-gray-700">Es cómo te defines en tu carrera. "Soy desarrollador Front-End y creo experiencias web increíbles."</p>
-        </div>
+    <ProfileCard 
+      title="Influencia" 
+      emoji="📢"
+      bgColor="bg-white"
+      borderColor="border border-gray-100"
+      circleColor="bg-blue-100 text-blue-600"
+      textColor="text-blue-600"
+    >
+      Tu capacidad de impactar en las decisiones y opiniones de otros. Como Elon Musk con sus tweets.
+    </ProfileCard>
 
-         {/* Tarjeta 4 */}
-        <div class="bg-white rounded-lg p-4 border border-gray-100">
-          <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-1">Influencia</h3>
-          <p class="text-sm sm:text-base text-gray-700">Tu capacidad de impactar en las decisiones y opiniones de otros. Como Elon Musk con sus tweets.</p>
-        </div>
-         {/* Tarjeta 5 */}
-        <div class="bg-white rounded-lg p-4 border border-gray-100">
-          <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-1">Visibilidad</h3>
-          <p class="text-sm sm:text-base text-gray-700">Tu nivel de exposición en tu industria. Un abogado con mucha experiencia pero sin presencia online, tiene baja visibilidad.</p>
-        </div>
-      </div>
-    </div>
+    <ProfileCard 
+      title="Visibilidad" 
+      emoji="👁️"
+      bgColor="bg-white"
+      borderColor="border border-gray-100"
+      circleColor="bg-blue-100 text-blue-600"
+      textColor="text-blue-600"
+    >
+      Tu nivel de exposición en tu industria. Un abogado con mucha experiencia pero sin presencia online, tiene baja visibilidad.
+    </ProfileCard>
+  </div>
+</Section>
     
     {/* Sección de Importancia - Reestructurada para consistencia */}
-    <div class="mb-8">
-      <h2 class="text-xl sm:text-2xl font-bold text-[#000033] mb-6 pb-1 border-b border-blue-300 sm:border-b-2 sm:border-blue-500">
-        🌍 El mundo cambió: ¿Por qué importa ahora?
-      </h2>
-      <p class="text-sm sm:text-base text-gray-600 italic mb-6">
-        Antes, un buen currículum y experiencia bastaban. Hoy, la historia es diferente. Tu presencia digital es tu nueva carta de presentación, y esto es lo que necesitas saber:
+    <Section 
+  title="🌍 El mundo cambió: ¿Por qué importa ahora?" 
+  subtitle="Antes, un buen currículum y experiencia bastaban. Hoy, la historia es diferente. Tu presencia digital es tu nueva carta de presentación, y esto es lo que necesitas saber:"
+  sectionNumber={3}
+>
+  <div class="space-y-6">
+    <TipCard 
+      title="🔍 Te investigan online (¡y la IA también!)" 
+      icon="🔍" 
+      borderColor="border-blue-500"
+    >
+      <p class="mb-3">
+        Un 70% de las empresas investigan a los candidatos en línea antes de contratar. Y el dato que asusta: ¡el 57% ha descartado a alguien por lo que encontró!
       </p>
-
-      <div class="space-y-6">
-        {/* Tarjeta 1: Investigación Online */}
-        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-500">
-          <h3 class="font-bold flex items-center gap-2 mb-2 text-base sm:text-lg text-[#000033]">
-            🔍 Te investigan online (¡y la IA también!)
-          </h3>
-          <p class="text-sm sm:text-base text-gray-700 mb-3">
-            Un 70% de las empresas investigan a los candidatos en línea antes de contratar. Y el dato que asusta: ¡el 57% ha descartado a alguien por lo que encontró!
-          </p>
-          <p class="text-sm sm:text-base bg-blue-50 p-3 rounded-md text-blue-800">
-            Ahora imagina que una IA busca al candidato perfecto: si tu huella digital es un desastre o inexistente, simplemente <strong class="font-semibold">no aparecerás en los resultados.</strong>
-          </p>
-        </div>
-
-        {/* Tarjeta 2: Visibilidad */}
-        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-purple-500">
-          <h3 class="font-bold flex items-center gap-2 mb-2 text-base sm:text-lg text-[#000033]">
-            🏆 No se trata de ser el mejor, sino el más visible
-          </h3>
-          <p class="text-sm sm:text-base text-gray-700 mb-2">
-            No necesitas ser el único experto en tu campo. Necesitas ser quien mejor comunica su valor. ¿Conoces a Simon Sinek? No es el único que sabe de liderazgo, pero su "Start With Why" lo hizo el más reconocido. ¿La diferencia? Su marca personal.
-          </p>
-          <p class="text-sm sm:text-base font-bold bg-purple-50 p-3 rounded-md text-purple-800">
-            ✨ Comunicar tu valor es más importante que ser el mejor en secreto.
-          </p>
-        </div>
+      <div class="bg-blue-50 p-3 rounded-md text-blue-800">
+        Ahora imagina que una IA busca al candidato perfecto: si tu huella digital es un desastre o inexistente, simplemente <strong class="font-semibold">no aparecerás en los resultados.</strong>
       </div>
-    </div>
+    </TipCard>
+
+    <TipCard 
+      title="🏆 No se trata de ser el mejor, sino el más visible" 
+      icon="🏆" 
+      borderColor="border-purple-500"
+    >
+      <p class="mb-2">
+        No necesitas ser el único experto en tu campo. Necesitas ser quien mejor comunica su valor. ¿Conoces a Simon Sinek? No es el único que sabe de liderazgo, pero su "Start With Why" lo hizo el más reconocido. ¿La diferencia? Su marca personal.
+      </p>
+      <div class="bg-purple-50 p-3 rounded-md text-purple-800 font-bold">
+        ✨ Comunicar tu valor es más importante que ser el mejor en secreto.
+      </div>
+    </TipCard>
+  </div>
+</Section>
 
      {/* Sección 3 - Full width en móvil */}
     <div class="bg-gradient-to-r from-[#000033] to-blue-800 rounded-lg p-4 sm:p-6 text-white mb-8">

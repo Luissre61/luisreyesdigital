@@ -41,59 +41,31 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				max-width: 100%;
 				margin: 0 auto;
 				/* Padding por defecto para pantallas más grandes */
-				padding: 2rem 1rem;
+				
 			}
 
 			.article-container {
-				max-width: var(--max-content-width);
+			
 				margin: 0 auto;
 				background: white;
-				border-radius: var(--radius-lg);
+				
 				box-shadow: var(--shadow-md);
-				overflow: hidden;
+				overflow: hidden; /* Mantenemos esto para el heroImage */
 			}
 
 			.hero-image {
 				width: 100%;
-				max-height: 400px;
+				min-height: 550px; /* Damos una altura mínima para asegurar espacio */
 				overflow: hidden;
-			}
-
-			.hero-image img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				transition: var(--transition);
-			}
-
-			.article-container:hover .hero-image img {
-				transform: scale(1.02);
+				display: flex; /* Habilitamos flexbox para centrar */
+				align-items: center; /* Centrado vertical */
+				justify-content: center; /* Centrado horizontal */
+				text-align: center; /* Centramos el texto del contenido */
 			}
 
 			.article-content {
-				padding: 2rem;
-			}
-
-			.article-header {
-				margin-bottom: 2rem;
-				text-align: center;
-			}
-
-			.article-title {
-				font-size: 2.25rem;
-				font-weight: 800;
-				line-height: 1.2;
-				margin-bottom: 1rem;
-				color: var(--color-text);
-			}
-
-			.article-meta {
-				display: flex;
-				flex-direction: column;
-				gap: 0.5rem;
-				margin-bottom: 1.5rem;
-				color: var(--color-text-light);
-				font-size: 0.875rem;
+				/* Ajustamos el padding ya que el header no está aquí */
+				padding: 2rem 1rem;
 			}
 
 			.article-meta-item {
@@ -102,20 +74,12 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				gap: 0.5rem;
 			}
 
-			.article-divider {
-				height: 1px;
-				background-color: var(--color-border);
-				margin: 2rem 0;
-				border: none;
-			}
-
 			.prose {
 				max-width: var(--max-content-width);
 				margin: 0 auto;
 			}
 
 			.prose :where(h2):not(:where([class~="not-prose"] *)) {
-				font-size: 1.5rem;
 				font-weight: 700;
 				margin-top: 2rem;
 				margin-bottom: 1rem;
@@ -127,8 +91,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 			@media (max-width: 768px) {
 				main {
-					/* Se elimina todo el padding en móviles para un diseño de ancho completo. */
-					padding: 1em;
+					
 				}
 
 				.article-container {
@@ -137,13 +100,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 					box-shadow: none;
 				}
 
-				.article-title {
-					font-size: 1.75rem;
-				}
-
 				.article-content {
 					/* Se elimina el padding para que el contenido MDX pueda ser de ancho completo. */
-					padding: 0;
+					padding: 1.5rem 1rem;
 				}
 			}
 		</style>
@@ -154,40 +113,52 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<main>
 			<article class="article-container">
 				{heroImage && (
-					<div class="hero-image">
-						<Image width={1200} height={630} src={heroImage} alt="" />
+					<div class="hero-image relative">
+						{/* La imagen de cabecera */}
+						<Image
+							width={1200}
+							height={630}
+							src={heroImage}
+							alt={`Imagen de portada para ${title}`}
+							class="absolute inset-0 w-full h-full object-cover"
+						/>
+						{/* La capa de superposición oscura */}
+						<div class="absolute inset-0 bg-black opacity-30"></div>
+						{/* El header ahora va aquí, sobre la imagen y la superposición */}
+						{/* Caja semitransparente para el contenido del header */}
+						<header class="relative z-10 mx-auto max-w-[90%] rounded-lg bg-slate-800/50 p-6 backdrop-blur-sm md:p-8">
+							{/* Metadatos del post (fecha, etc.) con estilos de Tailwind */}
+							<div class="mb-6 flex flex-col items-center justify-center gap-2 text-sm text-white">
+								<span class="article-meta-item">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+										<polyline points="9 22 9 12 15 12 15 22"></polyline>
+									</svg>
+									<span>Blog</span>
+								</span>
+								<span class="article-meta-item">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<circle cx="12" cy="12" r="10"></circle>
+										<polyline points="12 6 12 12 16 14"></polyline>
+									</svg>
+									<FormattedDate date={pubDate} />
+								</span>
+								{updatedDate && (
+									<span class="article-meta-item">
+										<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+											<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+											<circle cx="12" cy="12" r="3"></circle>
+										</svg>
+										<span>Actualizado el <FormattedDate date={updatedDate} /></span>
+									</span>
+								)}
+							</div>
+							{/* Título del post con estilos de Tailwind */}
+							<h1 class="text-2xl font-extrabold leading-tight text-white md:text-4xl">{title}</h1>
+						</header>
 					</div>
 				)}
 				<div class="article-content">
-					<header class="article-header">
-						<div class="article-meta">
-							<span class="article-meta-item">
-								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-									<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-									<polyline points="9 22 9 12 15 12 15 22"></polyline>
-								</svg>
-								<span>Blog</span>
-							</span>
-							<span class="article-meta-item">
-								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-									<circle cx="12" cy="12" r="10"></circle>
-									<polyline points="12 6 12 12 16 14"></polyline>
-								</svg>
-								<FormattedDate date={pubDate} />
-							</span>
-							{updatedDate && (
-								<span class="article-meta-item">
-									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-										<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-										<circle cx="12" cy="12" r="3"></circle>
-									</svg>
-									<span>Actualizado el <FormattedDate date={updatedDate} /></span>
-								</span>
-							)}
-						</div>
-						<h1 class="article-title">{title}</h1>
-						<hr class="article-divider" />
-					</header>
 					<div class="prose">
 						<slot />
 					</div>
