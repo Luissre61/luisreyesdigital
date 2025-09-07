@@ -1,50 +1,32 @@
 ---
-title: 'prueba'
-description: 'Mis bases te ayudarán a construir una marca personal sólida, ahorrándote horas de lectura y confusión.'
-pubDate: '2021-07-24'
-heroImage: '@/assets/blog-placeholder-4.jpg' 
+# Corrección: Formato ISO para fechas
+title: 'Te explico que es una marca personal y por que es tan importante'
+description: 'El botón (Promocionar Publicación) es el enemigo de tus ventas'
+pubDate: '2025-07-14'  # Usar formato ISO AAAA-MM-DD
+heroImage: '@/assets/post1.png'
 ---
 import TipCard from '@/components/TipCard.astro';
-import Section from '@/components/Section.astro';
 import ProfileCard from '@/components/ProfileCard.astro';
+import Section from '@/components/Section.astro';
+import FeatureCard from '@/components/FeatureCard.astro';
 
 
-
-     {/*Sección 1 - Stack simple en móvil */}
-   <Section 
+   {/*Sección 1 - Stack simple en móvil */}
+ <Section 
   title="¿Qué es la Marca Personal?" 
   subtitle="(¡Te lo cuento fácil!)"
-  sectionNumber={1}
->
-  <TipCard 
-    title="" 
-    icon="💡" 
-    borderColor="border-transparent"
-  >
-    
-    
-    <p class="mb-4">
-      Imagina esto: tu marca personal es la huella que dejas en la mente de los demás. Es lo que la gente piensa y dice de ti cuando tú no estás en la sala. ¿Te conocen por ser un experto en algo? ¿Por ser confiable? ¿Por ser el que siempre da la milla extra? Esa es tu marca personal. Como dice Jeff Bezos, el fundador de Amazon: "Tu marca es lo que la gente dice de ti cuando no estás en la sala".
-    </p>
-    
-    
-    <p class="mb-4">
-      Ahora, si tu marca personal es esa huella, el <b>"Personal Branding"</b> es el arte de esculpir esa huella, de gestionarla para que sea exactamente la que tú quieres dejar. Es tu plan de acción para influir en esa percepción.
-    </p>
-    
-    <p>
-      Tu marca personal ya existe, te guste o no, la trabajes o no. Cada post que compartes, cada comentario, cada interacción en una reunión... todo suma (¡o resta!). El personal branding es tu herramienta para tomar el control y dirigirla hacia donde quieres ir.
-    </p>
-  </TipCard>
+  subtitleColor="text-gray-600">
+
+    <p class="mt-8">Imagina esto: tu marca personal es la huella que dejas en la mente de los demás. Es lo que la gente piensa y dice de ti cuando tú no estás en la sala. ¿Te conocen por ser un experto en algo? ¿Por ser confiable? Esa es tu marca personal. Como dice Jeff Bezos, el fundador de Amazon: “Tu marca es lo que la gente dice de ti cuando no estás en la sala”..</p>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
     <ProfileCard 
       title="Marca Personal" 
       emoji="🎯"
-      bgColor="bg-purple-50"
-      borderColor="border border-purple-100"
+      bgColor="bg-purple-100"
+      borderColor="border border-purple-400"
       circleColor="bg-white text-purple-600"
-      textColor="text-purple-600"
+      textColor="text-purple-700"
     >
       La huella que dejas en los demás cuando no estás presente
     </ProfileCard>
@@ -60,523 +42,141 @@ import ProfileCard from '@/components/ProfileCard.astro';
       El proceso activo de gestionar y moldear tu marca personal
     </ProfileCard>
   </div>
+
+<div class="mt-6 ">
+      <p class="text-blue-900 font-medium">Tu marca personal es la impresión estratégica que dejas en los demás. El "Personal Branding" es el arte de esculpir esa percepción, diseñando activamente cómo quieres que el mundo te vea. Es tu plan de acción para influir en esa impresión, transformando una simple percepción en una herramienta poderosa para alcanzar tus metas.</p>
+    </div>
+
+    <p class="mt-6">Tu marca personal ya existe, te guste o no, la trabajes o no. Cada post que compartes, cada comentario, cada interacción en una reunión… todo suma (¡o resta!). El personal branding es tu herramienta para tomar el control y dirigirla hacia donde quieres ir.</p>
+
+    
+
 </Section>
 
-     {/* Sección 2 - Una columna en móvil */}
+
+{/* Sección 2 - Una columna en móvil */}
      <Section 
   title="Diferencias Claves" 
   subtitle=""
-  sectionNumber={2}
+ 
 >
-  <div class="space-y-4 sm:grid sm:grid-cols-2 sm:gap-4 sm:space-y-0">
-    <ProfileCard 
-      title="Marca Personal" 
-      emoji="🎯"
-      bgColor="bg-white"
-      borderColor="border border-gray-100"
-      circleColor="bg-blue-100 text-blue-600"
-      textColor="text-blue-600"
-    >
-      Es la percepción estratégica que tú construyes. Piensa en un profesional reconocido por su contenido sobre liderazgo en LinkedIn.
-    </ProfileCard>
-    
-    <ProfileCard 
-      title="Reputación" 
-      emoji="⭐"
-      bgColor="bg-white"
-      borderColor="border border-gray-100"
-      circleColor="bg-blue-100 text-blue-600"
-      textColor="text-blue-600"
-    >
-      Es lo que otros dicen y piensan de ti basándose en tu historial de acciones. Por ejemplo, un CEO con fama positiva por tratar bien a sus empleados.
-    </ProfileCard>
+          <FeatureCard
+                icon="🎯"
+                title="Marca Personal"
+                description="Es la percepción estratégica que tú construyes. Piensa en un profesional reconocido por su contenido sobre liderazgo en LinkedIn"
+                class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
+            />
 
-    <ProfileCard 
-      title="Identidad Profesional" 
-      emoji="👔"
-      bgColor="bg-white"
-      borderColor="border border-gray-100"
-      circleColor="bg-blue-100 text-blue-600"
-      textColor="text-blue-600"
-    >
-      Es cómo te defines en tu carrera. "Soy desarrollador Front-End y creo experiencias web increíbles."
-    </ProfileCard>
+            <FeatureCard
+                icon="⭐"
+                title="Reputación"
+                description="Es lo que otros dicen y piensan de ti basándose en tu historial de acciones. Por ejemplo, un CEO con fama positiva por tratar bien a sus empleados."
+                class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
+            />
 
-    <ProfileCard 
-      title="Influencia" 
-      emoji="📢"
-      bgColor="bg-white"
-      borderColor="border border-gray-100"
-      circleColor="bg-blue-100 text-blue-600"
-      textColor="text-blue-600"
-    >
-      Tu capacidad de impactar en las decisiones y opiniones de otros. Como Elon Musk con sus tweets.
-    </ProfileCard>
+            <FeatureCard
+                icon="👔"
+                title="Identidad Profesional"
+                description="Es cómo te defines en tu carrera. Soy desarrollador web y creo experiencias web increíbles."
+                class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
+            />
 
-    <ProfileCard 
-      title="Visibilidad" 
-      emoji="👁️"
-      bgColor="bg-white"
-      borderColor="border border-gray-100"
-      circleColor="bg-blue-100 text-blue-600"
-      textColor="text-blue-600"
-    >
-      Tu nivel de exposición en tu industria. Un abogado con mucha experiencia pero sin presencia online, tiene baja visibilidad.
-    </ProfileCard>
-  </div>
+            <FeatureCard
+                icon="📢"
+                title="Influencia"
+                description="Tu capacidad de impactar en las decisiones y opiniones de otros. Como Elon Musk con sus tweets."
+                class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
+            />
+
+             <FeatureCard
+                icon="👁️"
+                title="Visibilidad"
+                description="Tu nivel de exposición en tu industria. Un abogado con mucha experiencia pero sin presencia online, tiene baja visibilidad."
+                class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
+            />
+
 </Section>
     
     {/* Sección de Importancia - Reestructurada para consistencia */}
     <Section 
-  title="🌍 El mundo cambió: ¿Por qué importa ahora?" 
-  subtitle="Antes, un buen currículum y experiencia bastaban. Hoy, la historia es diferente. Tu presencia digital es tu nueva carta de presentación, y esto es lo que necesitas saber:"
-  sectionNumber={3}
->
-  <div class="space-y-6">
-    <TipCard 
-      title="🔍 Te investigan online (¡y la IA también!)" 
-      icon="🔍" 
-      borderColor="border-blue-500"
-    >
-      <p class="mb-3">
-        Un 70% de las empresas investigan a los candidatos en línea antes de contratar. Y el dato que asusta: ¡el 57% ha descartado a alguien por lo que encontró!
-      </p>
-      <div class="bg-blue-50 p-3 rounded-md text-blue-800">
-        Ahora imagina que una IA busca al candidato perfecto: si tu huella digital es un desastre o inexistente, simplemente <strong class="font-semibold">no aparecerás en los resultados.</strong>
-      </div>
-    </TipCard>
-
-    <TipCard 
-      title="🏆 No se trata de ser el mejor, sino el más visible" 
-      icon="🏆" 
-      borderColor="border-purple-500"
-    >
-      <p class="mb-2">
-        No necesitas ser el único experto en tu campo. Necesitas ser quien mejor comunica su valor. ¿Conoces a Simon Sinek? No es el único que sabe de liderazgo, pero su "Start With Why" lo hizo el más reconocido. ¿La diferencia? Su marca personal.
-      </p>
-      <div class="bg-purple-50 p-3 rounded-md text-purple-800 font-bold">
-        ✨ Comunicar tu valor es más importante que ser el mejor en secreto.
-      </div>
-    </TipCard>
-  </div>
-</Section>
-
-     {/* Sección 3 - Full width en móvil */}
-    <div class="bg-gradient-to-r from-[#000033] to-blue-800 rounded-lg p-4 sm:p-6 text-white mb-8">
-      <h2 class="text-xl sm:text-2xl font-bold mb-3">Tu marca personal es tu superpoder para:</h2>
-      
-      <ul class="space-y-3">
-        <li class="flex items-start">
-          <span class="mr-2 text-lg sm:text-xl">🔍</span>
-          <span class="text-xs sm:text-sm"><strong>Conseguir ese trabajo soñado: </strong> Te haces más valioso, más visible para reclutadores y puedes negociar mejor. </span>
-        </li>
-        <li class="flex items-start">
-          <span class="mr-2 text-lg sm:text-xl">🌟</span>
-          <span class="text-xs sm:text-sm"><strong>Lanzar ese emprendimiento que te quita el sueño:</strong> Atrae clientes de alto valor, te diferencias de la competencia y te conviertes en un referente.</span>
-        </li>
-      </ul>
-    </div>
-
-    {/* Sección 4 */}
-    <div class="mb-8">
-      <h2 class="text-xl sm:text-2xl font-bold text-[#000033] mb-6 pb-1 border-b border-blue-300 sm:border-b-2 sm:border-blue-500">
-        La Fórmula Secreta de una Marca Personal de Alto Impacto (¡Para que la IA y la gente te amen!)
-      </h2>
-    
-      <p class="text-sm sm:text-base text-gray-600 italic mb-6">
+  title="Fórmula rapida para que tú Marca Personal sea Visible" 
+  subtitle="Ahora un buen currículum y experiencia no bastan."
+  subtitleColor="text-gray-600"
+  >
+<p class="text-sm sm:text-base text-gray-600 italic mb-6">
         Olvídate de solo "estar presente". En la era de la información instantánea y la IA, ser visible ya no es suficiente. El verdadero éxito radica en ser inolvidable, en influir y generar un cambio, dejando una huella más allá de lo profesional.
         <br /><br />
         ¿Cómo logramos eso? Aquí te va la base que aprendí y aplico:
       </p>
+    <TipCard 
+        title="Pasar de la Presencia a la Influencia" 
+        icon="💡" 
+        borderColor="border-blue-500">
+        <p class="mb-4">No solo publiques; crea contenido que resuene, que genere acción, que deje a la gente pensando: “¡Exacto, eso es lo que necesitaba!”.:</p>
 
-      <div class="space-y-6">
-        {/* Sección: ¿Qué es Marca Personal? -> Se reinterpreta como "De la Presencia a la Influencia" */}
-        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-500">
-          <h3 class="font-bold flex items-center gap-2 mb-2 text-base sm:text-lg text-[#000033]">
-            💡 De la Presencia a la Influencia
-          </h3>
-          <p class="text-sm sm:text-base text-gray-700 mb-3">
-            No solo publiques; crea contenido que resuene, que genere acción, que deje a la gente pensando: "¡Exacto, eso es lo que necesitaba!".
-          </p>
-        </div>
+         </TipCard>
 
-        {/* Sección: Diferencias Clave -> Se reinterpreta como "Autenticidad Extrema" */}
-        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-purple-500">
-          <h3 class="font-bold flex items-center gap-2 mb-2 text-base sm:text-lg text-[#000033]">
-            🔍 Autenticidad Extrema (¡Sé tú y punto!)
-          </h3>
-          <ul class="text-sm sm:text-base text-gray-700 space-y-2">
-            <li>Este es mi lema. Muestra tu vulnerabilidad, tu verdad.</li>
-            <li>Conecta todas tus facetas (¡sí, esa de los paisajes de Mérida también!).</li>
-            <li>La gente quiere conectar con humanos reales, no con robots perfectos.</li>
-          </ul>
-        </div>
+           <TipCard 
+        title="Autenticidad Extrema (¡Sé tú y punto!)" 
+        icon="🔍 " 
+        borderColor="border-purple-500">
+        <p class="mb-4">Muestra tu vulnerabilidad, tu verdad.
+Conecta todas tus facetas (¡sí, esa de los paisajes de Mérida también!).
+La gente quiere conectar con humanos reales, no con robots perfectos.</p>
 
-        {/* Sección: Por qué importa ahora -> Se reinterpreta como "De la Visibilidad a la Comunidad" */}
-        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-red-500">
-          <h3 class="font-bold flex items-center gap-2 mb-2 text-base sm:text-lg text-[#000033]">
-            ⚡ De la Visibilidad a la Comunidad
-          </h3>
-          <p class="text-sm sm:text-base text-gray-700">
-            No busques seguidores; busca construir una tribu. Genera valor real, responde, interactúa. Las relaciones son la moneda de oro del mundo digital.
-          </p>
-        </div>
-      </div>
-    </div>
+         </TipCard>
 
- <section class="max-w-4xl mx-auto px-0 sm:px-4 py-8 sm:py-12 ">
-  <article class="prose prose-sm sm:prose-lg">
-    {/* Encabezado optimizado para móvil */}
-    <header class="mb-8">
-      <h1 class="text-2xl sm:text-3xl font-bold leading-tight mb-4">
-        <span class="text-gray-700 bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-          Diferencias Claves Entre la Marca Personal de un Emprendedor vs. un Profesional por Cuenta Ajena
-        </span>
-      </h1>
-      
-    </header>
+           <TipCard 
+        title="Pasar de la Visibilidad a la Comunidad" 
+        icon="⚡" 
+        borderColor="border-red-500">
+        <p class="mb-4">No busques seguidores; busca construir una tribu. Genera valor real, responde, interactúa. Las relaciones son la moneda de oro del mundo digital.</p>
 
-    {/* Introducción */}
-    <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 mb-8 border-l-2 sm:border-l-4 border-r-2 sm:border-r-4 border-blue-500">
-      <p class="text-sm sm:text-base text-gray-700">
-        La marca personal es una herramienta clave tanto para emprendedores como para profesionales en empresas. Sin embargo, la manera en que cada uno la trabaja varía significativamente según sus objetivos, el público al que se dirigen y la estrategia que necesitan seguir:
-      </p>
-    </div>
+         </TipCard>
 
-    {/* Sección 1: Propósito y objetivos */}
-
-
-<Section 
-  title="Propósito y objetivos de la marca personal"
-  subtitle="(El &quot;por qué&quot; de tu estrategia)"
-  sectionNumber={1}
->
-  <ProfileCard 
-    title="Emprendedor" 
-    emoji="🏢"
-    bgColor="bg-blue-50"
-    borderColor="border border-blue-100"
-    circleColor="bg-blue-100 text-blue-600"
-    textColor="text-blue-600"
-  >
-    Su marca personal está alineada con su negocio. Su objetivo principal es generar confianza, atraer clientes y posicionarse como referente en su sector. Su reputación impacta directamente en el éxito de su empresa.
-  </ProfileCard>
+        
+  </Section>
   
-  <ProfileCard 
-    title="Profesional por cuenta ajena" 
-    emoji="💼"
-    bgColor="bg-green-50"
-    borderColor="border border-green-100"
-    circleColor="bg-green-100 text-green-600"
-    textColor="text-green-600"
-  >
-    Su marca personal está enfocada en destacar dentro de su empresa o industria para crecer profesionalmente, acceder a nuevas oportunidades laborales o posicionarse como experto en su campo.
-  </ProfileCard>
-</Section>
 
+  {/* Sección de Auditoría Digital */}
 <Section 
-  title="Audiencia y mensaje"
-  subtitle="(¿A quién hablas y qué dices?)"
-  sectionNumber={2}
+  title="Descubre tu Huella Digital y lo que dice de ti" 
+  subtitle="¡Con esta mini-auditoría, sabrás cómo te ven los demás!"
+  subtitleColor="text-gray-600"
 >
-  <ProfileCard 
-    title="Emprendedor" 
-    emoji="🏢"
-    bgColor="bg-blue-50"
-    borderColor="border border-blue-100"
-    circleColor="bg-blue-100 text-blue-600"
-    textColor="text-blue-600"
+  <p class="mb-6">
+    Sé que da miedo, pero es el primer paso más importante. Tu huella digital puede abrirte o cerrarte puertas en menos de un segundo.
+  </p>
+
+  <TipCard
+    title="Paso 1: ¡Googlea tu nombre!"
+    icon="🔍"
+    borderColor="border-blue-500"
   >
-    Su audiencia principal son clientes potenciales, inversores, aliados estratégicos y la comunidad de su sector. Su mensaje debe reflejar autoridad, innovación y resolver problemas específicos de su nicho.
-  </ProfileCard>
-  
-  <ProfileCard 
-    title="Profesional por cuenta ajena" 
-    emoji="💼"
-    bgColor="bg-green-50"
-    borderColor="border border-green-100"
-    circleColor="bg-green-100 text-green-600"
-    textColor="text-green-600"
-  >
-    Su público objetivo puede ser su empleador, líderes de la industria, reclutadores y colegas. Su comunicación se centra en demostrar habilidades, resultados y conocimientos que lo hagan valioso dentro de su entorno profesional.
-  </ProfileCard>
-</Section>
+    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+      <li>Abre una ventana <strong>privada</strong> en tu navegador.</li>
+      <li>Busca tu nombre entre comillas: <code class="bg-gray-200 text-gray-800 px-1 rounded-md">"Nombre Apellido"</code>.</li>
+      <li>Analiza los primeros 5-10 resultados.</li>
+    </ul>
+  </TipCard>
 
-<Section 
-  title="Contenido y presencia digital"
-  subtitle="(Dónde y cómo te muestras)"
-  sectionNumber={3}
->
-  <ProfileCard 
-    title="Emprendedor" 
-    emoji="🏢"
-    bgColor="bg-blue-50"
-    borderColor="border border-blue-100"
-    circleColor="bg-blue-100 text-blue-600"
-    textColor="text-blue-600"
-  >
-    Necesita una estrategia de contenido más agresiva y constante. Publica en redes como LinkedIn, Instagram, YouTube o incluso su propio blog para atraer clientes y demostrar su expertise. Además, usa estrategias de branding personal con un toque comercial.
-  </ProfileCard>
-  
-  <ProfileCard 
-    title="Profesional por cuenta ajena" 
-    emoji="💼"
-    bgColor="bg-green-50"
-    borderColor="border border-green-100"
-    circleColor="bg-green-100 text-green-600"
-    textColor="text-green-600"
-  >
-    Su contenido está más orientado a compartir conocimientos, generar networking y construir credibilidad. LinkedIn es su plataforma clave, aunque puede usar otras redes de manera más discreta.
-  </ProfileCard>
-</Section>
-
-<Section 
-  title="Riesgo y exposición"
-  subtitle="(Cuánto te juegas)"
-  sectionNumber={4}
->
-  <ProfileCard 
-    title="Emprendedor" 
-    emoji="🏢"
-    bgColor="bg-blue-50"
-    borderColor="border border-blue-100"
-    circleColor="bg-blue-100 text-blue-600"
-    textColor="text-blue-600"
-  >
-    Necesita exponerse más, compartir opiniones firmes y crear contenido diferenciado. Su reputación y marca personal están completamente ligadas a su negocio, lo que implica mayor riesgo en su comunicación.
-  </ProfileCard>
-  
-  <ProfileCard 
-    title="Profesional por cuenta ajena" 
-    emoji="💼"
-    bgColor="bg-green-50"
-    borderColor="border border-green-100"
-    circleColor="bg-green-100 text-green-600"
-    textColor="text-green-600"
-  >
-    Tiene que equilibrar su marca personal con la imagen de la empresa donde trabja. Un exceso de exposición o una opinión controvertida puede afectar su relación con su empleador.
-  </ProfileCard>
-</Section>
-
-<Section 
-  title="Evolución y adaptabilidad"
-  subtitle="(Cómo cambia tu marca con el tiempo)"
-  sectionNumber={5}
->
-  <ProfileCard 
-    title="Emprendedor" 
-    emoji="🏢"
-    bgColor="bg-blue-50"
-    borderColor="border border-blue-100"
-    circleColor="bg-blue-100 text-blue-600"
-    textColor="text-blue-600"
-  >
-    Su marca personal evoluciona con su negocio, adaptándose a nuevas tendencias, mercados y necesidades de su público. Puede pivotar su enfoque si el mercado lo exige.
-  </ProfileCard>
-  
-  <ProfileCard 
-    title="Profesional por cuenta ajena" 
-    emoji="💼"
-    bgColor="bg-green-50"
-    borderColor="border border-green-100"
-    circleColor="bg-green-100 text-green-600"
-    textColor="text-green-600"
-  >
-    Su marca se adapta a su crecimiento dentro de la empresa o sector. Puede fortalecer su branding personal para acceder a promociones, cambiar de industria o emprender en el futuro.
-  </ProfileCard>
-</Section>
-
-    {/* Tabla comparativa */}
-    <div class="max-w-4xl mx-auto mb-12 px-4 sm:px-6">
-      <div class="mb-6">
-        <h2 class="text-xl sm:text-2xl font-bold text-[#000033] mb-2 pb-2 border-b-2 border-blue-300">
-          Resumen comparativo: Emprendedor vs. Profesional por Cuenta Ajena
-        </h2>
-        <p class="text-xs sm:text-sm text-gray-600">
-          Comparación visual de las principales diferencias en estrategia de marca personal
-        </p>
-      </div>
-
-      <div class="w-full overflow-x-auto mb-4 rounded-lg">
-        <table class="w-screen min-w-full bg-white sm:w-full sm:rounded-lg sm:shadow-sm">
-          <thead>
-            <tr class="bg-blue-600 text-white">
-              <th class="text-left py-3 px-4 font-bold text-sm sm:text-base w-1/4">Área</th>
-              <th class="text-left py-3 px-4 font-bold text-sm sm:text-base w-3/8">Cuenta Propia</th>
-              <th class="text-left py-3 px-4 font-bold text-sm sm:text-base w-3/8">Cuenta Ajena</th>
-            </tr>
-          </thead>
-
-          <tbody class="divide-y divide-gray-200">
-            <tr>
-              <td class="py-3 px-4 font-semibold bg-gray-50 text-xs sm:text-sm w-1/4">Propósito</td>
-              <td class="py-3 px-4 text-xs sm:text-sm w-3/8">
-                <div class="flex items-start">
-                  <span class="mr-2">🚀</span>
-                  <span>Generar confianza y atraer clientes</span>
-                </div>
-              </td>
-              <td class="py-3 px-4 text-xs sm:text-sm w-3/8">
-                <div class="flex items-start">
-                  <span class="mr-2">💼</span>
-                  <span>Destacar profesionalmente</span>
-                </div>
-              </td>
-            </tr>
-            
-            <tr>
-              <td class="py-3 px-4 font-semibold bg-gray-50 text-xs sm:text-sm">Audiencia</td>
-              <td class="py-3 px-4 text-xs sm:text-sm">
-                <div class="flex items-start">
-                  <span class="mr-2">👥</span>
-                  <span>Clientes, inversores, aliados</span>
-                </div>
-              </td>
-              <td class="py-3 px-4 text-xs sm:text-sm">
-                <div class="flex items-start">
-                  <span class="mr-2">🏢</span>
-                  <span>Empleador, reclutadores</span>
-                </div>
-              </td>
-            </tr>
-            
-            <tr>
-              <td class="py-3 px-4 font-semibold bg-gray-50 text-xs sm:text-sm">Mensaje</td>
-              <td class="py-3 px-4 text-xs sm:text-sm">
-                <div class="flex items-start">
-                  <span class="mr-2">📢</span>
-                  <span>Autoridad y solución de problemas</span>
-                </div>
-              </td>
-              <td class="py-3 px-4 text-xs sm:text-sm">
-                <div class="flex items-start">
-                  <span class="mr-2">🗣️</span>
-                  <span>Habilidades y resultados</span>
-                </div>
-              </td>
-            </tr>
-            
-            <tr>
-              <td class="py-3 px-4 font-semibold bg-gray-50 text-xs sm:text-sm">Contenido</td>
-              <td class="py-3 px-4 text-xs sm:text-sm">
-                <div class="flex items-start">
-                  <span class="mr-2">📈</span>
-                  <span>Agresivo y constante</span>
-                </div>
-              </td>
-              <td class="py-3 px-4 text-xs sm:text-sm">
-                <div class="flex items-start">
-                  <span class="mr-2">🔍</span>
-                  <span>Networking y credibilidad</span>
-                </div>
-              </td>
-            </tr>
-            
-            <tr>
-              <td class="py-3 px-4 font-semibold bg-gray-50 text-xs sm:text-sm">Riesgo</td>
-              <td class="py-3 px-4 text-xs sm:text-sm">
-                <div class="flex items-start">
-                  <span class="mr-2">⚠️</span>
-                  <span>Mayor exposición</span>
-                </div>
-              </td>
-              <td class="py-3 px-4 text-xs sm:text-sm">
-                <div class="flex items-start">
-                  <span class="mr-2">⚖️</span>
-                  <span>Equilibrar con imagen empresarial</span>
-                </div>
-              </td>
-            </tr>
-            
-            <tr>
-              <td class="py-3 px-4 font-semibold bg-gray-50 text-xs sm:text-sm">Adaptabilidad</td>
-              <td class="py-3 px-4 text-xs sm:text-sm">
-                <div class="flex items-start">
-                  <span class="mr-2">🔄</span>
-                  <span>Evoluciona con el negocio</span>
-                </div>
-              </td>
-              <td class="py-3 px-4 text-xs sm:text-sm">
-                <div class="flex items-start">
-                  <span class="mr-2">📈</span>
-                  <span>Crecimiento en la empresa</span>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="text-center text-xs sm:text-sm text-gray-500 bg-blue-50 p-3 rounded-lg">
-        <p class="flex items-center justify-center">
-          <span class="mr-2">💡</span>
-          Selecciona el enfoque que mejor se adapte a tus objetivos profesionales
-        </p>
-      </div>
-    </div>
-
-    {/* Conclusión */}
-    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 md:p-8 border-l-2 sm:border-l-4 border-r-2 sm:border-r-4  border-blue-400 mb-8 shadow-sm hover:shadow-md transition-shadow duration-300">
-      
-    
-
-      <p class="text-sm sm:text-base text-gray-700 mb-6">
-        Tanto emprendedores como profesionales pueden beneficiarse enormemente de una marca personal sólida, pero deben adaptar su enfoque a sus objetivos específicos. Mientras los emprendedores necesitan una marca que impulse su negocio, los profesionales deben construir una que impulse su carrera dentro de estructuras corporativas.
-      </p>
-      
-    </div>
-
-{/*ejercicio*/}
-
-<section class="bg-white py-12 px-4">
-  <div class="max-w-2xl mx-auto">
-    <h2 class="text-2xl font-bold text-center mb-8">
-      Descubre tu Huella Digital antes de que lo haga tu futuro jefe
-    </h2>
-
-    <div class="space-y-6">
-      <p class="text-gray-700">
-        Sé que da miedo, pero es el primer paso más importante. Tu huella digital puede abrirte o cerrarte puertas en menos de un segundo.
-      </p>
-      
-      <p class="font-medium">
-        ¡Con esta mini-auditoría, sabrás cómo te ven los demás!
-      </p>
-
-      <h3 class="text-xl font-bold mt-8">Paso 1: ¡Googlea tu nombre!</h3>
-      <ul class="list-disc pl-5 space-y-2 text-gray-700">
-        <li>Abre una ventana <span class="font-medium">privada</span> en tu navegador</li>
-        <li>Busca tu nombre entre comillas: <span class="font-mono">"Nombre Apellido"</span></li>
-        <li>Analiza los primeros 5-10 resultados</li>
-      </ul>
-
-      <div class="mt-8">
-        <h4 class="font-bold mb-3">Pregúntate:</h4>
-        <div class="space-y-3">
-          <p class="flex items-start">
-            <span class="mr-2">🤔</span> ¿La información te representa profesionalmente?
-          </p>
-          <p class="flex items-start">
-            <span class="mr-2">✅</span> ¿Aparece tu LinkedIn o blog?
-          </p>
-          <p class="flex items-start">
-            <span class="mr-2">❌</span> ¿Hay contenido que pueda perjudicarte?
-          </p>
-        </div>
-      </div>
-
-      <div class="mt-8 p-4 bg-gray-50 rounded-lg">
-        <p class="font-medium">
-          Si no te gusta lo que ves, ¡es tu señal para crear la huella que TÚ quieres dejar!
-        </p>
-      </div>
+  <div class="mt-8">
+    <h4 class="not-prose font-bold mb-4 text-lg text-[#000033]">Pregúntate:</h4>
+    <div class="space-y-4">
+      <p class="flex items-start"><span class="mr-3 text-xl">🤔</span><span>¿La información te representa profesionalmente?</span></p>
+      <p class="flex items-start"><span class="mr-3 text-xl">✅</span><span>¿Aparece tu LinkedIn o blog?</span></p>
+      <p class="flex items-start"><span class="mr-3 text-xl">❌</span><span>¿Hay contenido que pueda perjudicarte?</span></p>
     </div>
   </div>
-</section>
-  
 
+  <div class="mt-8 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-lg">
+    <p class="font-medium text-blue-800">
+      Si no te gusta lo que ves, ¡es tu señal para crear la huella que TÚ quieres dejar!
+    </p>
+  </div>
+</Section>
 
-    {/* Llamado a la acción */}
+ {/* Llamado a la acción */}
     <div class="bg-gradient-to-r from-[#000033] to-blue-800 rounded-lg p-4 sm:p-6 text-white mb-8">
       <div class="max-w-2xl mx-auto">
         <h3 class="font-bold text-2xl sm:text-3xl text-white mb-4">
@@ -597,5 +197,3 @@ import ProfileCard from '@/components/ProfileCard.astro';
         </div>
       </div>
     </div>
-  </article>
-</section>  
