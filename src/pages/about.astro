@@ -5,7 +5,12 @@ import Footer from "../components/Footer.astro";
 import GradientButton from '@/components/GradientButton.astro';
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import TipCard from '@/components/TipCard.astro';
+import ProfileCard from '@/components/ProfileCard.astro';
+import Section from '@/components/Section.astro';
+import FeatureCard from '@/components/FeatureCard.astro';
 ---
+
 
 <!doctype html>
 <!-- Inicia el documento HTML en español -->
@@ -23,7 +28,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
             <!-- Sección Hero: Encabezado principal con fondo oscuro y curva -->
             <div
-                class="relative bg-[#000033] min-h-[30vh] sm:min-h-[45vh] w-full overflow-hidden mb-10"
+                class="relative bg-[#000033] min-h-[10vh] sm:min-h-[25vh] w-full overflow-hidden mb-10"
             >
                 <!-- Patrón de fondo decorativo -->
                 <div class="absolute inset-0 opacity-20">
@@ -38,7 +43,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 <div
                     class="relative z-10 max-w-7xl mx-auto h-full flex items-center px-4"
                 >
-                    <div class="text-white pt-3 sm:pt-10 py-23 sm:py-15 ">
+                    <div class="text-white pt-3 sm:pt-10 py-10 sm:py-5 ">
                         <h1
                             class="text-3xl md:text-4xl lg:text-5xl font-bold mb-0 sm:mb-2 leading-tight"
                         >
@@ -69,17 +74,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                     <p
                         class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
                     >
-                        Hola, mi nombre es Luis Reyes. Aunque hoy estoy inmerso
-                        en el fascinante mundo del desarrollo web y el marketing
-                        digital, mis raíces se aferran a la serena belleza del
-                        campo venezolano. Mi espíritu aventurero siempre me ha
-                        impulsado a explorar sus diversos paisajes. Sin embargo
-                        desde muy joven, el universo digital me cautivó por
-                        completo; desde mi primer celular hasta la primera
-                        computadora, sentí cómo se abría ante mí un mundo de
-                        infinitas posibilidades. Esa curiosidad ha sido la
-                        brújula de toda mi vida, llevándome por caminos
-                        inesperados y transformadores.
+                        Hola, mi nombre es Luis Reyes. Mi historia no se cuenta solo con palabras. Se ve en cada paso que he dado, desde mis orígenes en el campo venezolano hasta el mundo digital de hoy. Mi trayectoria no es convencional, y esa es mi mayor fortaleza.
                     </p>
 
                     <!-- Imagen 1: Luis en la naturaleza -->
@@ -97,85 +92,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                     <p
                         class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
                     >
-                        La vida me trajo a la ciudad para estudiar informática,
-                        pero la crisis del país me obligó a regresar a mis
-                        orígenes. Lejos de rendirme, vi una oportunidad y me
-                        lancé a mi primer gran proyecto: una destilería de licor
-                        artesanal. Fue mi escuela de negocios a pie de calle;
-                        ahí aprendí a gestionar, a liderar equipos y a construir
-                        redes de comercialización, logrando un éxito palpable.
-                        Sin embargo, en un giro inesperado, llegó la pandemia y,
-                        de la noche a la mañana, tres años de arduo trabajo se
-                        derrumbaron.
+                       Pasé de ser un emprendedor a dominar las ventas y el soporte al cliente en un call center durante 4 años. Cada experiencia me enseñó a liderar, a gestionar y, lo más importante, a comunicarme de forma efectiva. Hoy, he canalizado esa resiliencia en el mundo digital.
                     </p>
 
-                    <!-- Divisor visual entre secciones -->
-                    <div class="border-t border-gray-200 my-12"></div>
-                    <!-- Sección 3: El punto de inflexión y reinvención -->
-                    <h2
-                        class="text-3xl md:text-4xl font-bold text-gray-700 mb-6 pb-2"
-                    >
-                        Caminos inesperados que forjan el destino correcto.
-                    </h2>
-
-                    <!-- Párrafo sobre la superación y el aprendizaje online -->
-                    <p
+                     <p
                         class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
                     >
-                        Esa etapa fue dura, llena de cuestionamientos y una
-                        profunda depresión. Pero mi espíritu se negó a ser
-                        vencido. Me propuse llevarme al límite, a la ciudad, a
-                        nuevos trabajos, escalando una y otra vez para
-                        mantenerme a flote. Incluso intenté una segunda carrera
-                        universitaria, y volví a fracasar. Fue en esa
-                        frustración donde llegó mi mayor claridad: el camino no
-                        era el tradicional, y el verdadero valor no se mide en
-                        títulos, sino en la resiliencia y las habilidades que
-                        forjas en la vida real. Comprendí que lo que necesitaba
-                        era la flexibilidad y el aprendizaje 100% online. Así
-                        fue como me sumergí en los fundamentos de la
-                        programación, adquirí habilidades sólidas de Front-End,
-                        y me enamoré del fascinante mundo del Marketing Digital
-                        y la Inteligencia Artificial. Hoy, sigo mi aprendizaje
-                        con el Análisis de Datos, buscando expandir aún más mi
-                        conjunto de herramientas.
-                        <!-- Párrafo de cierre de la sección -->
-                    </p>
-                    <p
-                        class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
-                    >
-                        Todo lo que he vivido, cada obstáculo y cada quiebre, me
-                        ha dotado de una fortaleza inquebrantable. Esa es la
-                        base de mi visión hoy: estoy construyendo mi futuro
-                        digital y estoy listo para guiarte en tu propio camino
-                        de transformación.
-                    </p>
-                    <!-- Divisor visual entre secciones -->
-                    <div class="border-t border-gray-200 my-12"></div>
-                    <!-- Sección 4: Visión a futuro y propósito del blog -->
-                    <h2
-                        class="text-3xl md:text-4xl font-bold text-gray-700 mb-6 pb-2"
-                    >
-                        El Próximo Gran Salto: Un Nuevo Capítulo Se Abre.
-                    </h2>
-
-                    <!-- Párrafo sobre el próximo capítulo y la misión del blog -->
-                    <p
-                        class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
-                    >
-                        Luego de sumergirme por completo en el mundo digital y
-                        de crear Luis Reyes Digital con el fin de crecer
-                        profesionalmente, me preparo para dar un gran salto. Un
-                        nuevo horizonte me llama, un desafío que me llevará más
-                        allá del océano, demostrando una vez más que el punto de
-                        partida no define el destino, sino tu potencia. Quiero
-                        contarte mis experiencias, compartir las estrategias y
-                        herramientas que realmente funcionan, y mostrarte el
-                        cómo para que tú también puedas desbloquear tu potencial
-                        digital.
+                       Con habilidades en desarrollo web y conocimientos en marketing digital, estoy construyendo mi marca personal, Luis Reyes Digital, para mostrar que el punto de partida no define el destino, y que la resiliencia es el motor de una transformación real.
                     </p>
 
-                    <!-- Imagen 2: Luis en la ciudad -->
+                     <!-- Imagen 2: Luis en la ciudad -->
                     <figure class="my-10">
                         <img
                             src={import.meta.env.BASE_URL +
@@ -190,9 +116,35 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                         </figcaption>
                     </figure>
 
+                </article>
+                <Section title="Mi Brújula Digital">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                        <TipCard
+                            title="Quién soy"
+                            description="Soy una persona con 4 años de experiencia en gestión de ventas y soporte al cliente, apasionado por la tecnología y el Marketing Digital."
+                            icon="👨‍💻"
+                        />
+                        <TipCard
+                            title="Qué puedo hacer"
+                            description="Estrategias Digitales | Desarrollo Web | Marketing Digital | Resolución de Problemas."
+                            
+                            icon="🛠️"
+                        />
+                        <TipCard
+                            title="Mi objetivo"
+                            description="Utilizar mis habilidades para construir soluciones digitales y guiar a otros a través de su propio camino de transformación."
+                            icon="🎯"
+                        />
+                    </div>
+                    
+                </Section>
+             
+                    
+
                     <!-- Sección de Llamado a la Acción (CTA) -->
                     <div
-                        class="bg-[#000033] rounded-3xl p-8 md:p-12 my-16 shadow-lg"
+                        class="bg-gradient-to-r from-[#000033] to-blue-800 rounded-lg p-4 sm:p-6 text-white mb-8"
                     >
                         <div class="max-w-2xl mx-auto text-center">
                             <h2
@@ -214,8 +166,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                           
                         </div>
                     </div>
-                </article>
-            </div>
+            </div> <!-- Cierre de max-w-4xl -->
         </main>
 
         <Footer />
