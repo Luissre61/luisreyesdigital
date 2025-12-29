@@ -24,12 +24,13 @@ const posts = (await getCollection("blog")).sort(
 			}
 		</style>
 	</head>
-	<body>
+	<body class="overflow-x-hidden">
 		<Header />
 		<main class="max-w-5xl mx-auto px-4">
-			<section
+			
+            <section
 				title="Pilares de mi contenido"
-				class="relative w-screen bg-cover bg-center bg-fixed flex items-center justify-start py-12 sm:py-16 px-4 sm:px-6 lg:px-8 mx-[-50vw] left-1/2 right-1/2
+				class="relative w-screen bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed flex items-center justify-start py-12 sm:py-16 px-4 sm:px-6 lg:px-8 mx-[-50vw] left-1/2 right-1/2
     h-[80vh] md:h-screen lg:h-screen mb-20"
 				style={`background-image: url('${import.meta.env.BASE_URL + "/imagenes/luis-2.png"}');`}
 			>
@@ -39,9 +40,8 @@ const posts = (await getCollection("blog")).sort(
 				<div class="absolute inset-0 bg-black opacity-30"></div>
 				<div
 					class="relative z-10 p-6 sm:p-8 md:p-10 lg:p-12 bg-white rounded-lg shadow-xl text-gray-900
-        max-w-[calc(100%-8rem)] sm:max-w-[calc(100%-12rem)] md:max-w-[calc(100%-16rem)] lg:max-w-[calc(100%-20rem)]
-        left-0 ml-4 sm:ml-6 md:ml-8 lg:ml-12"
-					style="width: 40vw; min-width: 320px;"
+        w-[90%] sm:w-[80%] md:w-[40vw] md:min-w-[320px]
+        ml-4 sm:ml-6 md:ml-12"
 				>
 					<div class="space-y-4 sm:space-y-6">
 						<h1

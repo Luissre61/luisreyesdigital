@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   // **TU NOMBRE DE USUARIO ES 'luissre61'**
-  site: 'https://luissre61.github.io', // Confirmado tu nombre de usuario
+  site: 'https://luisreyesdigital.com', // Confirmado tu nombre de usuario
 
   // **TU REPOSITORIO ES 'luisreyesdigital'**
   base: '/luisreyesdigital', // Confirmo que esto es correcto para tu repositorio
