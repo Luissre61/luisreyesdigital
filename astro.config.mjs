@@ -10,7 +10,7 @@ export default defineConfig({
   site: 'https://luisreyesdigital.com', // Confirmado tu nombre de usuario
 
   // **TU REPOSITORIO ES 'luisreyesdigital'**
-  base: '/luisreyesdigital', // Confirmo que esto es correcto para tu repositorio
+  base: '/', // Confirmo que esto es correcto para tu repositorio
 
   trailingSlash: 'always',
   integrations: [mdx(), sitemap()],
