@@ -18,12 +18,27 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         <main class="flex flex-col gap-16 sm:gap-24">
 
           <!-- Sección 1 - Modernizada -->
-<section title="Mis estrategias" class="min-h-[70vh] sm:min-h-[85vh] shadow-[0_4px_15px_-2px_rgba(59,130,246,0.5),0_2px_8px_-1px_rgba(59,130,246,0.3)]">
+<section title="" class="min-h-[70vh] sm:min-h-[85vh] shadow-[0_4px_15px_-2px_rgba(59,130,246,0.5),0_2px_8px_-1px_rgba(59,130,246,0.3)]">
     <div class="bg-[#000033] font-sans text-white h-auto min-h-[80vh] sm:h-[90vh] px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <!-- Patrón de fondo -->
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBzdHJva2U9InJnYmEoMzQsMjExLDIzOCwwLjE1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+')]"></div>
-        </div>
+     <div class="absolute inset-0 bg-gradient-to-br from-[#000033] via-[#1a1a4d] to-[#000033]">
+  <!-- Gradiente radial multi-foco -->
+  <div class="absolute inset-0 opacity-30">
+    <!-- Foco 1: Esquina superior izquierda -->
+    <div class="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-blue-500/40 to-transparent rounded-full blur-3xl"></div>
+
+      <!-- Foco 2: Centro -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-gradient-to-r from-cyan-400/30 via-blue-500/20 to-cyan-400/30 rounded-full blur-3xl"></div>
+
+       <!-- Foco 3: Esquina inferior derecha -->
+    <div class="absolute bottom-0 right-0 w-1/3 h-1/3 bg-gradient-to-tl from-cyan-300/30 to-transparent rounded-full blur-3xl"></div>
+  </div>
+
+    <!-- Patrón sutil de puntos para textura -->
+  <div class="absolute inset-0 opacity-10" 
+       style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 1px);
+              background-size: 40px 40px;"></div>
+</div>
 
         <div class="max-w-7xl mx-auto h-full flex flex-col md:grid md:grid-cols-2 gap-6 sm:gap-8 relative z-10 pt-16 sm:pt-10 sm:py-0">
             <!-- Contenido de texto - Siempre arriba en móvil -->
@@ -54,7 +69,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 <img
                     src={import.meta.env.BASE_URL + "/imagenes/luis-7.png"}
                     alt="Luis Reyes - Profesional digital"
-                    class="h-[50vh] sm:h-[70vh] w-auto object-contain"
+                    class="h-[50vh] sm:h-[84vh] w-auto object-contain"
                     loading="lazy"
                 />
             </div>
@@ -108,7 +123,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <!-- Imagen responsiva (45% del viewport) -->
     <div class="flex justify-center w-[45vw]">
         <img
-            src="https://i.pinimg.com/736x/62/f1/e4/62f1e4ea079366f04e92cd9ee837b3d9.jpg"
+            src={import.meta.env.BASE_URL + "/imagenes/luis-1.jpg"}
             alt="Luis Reyes"
             class="max-h-[60vh] w-auto object-cover shadow-xl rounded-xl mask-radial-closest-corner mask-radial-from-100% mask-radial-at-[40%_50%]"
         />
