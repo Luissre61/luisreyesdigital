@@ -3,9 +3,27 @@ import Icon from "./Icon.astro";
 const today = new Date();
 ---
 
-<footer class="relative bg-[#000033] text-white pt-16 pb-8 overflow-hidden mt-12">
+<footer class="relative bg-[#000033] font-sans text-white pt-8 pb-8 overflow-hidden mt-8">
+  <!-- Patrón de fondo -->
+  <div class="absolute inset-0 bg-gradient-to-br from-[#000033] via-[#1a1a4d] to-[#000033]">
+    <!-- Gradiente radial multi-foco -->
+    <div class="absolute inset-0 opacity-30">
+      <!-- Foco 1: Esquina superior izquierda -->
+      <div class="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-blue-500/40 to-transparent rounded-full blur-3xl"></div>
 
-  
+      <!-- Foco 2: Centro -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-gradient-to-r from-cyan-400/30 via-blue-500/20 to-cyan-400/30 rounded-full blur-3xl"></div>
+
+      <!-- Foco 3: Esquina inferior derecha -->
+      <div class="absolute bottom-0 right-0 w-1/3 h-1/3 bg-gradient-to-tl from-cyan-300/30 to-transparent rounded-full blur-3xl"></div>
+    </div>
+
+    <!-- Patrón sutil de puntos para textura -->
+    <div class="absolute inset-0 opacity-10" 
+         style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 1px);
+                background-size: 40px 40px;"></div>
+  </div>
+
   <!-- Contenido del footer -->
   <div class="relative z-10 flex flex-col items-center text-center px-4 py-8">
     <!-- Texto de copyright -->
