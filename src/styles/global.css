@@ -1,25 +1,5 @@
-/*  The CSS in this style tag is based off of Bear Blog's default CSS.
-    https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-    License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md */
-main{
-    background-color: white;
-}
-
 @import "tailwindcss";
 
-
-:root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
-}
 html {
 	scroll-behavior: smooth;
 }
@@ -28,28 +8,11 @@ body {
 	font-family: 'Atkinson Hyperlegible', sans-serif;
 	margin: 0;
 	padding: 0;
-	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
-}
-
-strong,
-b {
-	font-weight: 700;
 }
 
 
 /* Media Query para unificar estilos móviles */
 @media (max-width: 720px) {
-	body {
-		font-size: 18px;
-	}
-
     .social-icons-wrapper {
         gap: 0.5rem; /* Reduce el espacio entre los iconos en móviles */
     }
@@ -107,4 +70,443 @@ a.boton::before {
 
 a.boton:hover::before {
   transform: scale(1);
+}
+
+/* ============================================
+   ANIMACIONES PARA MEJORAR EXPERIENCIA MÓVIL
+   ============================================ */
+
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes bounceSoft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ============================================
+   CLASES DE ANIMACIÓN UTILITARIAS
+   ============================================ */
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-gradient-flow {
+  background-size: 200% 200%;
+  animation: gradientFlow 3s ease infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.animate-bounce-soft {
+  animation: bounceSoft 2s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animate-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animate-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animate-delay-700 {
+  animation-delay: 700ms;
+}
+
+.animate-delay-800 {
+  animation-delay: 800ms;
+}
+
+.animate-delay-900 {
+  animation-delay: 900ms;
+}
+
+.animate-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+.animate-duration-700 {
+  animation-duration: 700ms;
+}
+
+.animate-duration-1000 {
+  animation-duration: 1000ms;
+}
+
+.animate-duration-1500 {
+  animation-duration: 1500ms;
+}
+
+.animate-duration-2000 {
+  animation-duration: 2000ms;
+}
+
+/* ============================================
+   MEJORAS ESPECÍFICAS PARA MÓVIL
+   ============================================ */
+
+/* Feedback táctil para móvil */
+.touch-feedback:active {
+  transform: scale(0.97);
+  transition: transform 0.1s ease;
+}
+
+.touch-feedback-sm:active {
+  transform: scale(0.99);
+  transition: transform 0.1s ease;
+}
+
+/* Mejoras para elementos interactivos en móvil */
+@media (max-width: 768px) {
+  /* Efectos activos para reemplazar hover */
+  .mobile-active:active {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  /* Deshabilitar hover problemático en móvil */
+  .hover\:shadow-xl:hover,
+  .hover\:-translate-y-1:hover,
+  .hover\:border-blue-200:hover,
+  .hover\:text-blue-600:hover,
+  .group:hover .group-hover\:scale-105 {
+    animation-name: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  /* Mejorar botones para touch */
+  button,
+  a[href],
+  .cursor-pointer {
+    -webkit-tap-highlight-color: rgba(59, 130, 246, 0.1);
+    touch-action: manipulation;
+  }
+  
+  /* Animaciones específicas para móvil */
+  .mobile-float {
+    animation: floatSlow 5s ease-in-out infinite;
+  }
+  
+  .mobile-pulse {
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+  
+  /* Efectos de entrada escalonados para móvil */
+  .stagger-animation > *:nth-child(1) { animation-delay: 0ms; }
+  .stagger-animation > *:nth-child(2) { animation-delay: 150ms; }
+  .stagger-animation > *:nth-child(3) { animation-delay: 300ms; }
+  .stagger-animation > *:nth-child(4) { animation-delay: 450ms; }
+  .stagger-animation > *:nth-child(5) { animation-delay: 600ms; }
+}
+
+/* ============================================
+   ANIMACIONES PARA ELEMENTOS ESPECÍFICOS DE TU SITIO
+   ============================================ */
+
+/* Animación para el gradiente del título */
+.bg-gradient-to-r.from-blue-600.to-cyan-500 {
+  background-size: 200% auto;
+  animation: gradientFlow 4s ease infinite;
+}
+
+/* Animación para los puntos de fondo */
+.bg-gradient-to-br.from-blue-500\/40.to-transparent {
+  animation: float 8s ease-in-out infinite;
+}
+
+.bg-gradient-to-r.from-cyan-400\/30.via-blue-500\/20.to-cyan-400\/30 {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+.bg-gradient-to-tl.from-cyan-300\/30.to-transparent {
+  animation: float 10s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* ============================================
+   EFECTOS DE SCROLL SUAVE
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   CLASES PARA MEJORAR LA INTERACCIÓN MÓVIL
+   ============================================ */
+
+/* Clase para imágenes con efecto de carga suave */
+.img-load-fade {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.img-loaded {
+  opacity: 1;
+}
+
+/* Efecto de onda para botones */
+.wave-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-effect:active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+  animation: wave 0.5s ease-out;
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(30, 30);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   MEJORAS DE RENDIMIENTO PARA MÓVIL
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Optimizar animaciones para móvil */
+  .animate-on-mobile {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* Reducir efectos de desenfoque en móvil para mejor rendimiento */
+  .blur-3xl {
+    --tw-blur: blur(24px);
+  }
+  
+  /* Mejorar renderizado de gradientes */
+  .bg-gradient-to-r {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+/* ============================================
+   ANIMACIONES PARA ICONOS DE LA LISTA
+   ============================================ */
+
+/* Animación para los emojis de la lista de habilidades */
+.text-xl:has(🗣️),
+.text-xl:has(🧠),
+.text-xl:has(🚀),
+.text-xl:has(💻) {
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  /* Animación secuencial para los iconos en móvil */
+  .space-y-4 > li:nth-child(1) .text-xl {
+    animation: bounceSoft 2s ease-in-out infinite;
+  }
+  
+  .space-y-4 > li:nth-child(2) .text-xl {
+    animation: bounceSoft 2s ease-in-out infinite;
+    animation-delay: 0.5s;
+  }
+  
+  .space-y-4 > li:nth-child(3) .text-xl {
+    animation: bounceSoft 2s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  
+  .space-y-4 > li:nth-child(4) .text-xl {
+    animation: bounceSoft 2s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+}
+
+/* ============================================
+   EFECTOS DE CARGA PROGRESIVA
+   ============================================ */
+
+/* Para imágenes que se cargan con lazy loading */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+/* ============================================
+   RESPETAR PREFERENCIAS DE REDUCIR MOVIMIENTO
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-fade-in,
+  .animate-float,
+  .animate-float-slow,
+  .animate-gradient-flow,
+  .animate-pulse-glow,
+  .animate-bounce-soft,
+  .animate-slide-in-left,
+  .animate-slide-in-right,
+  .bg-gradient-to-r.from-blue-600.to-cyan-500,
+  .bg-gradient-to-br.from-blue-500\/40.to-transparent,
+  .bg-gradient-to-r.from-cyan-400\/30.via-blue-500\/20.to-cyan-400\/30,
+  .bg-gradient-to-tl.from-cyan-300\/30.to-transparent {
+    animation: none !important;
+    transition: none !important;
+  }
 }

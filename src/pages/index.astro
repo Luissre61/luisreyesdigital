@@ -17,68 +17,67 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         <Header />
         <main class="flex flex-col gap-16 sm:gap-24">
 
-          <!-- Sección 1 - Modernizada -->
-<section title="" class="min-h-[70vh] sm:min-h-[85vh] shadow-[0_4px_15px_-2px_rgba(59,130,246,0.5),0_2px_8px_-1px_rgba(59,130,246,0.3)]">
+         <!-- Sección 1 - Modernizada -->
+<section title="" class="min-h-[70vh] sm:min-h-[85vh] shadow-[0_4px_15px_-2px_rgba(59,130,246,0.5),0_2px_8px_-1px_rgba(59,130,246,0.3)] animate-fade-in">
     <div class="bg-[#000033] font-sans text-white h-auto min-h-[80vh] sm:h-[90vh] px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <!-- Patrón de fondo -->
-     <div class="absolute inset-0 bg-gradient-to-br from-[#000033] via-[#1a1a4d] to-[#000033]">
-  <!-- Gradiente radial multi-foco -->
-  <div class="absolute inset-0 opacity-30">
-    <!-- Foco 1: Esquina superior izquierda -->
-    <div class="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-blue-500/40 to-transparent rounded-full blur-3xl"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-[#000033] via-[#1a1a4d] to-[#000033]">
+            <!-- Gradiente radial multi-foco -->
+            <div class="absolute inset-0 opacity-30">
+                <!-- Foco 1: Esquina superior izquierda -->
+                <div class="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-blue-500/40 to-transparent rounded-full blur-3xl animate-float-slow"></div>
 
-      <!-- Foco 2: Centro -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-gradient-to-r from-cyan-400/30 via-blue-500/20 to-cyan-400/30 rounded-full blur-3xl"></div>
+                <!-- Foco 2: Centro -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-gradient-to-r from-cyan-400/30 via-blue-500/20 to-cyan-400/30 rounded-full blur-3xl animate-pulse-glow animate-duration-2000"></div>
 
-       <!-- Foco 3: Esquina inferior derecha -->
-    <div class="absolute bottom-0 right-0 w-1/3 h-1/3 bg-gradient-to-tl from-cyan-300/30 to-transparent rounded-full blur-3xl"></div>
-  </div>
+                <!-- Foco 3: Esquina inferior derecha -->
+                <div class="absolute bottom-0 right-0 w-1/3 h-1/3 bg-gradient-to-tl from-cyan-300/30 to-transparent rounded-full blur-3xl animate-float-slow animate-delay-1000"></div>
+            </div>
 
-    <!-- Patrón sutil de puntos para textura -->
-  <div class="absolute inset-0 opacity-10" 
-       style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 1px);
-              background-size: 40px 40px;"></div>
-</div>
+            <!-- Patrón sutil de puntos para textura -->
+            <div class="absolute inset-0 opacity-10" 
+                style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 1px);
+                        background-size: 40px 40px;"></div>
+        </div>
 
         <div class="max-w-7xl mx-auto h-full flex flex-col md:grid md:grid-cols-2 gap-6 sm:gap-8 relative z-10 pt-16 sm:pt-10 sm:py-0">
             <!-- Contenido de texto - Siempre arriba en móvil -->
             <div class="flex flex-col justify-center order-1">
-                
-                
-                <h2 class="text-xl sm:text-2xl text-white mt-2">
-                   Soy Luis Reyes
+                <h2 class="text-xl sm:text-2xl text-white mt-2 animate-fade-in-up">
+                    Soy Luis Reyes
                 </h2>
-                <p> <b class="inline-block px-1 font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent animate-pulse">
+                <p>
+                    <b class="inline-block px-1 font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent animate-gradient-flow animate-duration-1500">
                         | Estratega de Customer Success & Desarrollador Web
-                    </b></p>
+                    </b>
+                </p>
 
-                <p class="text-lg sm:text-2xl leading-relaxed font-medium text-gray-200 my-6">
-                   Especialista en canales digitales enfocado en Customer Success con un enfoque estratégico en Customer Experience (CX) para transformar el Customer Journey en un proceso fluido, personalizado y eficiente.
-                   
+                <p class="text-lg sm:text-2xl leading-relaxed font-medium text-gray-200 my-6 animate-fade-in-up animate-delay-300">
+                    Especialista en canales digitales enfocado en Customer Success con un enfoque estratégico en Customer Experience (CX) para transformar el Customer Journey en un proceso fluido, personalizado y eficiente.
                 </p>
               
-                  <GradientButton 
-                     text="Ver Perfil Profesional"
-                     href="https://www.linkedin.com/in/luis-reyes-263aa2355"
-                     target="_blank"
-                     leftIcon=""
-                     rightIcon="💼"
+                <div class="touch-feedback wave-effect">
+                    <GradientButton 
+                        text="Ver Perfil Profesional"
+                        href="https://www.linkedin.com/in/luis-reyes-263aa2355"
+                        target="_blank"
+                        leftIcon=""
+                        rightIcon="💼"
                     />
+                </div>
             </div>
 
             <!-- Imagen - Abajo en móvil, al lado en desktop -->
-            <div class="flex justify-center items-center order-2 md:order-2 mt-8 sm:mt-0">
+            <div class="flex justify-center items-center order-2 md:order-2 mt-8 sm:mt-0 mobile-float">
                 <img
                     src={"/imagenes/luis-7.png"}
                     alt="Luis Reyes - Profesional digital"
-                    class="h-[50vh] sm:h-[84vh] w-auto object-contain"
+                    class="h-[50vh] sm:h-[84vh] w-auto object-contain img-load-fade"
                     loading="lazy"
                 />
             </div>
         </div>
     </div>
-    
-  
 </section>
 
 <!-- Sección habilidades -->
@@ -208,5 +207,62 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         </main>
 
         <Footer />
+
+
+
+        <script>
+// Manejar la carga de imágenes
+document.addEventListener('DOMContentLoaded', function() {
+    // Imágenes lazy
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    
+    lazyImages.forEach(img => {
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', function() {
+                this.classList.add('loaded');
+            });
+        }
+    });
+    
+    // Efectos táctiles para móvil
+    if ('ontouchstart' in window) {
+        document.querySelectorAll('.mobile-active, .touch-feedback').forEach(el => {
+            el.addEventListener('touchstart', function() {
+                this.classList.add('active');
+            });
+            
+            el.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.classList.remove('active');
+                }, 150);
+            });
+        });
+    }
+    
+    // Animaciones progresivas en scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-in-up');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observar elementos que deben animarse al aparecer
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
+});
+</script>
+
+
     </body>
 </html>
