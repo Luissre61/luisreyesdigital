@@ -4,17 +4,13 @@ import type { HTMLAttributes } from 'astro/types';
 type Props = HTMLAttributes<'a'>;
 
 const { href, class: className, ...props } = Astro.props;
-const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
-
-// La lógica original para `isActive` era un poco frágil.
-// Esta es una forma más robusta de comprobar si el enlace está activo,
-// manejando correctamente las páginas anidadas como /blog/mi-post.
-const hrefString = typeof href === 'string' ? href : href?.toString() ?? '';
-const isActive = hrefString === pathname || (hrefString !== '/' && pathname.startsWith(hrefString));
-const finalHref = (import.meta.env.BASE_URL + hrefString).replace(/\/+/g, '/');
+const pathname = Astro.url.pathname;
+const hrefString = href?.toString().replace(/\/$/, '') || '';
+const pathnameString = pathname.replace(/\/$/, '');
+const isActive = hrefString === pathnameString || (hrefString !== '' && hrefString !== '/' && pathnameString.startsWith(hrefString));
 ---
 
-<a href={finalHref} class:list={[className, { active: isActive }]} {...props}>
+<a href={href} class:list={[className, { active: isActive }]} {...props}>
 	<slot />
 </a>
 <style>
