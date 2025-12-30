@@ -46,21 +46,23 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 
                 
                 <h2 class="text-xl sm:text-2xl text-white mt-2">
-                    Soy Luis Reyes
+                   Soy Luis Reyes
                 </h2>
+                <p> <b class="inline-block px-1 font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent animate-pulse">
+                        | Estratega de Customer Success & Desarrollador Web
+                    </b></p>
 
-                <p class="text-lg sm:text-3xl leading-relaxed font-medium text-gray-200 mb-6">
-                    Impulso tu negocio con campañas de Meta Ads rentables. Convierto tus clics en clientes de  
-                    <b class="inline-block px-1 font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent animate-pulse">
-                        alto valor.
-                    </b>
+                <p class="text-lg sm:text-2xl leading-relaxed font-medium text-gray-200 my-6">
+                   Especialista en canales digitales enfocado en Customer Success con un enfoque estratégico en Customer Experience (CX) para transformar el Customer Journey en un proceso fluido, personalizado y eficiente.
+                   
                 </p>
               
                   <GradientButton 
-                     text="Hablemos de tu Estrategia"
-                     href="blog/"
-                     leftIcon="⚡️"
-                     rightIcon="🚀"
+                     text="Ver Perfil Profesional"
+                     href="https://www.linkedin.com/in/luis-reyes-263aa2355"
+                     target="_blank"
+                     leftIcon=""
+                     rightIcon="💼"
                     />
             </div>
 
@@ -86,33 +88,46 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         <div class="text-left flex flex-col gap-6 sm:gap-8">
             <!-- Título responsivo -->
             <h2 class="text-2xl sm:text-4xl font-bold text-[#000033] bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent px-4 py-2 transition-all duration-1000">
-            Estrategias de Marketing que Generan Campañas Rentables
+            Soluciones Estratégicas para la Excelencia en la Experiencia del Cliente
         </h2>
 
             <!-- Descripción -->
-           <ul class="text-lg sm:text-xl space-y-3 font-medium text-gray-700">
+           <ul class="text-lg sm:text-xl space-y-4 font-medium text-gray-700">
     <li class="flex items-start">
         <span class="mr-3 mt-0.5 flex-shrink-0 text-xl">🗣️</span>
-        Diseño Estratégico de Anuncios y Contenido
+        <span>
+            <strong class="text-gray-900">Comunicación Estratégica y Empática:</strong> 
+            Gestión conversacional avanzada con enfoque en la resolución de conflictos y fidelización.
+        </span>
     </li>
     <li class="flex items-start">
         <span class="mr-3 mt-0.5 flex-shrink-0 text-xl">🧠</span>
-        Gestión y Optimización de Campañas
+        <span>
+            <strong class="text-gray-900">Optimización del Customer Journey:</strong> 
+            Análisis y mejora de cada punto de contacto para garantizar un proceso fluido y eficiente.
+        </span>
     </li>
     <li class="flex items-start">
         <span class="mr-3 mt-0.5 flex-shrink-0 text-xl">🚀</span>
-        Segmentación Inteligente con IA
+        <span>
+            <strong class="text-gray-900">Implementación de IA Generativa:</strong> 
+            Uso de herramientas de inteligencia artificial para la automatización de tareas y mejora de la productividad.
+        </span>
     </li>
     <li class="flex items-start">
         <span class="mr-3 mt-0.5 flex-shrink-0 text-xl">💻</span>
-        Análisis Técnico de Landing Pages
+        <span>
+            <strong class="text-gray-900">Desarrollo y Soporte Técnico:</strong> 
+            Capacidad técnica para entender la arquitectura web y solucionar incidencias técnicas.
+        </span>
     </li>
 </ul>
 
  
 <GradientButton 
-  text="Explora mi Guía de Marketing"
-  href="blog/"
+  text="Conoce mi Trayectoria Profesional"
+  href="https://www.linkedin.com/in/luis-reyes-263aa2355"
+  target="_blank"
   leftIcon="💡"
   rightIcon="✨⬇️"
 />
@@ -122,12 +137,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
     <!-- Imagen responsiva (45% del viewport) -->
     <div class="flex justify-center w-[45vw]">
+    <div class="relative max-h-[70vh]">
         <img
-            src={import.meta.env.BASE_URL + "/imagenes/luis-1.jpg"}
+            src={"/imagenes/luis-1.jpg"}
             alt="Luis Reyes"
-            class="max-h-[60vh] w-auto object-cover shadow-xl rounded-xl mask-radial-closest-corner mask-radial-from-100% mask-radial-at-[40%_50%]"
+            class="w-auto h-full object-cover shadow-2xl"
+            style="border-radius: 30% 70% 30% 30% / 30% 30% 70% 70%;"
         />
+        <!-- Efecto de brillo sutil -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent rounded-full mix-blend-soft-light"></div>
     </div>
+</div>
+</div>
 </section>
 
  <!-- Sección mi camino - Con transiciones más lentas -->
@@ -140,29 +161,29 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         <div class="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:justify-items-center">
             <FeatureCard
                 icon="💡"
-                title="Encontrar Tu Propósito Digital"
-                description="Como pasé de no tener un rumbo definido a construir una marca con propósito, te muestro cómo encontrar tu camino y transformar tu visión en un proyecto tangible."
+                title="Garantizar la Satisfacción del Cliente"
+                description="He consolidado una trayectoria de 4 años en atención al cliente, especializándome en canales digitales. Mi camino me ha preparado para que cada chat sea una oportunidad de garantizar el Customer Success y la fidelización del usuario"
                 class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
             />
 
             <FeatureCard
                 icon="🚀"
-                title="Desbloquear Oportunidades"
-                description="Te guío a través de las lecciones que aprendí al arriesgarme y dejar mi zona de confort, para que descubras que los fracasos solo son el camino hacia nuevas oportunidades."
+                title="Resolver Conflictos de Forma Ágil"
+                description="Mi experiencia gestionando situaciones de alta presión me permite transformar reclamos complejos en soluciones reales. Estoy preparado para mejorar la retención del cliente integrando empatía, rapidez y una comunicación estratégica"
                 class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
             />
 
             <FeatureCard
                 icon="💻"
-                title="Adquirir Habilidades de Alto Valor"
-                description="Te comparto mi proceso para dominar habilidades fundamentales como el desarrollo web, el análisis de datos, el marketing digital y la IA, y te muestro cómo aplicarlas para crear tu propia marca y proyecto."
+                title="Integrar Tecnología en la Operación"
+                description="Como desarrollador web, entiendo los productos desde su estructura. Poseo una base sólida en fundamentos de programación que me permite desglosar problemas grandes para convertirlo en problemas más simples y accionables, tambien puedo optimizar procesos con IA."
                 class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
             />
 
             <FeatureCard
-                icon="📈"
-                title="Afrontar la Adversidad"
-                description="Mi experiencia con la quiebra y la depresión me enseñó a convertir los obstáculos en catalizadores. Te inspiro a encontrar la fuerza para seguir adelante, a cuestionar la culpa y a usar cada revés como un impulso."
+                icon="🧩"
+                title="Adaptarme a Entornos Exigentes"
+                description="Los retos más difíciles me han enseñado a ser resolutivo y aprender sistemas complejos. Estoy preparado para mantener un estándar de excelencia y una comunicación impecable incluso en los entornos digitales más competitivos"
                 class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
             />
         </div>

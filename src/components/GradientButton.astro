@@ -3,6 +3,7 @@
 export interface Props {
   text: string;
   href: string;
+  target?: string;
   leftIcon?: string;
   rightIcon?: string;
   gradientFrom?: string;
@@ -16,6 +17,7 @@ export interface Props {
 const {
   text = "Call to Action",
   href = "#",
+  target,
   leftIcon = "",
   rightIcon = "",
   gradientFrom = "from-blue-600",
@@ -73,6 +75,7 @@ const fullHref = isInternalLink ? href : (
 ) : (
   <a
     href={fullHref}
+    target={target}
     class={`
       self-start inline-block 
       bg-gradient-to-r ${gradientFrom} ${gradientTo} 
