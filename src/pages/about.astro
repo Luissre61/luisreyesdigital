@@ -21,153 +21,133 @@ import FeatureCard from '@/components/FeatureCard.astro';
     <body
         class="overflow-x-hidden flex flex-col min-h-screen font-sans bg-white"
     >
+
+    
+
         <!-- Contenido principal de la página -->
         <main class="flex-grow bg-white -mt-1 ">
             <Header />
 
-            <!-- Sección Hero: Encabezado principal con fondo oscuro y curva -->
-            <div
-                class="relative bg-[#000033] min-h-[10vh] sm:min-h-[25vh] w-full overflow-hidden mb-10"
-            >
-                <!-- Patrón de fondo decorativo -->
-                <div class="absolute inset-0 opacity-20">
-                    <div
-                        class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBzdHJva2U9InJnYmEoMzQsMjExLDIzOCwwLjE1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+')]"
-                    >
-                    </div>
-                </div>
+          <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-6 animate-fade-in">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#000033] via-[#1a1a4d] to-[#000033]">
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-blue-500/40 to-transparent rounded-full blur-3xl animate-float-slow"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-gradient-to-r from-cyan-400/30 via-blue-500/20 to-cyan-400/30 rounded-full blur-3xl animate-pulse-glow animate-duration-2000"></div>
+            <div class="absolute bottom-0 right-0 w-1/3 h-1/3 bg-gradient-to-tl from-cyan-300/30 to-transparent rounded-full blur-3xl animate-float-slow animate-delay-1000"></div>
+        </div>
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
+    </div>
 
-
-                <!-- Contenido del Hero: Título y subtítulo -->
-                <div
-                    class="relative z-10 max-w-7xl mx-auto h-full flex items-center px-4"
-                >
-                    <div class="text-white pt-3 sm:pt-10 py-10 sm:py-5 ">
-                        <h1
-                            class="text-3xl md:text-4xl lg:text-5xl font-bold mb-0 sm:mb-2 leading-tight"
-                        >
-                            Luis <span
-                                class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500"
-                                >Reyes</span
-                            >
-                        </h1>
-                        <p
-                            class="text-lg md:text-xl text-blue-200 italic max-w-2xl"
-                        >
-                            Un visionario en constante evolución y crecimiento
-                        </p>
-                    </div>
-                </div>
+    <div class="relative z-10 max-w-6xl w-full bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl animate-fade-in-up">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <div class="relative group mx-auto lg:mx-0 animate-slide-in-left">
+                <div class="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse-glow"></div>
+                <img 
+                    src="/tu-foto-perfil.jpg" 
+                    alt="Luis Reyes - Especialista en Ventas y CS" 
+                    class="relative rounded-2xl w-full max-w-md object-cover border border-white/20 shadow-lg img-load-fade group-hover:scale-105 transition-transform duration-700"
+                />
             </div>
 
-            <!-- Contenedor principal del artículo -->
-            <!--
-              Este contenedor aplica el padding lateral directamente al contenido del artículo.
-              - `px-4`: Padding de 1rem en móvil (equivalente a ~1em).
-              - `md:px-12`: Padding de 3rem en pantallas medianas y grandes (equivalente a ~3em).
-            -->
-            <div class="max-w-4xl mx-auto px-4 md:px-12">
-                <!-- Contenedor del artículo con estilos de 'prose' para el contenido Markdown -->
-                <article class="prose prose-lg md:prose-xl prose-blue">
-                    <!-- Sección 1: Introducción y orígenes -->
-                    <p
-                        class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
-                    >
-                        Hola, mi nombre es Luis Reyes. Mi historia no se cuenta solo con palabras. Se ve en cada paso que he dado, desde mis orígenes en el campo venezolano hasta el mundo digital de hoy. Mi trayectoria no es convencional, y esa es mi mayor fortaleza.
-                    </p>
+            <div class="space-y-6 text-white animate-slide-in-right">
+                <div class="animate-fade-in-up">
+                    <span class="text-cyan-400 font-medium tracking-widest uppercase text-sm animate-gradient-flow inline-block">Acerca de Mí</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-2 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent animate-gradient-flow animate-duration-1500">
+                        El Humano detrás de la Estrategia Digital. 🧠
+                    </h2>
+                </div>
 
-                    <!-- Imagen 1: Luis en la naturaleza -->
-                    <figure class="my-10">
-                        <img
-                            src={import.meta.env.BASE_URL +
-                                "/imagenes/luis-bosque.jpg"}
-                            alt="Luis en la naturaleza"
-                            class="rounded-2xl shadow-xl w-full h-auto max-h-[70vh] object-cover"
-                            loading="lazy"
-                        />
-                    </figure>
-
-                    <!-- Sección 2: Primer emprendimiento y adversidad -->
-                    <p
-                        class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
-                    >
-                       Pasé de ser un emprendedor a dominar las ventas y el soporte al cliente en un call center durante 4 años. Cada experiencia me enseñó a liderar, a gestionar y, lo más importante, a comunicarme de forma efectiva. Hoy, he canalizado esa resiliencia en el mundo digital.
-                    </p>
-
-                     <p
-                        class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8"
-                    >
-                       Con habilidades en desarrollo web y conocimientos en marketing digital, estoy construyendo mi marca personal, Luis Reyes Digital, para mostrar que el punto de partida no define el destino, y que la resiliencia es el motor de una transformación real.
-                    </p>
-
-                     <!-- Imagen 2: Luis en la ciudad -->
-                    <figure class="my-10">
-                        <img
-                            src={import.meta.env.BASE_URL +
-                                "/imagenes/luis-ciudad.jpg"}
-                            alt="Luis en la naturaleza"
-                            class="rounded-2xl shadow-xl w-full h-auto max-h-[70vh] object-cover"
-                            loading="lazy"
-                        />
-                        <figcaption class="text-center text-gray-500 mt-2">
-                            Acompañame en este viaje digital. ¡Juntos,
-                            construyamos tu propio futuro digital
-                        </figcaption>
-                    </figure>
-
-                </article>
-                <Section title="Mi Brújula Digital">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-                        <FeatureCard
-                            title="Quién soy"
-                            description="Soy una persona con 4 años de experiencia en gestión de ventas y soporte al cliente, apasionado por la tecnología y el Marketing Digital."
-                            icon="👨‍💻"
-                            class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
-                        />
-                        <FeatureCard
-                            title="Qué puedo hacer"
-                            description="Estrategias Digitales. Desarrollo Web. Marketing Digital. Análisis de datos."
-                            icon="🛠️"
-                            class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
-                        />
-                        <FeatureCard
-                            title="Mi objetivo"
-                            description="Utilizar mis habilidades para construir soluciones digitales y guiar a otros a través de su propio camino de transformación."
-                            icon="🎯"
-                            class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
-                        />
-                    </div>
-                    
-                </Section>
-             
-                    
-
-                    <!-- Sección de Llamado a la Acción (CTA) -->
-                    <div
-                        class="bg-gradient-to-r from-[#000033] to-blue-800 rounded-lg p-4 sm:p-6 text-white mb-8"
-                    >
-                        <div class="max-w-2xl mx-auto text-center">
-                            <h2
-                                class="text-2xl md:text-3xl text-white font-bold mb-6"
-                            >
-                                Transforma cada desafío en tu próxima
-                                oportunidad
-                            </h2>
-
-                            <!-- Botón CTA que enlaza al blog -->
-                            <div class="mt-4">
-                                <GradientButton 
-                                    text="Explora Mi Blog"
-                                    href="blog/"
-                                    leftIcon="⚡️"
-                                    rightIcon="👇 "
-                                />
-                            </div>
-                          
+                <ul class="space-y-6 stagger-animation">
+                    <li class="flex gap-4 animate-fade-in-up animate-on-mobile mobile-active">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 mt-1 animate-bounce-soft">✓</div>
+                        <div>
+                            <strong class="text-cyan-300 block text-lg group-hover:text-cyan-400 transition-colors duration-300">El Origen (Experiencia):</strong>
+                            <p class="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">Mi nombre es Luis Reyes y mi trayectoria no es convencional; esa es mi mayor fortaleza. Desde mis orígenes en el campo venezolano hasta el ecosistema digital de hoy, cada paso ha sido una lección de adaptación y esfuerzo constante. No mido mi éxito por el punto de partida, sino por la capacidad de transformar realidades a través del aprendizaje y la dedicación.</p>
                         </div>
-                    </div>
-            </div> <!-- Cierre de max-w-4xl -->
+                    </li>
+                    <li class="flex gap-4 animate-fade-in-up animate-on-mobile animate-delay-100 mobile-active">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 mt-1 animate-bounce-soft animate-delay-200">✓</div>
+                        <div>
+                            <strong class="text-blue-300 block text-lg group-hover:text-blue-400 transition-colors duration-300">El Puente (Tecnología):</strong>
+                            <p class="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">Pasé de emprender por cuenta propia a liderar la gestión de ventas y soporte al cliente durante 4 años en entornos de alto rendimiento. Allí perfeccioné el arte de la comunicación efectiva y la gestión de crisis, entendiendo que detrás de cada transacción hay una persona buscando una solución honesta y eficiente.</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4 animate-fade-in-up animate-on-mobile animate-delay-200 mobile-active">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 mt-1 animate-bounce-soft animate-delay-400">✓</div>
+                        <div>
+                            <strong class="text-purple-300 block text-lg group-hover:text-purple-400 transition-colors duration-300">Luis Reyes Digital: El Futuro</strong>
+                            <p class="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">Hoy, canalizo esa resiliencia en Luis Reyes Digital. He integrado fundamentos de desarrollo web y marketing digital no para cambiar mi enfoque, sino para ser profesional completo y versátil. Mi objetivo es claro: demostrar que la tecnología es el puente y el talento humano el motor de una transformación real.</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="flex flex-wrap gap-3 pt-4 stagger-animation">
+                    <span class="px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-medium animate-fade-in-up hover:bg-white/20 hover:border-white/30 transition-all duration-300 mobile-active">🎯 Estrategia Comercial</span>
+                    <span class="px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-medium animate-fade-in-up animate-delay-100 hover:bg-white/20 hover:border-white/30 transition-all duration-300 mobile-active">🛠️ Criterio Técnico</span>
+                    <span class="px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-medium animate-fade-in-up animate-delay-200 hover:bg-white/20 hover:border-white/30 transition-all duration-300 mobile-active">🤝 Enfoque Humano</span>
+                </div>
+
+                <div class="pt-6 animate-fade-in-up animate-delay-400">
+                    <a href="https://linkedin.com/in/tu-perfil" class="inline-flex items-center justify-center px-8 py-3 font-bold text-white transition-all duration-200 bg-blue-600 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 shadow-lg shadow-blue-500/30 touch-feedback wave-effect group/btn hover:scale-105 active:scale-95">
+                        Conecta conmigo en LinkedIn
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 bg-gray-50 relative overflow-hidden">
+  <!-- Elementos de fondo decorativos -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-float-slow"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-tr from-blue-500/15 to-cyan-500/15 rounded-full blur-3xl animate-float-slow animate-delay-1000"></div>
+  </div>
+  
+  <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+    <div class="mb-8 animate-fade-in-down">
+      <h2 class="text-2xl sm:text-4xl font-bold text-[#000033] bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent px-4 py-2 animate-gradient-flow animate-duration-1500 inline-block">
+        En el mundo digital
+      </h2>
+    </div>
+    
+    <div class="relative inline-block mb-12 animate-fade-in-up animate-delay-200">
+      <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed px-4 py-6 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-100/50">
+        El futuro de la tecnología, la IA y los algoritmos no reside en el reemplazo del talento humano, sino en su capacidad para potenciarlo hacia nuevas oportunidades innovadoras.
+      </p>
+      
+      <!-- Elemento decorativo de acento -->
+      <div class="absolute -top-2 -left-2 w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg rotate-45 animate-pulse-glow"></div>
+      <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-tr from-cyan-500 to-blue-500 rounded-lg rotate-45 animate-pulse-glow animate-delay-500"></div>
+    </div>
+    
+    <!-- Iconos decorativos -->
+    <div class="flex justify-center items-center gap-6 sm:gap-10 mt-12 animate-fade-in-up animate-delay-400">
+      <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center shadow-sm border border-gray-200 animate-bounce-soft">
+        <span class="text-2xl sm:text-3xl">🤖</span>
+      </div>
+      <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center shadow-sm border border-gray-200 animate-bounce-soft animate-delay-200">
+        <span class="text-2xl sm:text-3xl">💡</span>
+      </div>
+      <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center shadow-sm border border-gray-200 animate-bounce-soft animate-delay-400">
+        <span class="text-2xl sm:text-3xl">🚀</span>
+      </div>
+    </div>
+    
+    <!-- Llamado a la acción sutil -->
+    <div class="mt-12 animate-fade-in-up animate-delay-600">
+      <div class="inline-flex items-center gap-3 text-gray-500 text-sm sm:text-base font-medium px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-sm border border-gray-200 hover:border-blue-200 transition-all duration-300 active:scale-95 touch-feedback">
+        <span>Descubre cómo la tecnología potencia la innovación humana</span>
+        <span class="text-blue-500 animate-pulse-glow">→</span>
+      </div>
+    </div>
+  </div>
+</section>
+
         </main>
 
         <Footer />

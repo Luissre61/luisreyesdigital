@@ -70,7 +70,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             <!-- Imagen - Abajo en móvil, al lado en desktop -->
             <div class="flex justify-center items-center order-2 md:order-2 mt-8 sm:mt-0 mobile-float">
                 <img
-                    src={"/imagenes/luis-7.png"}
+                    src={import.meta.env.BASE_URL + "imagenes/luis-7.png"}
                     alt="Luis Reyes - Profesional digital"
                     class="h-[50vh] sm:h-[84vh] w-auto object-contain img-load-fade"
                     loading="lazy"
@@ -84,37 +84,37 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 <section class="min-h-[70vh] flex flex-col md:flex-row items-center justify-center gap-8 px-4 sm:px-6 lg:px-8 py-12 bg-white">
     <!-- Contenedor de información (45% del viewport) -->
     <div class="text-gray-800 w-full md:w-[90vw] lg:w-[70vw] xl:w-[50vw] 2xl:w-[45vw] max-w-4xl mx-auto">
-        <div class="text-left flex flex-col gap-6 sm:gap-8 animate-slide-in-left">
+        <div class="text-left flex flex-col gap-6 sm:gap-8">
             <!-- Título responsivo -->
-            <h2 class="text-2xl sm:text-4xl font-bold text-[#000033] bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent px-4 py-2 animate-gradient-flow animate-duration-1500">
+            <h2 class="text-2xl sm:text-4xl font-bold text-[#000033] bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent px-4 py-2 animate-gradient-flow animate-duration-1500 transition-all duration-1000">
                 Soluciones Estratégicas para la Excelencia en la Experiencia del Cliente
             </h2>
 
             <!-- Descripción -->
-            <ul class="text-lg sm:text-xl space-y-4 font-medium text-gray-700 stagger-animation">
-                <li class="flex items-start transform transition-transform duration-300 active:scale-[1.02] active:translate-x-2 animate-on-mobile">
-                    <span class="mr-3 mt-0.5 flex-shrink-0 text-xl animate-bounce-soft animate-delay-100">🗣️</span>
+            <ul class="text-lg sm:text-xl space-y-4 font-medium text-gray-700">
+                <li class="flex items-start group/item hover:scale-[1.02] hover:translate-x-2 transition-all duration-300 active:scale-[1.02] active:translate-x-2">
+                    <span class="mr-3 mt-0.5 flex-shrink-0 text-xl animate-bounce-soft animate-delay-100 group-hover/item:animate-none">🗣️</span>
                     <span>
                         <strong class="text-gray-900">Comunicación Estratégica y Empática:</strong> 
                         Gestión conversacional avanzada con enfoque en la resolución de conflictos y fidelización.
                     </span>
                 </li>
-                <li class="flex items-start transform transition-transform duration-300 active:scale-[1.02] active:translate-x-2 animate-on-mobile">
-                    <span class="mr-3 mt-0.5 flex-shrink-0 text-xl animate-bounce-soft animate-delay-300">🧠</span>
+                <li class="flex items-start group/item hover:scale-[1.02] hover:translate-x-2 transition-all duration-300 active:scale-[1.02] active:translate-x-2">
+                    <span class="mr-3 mt-0.5 flex-shrink-0 text-xl animate-bounce-soft animate-delay-300 group-hover/item:animate-none">🧠</span>
                     <span>
                         <strong class="text-gray-900">Optimización del Customer Journey:</strong> 
                         Análisis y mejora de cada punto de contacto para garantizar un proceso fluido y eficiente.
                     </span>
                 </li>
-                <li class="flex items-start transform transition-transform duration-300 active:scale-[1.02] active:translate-x-2 animate-on-mobile">
-                    <span class="mr-3 mt-0.5 flex-shrink-0 text-xl animate-bounce-soft animate-delay-500">🚀</span>
+                <li class="flex items-start group/item hover:scale-[1.02] hover:translate-x-2 transition-all duration-300 active:scale-[1.02] active:translate-x-2">
+                    <span class="mr-3 mt-0.5 flex-shrink-0 text-xl animate-bounce-soft animate-delay-500 group-hover/item:animate-none">🚀</span>
                     <span>
                         <strong class="text-gray-900">Implementación de IA Generativa:</strong> 
                         Uso de herramientas de inteligencia artificial para la automatización de tareas y mejora de la productividad.
                     </span>
                 </li>
-                <li class="flex items-start transform transition-transform duration-300 active:scale-[1.02] active:translate-x-2 animate-on-mobile">
-                    <span class="mr-3 mt-0.5 flex-shrink-0 text-xl animate-bounce-soft animate-delay-700">💻</span>
+                <li class="flex items-start group/item hover:scale-[1.02] hover:translate-x-2 transition-all duration-300 active:scale-[1.02] active:translate-x-2">
+                    <span class="mr-3 mt-0.5 flex-shrink-0 text-xl animate-bounce-soft animate-delay-700 group-hover/item:animate-none">💻</span>
                     <span>
                         <strong class="text-gray-900">Desarrollo y Soporte Técnico:</strong> 
                         Capacidad técnica para entender la arquitectura web y solucionar incidencias técnicas.
@@ -122,7 +122,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 </li>
             </ul>
 
-            <div class="touch-feedback wave-effect animate-fade-in-up animate-delay-800">
+            <div class="group/btn hover:scale-105 transition-transform duration-300 active:scale-95">
                 <GradientButton 
                     text="Conoce mi Trayectoria Profesional"
                     href="https://www.linkedin.com/in/luis-reyes-263aa2355"
@@ -136,132 +136,123 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
     <!-- Imagen responsiva (45% del viewport) -->
     <div class="flex justify-center w-[55vw]">
-        <div class="relative max-h-[85vh] animate-slide-in-right">
+        <div class="relative max-h-[85vh] group/image hover:scale-105 transition-transform duration-500">
             <img
-                src={"/imagenes/luis-1.png"}
+                src={import.meta.env.BASE_URL + "imagenes/luis-1.png"}
                 alt="Luis Reyes"
-                class="w-auto h-full object-cover shadow-2xl img-load-fade"
+                class="w-auto h-full object-cover shadow-2xl img-load-fade group-hover/image:scale-110 transition-transform duration-700"
                 style="border-radius: 30% 70% 30% 18% / 30% 30% 70% 70%;"
             />
             <!-- Efecto de brillo sutil -->
-            <div class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent rounded-full mix-blend-soft-light animate-pulse-glow animate-duration-3000"></div>
+            <div class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent rounded-full mix-blend-soft-light group-hover/image:opacity-50 transition-opacity duration-500"></div>
         </div>
     </div>
 </section>
 
  <!-- Sección mi camino - Con transiciones más lentas -->
-<section id="mi-viaje" class="px-4 sm:px-6 lg:px-8  ">
+<section id="mi-viaje" class="px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl w-full mx-auto flex flex-col items-center text-center gap-8 sm:gap-16">
-        <h2 class="text-2xl sm:text-4xl font-bold text-[#000033] bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent px-4 py-2 transition-all duration-1000">
+        <h2 class="text-2xl sm:text-4xl font-bold text-[#000033] bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent px-4 py-2 animate-gradient-flow animate-duration-1500 transition-all duration-1000">
             Mi camino me ha preparado para ayudarte a:
         </h2>
 
-        <div class="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:justify-items-center">
+        <div class="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:justify-items-center stagger-animation">
             <FeatureCard
                 icon="💡"
                 title="Garantizar la Satisfacción del Cliente"
                 description="He consolidado una trayectoria de 4 años en atención al cliente, especializándome en canales digitales. Mi camino me ha preparado para que cada chat sea una oportunidad de garantizar el Customer Success y la fidelización del usuario"
-                class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
+                class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up"
             />
 
             <FeatureCard
                 icon="🚀"
                 title="Resolver Conflictos de Forma Ágil"
                 description="Mi experiencia gestionando situaciones de alta presión me permite transformar reclamos complejos en soluciones reales. Estoy preparado para mejorar la retención del cliente integrando empatía, rapidez y una comunicación estratégica"
-                class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
+                class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up animate-delay-100"
             />
 
             <FeatureCard
                 icon="💻"
                 title="Integrar Tecnología en la Operación"
                 description="Como desarrollador web, entiendo los productos desde su estructura. Poseo una base sólida en fundamentos de programación que me permite desglosar problemas grandes para convertirlo en problemas más simples y accionables, tambien puedo optimizar procesos con IA."
-                class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
+                class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up animate-delay-200"
             />
 
             <FeatureCard
                 icon="🧩"
                 title="Adaptarme a Entornos Exigentes"
                 description="Los retos más difíciles me han enseñado a ser resolutivo y aprender sistemas complejos. Estoy preparado para mantener un estándar de excelencia y una comunicación impecable incluso en los entornos digitales más competitivos"
-                class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
+                class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up animate-delay-300"
             />
         </div>
     </div>
 </section>
 
 
-
-<section class="py-16 bg-gray-50">
-  <div class="max-w-6xl mx-auto px-4 text-center">
-
- <h2 class="text-2xl sm:text-4xl font-bold text-[#000033] bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent px-4 py-2 transition-all duration-1000">
-           En el mundo digital
-        </h2>
-    <p class="text-gray-600 mb-12 max-w-2xl mx-auto">
-      El futuro de la tecnología, la IA y los algoritmos no reside en el reemplazo del talento humano, sino en su capacidad para potenciarlo hacia nuevas oportunidades innovadoras.
-    </p>
-
+<section class="py-16 bg-gray-50 relative overflow-hidden">
+  <!-- Elementos de fondo decorativos -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-float-slow"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-tr from-blue-500/15 to-cyan-500/15 rounded-full blur-3xl animate-float-slow animate-delay-1000"></div>
+  </div>
+  
+  <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+    <div class="mb-8 animate-fade-in-down">
+      <h2 class="text-2xl sm:text-4xl font-bold text-[#000033] bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent px-4 py-2 animate-gradient-flow animate-duration-1500 inline-block">
+        En el mundo digital
+      </h2>
+    </div>
     
+    <div class="relative inline-block mb-12 animate-fade-in-up animate-delay-200">
+      <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed px-4 py-6 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-100/50">
+        El futuro de la tecnología, la IA y los algoritmos no reside en el reemplazo del talento humano, sino en su capacidad para potenciarlo hacia nuevas oportunidades innovadoras.
+      </p>
+      
+      <!-- Elemento decorativo de acento -->
+      <div class="absolute -top-2 -left-2 w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg rotate-45 animate-pulse-glow"></div>
+      <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-tr from-cyan-500 to-blue-500 rounded-lg rotate-45 animate-pulse-glow animate-delay-500"></div>
+    </div>
+    
+    <!-- Iconos decorativos -->
+    <div class="flex justify-center items-center gap-6 sm:gap-10 mt-12 animate-fade-in-up animate-delay-400">
+      <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center shadow-sm border border-gray-200 animate-bounce-soft">
+        <span class="text-2xl sm:text-3xl">🤖</span>
+      </div>
+      <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center shadow-sm border border-gray-200 animate-bounce-soft animate-delay-200">
+        <span class="text-2xl sm:text-3xl">💡</span>
+      </div>
+      <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center shadow-sm border border-gray-200 animate-bounce-soft animate-delay-400">
+        <span class="text-2xl sm:text-3xl">🚀</span>
+      </div>
+    </div>
+    
+    <!-- Llamado a la acción sutil -->
+    <div class="mt-12 animate-fade-in-up animate-delay-600">
+      <div class="inline-flex items-center gap-3 text-gray-500 text-sm sm:text-base font-medium px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-sm border border-gray-200 hover:border-blue-200 transition-all duration-300 active:scale-95 touch-feedback">
+        <span>Descubre cómo la tecnología potencia la innovación humana</span>
+        <span class="text-blue-500 animate-pulse-glow">→</span>
+      </div>
+    </div>
+  </div>
 </section>
 
         </main>
 
         <Footer />
-
-
-
         <script>
-// Manejar la carga de imágenes
-document.addEventListener('DOMContentLoaded', function() {
-    // Imágenes lazy
-    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-    
-    lazyImages.forEach(img => {
-        if (img.complete) {
-            img.classList.add('loaded');
-        } else {
-            img.addEventListener('load', function() {
-                this.classList.add('loaded');
+            // Script para manejar la carga suave de imágenes
+            document.addEventListener('DOMContentLoaded', () => {
+                const images = document.querySelectorAll('.img-load-fade');
+                images.forEach(img => {
+                    if (img.complete) {
+                        img.classList.add('loaded');
+                    } else {
+                        img.addEventListener('load', () => {
+                            img.classList.add('loaded');
+                        });
+                    }
+                });
             });
-        }
-    });
-    
-    // Efectos táctiles para móvil
-    if ('ontouchstart' in window) {
-        document.querySelectorAll('.mobile-active, .touch-feedback').forEach(el => {
-            el.addEventListener('touchstart', function() {
-                this.classList.add('active');
-            });
-            
-            el.addEventListener('touchend', function() {
-                setTimeout(() => {
-                    this.classList.remove('active');
-                }, 150);
-            });
-        });
-    }
-    
-    // Animaciones progresivas en scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-fade-in-up');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    // Observar elementos que deben animarse al aparecer
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        observer.observe(el);
-    });
-});
-</script>
-
-
+        </script>
     </body>
 </html>

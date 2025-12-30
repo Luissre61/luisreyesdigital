@@ -73,10 +73,19 @@ a.boton:hover::before {
 }
 
 /* ============================================
-   ANIMACIONES PARA MEJORAR EXPERIENCIA MÓVIL
+   ANIMACIONES GLOBALES
    ============================================ */
 
 /* Animaciones de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -88,15 +97,40 @@ a.boton:hover::before {
   }
 }
 
-@keyframes fadeIn {
+@keyframes fadeInDown {
   from {
     opacity: 0;
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animaciones de movimiento */
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -111,10 +145,20 @@ a.boton:hover::before {
     transform: translateY(0);
   }
   50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatMobile {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
     transform: translateY(-5px);
   }
 }
 
+/* Animaciones de gradiente */
 @keyframes gradientFlow {
   0% {
     background-position: 0% 50%;
@@ -129,10 +173,10 @@ a.boton:hover::before {
 
 @keyframes pulseGlow {
   0%, 100% {
-    opacity: 1;
+    opacity: 0.3;
   }
   50% {
-    opacity: 0.8;
+    opacity: 0.5;
   }
 }
 
@@ -141,42 +185,53 @@ a.boton:hover::before {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
   }
 }
 
-@keyframes slideInLeft {
+@keyframes spinSlow {
   from {
-    opacity: 0;
-    transform: translateX(-30px);
+    transform: rotate(0deg);
   }
   to {
-    opacity: 1;
-    transform: translateX(0);
+    transform: rotate(360deg);
   }
 }
 
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
+/* Animación de onda */
+@keyframes wave {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  100% {
+    transform: scale(30, 30);
+    opacity: 0;
   }
 }
 
 /* ============================================
-   CLASES DE ANIMACIÓN UTILITARIAS
+   CLASES DE ANIMACIÓN
    ============================================ */
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
 
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
+.animate-fade-in-down {
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.6s ease-out forwards;
 }
 
 .animate-float {
@@ -187,27 +242,28 @@ a.boton:hover::before {
   animation: floatSlow 4s ease-in-out infinite;
 }
 
+.animate-float-mobile {
+  animation: floatMobile 5s ease-in-out infinite;
+}
+
 .animate-gradient-flow {
-  background-size: 200% 200%;
+  background-size: 200% auto;
   animation: gradientFlow 3s ease infinite;
 }
 
 .animate-pulse-glow {
-  animation: pulseGlow 2s ease-in-out infinite;
+  animation: pulseGlow 3s ease-in-out infinite;
 }
 
 .animate-bounce-soft {
   animation: bounceSoft 2s ease-in-out infinite;
 }
 
-.animate-slide-in-left {
-  animation: slideInLeft 0.6s ease-out forwards;
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
 }
 
-.animate-slide-in-right {
-  animation: slideInRight 0.6s ease-out forwards;
-}
-
+/* Delays escalonados */
 .animate-delay-100 {
   animation-delay: 100ms;
 }
@@ -248,6 +304,7 @@ a.boton:hover::before {
   animation-delay: 1000ms;
 }
 
+/* Duración personalizada */
 .animate-duration-700 {
   animation-duration: 700ms;
 }
@@ -264,11 +321,15 @@ a.boton:hover::before {
   animation-duration: 2000ms;
 }
 
+.animate-duration-3000 {
+  animation-duration: 3000ms;
+}
+
 /* ============================================
-   MEJORAS ESPECÍFICAS PARA MÓVIL
+   EFECTOS ESPECÍFICOS
    ============================================ */
 
-/* Feedback táctil para móvil */
+/* Feedback táctil */
 .touch-feedback:active {
   transform: scale(0.97);
   transition: transform 0.1s ease;
@@ -277,110 +338,6 @@ a.boton:hover::before {
 .touch-feedback-sm:active {
   transform: scale(0.99);
   transition: transform 0.1s ease;
-}
-
-/* Mejoras para elementos interactivos en móvil */
-@media (max-width: 768px) {
-  /* Efectos activos para reemplazar hover */
-  .mobile-active:active {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  }
-  
-  /* Deshabilitar hover problemático en móvil */
-  .hover\:shadow-xl:hover,
-  .hover\:-translate-y-1:hover,
-  .hover\:border-blue-200:hover,
-  .hover\:text-blue-600:hover,
-  .group:hover .group-hover\:scale-105 {
-    animation-name: none !important;
-    transform: none !important;
-    transition: none !important;
-  }
-  
-  /* Mejorar botones para touch */
-  button,
-  a[href],
-  .cursor-pointer {
-    -webkit-tap-highlight-color: rgba(59, 130, 246, 0.1);
-    touch-action: manipulation;
-  }
-  
-  /* Animaciones específicas para móvil */
-  .mobile-float {
-    animation: floatSlow 5s ease-in-out infinite;
-  }
-  
-  .mobile-pulse {
-    animation: pulseGlow 3s ease-in-out infinite;
-  }
-  
-  /* Efectos de entrada escalonados para móvil */
-  .stagger-animation > *:nth-child(1) { animation-delay: 0ms; }
-  .stagger-animation > *:nth-child(2) { animation-delay: 150ms; }
-  .stagger-animation > *:nth-child(3) { animation-delay: 300ms; }
-  .stagger-animation > *:nth-child(4) { animation-delay: 450ms; }
-  .stagger-animation > *:nth-child(5) { animation-delay: 600ms; }
-}
-
-/* ============================================
-   ANIMACIONES PARA ELEMENTOS ESPECÍFICOS DE TU SITIO
-   ============================================ */
-
-/* Animación para el gradiente del título */
-.bg-gradient-to-r.from-blue-600.to-cyan-500 {
-  background-size: 200% auto;
-  animation: gradientFlow 4s ease infinite;
-}
-
-/* Animación para los puntos de fondo */
-.bg-gradient-to-br.from-blue-500\/40.to-transparent {
-  animation: float 8s ease-in-out infinite;
-}
-
-.bg-gradient-to-r.from-cyan-400\/30.via-blue-500\/20.to-cyan-400\/30 {
-  animation: pulseGlow 6s ease-in-out infinite;
-}
-
-.bg-gradient-to-tl.from-cyan-300\/30.to-transparent {
-  animation: float 10s ease-in-out infinite;
-  animation-delay: 2s;
-}
-
-/* ============================================
-   EFECTOS DE SCROLL SUAVE
-   ============================================ */
-
-html {
-  scroll-behavior: smooth;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* ============================================
-   CLASES PARA MEJORAR LA INTERACCIÓN MÓVIL
-   ============================================ */
-
-/* Clase para imágenes con efecto de carga suave */
-.img-load-fade {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.img-loaded {
-  opacity: 1;
 }
 
 /* Efecto de onda para botones */
@@ -399,114 +356,151 @@ html {
   background: rgba(255, 255, 255, 0.5);
   opacity: 0;
   border-radius: 100%;
-  transform: scale(1, 1) translate(-50%);
+  transform: scale(0, 0) translate(-50%);
   transform-origin: 50% 50%;
   animation: wave 0.5s ease-out;
 }
 
-@keyframes wave {
-  0% {
-    transform: scale(0, 0);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(30, 30);
-    opacity: 0;
-  }
-}
-
-/* ============================================
-   MEJORAS DE RENDIMIENTO PARA MÓVIL
-   ============================================ */
-
-@media (max-width: 768px) {
-  /* Optimizar animaciones para móvil */
-  .animate-on-mobile {
-    will-change: transform, opacity;
-    backface-visibility: hidden;
-    -webkit-font-smoothing: antialiased;
-  }
-  
-  /* Reducir efectos de desenfoque en móvil para mejor rendimiento */
-  .blur-3xl {
-    --tw-blur: blur(24px);
-  }
-  
-  /* Mejorar renderizado de gradientes */
-  .bg-gradient-to-r {
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-}
-
-/* ============================================
-   ANIMACIONES PARA ICONOS DE LA LISTA
-   ============================================ */
-
-/* Animación para los emojis de la lista de habilidades */
-.text-xl:has(🗣️),
-.text-xl:has(🧠),
-.text-xl:has(🚀),
-.text-xl:has(💻) {
-  display: inline-block;
-}
-
-@media (max-width: 768px) {
-  /* Animación secuencial para los iconos en móvil */
-  .space-y-4 > li:nth-child(1) .text-xl {
-    animation: bounceSoft 2s ease-in-out infinite;
-  }
-  
-  .space-y-4 > li:nth-child(2) .text-xl {
-    animation: bounceSoft 2s ease-in-out infinite;
-    animation-delay: 0.5s;
-  }
-  
-  .space-y-4 > li:nth-child(3) .text-xl {
-    animation: bounceSoft 2s ease-in-out infinite;
-    animation-delay: 1s;
-  }
-  
-  .space-y-4 > li:nth-child(4) .text-xl {
-    animation: bounceSoft 2s ease-in-out infinite;
-    animation-delay: 1.5s;
-  }
-}
-
-/* ============================================
-   EFECTOS DE CARGA PROGRESIVA
-   ============================================ */
-
-/* Para imágenes que se cargan con lazy loading */
-img[loading="lazy"] {
+/* Carga suave de imágenes */
+.img-load-fade {
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
 }
 
-img[loading="lazy"].loaded {
+.img-load-fade.loaded {
   opacity: 1;
 }
 
+/* Optimización móvil */
+.mobile-float {
+  animation: floatMobile 6s ease-in-out infinite;
+}
+
+.mobile-active:active {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Mejoras de rendimiento */
+.animate-on-mobile {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
 /* ============================================
-   RESPETAR PREFERENCIAS DE REDUCIR MOVIMIENTO
+   MEJORAS PARA MÓVIL
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Deshabilitar hover problemático en móvil */
+  .hover\:shadow-xl:hover,
+  .hover\:-translate-y-1:hover,
+  .hover\:border-blue-200:hover,
+  .hover\:text-blue-600:hover,
+  .group:hover .group-hover\:scale-105,
+  .group:hover .group-hover\:opacity-50,
+  .group:hover .group-hover\:animate-none {
+    transform: none !important;
+    box-shadow: none !important;
+    border-color: inherit !important;
+    color: inherit !important;
+    opacity: 1 !important;
+    animation-play-state: running !important;
+  }
+  
+  /* Mejorar elementos táctiles */
+  button,
+  a[href],
+  .cursor-pointer,
+  .touch-feedback {
+    -webkit-tap-highlight-color: rgba(59, 130, 246, 0.1);
+    touch-action: manipulation;
+  }
+  
+  /* Optimizar blur para móvil */
+  .blur-3xl {
+    filter: blur(24px);
+    -webkit-filter: blur(24px);
+  }
+  
+  /* Animaciones escalonadas para listas */
+  .stagger-animation > *:nth-child(1) { animation-delay: 0ms; }
+  .stagger-animation > *:nth-child(2) { animation-delay: 150ms; }
+  .stagger-animation > *:nth-child(3) { animation-delay: 300ms; }
+  .stagger-animation > *:nth-child(4) { animation-delay: 450ms; }
+  .stagger-animation > *:nth-child(5) { animation-delay: 600ms; }
+}
+
+/* ============================================
+   MEJORAS PARA DESKTOP
+   ============================================ */
+
+@media (min-width: 769px) {
+  /* Suavizar transiciones hover */
+  .group-hover\:scale-110 {
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .group-hover\:opacity-50 {
+    transition: opacity 0.5s ease;
+  }
+  
+  .group-hover\:animate-none {
+    transition: animation 0.3s ease;
+  }
+}
+
+/* ============================================
+   SCROLL SUAVE
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================================
+   PREFERENCIAS DE REDUCIR MOVIMIENTO
    ============================================ */
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-fade-in-up,
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
   .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-fade-in-down,
+  .animate-fade-in-left,
+  .animate-fade-in-right,
   .animate-float,
   .animate-float-slow,
+  .animate-float-mobile,
   .animate-gradient-flow,
   .animate-pulse-glow,
   .animate-bounce-soft,
-  .animate-slide-in-left,
-  .animate-slide-in-right,
-  .bg-gradient-to-r.from-blue-600.to-cyan-500,
-  .bg-gradient-to-br.from-blue-500\/40.to-transparent,
-  .bg-gradient-to-r.from-cyan-400\/30.via-blue-500\/20.to-cyan-400\/30,
-  .bg-gradient-to-tl.from-cyan-300\/30.to-transparent {
+  .animate-spin-slow,
+  .mobile-float,
+  .mobile-active:active,
+  .wave-effect:active::after {
     animation: none !important;
-    transition: none !important;
+  }
+  
+  .img-load-fade {
+    opacity: 1;
+    transition: none;
+  }
+  
+  .touch-feedback:active,
+  .touch-feedback-sm:active {
+    transform: none;
   }
 }
