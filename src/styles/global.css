@@ -180,7 +180,7 @@ a.boton:hover::before {
   }
   
   /* ============================================
-     FEATURECARDS (DEBEN CAMBIAR FONDO)
+     FEATURECARDS (DEBEN CAMBIAR FONDO Y TEXTO)
      ============================================ */
   /* Efecto táctil para FeatureCards - CON cambio de fondo */
   .touch-feedback:not(.tech-card):active,
@@ -197,13 +197,51 @@ a.boton:hover::before {
                 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
   }
   
-  /* FeatureCards específicas - CON cambio de fondo completo */
+  /* FeatureCards específicas - CON cambio de fondo completo y texto blanco */
   .touch-feedback.active-touch:not(.tech-card),
   .mobile-active.active-touch:not(.tech-card) {
     background-color: #1e3a8a !important; /* bg-blue-900 */
     color: white !important;
     border-color: #93c5fd !important; /* border-blue-300 */
     transform: translateY(-2px) !important;
+  }
+  
+  /* CAMBIO CRÍTICO: Texto de párrafos en FeatureCards a blanco */
+  .touch-feedback.active-touch:not(.tech-card) p,
+  .mobile-active.active-touch:not(.tech-card) p,
+  .touch-feedback.active-touch:not(.tech-card) .text-gray-600,
+  .touch-feedback.active-touch:not(.tech-card) .text-gray-700,
+  .touch-feedback.active-touch:not(.tech-card) .text-gray-800,
+  .mobile-active.active-touch:not(.tech-card) .text-gray-600,
+  .mobile-active.active-touch:not(.tech-card) .text-gray-700,
+  .mobile-active.active-touch:not(.tech-card) .text-gray-800 {
+    color: white !important;
+  }
+  
+  /* Títulos y encabezados en FeatureCards a blanco */
+  .touch-feedback.active-touch:not(.tech-card) h1,
+  .touch-feedback.active-touch:not(.tech-card) h2,
+  .touch-feedback.active-touch:not(.tech-card) h3,
+  .touch-feedback.active-touch:not(.tech-card) h4,
+  .touch-feedback.active-touch:not(.tech-card) h5,
+  .touch-feedback.active-touch:not(.tech-card) h6,
+  .mobile-active.active-touch:not(.tech-card) h1,
+  .mobile-active.active-touch:not(.tech-card) h2,
+  .mobile-active.active-touch:not(.tech-card) h3,
+  .mobile-active.active-touch:not(.tech-card) h4,
+  .mobile-active.active-touch:not(.tech-card) h5,
+  .mobile-active.active-touch:not(.tech-card) h6 {
+    color: white !important;
+  }
+  
+  /* Textos específicos con clases group-hover */
+  .touch-feedback.active-touch:not(.tech-card) .group-hover\:text-gray-700,
+  .touch-feedback.active-touch:not(.tech-card) .group-hover\:text-gray-600,
+  .touch-feedback.active-touch:not(.tech-card) .group-hover\:text-gray-800,
+  .mobile-active.active-touch:not(.tech-card) .group-hover\:text-gray-700,
+  .mobile-active.active-touch:not(.tech-card) .group-hover\:text-gray-600,
+  .mobile-active.active-touch:not(.tech-card) .group-hover\:text-gray-800 {
+    color: white !important;
   }
   
   /* ============================================
@@ -288,6 +326,34 @@ a.boton:hover::before {
     color: white !important;
     border-color: #93c5fd !important;
     transform: translateY(-2px) !important;
+  }
+  
+  /* Texto blanco en hover para FeatureCards en desktop */
+  .touch-feedback:not(.tech-card):hover p,
+  .mobile-active:not(.tech-card):hover p,
+  .touch-feedback:not(.tech-card):hover .text-gray-600,
+  .touch-feedback:not(.tech-card):hover .text-gray-700,
+  .touch-feedback:not(.tech-card):hover .text-gray-800,
+  .mobile-active:not(.tech-card):hover .text-gray-600,
+  .mobile-active:not(.tech-card):hover .text-gray-700,
+  .mobile-active:not(.tech-card):hover .text-gray-800 {
+    color: white !important;
+  }
+  
+  /* Títulos en FeatureCards en hover para desktop */
+  .touch-feedback:not(.tech-card):hover h1,
+  .touch-feedback:not(.tech-card):hover h2,
+  .touch-feedback:not(.tech-card):hover h3,
+  .touch-feedback:not(.tech-card):hover h4,
+  .touch-feedback:not(.tech-card):hover h5,
+  .touch-feedback:not(.tech-card):hover h6,
+  .mobile-active:not(.tech-card):hover h1,
+  .mobile-active:not(.tech-card):hover h2,
+  .mobile-active:not(.tech-card):hover h3,
+  .mobile-active:not(.tech-card):hover h4,
+  .mobile-active:not(.tech-card):hover h5,
+  .mobile-active:not(.tech-card):hover h6 {
+    color: white !important;
   }
   
   /* Hover normal para desktop - Tarjetas de tecnología */
