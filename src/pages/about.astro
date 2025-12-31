@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import GradientButton from '../components/GradientButton.astro';
 import ScrollToTop from "../components/ScrollToTop.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
@@ -41,7 +42,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             <div class="relative group mx-auto lg:mx-0 animate-slide-in-left">
                 <div class="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse-glow"></div>
                 <img 
-                    src="/tu-foto-perfil.jpg" 
+                    src={import.meta.env.BASE_URL + "imagenes/luis-11.png"}
                     alt="Luis Reyes - Especialista en Ventas y CS" 
                     class="relative rounded-2xl w-full max-w-md object-cover border border-white/20 shadow-lg img-load-fade group-hover:scale-105 transition-transform duration-700"
                 />
@@ -85,15 +86,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                     <span class="px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-medium animate-fade-in-up animate-delay-200 hover:bg-white/20 hover:border-white/30 transition-all duration-300 mobile-active">🤝 Enfoque Humano</span>
                 </div>
 
-                <div class="pt-6 animate-fade-in-up animate-delay-400">
-                    <a href="https://linkedin.com/in/tu-perfil" class="inline-flex items-center justify-center px-8 py-3 font-bold text-white transition-all duration-200 bg-blue-600 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 shadow-lg shadow-blue-500/30 touch-feedback wave-effect group/btn hover:scale-105 active:scale-95">
-                        Conecta conmigo en LinkedIn
-                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </a>
+                <div class="touch-feedback wave-effect p-1">
+                    <GradientButton 
+                        text="Conecta conmigo en LinkedIn"
+                        href="https://www.linkedin.com/in/luis-reyes-263aa2355"
+                        target="_blank"
+                        leftIcon=""
+                        rightIcon="💼"
+                    />
                 </div>
             </div>
+            
         </div>
     </div>
 </section>
@@ -137,16 +140,31 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     
     <!-- Llamado a la acción sutil -->
     <div class="mt-12 animate-fade-in-up animate-delay-600">
-      <div class="inline-flex items-center gap-3 text-gray-500 text-sm sm:text-base font-medium px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-sm border border-gray-200 hover:border-blue-200 transition-all duration-300 active:scale-95 touch-feedback">
-        <span>Conectemos para innovar juntos </span>
-        <span class="text-blue-500 animate-pulse-glow">→</span>
-      </div>
+      <a href="/" class="inline-flex items-center gap-3 text-gray-500 text-sm sm:text-base font-medium px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-sm border border-gray-200 hover:border-blue-200 transition-all duration-300 active:scale-95 touch-feedback cursor-pointer">
+        <span>Explorar de nuevo  </span>
+        <span class="text-blue-500 animate-pulse-glow">↑</span>
+      </a>
     </div>
   </div>
-</section>
+</section>  
 
         </main>
  <ScrollToTop />
         <Footer />
+        <script>
+            // Script para manejar la carga suave de imágenes
+            document.addEventListener('DOMContentLoaded', () => {
+                const images = document.querySelectorAll('.img-load-fade');
+                images.forEach(img => {
+                    if (img.complete) {
+                        img.classList.add('loaded');
+                    } else {
+                        img.addEventListener('load', () => {
+                            img.classList.add('loaded');
+                        });
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
