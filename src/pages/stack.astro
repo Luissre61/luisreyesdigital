@@ -22,7 +22,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		<Header />
 		<main class="">
 
-<section class="py-16 bg-gray-50 animate-fade-in">
+<section class="py-16 bg-white animate-fade-in shadow-blue-500 mt-4">
   <div class="max-w-6xl mx-auto px-4">
     <div class="flex items-center gap-3 mb-8 animate-fade-in-down">
       <span class="text-3xl animate-bounce-soft">🤝</span>
@@ -96,10 +96,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   </div>
 </section>
 
- <!-- Sección 1 - Modernizada -->
+ 
 <!-- Sección 1 - Modernizada -->
 <section class="min-h-[70vh] sm:min-h-[85vh] shadow-[0_4px_15px_-2px_rgba(59,130,246,0.5),0_2px_8px_-1px_rgba(59,130,246,0.3)] animate-fade-in">
-    <div class="bg-[#000033] font-sans text-white h-auto min-h-[80vh] sm:h-[90vh] px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div class="bg-gray-50 font-sans text-white h-auto min-h-[80vh] sm:h-[90vh] px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <!-- Patrón de fondo -->
         <div class="absolute inset-0 bg-gradient-to-br from-[#000033] via-[#1a1a4d] to-[#000033]">
             <!-- Gradiente radial multi-foco -->
@@ -129,7 +129,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 stagger-animation">
                 <!-- Astro & Tailwind - Fondo mejorado -->
-                <div class="group bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 p-6 flex flex-col items-center text-center relative overflow-hidden mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up">
+                <div class="group bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 p-6 flex flex-col items-center text-center relative overflow-hidden mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up tech-card">
                     <!-- Efecto de brillo sutil -->
                     <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/5 via-transparent to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
@@ -139,13 +139,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                     <div class="flex gap-4 mb-4 relative z-10">
                         <!-- Icono Astro -->
                         <div class="w-12 h-12 bg-gradient-to-br from-[#FF5D01] to-[#FF7E33] rounded-lg flex items-center justify-center p-2 shadow-lg group-hover:scale-110 transition-transform duration-300 animate-bounce-soft">
-                            <svg viewBox="0 0 27 32" class="w-8 h-8">
+                            <svg viewBox="0 0 27 32" class="w-8 h-8" aria-hidden="true">
                                 <path fill="#fff" d="M13.376 0L0 31.872h5.088l2.24-5.696h11.392l2.24 5.696h5.088L13.376 0zm-2.432 21.568l4.128-10.752 4.128 10.752h-8.256z"/>
                             </svg>
                         </div>
                         <!-- Icono Tailwind -->
                         <div class="w-12 h-12 bg-gradient-to-br from-[#06B6D4] to-[#0EA5E9] rounded-lg flex items-center justify-center p-2 shadow-lg group-hover:scale-110 transition-transform duration-300 animate-bounce-soft animate-delay-100">
-                            <svg viewBox="0 0 256 153.6" class="w-8 h-8">
+                            <svg viewBox="0 0 256 153.6" class="w-8 h-8" aria-hidden="true">
                                 <path fill="#fff" d="M128 0C93.867 0 72.533 17.067 64 51.2 76.8 34.133 91.733 27.733 108.8 32c9.737 2.434 16.697 9.499 24.401 17.318C145.751 62.057 160.275 76.8 192 76.8c34.133 0 55.467-17.067 64-51.2-12.8 17.067-27.733 23.467-44.8 19.2-9.737-2.434-16.697-9.499-24.401-17.318C174.249 14.743 159.725 0 128 0zM64 76.8C29.867 76.8 8.533 93.867 0 128c12.8-17.067 27.733-23.467 44.8-19.2 9.737 2.434 16.697 9.499 24.401 17.318C81.751 138.857 96.275 153.6 128 153.6c34.133 0 55.467-17.067 64-51.2-12.8 17.067-27.733 23.467-44.8 19.2-9.737-2.434-16.697-9.499-24.401-17.318C110.249 91.543 95.725 76.8 64 76.8z"/>
                             </svg>
                         </div>
@@ -155,7 +155,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 </div>
 
                 <!-- Cloudflare & GitHub - Fondo mejorado -->
-                <div class="group bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:border-orange-400/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 p-6 flex flex-col items-center text-center relative overflow-hidden mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up animate-delay-100">
+                <div class="group bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:border-orange-400/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 p-6 flex flex-col items-center text-center relative overflow-hidden mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up animate-delay-100 tech-card">
                     <!-- Efecto de brillo sutil -->
                     <div class="absolute inset-0 bg-gradient-to-tr from-orange-500/5 via-transparent to-gray-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
@@ -165,13 +165,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                     <div class="flex gap-4 mb-4 relative z-10">
                         <!-- Icono Cloudflare -->
                         <div class="w-12 h-12 bg-gradient-to-br from-[#F38020] to-[#FAAE42] rounded-lg flex items-center justify-center p-2 shadow-lg group-hover:scale-110 transition-transform duration-300 animate-bounce-soft">
-                            <svg viewBox="0 0 24 24" class="w-8 h-8">
+                            <svg viewBox="0 0 24 24" class="w-8 h-8" aria-hidden="true">
                                 <path fill="#fff" d="M16.871 9.583c-.127 0-.253.013-.38.013 1.52-1.519 2.532-3.544 2.532-5.81C18.822 1.696 17.126 0 15.04 0c-2.09 0-3.787 1.696-3.787 3.786 0 1.266.532 2.41 1.393 3.228-2.405-.152-4.684.76-6.337 2.41-2.532 2.532-2.532 6.62 0 9.152 1.14 1.14 2.66 1.773 4.305 1.773h8.255c2.09 0 3.787-1.696 3.787-3.786 0-2.09-1.696-3.787-3.787-3.787z"/>
                             </svg>
                         </div>
                         <!-- Icono GitHub -->
                         <div class="w-12 h-12 bg-gradient-to-br from-[#181717] to-[#333] rounded-lg flex items-center justify-center p-2 shadow-lg group-hover:scale-110 transition-transform duration-300 animate-bounce-soft animate-delay-100">
-                            <svg viewBox="0 0 24 24" class="w-8 h-8">
+                            <svg viewBox="0 0 24 24" class="w-8 h-8" aria-hidden="true">
                                 <path fill="#fff" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                             </svg>
                         </div>
@@ -181,7 +181,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 </div>
 
                 <!-- VS Code & Git - Fondo mejorado -->
-                <div class="group bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 p-6 flex flex-col items-center text-center relative overflow-hidden mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up animate-delay-200">
+                <div class="group bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 p-6 flex flex-col items-center text-center relative overflow-hidden mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up animate-delay-200 tech-card">
                     <!-- Efecto de brillo sutil -->
                     <div class="absolute inset-0 bg-gradient-to-tr from-blue-400/5 via-transparent to-red-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
@@ -191,13 +191,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                     <div class="flex gap-4 mb-4 relative z-10">
                         <!-- Icono VS Code -->
                         <div class="w-12 h-12 bg-gradient-to-br from-[#007ACC] to-[#3C99D4] rounded-lg flex items-center justify-center p-2 shadow-lg group-hover:scale-110 transition-transform duration-300 animate-bounce-soft">
-                            <svg viewBox="0 0 24 24" class="w-8 h-8">
+                            <svg viewBox="0 0 24 24" class="w-8 h-8" aria-hidden="true">
                                 <path fill="#fff" d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .327 8.74L3.899 12 .327 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/>
                             </svg>
                         </div>
                         <!-- Icono Git -->
                         <div class="w-12 h-12 bg-gradient-to-br from-[#F05032] to-[#F4845E] rounded-lg flex items-center justify-center p-2 shadow-lg group-hover:scale-110 transition-transform duration-300 animate-bounce-soft animate-delay-100">
-                            <svg viewBox="0 0 24 24" class="w-8 h-8">
+                            <svg viewBox="0 0 24 24" class="w-8 h-8" aria-hidden="true">
                                 <path fill="#fff" d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.435 1.9l2.658 2.66c.645-.223 1.387-.081 1.9.435.721.721.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-2.007L12.86 8.955v6.525c.176.086.342.203.488.348.713.713.713 1.873 0 2.586-.719.719-1.881.719-2.6 0-.719-.719-.719-1.881 0-2.6.182-.182.383-.316.591-.406V8.835c-.217-.091-.424-.224-.6-.406-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.604-.603.604-1.582 0-2.187z"/>
                             </svg>
                         </div>
@@ -207,7 +207,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 </div>
 
                 <!-- Personal Branding - Fondo mejorado -->
-                <div class="group bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:border-purple-400/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 p-6 flex flex-col items-center text-center relative overflow-hidden mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up animate-delay-300">
+                <div class="group bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:border-purple-400/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 p-6 flex flex-col items-center text-center relative overflow-hidden mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up animate-delay-300 tech-card">
                     <!-- Efecto de brillo sutil -->
                     <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/5 via-transparent to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
@@ -218,7 +218,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                     <div class="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-br from-purple-400/10 to-transparent rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
                     
                     <div class="w-20 h-20 bg-gradient-to-br from-[#8B5CF6] to-[#A78BFA] rounded-full flex items-center justify-center mb-4 shadow-lg relative z-10 group-hover:scale-110 transition-transform duration-300 animate-bounce-soft">
-                        <svg viewBox="0 0 24 24" class="w-10 h-10">
+                        <svg viewBox="0 0 24 24" class="w-10 h-10" aria-hidden="true">
                             <path fill="#fff" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
                         </svg>
                     </div>

@@ -179,11 +179,14 @@ a.boton:hover::before {
     -webkit-filter: blur(24px);
   }
   
-  /* Efecto táctil unificado */
-  .touch-feedback:active,
-  .mobile-active:active,
-  .touch-feedback.active-touch,
-  .mobile-active.active-touch {
+  /* ============================================
+     FEATURECARDS (DEBEN CAMBIAR FONDO)
+     ============================================ */
+  /* Efecto táctil para FeatureCards - CON cambio de fondo */
+  .touch-feedback:not(.tech-card):active,
+  .touch-feedback:not(.tech-card).active-touch,
+  .mobile-active:not(.tech-card):active,
+  .mobile-active:not(.tech-card).active-touch {
     border-color: #93c5fd !important;
     background: linear-gradient(135deg, 
       rgba(59, 130, 246, 0.03), 
@@ -194,19 +197,76 @@ a.boton:hover::before {
                 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
   }
   
-  /* Efectos específicos para tarjetas */
-  .touch-feedback:active .group-hover\:opacity-100,
-  .mobile-active:active .group-hover\:opacity-100,
-  .touch-feedback.active-touch .group-hover\:opacity-100,
-  .mobile-active.active-touch .group-hover\:opacity-100 {
+  /* FeatureCards específicas - CON cambio de fondo completo */
+  .touch-feedback.active-touch:not(.tech-card),
+  .mobile-active.active-touch:not(.tech-card) {
+    background-color: #1e3a8a !important; /* bg-blue-900 */
+    color: white !important;
+    border-color: #93c5fd !important; /* border-blue-300 */
+    transform: translateY(-2px) !important;
+  }
+  
+  /* ============================================
+     TARJETAS DE TECNOLOGÍA (NO deben cambiar fondo)
+     ============================================ */
+  /* Efecto táctil para tarjetas de tecnología - SIN cambio de fondo */
+  .tech-card.touch-feedback:active,
+  .tech-card.touch-feedback.active-touch,
+  .tech-card.mobile-active:active,
+  .tech-card.mobile-active.active-touch {
+    /* Mantener efectos visuales pero NO el cambio de fondo */
+    border-color: rgba(59, 130, 246, 0.4) !important; /* hover:border-blue-400/40 */
+    transform: translateY(-2px) !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+    
+    /* PREVENIR CAMBIO DE FONDO - mantener gradiente original */
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)) !important;
+    background-color: transparent !important;
+  }
+  
+  /* Efectos específicos para tarjetas de tecnología */
+  .tech-card.touch-feedback:active .group-hover\:opacity-100,
+  .tech-card.mobile-active:active .group-hover\:opacity-100,
+  .tech-card.touch-feedback.active-touch .group-hover\:opacity-100,
+  .tech-card.mobile-active.active-touch .group-hover\:opacity-100 {
     opacity: 1 !important;
   }
   
-  .touch-feedback:active .group-hover\:scale-110,
-  .mobile-active:active .group-hover\:scale-110,
-  .touch-feedback.active-touch .group-hover\:scale-110,
-  .mobile-active.active-touch .group-hover\:scale-110 {
+  .tech-card.touch-feedback:active .group-hover\:scale-110,
+  .tech-card.mobile-active:active .group-hover\:scale-110,
+  .tech-card.touch-feedback.active-touch .group-hover\:scale-110,
+  .tech-card.mobile-active.active-touch .group-hover\:scale-110 {
     transform: scale(1.1) !important;
+  }
+  
+  /* Cambiar color de texto al tocar en tarjetas de tecnología */
+  .tech-card.touch-feedback:active .group-hover\:text-blue-700,
+  .tech-card.mobile-active:active .group-hover\:text-blue-700,
+  .tech-card.touch-feedback.active-touch .group-hover\:text-blue-700,
+  .tech-card.mobile-active.active-touch .group-hover\:text-blue-700 {
+    color: #1d4ed8 !important; /* text-blue-700 */
+  }
+  
+  .tech-card.touch-feedback:active .group-hover\:text-orange-700,
+  .tech-card.mobile-active:active .group-hover\:text-orange-700,
+  .tech-card.touch-feedback.active-touch .group-hover\:text-orange-700,
+  .tech-card.mobile-active.active-touch .group-hover\:text-orange-700 {
+    color: #c2410c !important; /* text-orange-700 */
+  }
+  
+  .tech-card.touch-feedback:active .group-hover\:text-purple-700,
+  .tech-card.mobile-active:active .group-hover\:text-purple-700,
+  .tech-card.touch-feedback.active-touch .group-hover\:text-purple-700,
+  .tech-card.mobile-active.active-touch .group-hover\:text-purple-700 {
+    color: #7c3aed !important; /* text-purple-700 */
+  }
+  
+  .tech-card.touch-feedback:active .group-hover\:text-gray-700,
+  .tech-card.mobile-active:active .group-hover\:text-gray-700,
+  .tech-card.touch-feedback.active-touch .group-hover\:text-gray-700,
+  .tech-card.mobile-active.active-touch .group-hover\:text-gray-700 {
+    color: #374151 !important; /* text-gray-700 */
   }
   
   /* Animaciones escalonadas simplificadas */
@@ -221,13 +281,22 @@ a.boton:hover::before {
   .group-hover\:opacity-50 { transition: opacity 0.5s ease; }
   .group-hover\:animate-none { transition: animation 0.3s ease; }
   
-  /* Hover normal para desktop */
-  .touch-feedback:hover,
-  .mobile-active:hover {
-    background-color: #1e3a8a !important;
+  /* Hover normal para desktop - FeatureCards */
+  .touch-feedback:not(.tech-card):hover,
+  .mobile-active:not(.tech-card):hover {
+    background-color: #1e3a8a !important; /* hover:bg-blue-900 */
     color: white !important;
     border-color: #93c5fd !important;
     transform: translateY(-2px) !important;
+  }
+  
+  /* Hover normal para desktop - Tarjetas de tecnología */
+  .tech-card:hover {
+    /* Los efectos hover ya están definidos en las clases de Tailwind en el HTML */
+    border-color: rgba(59, 130, 246, 0.4) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
   }
 }
 
