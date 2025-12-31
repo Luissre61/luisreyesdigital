@@ -9,11 +9,18 @@ export interface Props {
 const { title, description, icon } = Astro.props;
 ---
 
+<!-- Agrega las clases touch-feedback y mobile-active al div principal -->
 <div
 	class:list={[
 		"group bg-gray-50 p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900 w-[90vw] mx-auto md:w-full text-gray-900 hover:text-white",
+		"touch-feedback mobile-active", // ← AQUÍ ESTÁ EL CAMBIO
 		Astro.props.class,
 	]}
+	// Agrega estos atributos para manejar touch en móvil
+	onTouchStart="this.classList.add('active-touch')"
+	onTouchEnd="setTimeout(() => this.classList.remove('active-touch'), 300)"
+	onTouchCancel="this.classList.remove('active-touch')"
+	style="-webkit-tap-highlight-color: transparent;"
 >
 	{icon ? (
 		<div class="flex items-center gap-4 mb-4">
