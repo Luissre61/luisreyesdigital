@@ -504,3 +504,27 @@ html {
     transform: none;
   }
 }
+
+/* ============================================
+   FEEDBACK TÁCTIL PARA FEATURECARDS
+   ============================================ */
+
+/* Efecto táctil en móvil */
+@media (max-width: 768px) {
+  .touch-feedback:active,
+  .mobile-active:active {
+    border-color: #93c5fd !important;
+    background: linear-gradient(135deg, 
+      rgba(59, 130, 246, 0.03), 
+      rgba(6, 182, 212, 0.03)
+    ) !important;
+  }
+}
+
+/* Para desktop, mantener hover normal */
+@media (min-width: 769px) {
+  .touch-feedback:hover,
+  .mobile-active:hover {
+    border-color: #93c5fd !important;
+  }
+}

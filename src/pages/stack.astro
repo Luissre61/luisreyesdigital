@@ -2,6 +2,9 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import GradientButton from '../components/GradientButton.astro';
+import ScrollToTop from "../components/ScrollToTop.astro";
+import FeatureCard from "../components/FeatureCard.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
@@ -18,9 +21,82 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 	<body class="overflow-x-hidden">
 		<Header />
 		<main class="">
-			
-            
-          <!-- Sección 1 - Modernizada -->
+
+<section class="py-16 bg-gray-30 animate-fade-in">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex items-center gap-3 mb-8 animate-fade-in-down">
+      <span class="text-3xl animate-bounce-soft">🤝</span>
+      <h2 class="text-2xl md:text-3xl font-bold text-blue-600 animate-gradient-flow bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent">
+        Sinergia Digital: Innovación centrada en el Cliente
+      </h2>
+    </div>
+
+    <p class="text-gray-600 mb-10 max-w-3xl animate-fade-in-up animate-delay-200 text-lg">
+      Este proyecto nace de combinar mis <strong>fundamentos en Front-end</strong> con el poder del <strong>Prompt Engineering</strong>. Mi propósito no es el desarrollo puro, sino demostrar mi capacidad para crear soluciones digitales agradables, intuitivas y orientadas al éxito del cliente.
+    </p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm animate-fade-in-up animate-delay-300">
+      
+      <div class="relative group animate-slide-in-left">
+        <div class="absolute -inset-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse-glow"></div>
+        <div class="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 group-hover:shadow-2xl transition-all duration-500">
+          <img src={import.meta.env.BASE_URL + "imagenes/web.png"} alt="Diseño orientado al usuario" class="w-full h-auto img-load-fade group-hover:scale-105 transition-transform duration-700" />
+        </div>
+      </div>
+
+      <div class="space-y-6 animate-slide-in-right">
+        <div class="animate-fade-in-up animate-delay-400">
+          <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-700 transition-colors duration-300">Visión: El Usuario como Prioridad</h3>
+          <p class="text-gray-600 text-sm md:text-base leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+            Utilizo la IA como un multiplicador para ejecutar con agilidad, pero es mi base técnica y mi enfoque en ventas lo que asegura que el resultado final sea funcional y humano. Entiendo la tecnología como el medio para garantizar una experiencia de usuario impecable.
+          </p>
+        </div>
+
+        <ul class="space-y-3 stagger-animation text-sm md:text-base">
+          <li class="flex items-center gap-3 text-gray-700 animate-fade-in-up animate-on-mobile mobile-active touch-feedback">
+            <span class="text-blue-500 animate-bounce-soft">✨</span> 
+            <span><strong class="group-hover:text-blue-600 transition-colors duration-300">Diseño Intuitivo:</strong> Entornos pensados para facilitar la navegación y la retención.</span>
+          </li>
+          <li class="flex items-center gap-3 text-gray-700 animate-fade-in-up animate-on-mobile animate-delay-100 mobile-active touch-feedback">
+            <span class="text-blue-500 animate-bounce-soft animate-delay-200">🚀</span> 
+            <span><strong class="group-hover:text-blue-600 transition-colors duration-300">Prompt Engineering:</strong> Liderazgo de herramientas de IA para optimizar procesos comerciales.</span>
+          </li>
+          <li class="flex items-center gap-3 text-gray-700 animate-fade-in-up animate-on-mobile animate-delay-200 mobile-active touch-feedback">
+            <span class="text-blue-500 animate-bounce-soft animate-delay-400">📊</span> 
+            <span><strong class="group-hover:text-blue-600 transition-colors duration-300">Éxito del Cliente:</strong> Tecnología aplicada para generar confianza y resultados reales.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 stagger-animation">
+      
+      <FeatureCard
+        icon="🏗️"
+        title="El Reto del Proyecto"
+        description="Integrar mis conocimientos en Front-end con IA para construir una plataforma desde cero. El desafío fue auditar cada proceso técnico para garantizar que la tecnología nunca opaque la claridad del mensaje."
+        class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-blue-200 hover:shadow-md transition-all mobile-active touch-feedback animate-on-mobile animate-fade-in-up"
+      />
+
+      <FeatureCard
+        icon="💬"
+        title="Objetivo: CX Digital"
+        description="Demostrar mi dominio en canales conversacionales y flujos digitales. Mi meta es optimizar la retención y el Customer Success mediante interfaces que hablan el lenguaje del cliente."
+        class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-purple-200 hover:shadow-md transition-all mobile-active touch-feedback animate-on-mobile animate-fade-in-up animate-delay-100"
+      />
+
+      <FeatureCard
+        icon="🚀"
+        title="Propósito Profesional"
+        description="Unir mi resiliencia personal con mi formación en Gestión de Ventas. Busco ser el puente entre los problemas complejos de los clientes y las soluciones digitales más innovadoras y humanas."
+        class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-cyan-200 hover:shadow-md transition-all mobile-active touch-feedback animate-on-mobile animate-fade-in-up animate-delay-200"
+      />
+
+    </div>
+  </div>
+</section>
+
+ <!-- Sección 1 - Modernizada -->
 <section title="" class="min-h-[70vh] sm:min-h-[85vh] shadow-[0_4px_15px_-2px_rgba(59,130,246,0.5),0_2px_8px_-1px_rgba(59,130,246,0.3)] animate-fade-in">
     <div class="bg-[#000033] font-sans text-white h-auto min-h-[80vh] sm:h-[90vh] px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <!-- Patrón de fondo -->
@@ -52,7 +128,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 stagger-animation">
                 <!-- Astro & Tailwind - Fondo mejorado -->
-                <div class="group bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 p-6 flex flex-col items-center text-center relative overflow-hidden mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up">
+                <div class="group bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 p-6 flex flex-col items-center text-center relative overflow-hidden mobile-active touch-feedback animate-on-mobile animate-fade-in-up">
                     <!-- Efecto de brillo sutil -->
                     <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/5 via-transparent to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
@@ -78,7 +154,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 </div>
 
                 <!-- Cloudflare & GitHub - Fondo mejorado -->
-                <div class="group bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:border-orange-400/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 p-6 flex flex-col items-center text-center relative overflow-hidden mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up animate-delay-100">
+                <div class="group bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:border-orange-400/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 p-6 flex flex-col items-center text-center relative overflow-hidden mobile-active touch-feedback animate-on-mobile animate-fade-in-up animate-delay-100">
                     <!-- Efecto de brillo sutil -->
                     <div class="absolute inset-0 bg-gradient-to-tr from-orange-500/5 via-transparent to-gray-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
@@ -104,7 +180,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 </div>
 
                 <!-- VS Code & Git - Fondo mejorado -->
-                <div class="group bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 p-6 flex flex-col items-center text-center relative overflow-hidden mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up animate-delay-200">
+                <div class="group bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 p-6 flex flex-col items-center text-center relative overflow-hidden mobile-active touch-feedback animate-on-mobile animate-fade-in-up animate-delay-200">
                     <!-- Efecto de brillo sutil -->
                     <div class="absolute inset-0 bg-gradient-to-tr from-blue-400/5 via-transparent to-red-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
@@ -130,7 +206,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 </div>
 
                 <!-- Personal Branding - Fondo mejorado -->
-                <div class="group bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:border-purple-400/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 p-6 flex flex-col items-center text-center relative overflow-hidden mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up animate-delay-300">
+                <div class="group bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:border-purple-400/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 p-6 flex flex-col items-center text-center relative overflow-hidden mobile-active touch-feedback animate-on-mobile animate-fade-in-up animate-delay-300">
                     <!-- Efecto de brillo sutil -->
                     <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/5 via-transparent to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
@@ -152,80 +228,70 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         </div>
     </div>
 </section>
-
-<section class="py-16 bg-white animate-fade-in">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="flex items-center gap-3 mb-8 animate-fade-in-down">
-      <span class="text-3xl animate-bounce-soft">🚀</span>
-      <h2 class="text-2xl md:text-3xl font-bold text-blue-600 animate-gradient-flow bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent">
-        Mi Primer proyecto: Esta Plataforma Digital
+<!-- Llamado a la accion -->
+<section class="py-12 bg-gray-50 relative overflow-hidden">
+  <!-- Elementos de fondo decorativos -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-float-slow"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-tr from-blue-500/15 to-cyan-500/15 rounded-full blur-3xl animate-float-slow animate-delay-1000"></div>
+  </div>
+  
+  <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+    <div class="mb-8 animate-fade-in-down">
+      <h2 class="text-2xl sm:text-3xl font-bold text-[#000033] bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent px-4 py-2 animate-gradient-flow animate-duration-1500 inline-block">
+        Mi Stack Tecnológico
       </h2>
     </div>
-    <p class="text-gray-600 mb-10 max-w-3xl animate-fade-in-up animate-delay-200">
-      Diseñé y desarrollé este sitio desde cero para demostrar cómo la lógica técnica y la estrategia de ventas pueden converger en una herramienta de conversión eficiente.
-    </p>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm animate-fade-in-up animate-delay-300">
-      
-      <div class="relative group animate-slide-in-left">
-        <div class="absolute -inset-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse-glow"></div>
-        <div class="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 group-hover:shadow-2xl transition-all duration-500">
-          <img src={import.meta.env.BASE_URL + "imagenes/web.png"} alt="Vista previa del proyecto" class="w-full h-auto img-load-fade group-hover:scale-105 transition-transform duration-700" />
-        </div>
-      </div>
-
-      <div class="space-y-6 animate-slide-in-right">
-        <div class="animate-fade-in-up animate-delay-400">
-          <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-700 transition-colors duration-300">El Reto: Construir mi Marca Técnica</h3>
-          <p class="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-            El objetivo fue crear una infraestructura que no solo fuera estéticamente agradable, sino técnica mente superior para destacar ante reclutadores de sectores exigentes.
-          </p>
-        </div>
-
-        <ul class="space-y-3 stagger-animation">
-          <li class="flex items-center gap-3 text-sm text-gray-700 animate-fade-in-up animate-on-mobile mobile-active">
-            <span class="text-blue-500 animate-bounce-soft">🔍</span> 
-            <span><strong class="group-hover:text-blue-600 transition-colors duration-300">Optimización UX:</strong> Flujo diseñado para retener al reclutador.</span>
-          </li>
-          <li class="flex items-center gap-3 text-sm text-gray-700 animate-fade-in-up animate-on-mobile animate-delay-100 mobile-active">
-            <span class="text-blue-500 animate-bounce-soft animate-delay-200">⚡</span> 
-            <span><strong class="group-hover:text-blue-600 transition-colors duration-300">Web Performance:</strong> Carga instantánea gracias a la arquitectura de Astro.</span>
-          </li>
-          <li class="flex items-center gap-3 text-sm text-gray-700 animate-fade-in-up animate-on-mobile animate-delay-200 mobile-active">
-            <span class="text-blue-500 animate-bounce-soft animate-delay-400">🛠️</span> 
-            <span><strong class="group-hover:text-blue-600 transition-colors duration-300">Código Limpio:</strong> Escalabilidad asegurada mediante Tailwind CSS.</span>
-          </li>
-        </ul>
-
-        <div class="animate-fade-in-up animate-delay-600">
-          <a href="https://github.com/tu-usuario" target="_blank" class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-200 touch-feedback wave-effect group/btn hover:scale-105 active:scale-95">
-            Ver Código en GitHub 
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/btn:translate-x-1 transition-transform duration-300"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
-          </a>
+    
+    <!-- Contenedor principal con botón integrado -->
+    <div class="relative mb-8 animate-fade-in-up animate-delay-200">
+      <div class="bg-white/60 backdrop-blur-sm rounded-xl shadow-sm border border-gray-100/70 px-6 py-8 sm:px-8 sm:py-10 max-w-2xl mx-auto">
+        <!-- Elementos decorativos de acento POSICIONADOS CORRECTAMENTE -->
+        <div div class="absolute -top-2 -left-2 w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg rotate-45 animate-pulse-glow"></div>
+        <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-tr from-cyan-500 to-blue-500 rounded-lg rotate-45 animate-pulse-glow animate-delay-500"></div>
+        
+        <p class="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
+          La tecnología es el motor, pero la estrategia es humana
+          <span class="text-blue-600 font-semibold">Descubre la historia de la persona detras de este proyecto.</span>
+        </p>
+        
+        <!-- Botón usando GradientButton -->
+        <div class="flex justify-center">
+          <GradientButton 
+            text="Ir a Sobre Mí"
+            href="/about/"
+            target="_self"
+            leftIcon=" 👤"
+            rightIcon="→"
+          />
         </div>
       </div>
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 stagger-animation">
-      <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4 hover:border-blue-200 transition mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up">
-        <span class="text-2xl p-3 bg-blue-50 rounded-xl animate-bounce-soft">🔬</span>
-        <div>
-          <h4 class="font-bold text-gray-800 group-hover:text-blue-700 transition-colors duration-300">En el Laboratorio</h4>
-          <p class="text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-300">Actualmente explorando la integración de IA para automatizar el análisis de Customer Success.</p>
-        </div>
+    
+    <!-- Iconos flotantes más grandes -->
+    <div class="flex justify-center items-center gap-6 sm:gap-10 mb-6 animate-fade-in-up animate-delay-300">
+      <div class="w-14 h-14 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center shadow-lg border border-gray-200 animate-float group hover:scale-110 transition-transform duration-300">
+        <span class="text-2xl sm:text-3xl group-hover:scale-110 transition-transform duration-300">🚀</span>
       </div>
-      <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4 hover:border-blue-200 transition mobile-active touch-feedback-sm animate-on-mobile animate-fade-in-up animate-delay-100">
-        <span class="text-2xl p-3 bg-purple-50 rounded-xl animate-bounce-soft animate-delay-200">📈</span>
-        <div>
-          <h4 class="font-bold text-gray-800 group-hover:text-purple-700 transition-colors duration-300">Logro de Trayectoria</h4>
-          <p class="text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-300">Optimización de procesos que incrementan la eficiencia operativa en un 15% mediante flujos digitales.</p>
-        </div>
+      <div class="w-14 h-14 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center shadow-lg border border-gray-200 animate-float animate-delay-200 group hover:scale-110 transition-transform duration-300">
+        <span class="text-2xl sm:text-3xl group-hover:scale-110 transition-transform duration-300">💻</span>
       </div>
+      <div class="w-14 h-14 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center shadow-lg border border-gray-200 animate-float animate-delay-400 group hover:scale-110 transition-transform duration-300">
+        <span class="text-2xl sm:text-3xl group-hover:scale-110 transition-transform duration-300">🤖</span>
+      </div>
+    </div>
+    
+    <!-- Texto secundario compacto -->
+    <div class="animate-fade-in-up animate-delay-500">
+      <p class="text-gray-500 text-xs sm:text-sm max-w-xl mx-auto">
+       La IA construye el camino, pero el criterio humano elige el destino
+      </p>
     </div>
   </div>
 </section>
 
 		</main>
+		<ScrollToTop />
 		<Footer />
 		<script>
             // Script para manejar la carga suave de imágenes
