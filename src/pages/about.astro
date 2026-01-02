@@ -26,7 +26,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         <main class="flex-grow bg-white -mt-1 ">
             <Header />
 
-          <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-6 animate-fade-in">
+        <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-6 animate-fade-in">
     <div class="absolute inset-0 bg-gradient-to-br from-[#000033] via-[#1a1a4d] to-[#000033]">
         <div class="absolute inset-0 opacity-30">
             <div class="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-blue-500/40 to-transparent rounded-full blur-3xl animate-float-slow"></div>
@@ -37,9 +37,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     </div>
 
     <div class="relative z-10 max-w-6xl w-full bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl animate-fade-in-up">
+        <!-- TÍTULO FUERA DE LA GRID - SIEMPRE PRIMERO -->
+        <div class="animate-fade-in-up mb-8 lg:hidden">
+            <span class="text-cyan-400 font-medium tracking-widest uppercase text-sm animate-gradient-flow inline-block">Acerca de Mí</span>
+            <h2 class="text-4xl md:text-5xl font-bold mt-2 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent animate-gradient-flow animate-duration-1500">
+                El Humano detrás de la Estrategia Digital. 🧠
+            </h2>
+        </div>
+
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
-            <div class="relative group mx-auto lg:mx-0 animate-slide-in-left">
+            <!-- Imagen - En móvil va después del título (order-2) -->
+            <div class="relative group mx-auto lg:mx-0 animate-slide-in-left order-2 lg:order-1">
                 <div class="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse-glow"></div>
                 <img 
                     src={import.meta.env.BASE_URL + "imagenes/luis-11.png"}
@@ -48,34 +57,38 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 />
             </div>
 
-            <div class="space-y-6 text-white animate-slide-in-right">
-                <div class="animate-fade-in-up">
+            <!-- Contenido de texto - En móvil va después de la imagen (order-3), en desktop mantiene título incluido -->
+            <div class="space-y-6 text-white animate-slide-in-right order-3 lg:order-2">
+                <!-- Título solo visible en desktop (oculto en móvil porque ya lo mostramos arriba) -->
+                <div class="animate-fade-in-up hidden lg:block">
                     <span class="text-cyan-400 font-medium tracking-widest uppercase text-sm animate-gradient-flow inline-block">Acerca de Mí</span>
                     <h2 class="text-4xl md:text-5xl font-bold mt-2 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent animate-gradient-flow animate-duration-1500">
                         El Humano detrás de la Estrategia Digital. 🧠
                     </h2>
                 </div>
 
+                <!-- Contenido (siempre visible) -->
                 <ul class="space-y-6 stagger-animation">
                     <li class="flex gap-4 animate-fade-in-up animate-on-mobile mobile-active">
                         <div class="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 mt-1 animate-bounce-soft">✓</div>
                         <div>
                             <strong class="text-cyan-300 block text-lg group-hover:text-cyan-400 transition-colors duration-300">El Origen (Experiencia):</strong>
-                            <p class="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">Mi nombre es Luis Reyes y mi trayectoria no es convencional; esa es mi mayor fortaleza. Desde mis orígenes en el campo venezolano hasta el ecosistema digital de hoy, cada paso ha sido una lección de adaptación y esfuerzo constante. No mido mi éxito por el punto de partida, sino por la capacidad de transformar realidades a través del aprendizaje y la dedicación.</p>
+                            <p class="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">Soy Luis Reyes mi trayectoria se basa en una mentalidad de resolución constante. Desde mis inicios en el campo venezolano hasta mi evolución en el ecosistema digital, he aprendido que la verdadera ventaja competitiva es la capacidad de adaptarse y aprender rápido. Esta base me ha permitido construir una ética de trabajo enfocada en resultados, donde la resiliencia es el motor de cada proyecto que emprendo.
+                            </p>
                         </div>
                     </li>
                     <li class="flex gap-4 animate-fade-in-up animate-on-mobile animate-delay-100 mobile-active">
                         <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 mt-1 animate-bounce-soft animate-delay-200">✓</div>
                         <div>
                             <strong class="text-blue-300 block text-lg group-hover:text-blue-400 transition-colors duration-300">El Puente (Tecnología):</strong>
-                            <p class="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">Pasé de emprender por cuenta propia a liderar la gestión de ventas y soporte al cliente durante 4 años en entornos de alto rendimiento. Allí perfeccioné el arte de la comunicación efectiva y la gestión de crisis, entendiendo que detrás de cada transacción hay una persona buscando una solución honesta y eficiente.</p>
+                            <p class="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">  Con 4 años de experiencia como agente en gestión de ventas y soporte al cliente, he desarrollado una capacidad sólida para operar en entornos de alta presión. Mi enfoque es puramente resolutivo: transformar incidencias técnicas o comerciales en soluciones que aseguren la continuidad de la operación. Como especialista en canales digitales, entiendo que la tecnología debe ser el medio para humanizar la comunicación, garantizando que cada interacción sea fluida, personalizada y aporte un valor real basado en la confianza.</p>
                         </div>
                     </li>
                     <li class="flex gap-4 animate-fade-in-up animate-on-mobile animate-delay-200 mobile-active">
                         <div class="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 mt-1 animate-bounce-soft animate-delay-400">✓</div>
                         <div>
                             <strong class="text-purple-300 block text-lg group-hover:text-purple-400 transition-colors duration-300">Luis Reyes Digital: El Futuro</strong>
-                            <p class="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">Hoy, canalizo esa resiliencia en Luis Reyes Digital. He integrado fundamentos de desarrollo web y marketing digital no para cambiar mi enfoque, sino para ser profesional completo y versátil. Mi objetivo es claro: demostrar que la tecnología es el puente y el talento humano el motor de una transformación real.</p>
+                            <p class="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">Este proyecto es el reflejo de mi preparación para el sector de la Gestión de Ventas. He integrado mis conocimientos de Front-end y el uso de la IA como herramientas para optimizar procesos y entender mejor el entorno digital donde operan los negocios hoy. Mi meta es combinar mi experiencia en atención al cliente con una formación sólida en estrategia comercial, aportando una visión técnica y resolutiva que ayude a las empresas a alcanzar sus objetivos de crecimiento y fidelización.</p>
                         </div>
                     </li>
                 </ul>
@@ -98,6 +111,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             </div>
             
         </div>
+    </div>
+</section>
     </div>
 </section>
 
