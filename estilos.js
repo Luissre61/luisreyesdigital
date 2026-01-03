@@ -90,7 +90,7 @@ const TouchHandler = {
 };
 
 // ============================================
-// MANEJADOR PARA ESTADO ACTIVO EN MÓVIL (MODIFICADO)
+// MANEJADOR PARA ESTADO ACTIVO EN MÓVIL (CORREGIDO)
 // ============================================
 
 const MobileActiveHandler = {
@@ -111,6 +111,9 @@ const MobileActiveHandler = {
     const techCards = document.querySelectorAll('.mobile-active.tech-card');
     
     techCards.forEach(card => {
+      // Remover listener existente si lo hay
+      card.removeEventListener('click', MobileActiveHandler.onTechCardClick);
+      // Agregar nuevo listener
       card.addEventListener('click', MobileActiveHandler.onTechCardClick);
     });
   },
@@ -119,6 +122,9 @@ const MobileActiveHandler = {
     const featureCards = document.querySelectorAll('.mobile-active:not(.tech-card)');
     
     featureCards.forEach(card => {
+      // Remover listener existente si lo hay
+      card.removeEventListener('click', MobileActiveHandler.onFeatureCardClick);
+      // Agregar nuevo listener
       card.addEventListener('click', MobileActiveHandler.onFeatureCardClick);
     });
   },
@@ -145,15 +151,14 @@ const MobileActiveHandler = {
   },
 
   onFeatureCardClick: function(e) {
-    const featureCards = document.querySelectorAll('.mobile-active:not(.tech-card)');
+    // SOLO MODIFICAR ESTA FUNCIÓN PARA FEATURECARDS
     
     // Si ya está activa, quitar estado activo
     if (this.classList.contains('active-touch')) {
       this.classList.remove('active-touch');
     } else {
-      // Solo para FeatureCards: remover estado activo de otras FeatureCards
-      featureCards.forEach(t => t.classList.remove('active-touch'));
-      // Agregar estado activo a esta tarjeta
+      // NO remover estado activo de otras FeatureCards - CADA UNA ES INDEPENDIENTE
+      // Solo agregar estado activo a esta tarjeta
       this.classList.add('active-touch');
     }
     
@@ -166,7 +171,7 @@ const MobileActiveHandler = {
   },
 
   onDocumentClick: (e) => {
-    // Si se hace clic fuera de una tarjeta, remover todos los estados activos
+    // Solo remover estado activo si se hace clic FUERA de cualquier tarjeta .mobile-active
     if (!e.target.closest('.mobile-active')) {
       const allCards = document.querySelectorAll('.mobile-active');
       allCards.forEach(t => t.classList.remove('active-touch'));
