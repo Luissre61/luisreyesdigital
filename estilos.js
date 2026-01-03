@@ -59,11 +59,16 @@ const ImageHandler = {
   }
 };
 
+// ============================================
+// TOUCH HANDLER MODIFICADO - SIN COMPETENCIA CON FEATURECARDS
+// ============================================
+
 const TouchHandler = {
   init: () => {
     if (!Utils.isMobileDevice()) return;
     
-    const touchElements = document.querySelectorAll('.touch-feedback, .mobile-active, .wave-effect');
+    // SOLO elementos que NO sean FeatureCards o TechCards (elementos generales)
+    const touchElements = document.querySelectorAll('.touch-feedback:not(.mobile-active), .wave-effect:not(.mobile-active)');
     
     touchElements.forEach(el => {
       el.addEventListener('touchstart', TouchHandler.onTouchStart);
@@ -90,105 +95,100 @@ const TouchHandler = {
 };
 
 // ============================================
-// MANEJADOR PARA ESTADO ACTIVO EN MÓVIL (CORREGIDO)
+// MANEJADOR PARA ESTADO ACTIVO EN MÓVIL - VERSIÓN SIMPLIFICADA Y FUNCIONAL
 // ============================================
 
 const MobileActiveHandler = {
+  initialized: false,
+
   init: () => {
     if (!Utils.isMobileDevice()) return;
     
-    // Inicializar tarjetas de tecnología
-    MobileActiveHandler.initTechCards();
+    MobileActiveHandler.initialized = true;
     
-    // Inicializar FeatureCards
-    MobileActiveHandler.initFeatureCards();
+    // Inicializar listeners para todos los elementos .mobile-active
+    MobileActiveHandler.initAllCards();
     
-    // Remover estado activo al hacer clic fuera
-    document.addEventListener('click', MobileActiveHandler.onDocumentClick);
+    // Remover estado activo al hacer clic fuera de CUALQUIER tarjeta
+    document.addEventListener('click', MobileActiveHandler.onDocumentClick, true); // Use capture phase
   },
 
-  initTechCards: () => {
-    const techCards = document.querySelectorAll('.mobile-active.tech-card');
+  initAllCards: () => {
+    const allCards = document.querySelectorAll('.mobile-active');
     
-    techCards.forEach(card => {
-      // Remover listener existente si lo hay
-      card.removeEventListener('click', MobileActiveHandler.onTechCardClick);
-      // Agregar nuevo listener
-      card.addEventListener('click', MobileActiveHandler.onTechCardClick);
+    allCards.forEach(card => {
+      // Remover cualquier listener previo
+      card.removeEventListener('click', MobileActiveHandler.onCardClick);
+      card.removeEventListener('touchstart', MobileActiveHandler.onTouchStart);
+      
+      // Agregar nuevos listeners
+      card.addEventListener('click', MobileActiveHandler.onCardClick);
+      card.addEventListener('touchstart', MobileActiveHandler.onTouchStart);
     });
   },
 
-  initFeatureCards: () => {
-    const featureCards = document.querySelectorAll('.mobile-active:not(.tech-card)');
-    
-    featureCards.forEach(card => {
-      // Remover listener existente si lo hay
-      card.removeEventListener('click', MobileActiveHandler.onFeatureCardClick);
-      // Agregar nuevo listener
-      card.addEventListener('click', MobileActiveHandler.onFeatureCardClick);
-    });
-  },
-
-  onTechCardClick: function(e) {
-    const techCards = document.querySelectorAll('.mobile-active.tech-card');
-    
-    // Si ya está activa, quitar estado activo
-    if (this.classList.contains('active-touch')) {
-      this.classList.remove('active-touch');
-    } else {
-      // Solo para tarjetas de tecnología: remover estado activo de otras tarjetas de tecnología
-      techCards.forEach(t => t.classList.remove('active-touch'));
-      // Agregar estado activo a esta tarjeta
-      this.classList.add('active-touch');
-    }
-    
-    // Prevenir comportamiento por defecto si es un enlace
-    if (this.tagName === 'A') {
-      e.preventDefault();
-    }
-    
+  onTouchStart: function(e) {
+    // Prevenir que TouchHandler interfiera con FeatureCards
     e.stopPropagation();
   },
 
-  onFeatureCardClick: function(e) {
-    // SOLO MODIFICAR ESTA FUNCIÓN PARA FEATURECARDS
+  onCardClick: function(e) {
+    // Prevenir propagación para que no active otros listeners
+    e.stopPropagation();
+    e.stopImmediatePropagation();
     
-    // Si ya está activa, quitar estado activo
-    if (this.classList.contains('active-touch')) {
-      this.classList.remove('active-touch');
+    // Determinar si es FeatureCard (sin tech-card) o TechCard
+    const isTechCard = this.classList.contains('tech-card');
+    
+    if (isTechCard) {
+      // COMPORTAMIENTO PARA TECHCARDS: solo una activa a la vez
+      const techCards = document.querySelectorAll('.mobile-active.tech-card');
+      
+      if (this.classList.contains('active-touch')) {
+        this.classList.remove('active-touch');
+      } else {
+        techCards.forEach(t => t.classList.remove('active-touch'));
+        this.classList.add('active-touch');
+      }
     } else {
-      // NO remover estado activo de otras FeatureCards - CADA UNA ES INDEPENDIENTE
-      // Solo agregar estado activo a esta tarjeta
-      this.classList.add('active-touch');
+      // COMPORTAMIENTO PARA FEATURECARDS: múltiples activas, toggle individual
+      if (this.classList.contains('active-touch')) {
+        this.classList.remove('active-touch');
+      } else {
+        this.classList.add('active-touch');
+      }
     }
     
     // Prevenir comportamiento por defecto si es un enlace
-    if (this.tagName === 'A') {
+    if (this.tagName === 'A' || this.closest('a')) {
       e.preventDefault();
     }
-    
-    e.stopPropagation();
   },
 
   onDocumentClick: (e) => {
-    // Solo remover estado activo si se hace clic FUERA de cualquier tarjeta .mobile-active
+    // Si se hace clic FUERA de cualquier elemento .mobile-active
     if (!e.target.closest('.mobile-active')) {
+      // Remover active-touch de TODOS los elementos .mobile-active
       const allCards = document.querySelectorAll('.mobile-active');
-      allCards.forEach(t => t.classList.remove('active-touch'));
+      allCards.forEach(card => {
+        card.classList.remove('active-touch');
+      });
     }
   },
 
   cleanup: () => {
-    if (!Utils.isMobileDevice()) return;
+    if (!MobileActiveHandler.initialized) return;
     
     const allCards = document.querySelectorAll('.mobile-active');
     
     allCards.forEach(card => {
-      card.removeEventListener('click', MobileActiveHandler.onTechCardClick);
-      card.removeEventListener('click', MobileActiveHandler.onFeatureCardClick);
+      card.removeEventListener('click', MobileActiveHandler.onCardClick);
+      card.removeEventListener('touchstart', MobileActiveHandler.onTouchStart);
     });
     
-    document.removeEventListener('click', MobileActiveHandler.onDocumentClick);
+    document.removeEventListener('click', MobileActiveHandler.onDocumentClick, true);
+    
+    MobileActiveHandler.initialized = false;
   }
 };
 
@@ -261,6 +261,9 @@ const MotionPreferenceHandler = {
 
 const ButtonStateHandler = {
   init: () => {
+    // Solo en desktop
+    if (Utils.isMobileDevice()) return;
+    
     document.addEventListener('mousedown', ButtonStateHandler.onMouseDown);
     document.addEventListener('mouseup', ButtonStateHandler.onMouseUp);
   },
@@ -291,12 +294,12 @@ export function inicializarAnimaciones() {
 
   // Inicializar todos los manejadores
   ImageHandler.init();
-  TouchHandler.init();
+  TouchHandler.init(); // Ahora solo maneja elementos generales, NO FeatureCards
   MotionPreferenceHandler.init();
   ButtonStateHandler.init();
   ScrollObserver.init();
   
-  // INICIALIZAR MANEJADOR PARA ESTADO ACTIVO EN MÓVIL
+  // INICIALIZAR MANEJADOR PARA FEATURECARDS Y TECHCARDS
   MobileActiveHandler.init();
 
   // Manejar carga completa
@@ -346,6 +349,13 @@ export const Animaciones = {
   // Función para limpiar listeners (útil para SPA)
   limpiar: () => {
     MobileActiveHandler.cleanup();
+  },
+
+  // Función para actualizar listeners si se agregan elementos dinámicamente
+  actualizar: () => {
+    if (Utils.isMobileDevice()) {
+      MobileActiveHandler.initAllCards();
+    }
   },
 
   // Inicialización
