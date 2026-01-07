@@ -54,7 +54,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 <img 
                     src={import.meta.env.BASE_URL + "imagenes/luis-11.png"}
                     alt="Luis Reyes - Especialista en Ventas y CS" 
-                    class="relative rounded-2xl w-full max-w-md object-cover border border-white/20 shadow-lg img-load-fade group-hover:scale-105 transition-transform duration-700"
+                    width="500"
+                    height="500"
+                    decoding="async"
+                    fetchpriority="high"
+                    class="relative rounded-2xl w-full max-w-md object-cover border border-white/20 shadow-lg group-hover:scale-105 transition-transform duration-700"
                 />
             </div>
 
@@ -166,20 +170,5 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         </main>
  <ScrollToTop />
         <Footer />
-        <script>
-            // Script para manejar la carga suave de imágenes
-            document.addEventListener('DOMContentLoaded', () => {
-                const images = document.querySelectorAll('.img-load-fade');
-                images.forEach(img => {
-                    if (img.complete) {
-                        img.classList.add('loaded');
-                    } else {
-                        img.addEventListener('load', () => {
-                            img.classList.add('loaded');
-                        });
-                    }
-                });
-            });
-        </script>
     </body>
 </html>

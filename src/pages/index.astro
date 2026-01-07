@@ -73,8 +73,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 <img
                     src={import.meta.env.BASE_URL + "imagenes/luis-7.png"}
                     alt="Luis Reyes - Profesional digital"
-                    class="h-[50vh] sm:h-[84vh] w-auto object-contain img-load-fade"
-                    loading="lazy"
+                    width="600"
+                    height="800"
+                    decoding="async"
+                    fetchpriority="high"
+                    class="h-[50vh] sm:h-[84vh] w-auto object-contain"
                 />
             </div>
             
@@ -142,7 +145,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             <img
                 src={import.meta.env.BASE_URL + "imagenes/luis-1.png"}
                 alt="Luis Reyes"
-                class="w-auto max-h-[85vh] max-w-full object-cover shadow-2xl img-load-fade group-hover/image:scale-110 transition-transform duration-700"
+                width="600"
+                height="800"
+                decoding="async"
+                loading="lazy"
+                class="w-auto max-h-[85vh] max-w-full object-cover shadow-2xl group-hover/image:scale-110 transition-transform duration-700"
                 style="border-radius: 30% 70% 30% 18% / 30% 30% 70% 70%;"
             />
             <!-- Efecto de brillo sutil -->
@@ -255,20 +262,5 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
         <ScrollToTop />
         <Footer />
-        <script>
-            // Script para manejar la carga suave de imágenes
-            document.addEventListener('DOMContentLoaded', () => {
-                const images = document.querySelectorAll('.img-load-fade');
-                images.forEach(img => {
-                    if (img.complete) {
-                        img.classList.add('loaded');
-                    } else {
-                        img.addEventListener('load', () => {
-                            img.classList.add('loaded');
-                        });
-                    }
-                });
-            });
-        </script>
     </body>
 </html>
