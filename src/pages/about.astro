@@ -26,9 +26,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
         <!-- Contenido principal de la página -->
         <main class="flex-grow bg-white -mt-1 ">
-            <Header />
-        <main class="flex-grow bg-white">
-
         <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-6 animate-fade-in">
     <div class="absolute inset-0 bg-gradient-to-br from-[#000033] via-[#1a1a4d] to-[#000033]">
         <div class="absolute inset-0 opacity-30">
@@ -64,7 +61,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             <!-- Contenido de texto - En móvil va después de la imagen (order-3), en desktop mantiene título incluido -->
             <div class="space-y-6 text-white animate-slide-in-right order-3 lg:order-2">
                 <!-- Título solo visible en desktop (oculto en móvil porque ya lo mostramos arriba) -->
-                <div class="animate-fade-in-up hidden lg:block">
                 <!-- aria-hidden="true" evita que Google lea esto como contenido duplicado -->
                 <div class="animate-fade-in-up hidden lg:block" aria-hidden="true">
                     <span class="text-cyan-400 font-medium tracking-widest uppercase text-sm animate-gradient-flow inline-block">Acerca de Mí</span>
@@ -117,8 +113,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             </div>
             
         </div>
-    </div>
-</section>
     </div>
 </section>
 
