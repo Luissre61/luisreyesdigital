@@ -19,12 +19,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <body
         class="overflow-x-hidden flex flex-col min-h-screen font-sans bg-white"
     >
+        <!-- Header debe estar fuera del main para mejor SEO semántico -->
+        <Header />
 
     
 
         <!-- Contenido principal de la página -->
         <main class="flex-grow bg-white -mt-1 ">
             <Header />
+        <main class="flex-grow bg-white">
 
         <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-6 animate-fade-in">
     <div class="absolute inset-0 bg-gradient-to-br from-[#000033] via-[#1a1a4d] to-[#000033]">
@@ -40,6 +43,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         <!-- TÍTULO FUERA DE LA GRID - SIEMPRE PRIMERO -->
         <div class="animate-fade-in-up mb-8 lg:hidden">
             <span class="text-cyan-400 font-medium tracking-widest uppercase text-sm animate-gradient-flow inline-block">Acerca de Mí</span>
+            <!-- Añadimos h2 pero visible solo en móvil -->
             <h2 class="text-4xl md:text-5xl font-bold mt-2 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent animate-gradient-flow animate-duration-1500">
                 El Humano detrás de la Estrategia Digital. 🧠
             </h2>
@@ -61,6 +65,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             <div class="space-y-6 text-white animate-slide-in-right order-3 lg:order-2">
                 <!-- Título solo visible en desktop (oculto en móvil porque ya lo mostramos arriba) -->
                 <div class="animate-fade-in-up hidden lg:block">
+                <!-- aria-hidden="true" evita que Google lea esto como contenido duplicado -->
+                <div class="animate-fade-in-up hidden lg:block" aria-hidden="true">
                     <span class="text-cyan-400 font-medium tracking-widest uppercase text-sm animate-gradient-flow inline-block">Acerca de Mí</span>
                     <h2 class="text-4xl md:text-5xl font-bold mt-2 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent animate-gradient-flow animate-duration-1500">
                         El Humano detrás de la Estrategia Digital. 🧠
@@ -132,7 +138,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     
     <div class="relative inline-block mb-12 animate-fade-in-up animate-delay-200">
       <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed px-4 py-6 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-100/50">
-        El futuro de la tecnología, la IA y los algoritmos no reside en el reemplazo del talento humano, sino en su capacidad para potenciarlo hacia nuevas oportunidades innovadoras.
+        El futuro de la tecnología no reside en el reemplazo del talento humano, sino en su capacidad para potenciarlo hacia nuevas oportunidades innovadoras.
       </p>
       
       <!-- Elemento decorativo de acento -->
