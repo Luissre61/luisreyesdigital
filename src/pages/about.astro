@@ -4,8 +4,11 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import GradientButton from '../components/GradientButton.astro';
 import ScrollToTop from "../components/ScrollToTop.astro";
+import GradientText from "../components/GradientText.astro";
+import Background from "../components/Background.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Separador from "../components/separador.astro";
 ---
 
 
@@ -14,42 +17,37 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 <html lang="es">
     <head>
         <!-- Sección Head: Metadatos, título y estilos -->
-        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <BaseHead title={`Sobre Mí | ${SITE_TITLE}`} description="Conoce a Luis Reyes, estratega de Customer Success y desarrollador web. Descubre mi trayectoria uniendo ventas, tecnología y enfoque humano." />
     </head>
     <body
-        class="overflow-x-hidden flex flex-col min-h-screen font-sans bg-white"
+        class="overflow-x-hidden flex flex-col min-h-screen font-sans"
     >
+        <Background />
         <!-- Header debe estar fuera del main para mejor SEO semántico -->
         <Header />
 
     
 
         <!-- Contenido principal de la página -->
-        <main class="flex-grow bg-white -mt-1 ">
-        <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-6 animate-fade-in">
-    <div class="absolute inset-0 bg-gradient-to-br from-[#000033] via-[#1a1a4d] to-[#000033]">
-        <div class="absolute inset-0 opacity-30">
-            <div class="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-blue-500/40 to-transparent rounded-full blur-3xl animate-float-slow"></div>
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-gradient-to-r from-cyan-400/30 via-blue-500/20 to-cyan-400/30 rounded-full blur-3xl animate-pulse-glow animate-duration-2000"></div>
-            <div class="absolute bottom-0 right-0 w-1/3 h-1/3 bg-gradient-to-tl from-cyan-300/30 to-transparent rounded-full blur-3xl animate-float-slow animate-delay-1000"></div>
-        </div>
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
-    </div>
+        <main class="flex-grow -mt-1 ">
 
-    <div class="relative z-10 max-w-6xl w-full bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl animate-fade-in-up">
+          
+        <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20 px-6 animate-fade-in">
+
+    <div class="relative z-10 max-w-6xl w-full bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl opacity-0 scroll-fade-in-up">
         <!-- TÍTULO FUERA DE LA GRID - SIEMPRE PRIMERO -->
-        <div class="animate-fade-in-up mb-8 lg:hidden">
+        <div class="opacity-0 scroll-fade-in-up mb-8 lg:hidden">
             <span class="text-cyan-400 font-medium tracking-widest uppercase text-sm animate-gradient-flow inline-block">Acerca de Mí</span>
             <!-- Añadimos h2 pero visible solo en móvil -->
-            <h2 class="text-4xl md:text-5xl font-bold mt-2 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent animate-gradient-flow animate-duration-1500">
+            <GradientText as="h1" gradient="from-white to-gray-400" animate={true} class="text-4xl md:text-5xl font-bold mt-2">
                 El Humano detrás de la Estrategia Digital. 🧠
-            </h2>
+            </GradientText>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
             <!-- Imagen - En móvil va después del título (order-2) -->
-            <div class="relative group mx-auto lg:mx-0 animate-slide-in-left order-2 lg:order-1">
+            <div class="relative group mx-auto lg:mx-0 opacity-0 scroll-fade-in-left order-2 lg:order-1">
                 <div class="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse-glow"></div>
                 <img 
                     src={import.meta.env.BASE_URL + "imagenes/luis-11.png"}
@@ -63,19 +61,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             </div>
 
             <!-- Contenido de texto - En móvil va después de la imagen (order-3), en desktop mantiene título incluido -->
-            <div class="space-y-6 text-white animate-slide-in-right order-3 lg:order-2">
+            <div class="space-y-6 text-white opacity-0 scroll-fade-in-right order-3 lg:order-2">
                 <!-- Título solo visible en desktop (oculto en móvil porque ya lo mostramos arriba) -->
                 <!-- aria-hidden="true" evita que Google lea esto como contenido duplicado -->
-                <div class="animate-fade-in-up hidden lg:block" aria-hidden="true">
+                <div class="opacity-0 scroll-fade-in-up hidden lg:block" aria-hidden="true">
                     <span class="text-cyan-400 font-medium tracking-widest uppercase text-sm animate-gradient-flow inline-block">Acerca de Mí</span>
-                    <h2 class="text-4xl md:text-5xl font-bold mt-2 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent animate-gradient-flow animate-duration-1500">
+                    <GradientText as="h1" gradient="from-white to-gray-400" animate={true} class="text-4xl md:text-5xl font-bold mt-2">
                         El Humano detrás de la Estrategia Digital. 🧠
-                    </h2>
+                    </GradientText>
                 </div>
 
                 <!-- Contenido (siempre visible) -->
                 <ul class="space-y-6 stagger-animation">
-                    <li class="flex gap-4 animate-fade-in-up animate-on-mobile hover:scale-[1.02] active:scale-[1.02] transition-transform duration-300">
+                    <li class="flex gap-4 opacity-0 scroll-fade-in-up animate-on-mobile hover:scale-[1.02] active:scale-[1.02] transition-transform duration-300">
                         <div class="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 mt-1 animate-bounce-soft">✓</div>
                         <div>
                             <strong class="text-cyan-300 block text-lg group-hover:text-cyan-400 transition-colors duration-300">Mi Base y Adaptación:</strong>
@@ -83,14 +81,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                             </p>
                         </div>
                     </li>
-                    <li class="flex gap-4 animate-fade-in-up animate-on-mobile animate-delay-100 hover:scale-[1.02] active:scale-[1.02] transition-transform duration-300">
+                    <li class="flex gap-4 opacity-0 scroll-fade-in-up animate-on-mobile animate-delay-100 hover:scale-[1.02] active:scale-[1.02] transition-transform duration-300">
                         <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 mt-1 animate-bounce-soft animate-delay-200">✓</div>
                         <div>
                             <strong class="text-blue-300 block text-lg group-hover:text-blue-400 transition-colors duration-300">Resolución y Resultados</strong>
                             <p class="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">  Con 4 años de experiencia como agente en gestión de ventas y soporte al cliente, he desarrollado una capacidad sólida para operar en entornos de alta presión. Mi enfoque es puramente resolutivo: transformar incidencias técnicas o comerciales en soluciones que aseguren la continuidad de la operación. Como especialista en canales digitales, entiendo que la tecnología debe ser el medio para humanizar la comunicación, garantizando que cada interacción sea fluida, personalizada y aporte un valor real basado en la confianza.</p>
                         </div>
                     </li>
-                    <li class="flex gap-4 animate-fade-in-up animate-on-mobile animate-delay-200 hover:scale-[1.02] active:scale-[1.02] transition-transform duration-300">
+                    <li class="flex gap-4 opacity-0 scroll-fade-in-up animate-on-mobile animate-delay-200 hover:scale-[1.02] active:scale-[1.02] transition-transform duration-300">
                         <div class="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 mt-1 animate-bounce-soft animate-delay-400">✓</div>
                         <div>
                             <strong class="text-purple-300 block text-lg group-hover:text-purple-400 transition-colors duration-300">Visión Estratégica</strong>
@@ -100,9 +98,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 </ul>
 
                 <div class="flex flex-wrap gap-3 pt-4 stagger-animation">
-                    <span class="px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-medium animate-fade-in-up hover:bg-white/20 hover:border-white/30 transition-all duration-300 mobile-active">🎯 Estrategia Comercial</span>
-                    <span class="px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-medium animate-fade-in-up animate-delay-100 hover:bg-white/20 hover:border-white/30 transition-all duration-300 mobile-active">🛠️ Criterio Técnico</span>
-                    <span class="px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-medium animate-fade-in-up animate-delay-200 hover:bg-white/20 hover:border-white/30 transition-all duration-300 mobile-active">🤝 Enfoque Humano</span>
+                    <span class="px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-medium opacity-0 scroll-fade-in-up hover:bg-white/20 hover:border-white/30 transition-all duration-300 mobile-active">🎯 Estrategia Comercial</span>
+                    <span class="px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-medium opacity-0 scroll-fade-in-up animate-delay-100 hover:bg-white/20 hover:border-white/30 transition-all duration-300 mobile-active">🛠️ Criterio Técnico</span>
+                    <span class="px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-medium opacity-0 scroll-fade-in-up animate-delay-200 hover:bg-white/20 hover:border-white/30 transition-all duration-300 mobile-active">🤝 Enfoque Humano</span>
                 </div>
 
                 <GradientButton 
@@ -116,34 +114,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             
         </div>
     </div>
+    
 </section>
-
-<section class="py-16 bg-gray-50 relative overflow-hidden">
-  <!-- Elementos de fondo decorativos -->
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-float-slow"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-tr from-blue-500/15 to-cyan-500/15 rounded-full blur-3xl animate-float-slow animate-delay-1000"></div>
-  </div>
-  
-  <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
-    <div class="mb-8 animate-fade-in-down">
-      <h2 class="text-2xl sm:text-4xl font-bold text-[#000033] bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent px-4 py-2 animate-gradient-flow animate-duration-1500 inline-block">
-        En el mundo digital
-      </h2>
+<!-- Llamado a la acción sutil -->
+    <div class=" opacity-0 scroll-fade-in-up animate-delay-600 flex justify-center">
+      <a href="/" class="inline-flex items-center gap-3 text-gray-300 text-sm sm:text-base font-medium px-6 py-3 bg-white/5 backdrop-blur-sm rounded-full shadow-sm border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 active:scale-95 touch-feedback cursor-pointer">
+        <span>Explorar de nuevo  </span>
+        <span class="text-blue-500 animate-pulse-glow">↑</span>
+      </a>
     </div>
-    
-    <div class="relative inline-block mb-12 animate-fade-in-up animate-delay-200">
-      <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed px-4 py-6 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-100/50">
-        El futuro de la tecnología no reside en el reemplazo del talento humano, sino en su capacidad para potenciarlo hacia nuevas oportunidades innovadoras.
-      </p>
-      
-      <!-- Elemento decorativo de acento -->
-      <div class="absolute -top-2 -left-2 w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg rotate-45 animate-pulse-glow"></div>
-      <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-tr from-cyan-500 to-blue-500 rounded-lg rotate-45 animate-pulse-glow animate-delay-500"></div>
-    </div>
-    
-    <!-- Iconos decorativos -->
-    <div class="flex justify-center items-center gap-6 sm:gap-10 mt-12 animate-fade-in-up animate-delay-400">
+    <!-- Iconos flotantes -->
+    <div class="flex justify-center items-center gap-6 sm:gap-10 mt-12 opacity-0 scroll-fade-in-up animate-delay-400 mb-12">
       <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center shadow-sm border border-gray-200 animate-bounce-soft">
         <span class="text-2xl sm:text-3xl">❤️</span>
       </div>
@@ -154,19 +135,25 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         <span class="text-2xl sm:text-3xl">🗺️</span>
       </div>
     </div>
-    
-    <!-- Llamado a la acción sutil -->
-    <div class="mt-12 animate-fade-in-up animate-delay-600">
-      <a href="/" class="inline-flex items-center gap-3 text-gray-500 text-sm sm:text-base font-medium px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-sm border border-gray-200 hover:border-blue-200 transition-all duration-300 active:scale-95 touch-feedback cursor-pointer">
-        <span>Explorar de nuevo  </span>
-        <span class="text-blue-500 animate-pulse-glow">↑</span>
-      </a>
-    </div>
-  </div>
-</section>  
+<Separador />
+  
 
         </main>
  <ScrollToTop />
         <Footer />
+
+        <script>
+            import { Animaciones } from "../../estilos.js";
+            
+            // Inicializar animaciones base
+            Animaciones.inicializar();
+            
+            // Observar elementos para animar al hacer scroll
+            Animaciones.observar('.scroll-fade-in', 'animate-fade-in');
+            Animaciones.observar('.scroll-fade-in-up', 'animate-fade-in-up');
+            Animaciones.observar('.scroll-fade-in-down', 'animate-fade-in-down');
+            Animaciones.observar('.scroll-fade-in-left', 'animate-fade-in-left');
+            Animaciones.observar('.scroll-fade-in-right', 'animate-fade-in-right');
+        </script>
     </body>
 </html>

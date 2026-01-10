@@ -70,7 +70,11 @@ a.boton:hover::before {
 @keyframes gradientFlow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 @keyframes pulseGlow { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.5; } }
 @keyframes bounceSoft { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-@keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes float-drift {
+    0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+    33% { transform: translateY(-8px) translateX(3px); opacity: 0.5; }
+    66% { transform: translateY(4px) translateX(-3px); opacity: 0.4; }
+}
 @keyframes wave { 0% { transform: scale(0, 0); opacity: 0.5; } 100% { transform: scale(30, 30); opacity: 0; } }
 
 /* Clases de animación */
@@ -83,7 +87,9 @@ a.boton:hover::before {
 .animate-gradient-flow { background-size: 200% auto; animation: gradientFlow 3s ease infinite; }
 .animate-pulse-glow { animation: pulseGlow 3s ease-in-out infinite; }
 .animate-bounce-soft { animation: bounceSoft 2s ease-in-out infinite; }
-.animate-spin-slow { animation: spinSlow 20s linear infinite; }
+.animate-float-slow { animation: float-drift 15s ease-in-out infinite; }
+.animate-float-medium { animation: float-drift 12s ease-in-out infinite; }
+.animate-float-fast { animation: float-drift 9s ease-in-out infinite; }
 
 /* Delays escalonados (simplificados con variable CSS) */
 :root {
@@ -198,8 +204,8 @@ a.boton:hover::before {
   }
   
   /* FeatureCards específicas - CON cambio de fondo completo y texto blanco */
-  .touch-feedback.active-touch:not(.tech-card),
-  .mobile-active.active-touch:not(.tech-card) {
+  .touch-feedback.active-touch:not(.tech-card):not(.glass),
+  .mobile-active.active-touch:not(.tech-card):not(.glass) {
     background-color: #1e3a8a !important; /* bg-blue-900 */
     color: white !important;
     border-color: #93c5fd !important; /* border-blue-300 */
@@ -207,41 +213,49 @@ a.boton:hover::before {
   }
   
   /* CAMBIO CRÍTICO: Texto de párrafos en FeatureCards a blanco */
-  .touch-feedback.active-touch:not(.tech-card) p,
-  .mobile-active.active-touch:not(.tech-card) p,
-  .touch-feedback.active-touch:not(.tech-card) .text-gray-600,
-  .touch-feedback.active-touch:not(.tech-card) .text-gray-700,
-  .touch-feedback.active-touch:not(.tech-card) .text-gray-800,
-  .mobile-active.active-touch:not(.tech-card) .text-gray-600,
-  .mobile-active.active-touch:not(.tech-card) .text-gray-700,
-  .mobile-active.active-touch:not(.tech-card) .text-gray-800 {
+  .touch-feedback.active-touch:not(.tech-card):not(.glass) p,
+  .mobile-active.active-touch:not(.tech-card):not(.glass) p,
+  .touch-feedback.active-touch:not(.tech-card):not(.glass) .text-gray-600,
+  .touch-feedback.active-touch:not(.tech-card):not(.glass) .text-gray-700,
+  .touch-feedback.active-touch:not(.tech-card):not(.glass) .text-gray-800,
+  .mobile-active.active-touch:not(.tech-card):not(.glass) .text-gray-600,
+  .mobile-active.active-touch:not(.tech-card):not(.glass) .text-gray-700,
+  .mobile-active.active-touch:not(.tech-card):not(.glass) .text-gray-800 {
     color: white !important;
   }
   
   /* Títulos y encabezados en FeatureCards a blanco */
-  .touch-feedback.active-touch:not(.tech-card) h1,
-  .touch-feedback.active-touch:not(.tech-card) h2,
-  .touch-feedback.active-touch:not(.tech-card) h3,
-  .touch-feedback.active-touch:not(.tech-card) h4,
-  .touch-feedback.active-touch:not(.tech-card) h5,
-  .touch-feedback.active-touch:not(.tech-card) h6,
-  .mobile-active.active-touch:not(.tech-card) h1,
-  .mobile-active.active-touch:not(.tech-card) h2,
-  .mobile-active.active-touch:not(.tech-card) h3,
-  .mobile-active.active-touch:not(.tech-card) h4,
-  .mobile-active.active-touch:not(.tech-card) h5,
-  .mobile-active.active-touch:not(.tech-card) h6 {
+  .touch-feedback.active-touch:not(.tech-card):not(.glass) h1,
+  .touch-feedback.active-touch:not(.tech-card):not(.glass) h2,
+  .touch-feedback.active-touch:not(.tech-card):not(.glass) h3,
+  .touch-feedback.active-touch:not(.tech-card):not(.glass) h4,
+  .touch-feedback.active-touch:not(.tech-card):not(.glass) h5,
+  .touch-feedback.active-touch:not(.tech-card):not(.glass) h6,
+  .mobile-active.active-touch:not(.tech-card):not(.glass) h1,
+  .mobile-active.active-touch:not(.tech-card):not(.glass) h2,
+  .mobile-active.active-touch:not(.tech-card):not(.glass) h3,
+  .mobile-active.active-touch:not(.tech-card):not(.glass) h4,
+  .mobile-active.active-touch:not(.tech-card):not(.glass) h5,
+  .mobile-active.active-touch:not(.tech-card):not(.glass) h6 {
     color: white !important;
   }
   
   /* Textos específicos con clases group-hover */
-  .touch-feedback.active-touch:not(.tech-card) .group-hover\:text-gray-700,
-  .touch-feedback.active-touch:not(.tech-card) .group-hover\:text-gray-600,
-  .touch-feedback.active-touch:not(.tech-card) .group-hover\:text-gray-800,
-  .mobile-active.active-touch:not(.tech-card) .group-hover\:text-gray-700,
-  .mobile-active.active-touch:not(.tech-card) .group-hover\:text-gray-600,
-  .mobile-active.active-touch:not(.tech-card) .group-hover\:text-gray-800 {
+  .touch-feedback.active-touch:not(.tech-card):not(.glass) .group-hover\:text-gray-700,
+  .touch-feedback.active-touch:not(.tech-card):not(.glass) .group-hover\:text-gray-600,
+  .touch-feedback.active-touch:not(.tech-card):not(.glass) .group-hover\:text-gray-800,
+  .mobile-active.active-touch:not(.tech-card):not(.glass) .group-hover\:text-gray-700,
+  .mobile-active.active-touch:not(.tech-card):not(.glass) .group-hover\:text-gray-600,
+  .mobile-active.active-touch:not(.tech-card):not(.glass) .group-hover\:text-gray-800 {
     color: white !important;
+  }
+
+  /* ESTILOS ACTIVOS PARA TARJETAS GLASS (Transparencia mantenida) */
+  .touch-feedback.active-touch.glass,
+  .mobile-active.active-touch.glass {
+    border-color: #4ade80 !important; /* green-400 */
+    box-shadow: 0 0 15px rgba(74,222,128,0.4) !important;
+    transform: translateY(-2px) !important;
   }
   
   /* ============================================
