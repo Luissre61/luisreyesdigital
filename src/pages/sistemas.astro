@@ -9,7 +9,14 @@ import GradientText from "../components/GradientText.astro";
 import Background from "../components/Background.astro";
 import Separador from '../components/separador.astro';
 
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE } from "../consts";
+
+const carouselImages = [
+    { src: "imagenes/cap-1.png", alt: "Captura de WhatsApp 1" },
+    { src: "imagenes/cap-2.png", alt: "Captura de WhatsApp 2" },
+    { src: "imagenes/cap-3.png", alt: "Captura de WhatsApp 3" },
+    { src: "imagenes/cap-4.png", alt: "Captura de WhatsApp 4" },
+];
 ---
 
 
@@ -152,7 +159,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 <div class="text-center mb-8 md:mb-10">
                     <div class="opacity-0 scroll-fade-in">
                         <GradientText as="h2" gradient="from-green-400 to-emerald-500" animate={true} class="text-2xl sm:text-4xl font-bold px-4 py-2">
-                            Resultados garantizados
+                            Resultados enfocados en el orden y la rapidez.
                         </GradientText>
                     </div>
                 </div>
@@ -162,7 +169,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                     <FeatureCard
                         icon="⚡"
                         title="Velocidad Extrema"
-                        description="Respuestas en menos de 30 segundos garantizadas."
+                        description="Respuestas diseadas para enviarse en menos de 30 segundos."
                         variant="glass"
                         class="animate-on-mobile opacity-0 scroll-fade-in-up"
                     />
@@ -176,14 +183,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                     <FeatureCard
                         icon="✅"
                         title="Cierre Efectivon"
-                        description="Lógica diseñada para filtrar curiosos y convertir chats en clientes reales."
+                        description="Lógica diseñada para filtrar curiosos y enfocar tu tiempo en clientes que si compran"
                         variant="glass"
                         class="animate-on-mobile opacity-0 scroll-fade-in-up animate-delay-200"
                     />
                     <FeatureCard
                         icon="📋"
                         title="Listo para Usar"
-                        description="Manual de respuestas personalizadas (copy & paste)"
+                        description="Sistema de respuestas personalizadas (copy & paste)"
                         variant="glass"
                         class="animate-on-mobile opacity-0 scroll-fade-in-up animate-delay-200"
                     />
@@ -210,159 +217,31 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                     
                     <!-- Carrusel infinito - Primera copia -->
                     <div class="carousel-track flex animate-scroll-infinite">
-                        <!-- Grupo 1 - Imágenes originales -->
-                        <div class="carousel-group flex">
-                            <!-- Imagen 1 - luis-1.png -->
-                            <div class="carousel-slide mx-2 md:mx-3">
-                                <div class="relative w-[160px] md:w-[200px]">
-                                    <div class="relative rounded-[1.5rem] md:rounded-[2rem] border-6 md:border-8 border-gray-800 shadow-xl overflow-hidden">
-                                        <!-- Notch del móvil -->
-                                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 bg-gray-800"></div>
-                                        
-                                        <!-- Imagen -->
-                                        <img 
-                                            src={import.meta.env.BASE_URL + "imagenes/cap-1.png"} 
-                                            alt="Captura de WhatsApp 1"
-                                            class="w-full h-auto object-cover img-load-fade"
-                                            loading="lazy"
-                                        />
-                                        
-                                        <!-- Overlay sutil para efecto móvil -->
-                                        <div class="absolute inset-0 pointer-events-none border-2 border-white/5 rounded-[1.4rem] md:rounded-[1.8rem]"></div>
+                        {[0, 1].map((groupIndex) => (
+                            <div class="carousel-group flex" aria-hidden={groupIndex === 1 ? "true" : undefined}>
+                                {carouselImages.map((image) => (
+                                    <div class="carousel-slide mx-2 md:mx-3">
+                                        <div class="relative w-[160px] md:w-[200px]">
+                                            <div class="relative rounded-[1.5rem] md:rounded-[2rem] border-6 md:border-8 border-gray-800 shadow-xl overflow-hidden">
+                                                <!-- Notch del móvil -->
+                                                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 bg-gray-800"></div>
+                                                
+                                                <!-- Imagen -->
+                                                <img 
+                                                    src={import.meta.env.BASE_URL + image.src} 
+                                                    alt={image.alt}
+                                                    class="w-full h-auto object-cover img-load-fade"
+                                                    loading="lazy"
+                                                />
+                                                
+                                                <!-- Overlay sutil para efecto móvil -->
+                                                <div class="absolute inset-0 pointer-events-none border-2 border-white/5 rounded-[1.4rem] md:rounded-[1.8rem]"></div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                ))}
                             </div>
-                            
-                            <!-- Imagen 2 - luis-7.png -->
-                            <div class="carousel-slide mx-2 md:mx-3">
-                                <div class="relative w-[160px] md:w-[200px]">
-                                    <div class="relative rounded-[1.5rem] md:rounded-[2rem] border-6 md:border-8 border-gray-800 shadow-xl overflow-hidden">
-                                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 bg-gray-800"></div>
-                                        
-                                        <img 
-                                            src={import.meta.env.BASE_URL + "imagenes/cap-2.png"} 
-                                            alt="Captura de WhatsApp 2"
-                                            class="w-full h-auto object-cover img-load-fade"
-                                            loading="lazy"
-                                        />
-                                        
-                                        <div class="absolute inset-0 pointer-events-none border-2 border-white/5 rounded-[1.4rem] md:rounded-[1.8rem]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Imagen 3 - cap-3.png -->
-                            <div class="carousel-slide mx-2 md:mx-3">
-                                <div class="relative w-[160px] md:w-[200px]">
-                                    <div class="relative rounded-[1.5rem] md:rounded-[2rem] border-6 md:border-8 border-gray-800 shadow-xl overflow-hidden">
-                                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 bg-gray-800"></div>
-                                        
-                                        <img 
-                                            src={import.meta.env.BASE_URL + "imagenes/cap-3.png"} 
-                                            alt="Captura de WhatsApp 3"
-                                            class="w-full h-auto object-cover img-load-fade"
-                                            loading="lazy"
-                                        />
-                                        
-                                        <div class="absolute inset-0 pointer-events-none border-2 border-white/5 rounded-[1.4rem] md:rounded-[1.8rem]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Imagen 4 - cap-4.png -->
-                            <div class="carousel-slide mx-2 md:mx-3">
-                                <div class="relative w-[160px] md:w-[200px]">
-                                    <div class="relative rounded-[1.5rem] md:rounded-[2rem] border-6 md:border-8 border-gray-800 shadow-xl overflow-hidden">
-                                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 bg-gray-800"></div>
-                                        
-                                        <img 
-                                            src={import.meta.env.BASE_URL + "imagenes/cap-4.png"} 
-                                            alt="Captura de WhatsApp 4"
-                                            class="w-full h-auto object-cover img-load-fade"
-                                            loading="lazy"
-                                        />
-                                        
-                                        <div class="absolute inset-0 pointer-events-none border-2 border-white/5 rounded-[1.4rem] md:rounded-[1.8rem]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Grupo 2 - Duplicado para efecto infinito -->
-                        <div class="carousel-group flex" aria-hidden="true">
-                            <!-- Duplicado Imagen 1 -->
-                            <div class="carousel-slide mx-2 md:mx-3">
-                                <div class="relative w-[160px] md:w-[200px]">
-                                    <div class="relative rounded-[1.5rem] md:rounded-[2rem] border-6 md:border-8 border-gray-800 shadow-xl overflow-hidden">
-                                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 bg-gray-800"></div>
-                                        
-                                        <img 
-                                            src={import.meta.env.BASE_URL + "imagenes/cap-1.png"} 
-                                            alt="Captura de WhatsApp 1"
-                                            class="w-full h-auto object-cover img-load-fade"
-                                            loading="lazy"
-                                        />
-                                        
-                                        <div class="absolute inset-0 pointer-events-none border-2 border-white/5 rounded-[1.4rem] md:rounded-[1.8rem]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Duplicado cap-2.png -->
-                         
-                            <div class="carousel-slide mx-2 md:mx-3">
-                                <div class="relative w-[160px] md:w-[200px]">
-                                    <div class="relative rounded-[1.5rem] md:rounded-[2rem] border-6 md:border-8 border-gray-800 shadow-xl overflow-hidden">
-                                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 bg-gray-800"></div>
-                                        
-                                        <img 
-                                            src={import.meta.env.BASE_URL + "imagenes/cap-2.png"} 
-                                            alt="Captura de WhatsApp 2"
-                                            class="w-full h-auto object-cover img-load-fade"
-                                            loading="lazy"
-                                        />
-                                        
-                                        <div class="absolute inset-0 pointer-events-none border-2 border-white/5 rounded-[1.4rem] md:rounded-[1.8rem]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Duplicado imagen 3 -->
-                            <div class="carousel-slide mx-2 md:mx-3">
-                                <div class="relative w-[160px] md:w-[200px]">
-                                    <div class="relative rounded-[1.5rem] md:rounded-[2rem] border-6 md:border-8 border-gray-800 shadow-xl overflow-hidden">
-                                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 bg-gray-800"></div>
-                                        
-                                        <img 
-                                            src={import.meta.env.BASE_URL + "imagenes/cap-3.png"} 
-                                            alt="Captura de WhatsApp 3"
-                                            class="w-full h-auto object-cover img-load-fade"
-                                            loading="lazy"
-                                        />
-                                        
-                                        <div class="absolute inset-0 pointer-events-none border-2 border-white/5 rounded-[1.4rem] md:rounded-[1.8rem]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Duplicado Imagen 4 -->
-                            <div class="carousel-slide mx-2 md:mx-3">
-                                <div class="relative w-[160px] md:w-[200px]">
-                                    <div class="relative rounded-[1.5rem] md:rounded-[2rem] border-6 md:border-8 border-gray-800 shadow-xl overflow-hidden">
-                                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 bg-gray-800"></div>
-                                        
-                                        <img 
-                                            src={import.meta.env.BASE_URL + "imagenes/cap-4.png"} 
-                                            alt="Captura de WhatsApp 4"
-                                            class="w-full h-auto object-cover img-load-fade"
-                                            loading="lazy"
-                                        />
-                                        
-                                        <div class="absolute inset-0 pointer-events-none border-2 border-white/5 rounded-[1.4rem] md:rounded-[1.8rem]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>
@@ -387,12 +266,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 </GradientText>
             </h1>
         
-      <div class="my-3 sm:my-4 opacity-0 animate-fade-in-up animate-delay-300 [animation-fill-mode:forwards]">
-    
-</div>
-
-        <p class="text-lg sm:text-2xl leading-relaxed font-medium text-w opacity-0 scroll-fade-in-up animate-delay-300 [animation-fill-mode:forwards] text-white">
-           Hola! Soy Luis Reyes, Transformo tu flujo de WhatsApp para que atiendas a decenas de clientes con la misma calidad, personalización y rapidez de un equipo profesional.
+        <p class="text-lg sm:text-2xl leading-relaxed font-medium opacity-0 scroll-fade-in-up animate-delay-300 [animation-fill-mode:forwards] text-white">
+           Hola! Soy Luis Reyes, Transformo tu flujo de WhatsApp para que atiendas a más clientes con la misma rapidez, orden y calidad de un profecional, aunque trabajes solo desde tu celular.
         </p>
                 <div class="mt-10">
                     <GradientButton 
