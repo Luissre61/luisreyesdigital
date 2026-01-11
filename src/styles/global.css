@@ -383,31 +383,51 @@ a.boton:hover::before {
 /* ============================================
    PREFERENCIAS DE REDUCIR MOVIMIENTO
    ============================================ */
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-infinite {
+    animation: scroll 40s linear infinite;
+    width: max-content;
+}
+
+/* Animación de desplazamiento infinito */
+.carousel-track {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.carousel-group {
+    flex-shrink: 0;
+}
+
+/* Pausar animación al hacer hover (opcional) */
+.animate-scroll-infinite:hover {
+    animation-play-state: paused;
+}
+
+/* Ajustes responsivos para el carrusel */
+@media (max-width: 640px) {
+    .carousel-slide > div {
+        width: 200px !important;
+    }
+    .animate-scroll-infinite {
+        animation-duration: 25s; /* Más rápido en móvil */
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+    .carousel-slide > div {
+        width: 240px !important;
+    }
+}
+
+/* Ajuste para preferencias de movimiento reducido */
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  
-  /* Deshabilitar todas las animaciones */
-  [class*="animate-"],
-  .mobile-float,
-  .wave-effect:active::after {
-    animation: none !important;
-  }
-  
-  .img-load-fade {
-    opacity: 1;
-    transition: none;
-  }
-  
-  .touch-feedback:active,
-  .touch-feedback-sm:active {
-    transform: none;
-  }
+    .animate-scroll-infinite {
+        animation: none;
+    }
 }

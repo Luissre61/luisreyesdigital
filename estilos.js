@@ -1,5 +1,5 @@
 // ============================================
-// UTILIDADES COMPARTIDAS
+// INICIO - UTILIDADES COMPARTIDAS
 // ============================================
 
 const Utils = {
@@ -26,7 +26,7 @@ const Utils = {
 };
 
 // ============================================
-// MANEJADORES ESPECÍFICOS
+// INICIO - MANEJADOR DE IMÁGENES
 // ============================================
 
 const ImageHandler = {
@@ -37,19 +37,29 @@ const ImageHandler = {
       if (img.complete) {
         img.classList.add('loaded');
       } else {
-        img.addEventListener('load', ImageHandler.onImageLoad);
-        img.addEventListener('error', ImageHandler.onImageError);
+        const loadHandler = ImageHandler.onImageLoad.bind(img);
+        const errorHandler = ImageHandler.onImageError.bind(img);
+        
+        img._loadHandler = loadHandler;
+        img._errorHandler = errorHandler;
+        
+        img.addEventListener('load', loadHandler);
+        img.addEventListener('error', errorHandler);
       }
     });
   },
 
   onImageLoad: function() {
     this.classList.add('loaded');
+    this.removeEventListener('load', this._loadHandler);
+    this.removeEventListener('error', this._errorHandler);
   },
 
   onImageError: function() {
     console.warn('No se pudo cargar la imagen:', this.src);
     this.classList.add('loaded');
+    this.removeEventListener('load', this._loadHandler);
+    this.removeEventListener('error', this._errorHandler);
   },
 
   markAllAsLoaded: () => {
@@ -60,38 +70,41 @@ const ImageHandler = {
 };
 
 // ============================================
-// MANEJADOR ESPECÍFICO PARA FEATURECARDS EN MÓVIL
+// INICIO - MANEJADOR DE FEATURECARDS EN MÓVIL
 // ============================================
 
 const FeatureCardHandler = {
   initialized: false,
   activeCard: null,
+  clickListeners: new WeakMap(),
+  touchListeners: new WeakMap(),
   
   init: () => {
-    // Solo en móvil
     if (!Utils.isMobileDevice()) return;
     
     FeatureCardHandler.initialized = true;
     
-    // Inicializar todos los FeatureCards (NO tech-card)
-    const featureCards = document.querySelectorAll('.mobile-active:not(.tech-card)');
+    const featureCards = document.querySelectorAll('.mobile-active:not(.tech-card):not(.carousel-slide):not(.carousel-btn-prev):not(.carousel-btn-next):not(.carousel-dot)');
     
     featureCards.forEach(card => {
-      // Remover cualquier listener previo
-      card.removeEventListener('click', FeatureCardHandler.onCardClick);
-      card.removeEventListener('touchstart', FeatureCardHandler.onTouchStart);
-      card.removeEventListener('touchend', FeatureCardHandler.onTouchEnd);
+      const clickHandler = (e) => FeatureCardHandler.onCardClick.call(card, e);
+      const touchStartHandler = (e) => FeatureCardHandler.onTouchStart.call(card, e);
+      const touchEndHandler = (e) => FeatureCardHandler.onTouchEnd.call(card, e);
       
-      // Agregar nuevos listeners
-      card.addEventListener('click', FeatureCardHandler.onCardClick);
-      card.addEventListener('touchstart', FeatureCardHandler.onTouchStart);
-      card.addEventListener('touchend', FeatureCardHandler.onTouchEnd);
+      FeatureCardHandler.clickListeners.set(card, clickHandler);
+      FeatureCardHandler.touchListeners.set(card, { start: touchStartHandler, end: touchEndHandler });
+      
+      card.removeEventListener('click', clickHandler);
+      card.removeEventListener('touchstart', touchStartHandler);
+      card.removeEventListener('touchend', touchEndHandler);
+      
+      card.addEventListener('click', clickHandler);
+      card.addEventListener('touchstart', touchStartHandler);
+      card.addEventListener('touchend', touchEndHandler);
     });
     
-    // También manejar tech-cards si es necesario
     FeatureCardHandler.initTechCards();
     
-    // Remover estado activo al hacer clic fuera
     document.addEventListener('click', FeatureCardHandler.onDocumentClick);
     document.addEventListener('touchstart', FeatureCardHandler.onDocumentTouch);
   },
@@ -100,51 +113,67 @@ const FeatureCardHandler = {
     const techCards = document.querySelectorAll('.mobile-active.tech-card');
     
     techCards.forEach(card => {
-      card.removeEventListener('click', FeatureCardHandler.onTechCardClick);
-      card.addEventListener('click', FeatureCardHandler.onTechCardClick);
+      const clickHandler = (e) => FeatureCardHandler.onTechCardClick.call(card, e);
+      FeatureCardHandler.clickListeners.set(card, clickHandler);
+      card.removeEventListener('click', clickHandler);
+      card.addEventListener('click', clickHandler);
     });
   },
   
   onTouchStart: function(e) {
-    // Evitar que otros manejadores interfieran
+    if (this.closest('#carouselTrack') || 
+        this.classList.contains('carousel-btn-prev') || 
+        this.classList.contains('carousel-btn-next') ||
+        this.classList.contains('carousel-dot')) {
+      return;
+    }
+    
     e.stopPropagation();
-    // Marcar que este elemento está siendo tocado
     this.setAttribute('data-touching', 'true');
   },
   
   onTouchEnd: function(e) {
-    // Quitar marca de touch
+    if (this.closest('#carouselTrack') || 
+        this.classList.contains('carousel-btn-prev') || 
+        this.classList.contains('carousel-btn-next') ||
+        this.classList.contains('carousel-dot')) {
+      return;
+    }
+    
     this.removeAttribute('data-touching');
     e.stopPropagation();
   },
   
   onCardClick: function(e) {
-    // IMPORTANTE: Prevenir comportamiento por defecto y propagación
+    if (this.closest('#carouselTrack') || 
+        this.classList.contains('carousel-btn-prev') || 
+        this.classList.contains('carousel-btn-next') ||
+        this.classList.contains('carousel-dot')) {
+      return;
+    }
+    
     e.preventDefault();
     e.stopPropagation();
-    e.stopImmediatePropagation();
     
-    // Si ya está activa, desactivarla
     if (this.classList.contains('active-touch')) {
       this.classList.remove('active-touch');
       FeatureCardHandler.activeCard = null;
     } else {
-      // Activar esta tarjeta
       this.classList.add('active-touch');
       FeatureCardHandler.activeCard = this;
     }
     
-    // Forzar reflow para asegurar que los estilos se apliquen
     void this.offsetWidth;
   },
   
   onTechCardClick: function(e) {
+    if (this.closest('#carouselTrack')) return;
+    
     e.preventDefault();
     e.stopPropagation();
     
     const techCards = document.querySelectorAll('.mobile-active.tech-card');
     
-    // Solo una tech-card activa a la vez
     if (this.classList.contains('active-touch')) {
       this.classList.remove('active-touch');
     } else {
@@ -154,9 +183,8 @@ const FeatureCardHandler = {
   },
   
   onDocumentClick: (e) => {
-    // Solo si se hace clic fuera de CUALQUIER FeatureCard
-    if (!e.target.closest('.mobile-active:not(.tech-card)')) {
-      const featureCards = document.querySelectorAll('.mobile-active:not(.tech-card)');
+    if (!e.target.closest('.mobile-active:not(.tech-card):not(.carousel-slide):not(.carousel-btn-prev):not(.carousel-btn-next):not(.carousel-dot)')) {
+      const featureCards = document.querySelectorAll('.mobile-active:not(.tech-card):not(.carousel-slide):not(.carousel-btn-prev):not(.carousel-btn-next):not(.carousel-dot)');
       featureCards.forEach(card => {
         card.classList.remove('active-touch');
       });
@@ -165,9 +193,8 @@ const FeatureCardHandler = {
   },
   
   onDocumentTouch: (e) => {
-    // Para touch: si se toca fuera y no es un FeatureCard
-    if (!e.target.closest('.mobile-active:not(.tech-card)')) {
-      const featureCards = document.querySelectorAll('.mobile-active:not(.tech-card)');
+    if (!e.target.closest('.mobile-active:not(.tech-card):not(.carousel-slide):not(.carousel-btn-prev):not(.carousel-btn-next):not(.carousel-dot)')) {
+      const featureCards = document.querySelectorAll('.mobile-active:not(.tech-card):not(.carousel-slide):not(.carousel-btn-prev):not(.carousel-btn-next):not(.carousel-dot)');
       featureCards.forEach(card => {
         card.classList.remove('active-touch');
       });
@@ -181,10 +208,20 @@ const FeatureCardHandler = {
     const allCards = document.querySelectorAll('.mobile-active');
     
     allCards.forEach(card => {
-      card.removeEventListener('click', FeatureCardHandler.onCardClick);
-      card.removeEventListener('click', FeatureCardHandler.onTechCardClick);
-      card.removeEventListener('touchstart', FeatureCardHandler.onTouchStart);
-      card.removeEventListener('touchend', FeatureCardHandler.onTouchEnd);
+      const clickHandler = FeatureCardHandler.clickListeners.get(card);
+      const touchHandlers = FeatureCardHandler.touchListeners.get(card);
+      
+      if (clickHandler) {
+        card.removeEventListener('click', clickHandler);
+        FeatureCardHandler.clickListeners.delete(card);
+      }
+      
+      if (touchHandlers) {
+        card.removeEventListener('touchstart', touchHandlers.start);
+        card.removeEventListener('touchend', touchHandlers.end);
+        FeatureCardHandler.touchListeners.delete(card);
+      }
+      
       card.removeAttribute('data-touching');
     });
     
@@ -197,32 +234,46 @@ const FeatureCardHandler = {
 };
 
 // ============================================
-// TOUCH HANDLER SIMPLIFICADO (solo para elementos generales)
+// INICIO - TOUCH HANDLER GENERAL
 // ============================================
 
 const TouchHandler = {
   init: () => {
     if (!Utils.isMobileDevice()) return;
     
-    // Solo elementos que NO sean FeatureCards
-    const touchElements = document.querySelectorAll('.touch-feedback:not(.mobile-active), .wave-effect:not(.mobile-active)');
+    const touchElements = document.querySelectorAll('.touch-feedback:not(.mobile-active):not(.carousel-slide):not(.carousel-btn-prev):not(.carousel-btn-next):not(.carousel-dot), .wave-effect:not(.mobile-active):not(.carousel-slide):not(.carousel-btn-prev):not(.carousel-btn-next):not(.carousel-dot)');
     
     touchElements.forEach(el => {
-      el.addEventListener('touchstart', TouchHandler.onTouchStart);
-      el.addEventListener('touchend', TouchHandler.onTouchEnd);
+      const startHandler = () => TouchHandler.onTouchStart.call(el);
+      const endHandler = () => TouchHandler.onTouchEnd.call(el);
+      
+      el._touchStartHandler = startHandler;
+      el._touchEndHandler = endHandler;
+      
+      el.removeEventListener('touchstart', startHandler);
+      el.removeEventListener('touchend', endHandler);
+      
+      el.addEventListener('touchstart', startHandler);
+      el.addEventListener('touchend', endHandler);
     });
   },
 
   onTouchStart: function() {
-    // Solo si no es un FeatureCard
-    if (!this.classList.contains('mobile-active')) {
+    if (!this.classList.contains('mobile-active') && 
+        !this.closest('#carouselTrack') &&
+        !this.classList.contains('carousel-btn-prev') &&
+        !this.classList.contains('carousel-btn-next') &&
+        !this.classList.contains('carousel-dot')) {
       this.classList.add('active-touch');
     }
   },
 
   onTouchEnd: function() {
-    // Solo si no es un FeatureCard
-    if (!this.classList.contains('mobile-active')) {
+    if (!this.classList.contains('mobile-active') && 
+        !this.closest('#carouselTrack') &&
+        !this.classList.contains('carousel-btn-prev') &&
+        !this.classList.contains('carousel-btn-next') &&
+        !this.classList.contains('carousel-dot')) {
       setTimeout(() => {
         this.classList.remove('active-touch');
       }, 150);
@@ -230,10 +281,18 @@ const TouchHandler = {
   }
 };
 
+// ============================================
+// INICIO - OBSERVADOR DE SCROLL
+// ============================================
+
 const ScrollObserver = {
   observer: null,
 
   init: () => {
+    if (ScrollObserver.observer) {
+      ScrollObserver.observer.disconnect();
+    }
+
     ScrollObserver.observer = new IntersectionObserver(ScrollObserver.onIntersection, {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -278,10 +337,18 @@ const ScrollObserver = {
   }
 };
 
+// ============================================
+// INICIO - MANEJADOR DE PREFERENCIAS DE MOVIMIENTO
+// ============================================
+
 const MotionPreferenceHandler = {
   mediaQuery: null,
 
   init: () => {
+    if (MotionPreferenceHandler.mediaQuery) {
+      MotionPreferenceHandler.mediaQuery.removeEventListener('change', MotionPreferenceHandler.updateClass);
+    }
+
     MotionPreferenceHandler.mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     
     MotionPreferenceHandler.updateClass();
@@ -297,10 +364,16 @@ const MotionPreferenceHandler = {
   }
 };
 
+// ============================================
+// INICIO - MANEJADOR DE ESTADO DE BOTONES (DESKTOP)
+// ============================================
+
 const ButtonStateHandler = {
   init: () => {
-    // Solo en desktop
     if (Utils.isMobileDevice()) return;
+    
+    document.removeEventListener('mousedown', ButtonStateHandler.onMouseDown);
+    document.removeEventListener('mouseup', ButtonStateHandler.onMouseUp);
     
     document.addEventListener('mousedown', ButtonStateHandler.onMouseDown);
     document.addEventListener('mouseup', ButtonStateHandler.onMouseUp);
@@ -308,7 +381,11 @@ const ButtonStateHandler = {
 
   onMouseDown: (e) => {
     const target = e.target.closest('.touch-feedback, .wave-effect');
-    if (target) {
+    if (target && 
+        !target.closest('#carouselTrack') &&
+        !target.classList.contains('carousel-btn-prev') &&
+        !target.classList.contains('carousel-btn-next') &&
+        !target.classList.contains('carousel-dot')) {
       target.classList.add('active-mouse');
     }
   },
@@ -321,7 +398,206 @@ const ButtonStateHandler = {
 };
 
 // ============================================
-// INICIALIZADOR PRINCIPAL
+// INICIO - CARRUSEL INFINITO MEJORADO
+// ============================================
+
+const InfiniteCarousel = {
+  isPaused: false,
+  animationFrameId: null,
+  lastTimestamp: null,
+  speed: 0.05, // píxeles por frame (ajustable)
+  currentPosition: 0,
+  groupWidth: 0,
+  isInitialized: false,
+  
+  // INICIO - INICIALIZACIÓN DEL CARRUSEL
+  init: () => {
+    const carouselTrack = document.getElementById('carouselTrack');
+    if (!carouselTrack) {
+      console.warn('No se encontró el carrusel');
+      return;
+    }
+    
+    // Evitar múltiples inicializaciones
+    if (InfiniteCarousel.isInitialized) {
+      InfiniteCarousel.cleanup();
+    }
+    
+    // Calcular dimensiones iniciales
+    InfiniteCarousel.calculateDimensions();
+    
+    // Configurar velocidad según tamaño de pantalla
+    InfiniteCarousel.adjustSpeed();
+    
+    // Iniciar animación
+    InfiniteCarousel.startAnimation();
+    
+    // Inicializar controles interactivos
+    InfiniteCarousel.initControls();
+    
+    // Manejar redimensionamiento
+    window.addEventListener('resize', InfiniteCarousel.handleResize);
+    
+    // Marcar como inicializado
+    InfiniteCarousel.isInitialized = true;
+    
+    console.log('Carrusel infinito inicializado');
+  },
+  
+  // INICIO - CALCULAR DIMENSIONES
+  calculateDimensions: () => {
+    const carouselTrack = document.getElementById('carouselTrack');
+    if (!carouselTrack) return;
+    
+    // Obtener el primer grupo de imágenes
+    const firstGroup = carouselTrack.querySelector('.carousel-group');
+    if (!firstGroup) {
+      console.warn('No se encontraron grupos en el carrusel');
+      return;
+    }
+    
+    // Calcular ancho de un grupo completo
+    InfiniteCarousel.groupWidth = firstGroup.offsetWidth;
+    
+    console.log(`Ancho del grupo: ${InfiniteCarousel.groupWidth}px`);
+    
+    // Asegurar que el track tenga suficiente ancho
+    carouselTrack.style.minWidth = `${InfiniteCarousel.groupWidth * 2}px`;
+  },
+  
+  // INICIO - MANEJAR REDIMENSIONAMIENTO
+  handleResize: () => {
+    InfiniteCarousel.calculateDimensions();
+    InfiniteCarousel.adjustSpeed();
+  },
+  
+  // INICIO - AJUSTAR VELOCIDAD
+  adjustSpeed: () => {
+    const width = window.innerWidth;
+    
+    // Velocidades diferentes según tamaño de pantalla
+    if (width < 640) {
+      InfiniteCarousel.speed = 0.04; // Más lento en móvil
+    } else if (width < 1024) {
+      InfiniteCarousel.speed = 0.045; // Tablet
+    } else {
+      InfiniteCarousel.speed = 0.05; // Desktop
+    }
+    
+    console.log(`Velocidad ajustada a: ${InfiniteCarousel.speed}px/frame`);
+  },
+  
+  // INICIO - INICIAR ANIMACIÓN
+  startAnimation: () => {
+    if (InfiniteCarousel.animationFrameId) {
+      cancelAnimationFrame(InfiniteCarousel.animationFrameId);
+    }
+    
+    // Reiniciar posición si es necesario
+    if (InfiniteCarousel.currentPosition <= -InfiniteCarousel.groupWidth) {
+      InfiniteCarousel.currentPosition = 0;
+    }
+    
+    InfiniteCarousel.lastTimestamp = null;
+    InfiniteCarousel.animate();
+  },
+  
+  // INICIO - BUCLE DE ANIMACIÓN PRINCIPAL
+  animate: (timestamp) => {
+    if (!InfiniteCarousel.lastTimestamp) InfiniteCarousel.lastTimestamp = timestamp;
+    
+    if (!InfiniteCarousel.isPaused) {
+      // Calcular tiempo transcurrido
+      const elapsed = timestamp - InfiniteCarousel.lastTimestamp;
+      
+      // Mover el carrusel (independiente del framerate)
+      InfiniteCarousel.currentPosition -= InfiniteCarousel.speed * (elapsed / 16.67); // Normalizado a 60fps
+      
+      // LÓGICA DE REINICIO SUAVE: Cuando un grupo completo ha salido
+      if (Math.abs(InfiniteCarousel.currentPosition) >= InfiniteCarousel.groupWidth) {
+        InfiniteCarousel.currentPosition += InfiniteCarousel.groupWidth;
+      }
+      
+      // Aplicar transformación
+      const carouselTrack = document.getElementById('carouselTrack');
+      if (carouselTrack) {
+        carouselTrack.style.transform = `translateX(${InfiniteCarousel.currentPosition}px)`;
+      }
+    }
+    
+    InfiniteCarousel.lastTimestamp = timestamp;
+    
+    // Continuar animación
+    InfiniteCarousel.animationFrameId = requestAnimationFrame(InfiniteCarousel.animate);
+  },
+  
+  // INICIO - CONTROLES INTERACTIVOS
+  initControls: () => {
+    const carouselTrack = document.getElementById('carouselTrack');
+    if (!carouselTrack) return;
+    
+    // Remover listeners previos
+    carouselTrack.removeEventListener('mouseenter', InfiniteCarousel.pause);
+    carouselTrack.removeEventListener('mouseleave', InfiniteCarousel.resume);
+    carouselTrack.removeEventListener('touchstart', InfiniteCarousel.pause);
+    carouselTrack.removeEventListener('touchend', InfiniteCarousel.delayedResume);
+    
+    // Pausar al hacer hover (desktop)
+    carouselTrack.addEventListener('mouseenter', InfiniteCarousel.pause);
+    carouselTrack.addEventListener('mouseleave', InfiniteCarousel.resume);
+    
+    // Pausar al tocar (móvil)
+    carouselTrack.addEventListener('touchstart', InfiniteCarousel.pause);
+    carouselTrack.addEventListener('touchend', InfiniteCarousel.delayedResume);
+  },
+  
+  // INICIO - PAUSAR CARRUSEL
+  pause: () => {
+    InfiniteCarousel.isPaused = true;
+  },
+  
+  // INICIO - REANUDAR CARRUSEL
+  resume: () => {
+    if (Utils.prefersReducedMotion()) return;
+    
+    InfiniteCarousel.isPaused = false;
+    InfiniteCarousel.lastTimestamp = null; // Resetear para animación suave
+  },
+  
+  // INICIO - REANUDACIÓN RETRASADA (para móvil)
+  delayedResume: () => {
+    if (Utils.prefersReducedMotion()) return;
+    
+    // Esperar 1 segundo antes de reanudar
+    setTimeout(() => {
+      InfiniteCarousel.resume();
+    }, 1000);
+  },
+  
+  // INICIO - LIMPIEZA
+  cleanup: () => {
+    if (InfiniteCarousel.animationFrameId) {
+      cancelAnimationFrame(InfiniteCarousel.animationFrameId);
+      InfiniteCarousel.animationFrameId = null;
+    }
+    
+    window.removeEventListener('resize', InfiniteCarousel.handleResize);
+    
+    const carouselTrack = document.getElementById('carouselTrack');
+    if (carouselTrack) {
+      carouselTrack.removeEventListener('mouseenter', InfiniteCarousel.pause);
+      carouselTrack.removeEventListener('mouseleave', InfiniteCarousel.resume);
+      carouselTrack.removeEventListener('touchstart', InfiniteCarousel.pause);
+      carouselTrack.removeEventListener('touchend', InfiniteCarousel.delayedResume);
+    }
+    
+    InfiniteCarousel.isInitialized = false;
+    console.log('Carrusel limpiado');
+  }
+};
+
+// ============================================
+// INICIO - INICIALIZADOR PRINCIPAL
 // ============================================
 
 export function inicializarAnimaciones() {
@@ -330,21 +606,28 @@ export function inicializarAnimaciones() {
   document.body.classList.add(deviceClass);
   document.body.classList.remove(deviceClass === 'is-mobile' ? 'is-desktop' : 'is-mobile');
 
-  // Inicializar todos los manejadores
+  // Limpiar inicializaciones previas
+  FeatureCardHandler.cleanup();
+  InfiniteCarousel.cleanup();
+
+  // INICIALIZAR TODOS LOS MANEJADORES
   ImageHandler.init();
-  TouchHandler.init(); // Solo para elementos generales
+  TouchHandler.init();
   MotionPreferenceHandler.init();
   ButtonStateHandler.init();
   ScrollObserver.init();
   
-  // INICIALIZAR MANEJADOR ESPECÍFICO PARA FEATURECARDS
+  // INICIALIZAR MANEJADORES ESPECÍFICOS
   FeatureCardHandler.init();
+  InfiniteCarousel.init();
 
   // Manejar carga completa
   const handleCompleteLoad = () => {
     ImageHandler.markAllAsLoaded();
     setTimeout(() => {
       document.body.classList.add('page-loaded');
+      // Recalcular carrusel después de que todo esté cargado
+      setTimeout(() => InfiniteCarousel.calculateDimensions(), 500);
     }, 100);
   };
 
@@ -359,7 +642,7 @@ export function inicializarAnimaciones() {
 }
 
 // ============================================
-// API PÚBLICA
+// INICIO - API PÚBLICA
 // ============================================
 
 export const Animaciones = {
@@ -384,21 +667,33 @@ export const Animaciones = {
   // Utilidades
   esVisible: Utils.isElementVisible,
   
-  // Función para limpiar listeners
-  limpiar: () => {
+  // Función para limpiar todos los listeners
+  limpiarTodo: () => {
     FeatureCardHandler.cleanup();
+    InfiniteCarousel.cleanup();
   },
 
   // Función para actualizar si se agregan elementos dinámicamente
   actualizar: () => {
+    ImageHandler.init();
+    ScrollObserver.init();
+    
     if (Utils.isMobileDevice()) {
       FeatureCardHandler.init();
     }
+    
+    InfiniteCarousel.init();
   },
+
+  // Control del carrusel
+  pausarCarrusel: InfiniteCarousel.pause,
+  reanudarCarrusel: InfiniteCarousel.resume,
+  ajustarVelocidadCarrusel: InfiniteCarousel.adjustSpeed,
+  recalcularCarrusel: InfiniteCarousel.calculateDimensions,
 
   // Inicialización
   inicializar: inicializarAnimaciones
 };
 
 // Inicialización automática opcional
-// Animaciones.inicializar();
+ Animaciones.inicializar();

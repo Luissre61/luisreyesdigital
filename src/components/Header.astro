@@ -24,11 +24,11 @@ import Icon from "./Icon.astro"; // Volvemos a importar Icon
     </div>
 
     <div id="mobile-menu" class="hidden w-full md:flex md:items-center md:w-auto md:ml-auto">
-      <button id="close-menu-button" class="absolute top-4 right-4 md:hidden flex items-center px-3 py-2 rounded text-gray-700 border-gray-700 hover:text-gray-900 hover:border-gray-900 z-50">
+      <button id="close-menu-button" class="absolute top-4 right-4 md:hidden flex items-center px-3 py-2 rounded text-white border-white hover:text-gray-200 hover:border-gray-200 z-50">
         <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Cerrar Menú</title><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/></svg>
       </button>
  
-      <div class="internal-links flex flex-grow flex-col items-center justify-center text-sm text-gray-800 md:text-white
+      <div class="internal-links flex flex-grow flex-col items-center justify-center text-sm text-white
             md:flex-grow-0 md:flex-row md:items-center w-full md:w-auto md:mt-0
             md:absolute md:left-1/2 md:-translate-x-1/2">
         <HeaderLink href="/" class="text-2xl md:text-xl block text-center mt-3 md:inline-block md:mt-0 px-4 py-2  transition-colors  relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-3/4 [&.active]:after:w-3/4">Inicio</HeaderLink>
@@ -37,7 +37,7 @@ import Icon from "./Icon.astro"; // Volvemos a importar Icon
         <HeaderLink href="/about/" class="text-2xl md:text-xl block text-center mt-4 md:inline-block md:mt-0 px-4 py-2  transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-3/4 [&.active]:after:w-3/4">Acerca de Mí</HeaderLink>
 </div>
 
-      <div class="social-icons-wrapper flex items-center justify-center gap-2 mt-4 md:mt-0 md:ml-4 w-full md:w-auto text-gray-800 md:text-white">
+      <div class="social-icons-wrapper flex items-center justify-center gap-2 mt-4 md:mt-0 md:ml-4 w-full md:w-auto text-white">
         <a href="https://www.linkedin.com/in/luis-reyes-digital" target="_blank" rel="noopener noreferrer" aria-label="Mi perfil de LinkedIn" class="hover:text-blue-400 transition-colors">
           <Icon name="linkedin" width={28} height={28} /> {/* Tamaño reducido */}
         </a>
@@ -52,7 +52,7 @@ import Icon from "./Icon.astro"; // Volvemos a importar Icon
     const closeMenuButton = document.getElementById('close-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    const mobileMenuOverlayClasses = ['flex', 'flex-col', 'fixed', 'top-0', 'left-0', 'h-screen', 'w-screen', 'bg-white', 'z-50', 'py-20'];
+    const mobileMenuOverlayClasses = ['flex', 'flex-col', 'fixed', 'top-0', 'left-0', 'h-screen', 'w-screen', 'bg-gradient-to-br', 'from-[#000033]', 'via-[#1a1a4d]', 'to-[#000033]', 'z-50', 'py-20'];
 
     if (openMenuButton && closeMenuButton && mobileMenu) {
       const openMenu = () => {
