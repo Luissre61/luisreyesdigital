@@ -40,22 +40,23 @@ const carouselImages = [
         <!-- Contenido principal de la página -->
         <main class="flex-grow">
 
-         <section class="relative px-4 sm:px-6 lg:px-8 min-h-[100dvh] md:h-[100dvh] py-0 md:py-0 flex flex-col justify-center overflow-hidden">
+       <section class="relative px-4 sm:px-6 lg:px-8 min-h-[100dvh] md:h-[100dvh] py-0 md:py-0 flex flex-col justify-center overflow-hidden">
 
-    <div class="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[73fr_27fr] gap-12 relative z-10 h-full pt-20 md:pt-0">
-        <!-- Columna izquierda - Texto -->
-        <div class="animate-fade-in-up flex flex-col justify-center relative">
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-green-400 animate-fade-in-down">
-                No pierdas ventas <br>
+    <div class="w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-12 relative z-10 h-full pt-20 md:pt-0 items-center">
+        
+        <!-- SECCIÓN 1: Texto y botón -->
+        <div class="animate-fade-in-up flex flex-col justify-center relative w-full md:w-[35vw]">
+            <h1 class="text-xl md:text-4xl font-extrabold leading-tight mb-6 text-green-400 animate-fade-in-down">
+                Gestiono tus clientes <br>
                 <GradientText as="span" gradient="from-green-400 to-emerald-500" class="animate-pulse-glow">
-                    por tardar en responder
+                     con soluciones inmediatas
                 </GradientText>
             </h1>
             
             <!-- Contenedor para párrafo y botón -->
             <div class="max-w-2xl relative z-10">
-                <p class="text-lg text-gray-300 mb-10 max-w-lg leading-relaxed">
-                    Diseño tu sistema de respuestas analizando tus clientes y sus preguntas más frecuentes. Sin pedirte contraseñas ni instalar programas raros. Aplico mi lógica de atención profesional para que respondas en segundos y no se te escape ni una sola venta.
+                <p class="text-xl text-gray-300 mb-10 max-w-lg leading-relaxed">
+                  Atiendo el flujo de tus clientes con empatía y enfoque en el Customer Success. Resuelvo problemas en tiempo real y audito cada proceso para garantizar el Customer Journey.
                 </p>
                 
                 <!-- CTA -->
@@ -66,26 +67,26 @@ const carouselImages = [
                         class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold text-white transition-all duration-300 bg-gradient-to-r from-green-500 to-emerald-600 rounded-4xl hover:shadow-lg hover:scale-105 hover:shadow-green-500/30"
                     >
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                        Quiero responder rápido desde WhatsApp
+                        Agendar entrevista por WhatsApp
                     </a>
                 </div>
-                <p class="text-sm text-gray-400 italic mt-4">Respuesta inmediata garantizada.</p>
-            </div>
-
-            <!-- Imagen de la mujer pegada al borde inferior -->
-            <div class="relative md:absolute md:bottom-0 md:right-0 z-0 w-auto max-w-[280px] md:max-w-[350px] pointer-events-none mx-auto md:mx-0 mt-8 md:mt-0">
-                <img 
-                    src={import.meta.env.BASE_URL + "imagenes/mujer.png"} 
-                    alt="Mujer sonriente"
-                    width="400"
-                    height="800"
-                    class="w-full h-auto object-contain max-h-[40vh] md:max-h-[85vh] animate-fade-in-right animate-delay-500"
-                />
+                <p class="text-sm text-gray-400 italic mt-4">Transformo cada consulta en una solución rápida y efectiva.</p>
             </div>
         </div>
+        
+        <!-- SECCIÓN 2: Imagen -->
+        <div class="relative z-0 w-auto max-w-[280px] md:max-w-none md:w-[25vw] pointer-events-none mx-auto md:mx-0 animate-fade-in-right animate-delay-500 md:self-end">
+            <img 
+                src={import.meta.env.BASE_URL + "imagenes/luis-7.png"} 
+                alt="Mujer sonriente"
+                width="400"
+                height="800"
+                class="w-full h-auto object-contain max-h-[40vh] md:max-h-[85vh]"
+            />
+        </div>
 
-        <!-- Columna derecha - Tarjeta de chat simulada -->
-        <div class="relative animate-fade-in-up animate-delay-300 flex flex-col justify-center">
+        <!-- SECCIÓN 3: Tarjeta de chat simulada -->
+        <div class="relative animate-fade-in-up animate-delay-300 flex flex-col justify-center w-full md:w-[25vw]">
             <div class="absolute -inset-4 bg-green-500/20 blur-3xl rounded-full"></div>
             <div class="bg-gray-900/90 backdrop-blur-md border border-white/20 shadow-[0_0_30px_rgba(34,197,94,0.3)] px-5 py-4 sm:px-6 sm:py-5 rounded-3xl relative z-20 animate-float">
                 <!-- Encabezado del chat -->
@@ -112,8 +113,8 @@ const carouselImages = [
                 <div class="space-y-3 font-sans">
                     <!-- Mensaje del cliente -->
                     <div class="bg-gray-700/50 p-2 sm:p-3 rounded-2xl rounded-tl-none max-w-[85%] text-sm text-gray-200">
-                        <p class="font-medium text-green-400 mb-1 text-xs">Cliente:</p>
-                        <p>Hola! Precio y envíos porfa?</p>
+                        <p class="font-medium text-green-400 mb-1 text-sm">Cliente:</p>
+                        <p>Hola, tengo un problemas con la plataforma para pagar.</p>
                     </div>
                     
                     <!-- Respuesta automática -->
@@ -121,12 +122,12 @@ const carouselImages = [
                         <div class="flex items-center justify-end gap-2 mb-1">
                             <span class="text-[10px] text-green-300 uppercase tracking-wider">Respuesta automática 🤖</span>
                         </div>
-                        <p>"¡Hola! 👋 Gracias por escribir. En segundos te damos toda la info. ¿Qué producto te interesa?</p>
+                        <p>"¡Hola! 👋 Gracias por escribir. En segundos sera atendido por uno de nuestros especialistas.</p>
                     </div>
                     <!-- Mensaje del negocio -->
                     <div class="bg-green-600/20 border border-green-500/30 p-2 sm:p-3 rounded-2xl rounded-tr-none ml-auto max-w-[85%] text-sm text-right text-gray-100">
-                        <p class="font-medium mb-1 text-xs text-green-400">Negocio:</p>
-                        <p>¡Listo! Aquí tienes: 💰 Precio: $XXX 🚚 Envío: Nacional (2-5 días) 💳 Pago: Transferencia/Pago Móvil. ¿Te lo reservo?</p>
+                        <p class="font-medium mb-1 text-xs text-green-400">Agente:</p>
+                        <p>"¡Hola!, te envio los siguientes enlaces de pago alternativos para tu comodidad. ¿Deseas que valide la transacción una vez la realices?</p>
                     </div>
                     
                 </div>
@@ -150,54 +151,136 @@ const carouselImages = [
 <!-- Separador moderno - Versión limpia -->
 <Separador />
 
-<section class="relative py-12 md:py-16 overflow-hidden">
+<section class="relative px-4 sm:px-6 lg:px-8 min-h-[100dvh] md:h-[100dvh] py-0 md:py-0 flex flex-col overflow-hidden">
+
     <!-- Contenido principal - Layout responsive -->
-    <div class="relative z-10 max-w-7xl mx-auto px-4">
-        <div class="flex flex-col lg:flex-row items-center justify-between gap-10 md:gap-12">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 h-full">
+        <div class="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-4 md:gap-8 h-full">
             
             <!-- Parte izquierda - Grid de características -->
-            <div class="w-full lg:w-1/2">
-                <div class="text-center mb-8 md:mb-10">
+            <div class="w-full lg:w-1/2 lg:self-center">
+                <div class="text-center mb-4 md:mb-6">
                     <div class="opacity-0 scroll-fade-in">
                         <GradientText as="h2" gradient="from-green-400 to-emerald-500" animate={true} class="text-2xl sm:text-4xl font-bold px-4 py-2">
-                            Resultados enfocados en el orden y la rapidez.
+                            Mi enfoque estratégico
                         </GradientText>
                     </div>
                 </div>
                 
                 <!-- Grid -->
-                <div class="w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 stagger-animation">
+                <div class="w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 stagger-animation">
                     <FeatureCard
                         icon="⚡"
-                        title="Velocidad Extrema"
-                        description="Respuestas diseñadas para enviarse en menos de 30 segundos."
+                        title="Gestiono con agilidad"
+                        description="Resuelvo consultas y cierro casos con tiempos de respuesta optimizados para mantener el flujo de tu operación."
                         variant="glass"
                         class="animate-on-mobile opacity-0 scroll-fade-in-up"
                     />
                     <FeatureCard
                         icon="🛡️"
-                        title="Seguridad Total"
-                        description="Cero riesgos: No pido contraseñas ni accesos a tus cuentas."
+                        title="Aseguro confiabilidad técnica"
+                        description="Manejo tus datos con ética y utilizo las herramientas corporativas bajo los más altos estándares de seguridad."
                         variant="glass"
                         class="animate-on-mobile opacity-0 scroll-fade-in-up animate-delay-100"
                     />
                     <FeatureCard
                         icon="✅"
-                        title="Cierre Efectivo"
-                        description="Lógica diseñada para filtrar curiosos y enfocar tu tiempo en clientes que sí compran"
+                        title="Filtro y convierto"
+                        description="Identifico clientes potenciales y priorizo casos críticos para maximizar la productividad de todo el equipo."
                         variant="glass"
                         class="animate-on-mobile opacity-0 scroll-fade-in-up animate-delay-200"
                     />
                     <FeatureCard
-                        icon="📋"
-                        title="Listo para Usar"
-                        description="Sistema de respuestas personalizadas (copy & paste)"
+                        icon="🚀"
+                        title="Ejecuto de inmediato"
+                        description="Adapto mis procesos al instante a tu flujo de trabajo dominando el uso de CRM y sistemas de tickets."
                         variant="glass"
                         class="animate-on-mobile opacity-0 scroll-fade-in-up animate-delay-300"
                     />
                 </div>
             </div>
             
+          
+                <div class="flex justify-center md:justify-end items-end order-2 mt-8 md:mt-0 mobile-float">
+                
+                <img
+                    src={import.meta.env.BASE_URL + "imagenes/luis-8.png"}
+                    alt="Luis Reyes - Profesional digital"
+                    width="600"
+                    height="800"
+                    decoding="async"
+                    fetchpriority="high"
+                    class="h-auto max-h-[50vh] md:max-h-[80vh] w-auto object-contain drop-shadow-xl opacity-0 scroll-fade-in-right"
+                />
+             
+            </div>
+            
+        </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<Separador />
+
+   
+
+ <section class="py-16 relative overflow-hidden">
+  <!-- Elementos de fondo decorativos -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-float-slow"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-tr from-blue-500/15 to-cyan-500/15 rounded-full blur-3xl animate-float-slow animate-delay-1000"></div>
+  </div>
+  
+  <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+    <div class="mb-8 opacity-0 scroll-fade-in-down">
+      <GradientText as="b" gradient="from-green-400 to-emerald-500" class="inline-block px-1 font-bold animate-[pulse_1.5s_ease-in-out_infinite] text-2xl sm:text-4xl">
+       My Strategic Tools
+    </GradientText>
+    </div>
+    
+    <div class="relative inline-block mb-12 opacity-0 scroll-fade-in-up animate-delay-200">
+      <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed px-4 py-6 bg-white/5 backdrop-blur-sm rounded-2xl shadow-sm border border-white/10">
+        Herramientas seleccionadas para optimizar procesos que conectan con el usuario y garantizan su satisfacción.
+      </p>
+
+       
+      
+      <!-- Elemento decorativo de acento -->
+      <div class="absolute -top-2 -left-2 w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg rotate-45 animate-pulse-glow"></div>
+      <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-tr from-cyan-500 to-blue-500 rounded-lg rotate-45 animate-pulse-glow animate-delay-500"></div>
+    </div>
+    
+    <!-- Botón usando GradientButton -->
+        <div class="flex justify-center">
+          <a 
+            href="/tools/" 
+            target="_self"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold text-white transition-all duration-300 bg-gradient-to-r from-green-500 to-emerald-600 rounded-4xl hover:shadow-lg hover:scale-105 hover:shadow-green-500/30"
+          >
+            🚀 Ir mis tools →
+          </a>
+        </div>
+
+
+    <!-- Iconos decorativos -->
+    <div class="flex justify-center items-center gap-6 sm:gap-10 mt-12 opacity-0 scroll-fade-in-up animate-delay-400">
+      <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center shadow-sm border border-gray-200 animate-bounce-soft">
+        <span class="text-2xl sm:text-3xl">❤️</span>
+      </div>
+      <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center shadow-sm border border-gray-200 animate-bounce-soft animate-delay-200">
+        <span class="text-2xl sm:text-3xl">🧠</span>
+      </div>
+      <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center shadow-sm border border-gray-200 animate-bounce-soft animate-delay-400">
+        <span class="text-2xl sm:text-3xl">🗺️</span>
+      </div>
+    </div>
+    
+
+
+      {/*
             <!-- Parte derecha - Carrusel -->
             <div class="w-full lg:w-1/2 border-xl rounded-3xl py-6 md:py-8 backdrop-blur-md bg-gray-900/70 shadow-[0_0_30px_rgba(34,197,94,0.3)] animate-fade-in-up animate-delay-300">
                 <!-- Encabezado minimalista -->
@@ -246,118 +329,8 @@ const carouselImages = [
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+                */}
 
-
-<Separador />
-
-     <section class="pt-16 sm:pt-24 pb-0 relative overflow-hidden animate-fade-in">
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-           
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-end">
-                <!-- Contenido de texto - Siempre arriba en móvil -->
-                <div class="flex flex-col justify-center order-1 pb-12 md:pb-0 md:self-center">
-         <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-green-400 opacity-0 scroll-fade-in">
-                La fusión que tu negocio <br>
-                <GradientText as="span" gradient="from-green-400 to-emerald-500" class="animate-pulse-glow">
-                    necesita.
-                </GradientText>
-            </h1>
-        
-        <p class="text-lg sm:text-2xl leading-relaxed font-medium opacity-0 scroll-fade-in-up animate-delay-300 [animation-fill-mode:forwards] text-white">
-           Hola! Soy Luis Reyes, Transformo tu flujo de WhatsApp para que atiendas a más clientes con la misma rapidez, orden y calidad de un profesional, aunque trabajes solo desde tu celular.
-        </p>
-                <div class="mt-10">
-                    <GradientButton 
-                        text="Hablar con Luis Ahora"
-                        href="https://wa.me/message/TT7KVY6XPU2II1"
-                        target="_blank"
-                        leftIcon=""
-                        rightIcon="💼"
-                        gradientFrom="from-green-500"
-                        gradientTo="to-emerald-600"
-                        hoverFrom="from-emerald-600"
-                        hoverTo="to-green-500"
-                        shadowColor="shadow-green-500/30"
-                    />
-                </div>
-            </div>
-
-            <!-- Imagen - Abajo en móvil, al lado en desktop -->
-            <div class="flex justify-center md:justify-end items-end order-2 mt-8 md:mt-0 mobile-float">
-                
-                <img
-                    src={import.meta.env.BASE_URL + "imagenes/luis-8.png"}
-                    alt="Luis Reyes - Profesional digital"
-                    width="600"
-                    height="800"
-                    decoding="async"
-                    fetchpriority="high"
-                    class="h-auto max-h-[50vh] md:max-h-[80vh] w-auto object-contain drop-shadow-xl opacity-0 scroll-fade-in-right"
-                />
-            </div>
-        </div>
-
-    
-</section>
-<Separador /> 
-
- <section class="py-16 relative overflow-hidden">
-  <!-- Elementos de fondo decorativos -->
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-float-slow"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-tr from-blue-500/15 to-cyan-500/15 rounded-full blur-3xl animate-float-slow animate-delay-1000"></div>
-  </div>
-  
-  <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
-    <div class="mb-8 opacity-0 scroll-fade-in-down">
-      <GradientText as="b" gradient="from-green-400 to-emerald-500" class="inline-block px-1 font-bold animate-[pulse_1.5s_ease-in-out_infinite] text-2xl sm:text-4xl">
-       My Strategic Tools
-    </GradientText>
-    </div>
-    
-    <div class="relative inline-block mb-12 opacity-0 scroll-fade-in-up animate-delay-200">
-      <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed px-4 py-6 bg-white/5 backdrop-blur-sm rounded-2xl shadow-sm border border-white/10">
-        Herramientas seleccionadas para optimizar procesos que conectan con el usuario y garantizan su satisfacción.
-      </p>
-      
-      <!-- Elemento decorativo de acento -->
-      <div class="absolute -top-2 -left-2 w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg rotate-45 animate-pulse-glow"></div>
-      <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-tr from-cyan-500 to-blue-500 rounded-lg rotate-45 animate-pulse-glow animate-delay-500"></div>
-    </div>
-
-    <!-- Botón usando GradientButton -->
-        <div class="flex justify-center">
-          <GradientButton 
-            text="Explorar mis Tools"
-            href="/tools/"
-            target="_self"
-            leftIcon="🚀"
-            rightIcon="→"
-            gradientFrom="from-green-500"
-            gradientTo="to-emerald-600"
-            hoverFrom="from-emerald-600"
-            hoverTo="to-green-500"
-            shadowColor="shadow-green-500/30"
-          />
-        </div>
-    
-    <!-- Iconos decorativos -->
-    <div class="flex justify-center items-center gap-6 sm:gap-10 mt-12 opacity-0 scroll-fade-in-up animate-delay-400">
-      <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center shadow-sm border border-gray-200 animate-bounce-soft">
-        <span class="text-2xl sm:text-3xl">❤️</span>
-      </div>
-      <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center shadow-sm border border-gray-200 animate-bounce-soft animate-delay-200">
-        <span class="text-2xl sm:text-3xl">🧠</span>
-      </div>
-      <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center shadow-sm border border-gray-200 animate-bounce-soft animate-delay-400">
-        <span class="text-2xl sm:text-3xl">🗺️</span>
-      </div>
-    </div>
-    
     
     
   </div>
